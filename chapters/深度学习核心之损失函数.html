@@ -319,7 +319,7 @@
 <p>在实际应用中，损失函数、代价函数和目标函数这些术语有时会被混用，但它们都涉及到衡量模型的预测结果与真实标签之间的差异，并在训练过程中用于优化模型</p>
 <p><strong>损失函数大致可分为两种</strong>：<code>回归损失</code>(针对<strong>连续型</strong>变量)和<code>分类损失</code>(针对<strong>离散型</strong>变量)</p>
 <p>具体使用哪个术语取决于上下文和个人偏好，但它们都指向类似的概念</p>
-<p><a data-lightbox="66719df3-3bb5-4f6d-9537-94dd0288d2af" data-title="损失函数结构图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/损失函数结构图.svg" target="_blank"><img alt="损失函数结构图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/损失函数结构图.svg"/></a></p>
+<p><a data-lightbox="11d9ae46-d4a1-43b7-9547-876eab7d5e2e" data-title="损失函数结构图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/损失函数结构图.svg" target="_blank"><img alt="损失函数结构图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/损失函数结构图.svg"/></a></p>
 <h1 id="回归损失函数">2 回归损失函数</h1>
 <blockquote>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzU0MDQ1NjAzNg==&amp;mid=2247528906&amp;idx=2&amp;sn=7bdd966af599e2b8a336560d5dc3fdea&amp;chksm=fb3ad4c1cc4d5dd7bc868de3c75a7d52d91d98c6561462757f2a68fe04d497f4b7b6e79ac620&amp;scene=27" target="_blank">深度学习常用损失函数总览：基本形式、原理、特点</a></p>
@@ -331,11 +331,11 @@ J_{M A E}=\frac{1}{N} \sum_{i=1}^{N}\left|y_{i}-\hat{y}_{i}\right|
 </script>
 <strong>优点</strong>: 对离群点(<strong>Outliers</strong>)或者异常值更具有鲁棒性</p>
 <p><strong>缺点</strong>: 由图可知其在0点处的导数不连续，使得求解效率低下，导致收敛速度慢；对于较小的损失值，其梯度也同其他区间损失值的梯度一样大，所以不利于网络的学习</p>
-<p><a data-lightbox="d49f4498-9c9e-4561-80c5-331b2b82db0b" data-title="MAE损失函数" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/MAE损失函数.webp" target="_blank"><img alt="MAE损失函数" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/MAE损失函数.webp"/></a></p>
+<p><a data-lightbox="23fad0ca-1ef0-4fe4-8b3e-29958487e560" data-title="MAE损失函数" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/MAE损失函数.webp" target="_blank"><img alt="MAE损失函数" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/MAE损失函数.webp"/></a></p>
 <blockquote>
 <p><strong>模型预测与真实值之间的误差服从拉普拉斯分布Laplace distribution</strong></p>
 </blockquote>
-<p>可以在一定的假设下通过最大化似然可以得到MAE损失的形式，假设模型预测与真实值之间的误差服从<code>拉普拉斯分布</code>Laplace distribution $(\mu=0, b=1)$，则给定一个输入<script type="math/tex; ">x_{i}</script>，模型输出真实值<script type="math/tex; ">y_{i}</script>的概率为
+<p>可以在一定的假设下通过最大化似然可以得到MAE损失的形式，假设模型预测与真实值之间的误差服从<code>拉普拉斯分布</code>Laplace distribution <script type="math/tex; ">(\mu=0, b=1)</script>，则给定一个输入<script type="math/tex; ">x_{i}</script>，模型输出真实值<script type="math/tex; ">y_{i}</script>的概率为
 <script type="math/tex; mode=display">
 p\left(y_{i} \mid x_{i}\right)=\frac{1}{2} \exp \left(-\left|y_{i}-\hat{y}_{i}\right|\right)
 </script>
@@ -358,11 +358,11 @@ J_{M S E}=\frac{1}{N} \sum_{i=1}^{N}\left(y_{i}-\hat{y}_{i}\right)^{2}
 </script>
 <strong>优点</strong>: 收敛速度快，能够对梯度给予合适的惩罚权重，而<strong>不是一视同仁</strong>，使梯度更新的方向可以更加精确</p>
 <p><strong>缺点</strong>: 对异常值十分敏感，梯度更新的方向很容易受离群点所主导，不具备鲁棒性，假如我们训练数据中存在较大的异常值，此时我们将会有一个巨大的权重更新，这有可能会使模型失去平衡</p>
-<p><a data-lightbox="b902db2b-7f3e-4003-9d66-bb5a01a236dc" data-title="MSE损失函数" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/MSE损失函数.webp" target="_blank"><img alt="MSE损失函数" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/MSE损失函数.webp"/></a></p>
+<p><a data-lightbox="f35f83ac-cd3e-4d50-a6a4-f2b4149d3c85" data-title="MSE损失函数" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/MSE损失函数.webp" target="_blank"><img alt="MSE损失函数" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/MSE损失函数.webp"/></a></p>
 <blockquote>
 <p><strong>在模型输出与真实值的误差服从高斯分布的假设下，最小化均方差损失函数与极大似然估计本质上是一致的</strong></p>
 </blockquote>
-<p>MSE假设了误差服从<code>高斯分布</code>，在高斯分布假设下，可以使用最大化似然得到均方差损失的形式，假设模型预测与真实值之间的误差服从标准高斯分布$(\mu=0, \sigma=1)$，则给定一个输入<script type="math/tex; ">x_{i}</script>，模型输出真实值<script type="math/tex; ">y_{i}</script>的概率为
+<p>MSE假设了误差服从<code>高斯分布</code>，在高斯分布假设下，可以使用最大化似然得到均方差损失的形式，假设模型预测与真实值之间的误差服从标准高斯分布<script type="math/tex; ">(\mu=0, \sigma=1)</script>，则给定一个输入<script type="math/tex; ">x_{i}</script>，模型输出真实值<script type="math/tex; ">y_{i}</script>的概率为
 <script type="math/tex; mode=display">
 p\left(y_{i} \mid x_{i}\right) 
 
@@ -370,7 +370,7 @@ p\left(y_{i} \mid x_{i}\right)
 
 =\frac{1}{\sqrt{2 \pi}} \exp \left(-\frac{\left(y_{i}-\hat{y}_{i}\right)^{2}}{2}\right)
 </script>
-进一步我们假设数据集中$\mathrm{N}$个样本点之间相互独立，则给定所有$x$输出所有真实值$y$的概率，即似然Likelihood为所有<script type="math/tex; ">p\left(y_{i} \mid x_{i}\right)</script>的累乘
+进一步我们假设数据集中<script type="math/tex; ">\mathrm{N}</script>个样本点之间相互独立，则给定所有<script type="math/tex; ">x</script>输出所有真实值<script type="math/tex; ">y</script>的概率，即似然Likelihood为所有<script type="math/tex; ">p\left(y_{i} \mid x_{i}\right)</script>的累乘
 <script type="math/tex; mode=display">
 L(x, y)=\prod_{i=1}^{N} \frac{1}{\sqrt{2 \pi}} \exp \left(-\frac{\left(y_{i}-\hat{y}_{i}\right)^{2}}{2}\right)
 </script>
@@ -378,7 +378,7 @@ L(x, y)=\prod_{i=1}^{N} \frac{1}{\sqrt{2 \pi}} \exp \left(-\frac{\left(y_{i}-\ha
 <script type="math/tex; mode=display">
 L L(x, y)=\log (L(x, y))=-\frac{N}{2} \log 2 \pi-\frac{1}{2} \sum_{i=1}^{N}\left(y_{i}-\hat{y}_{i}\right)^{2}
 </script>
-去掉与$\hat{y}_{i}$无关的第一项，然后转化为最小化负对数似然Negative Log-Likelihood
+去掉与<script type="math/tex; ">\hat{y}_{i}</script>无关的第一项，然后转化为最小化负对数似然Negative Log-Likelihood
 <script type="math/tex; mode=display">
 N L L(x, y)=\frac{1}{2} \sum_{i=1}^{N}\left(y_{i}-\hat{y}_{i}\right)^{2}
 </script>
@@ -430,8 +430,8 @@ J_{HL} =\left\{
 
 \end{array}\right.
 </script>
-对于Huber损失来说，$\delta$的选择十分重要，它决定了模型处理局外点的行为。当残差大于$\delta$时使用L1损失，很小时则使用更为合适的L2损失来进行优化</p>
-<p><a data-lightbox="2fbf9ed3-9986-46df-a9fb-478fb1411bfe" data-title="Huber损失函数" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/Huber损失函数.webp" target="_blank"><img alt="Huber损失函数" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/Huber损失函数.webp"/></a></p>
+对于Huber损失来说，<script type="math/tex; ">\delta</script>的选择十分重要，它决定了模型处理局外点的行为。当残差大于<script type="math/tex; ">\delta</script>时使用L1损失，很小时则使用更为合适的L2损失来进行优化</p>
+<p><a data-lightbox="dceba3ef-3eda-4c0e-b9c4-769edbec4574" data-title="Huber损失函数" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/Huber损失函数.webp" target="_blank"><img alt="Huber损失函数" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/Huber损失函数.webp"/></a></p>
 <blockquote>
 <p>优点</p>
 </blockquote>
@@ -441,21 +441,21 @@ J_{HL} =\left\{
 <li><p><strong>解决离群点梯度爆炸的问题</strong>: 利用MSE梯度随误差减小的特性来得到更精确的最小值，也对局外点具有<strong>更好的鲁棒性</strong></p>
 </li>
 </ul>
-<p>但Huber损失函数的良好表现得益于精心训练的超参数$\delta$，当$\delta$趋向于0时它就退化成了MAE，而当$\delta$趋向于无穷时则退化为了MSE</p>
+<p>但Huber损失函数的良好表现得益于精心训练的超参数<script type="math/tex; ">\delta</script>，当<script type="math/tex; ">\delta</script>趋向于0时它就退化成了MAE，而当<script type="math/tex; ">\delta</script>趋向于无穷时则退化为了MSE</p>
 <h2 id="quantile-loss">2.5 Quantile Loss</h2>
 <p><code>分位数回归Quantile Regression</code>是一类在实际应用中非常有用的回归算法，通常的回归算法是拟合目标值的期望或者中位数，而分位数回归可以通过给定不同的分位点，拟合目标值的不同分位数</p>
 <h2 id="iou-loss">2.6 IoU Loss</h2>
 <blockquote>
 <p><a href="https://arxiv.org/pdf/1608.01471.pdf" target="_blank">UnitBox: An Advanced Object Detection Network 2016</a></p>
 </blockquote>
-<p><a data-lightbox="e39257d6-1c56-4a6b-88e2-eaa6ebb2c385" data-title="IOU loss公式可视化" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/IOU loss公式可视化.webp" target="_blank"><img alt="IOU loss公式可视化" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/IOU loss公式可视化.webp"/></a></p>
+<p><a data-lightbox="b0534288-899d-41eb-958c-04521aed7a3c" data-title="IOU loss公式可视化" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/IOU loss公式可视化.webp" target="_blank"><img alt="IOU loss公式可视化" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/IOU loss公式可视化.webp"/></a></p>
 <h1 id="分类损失函数">3 分类损失函数</h1>
 <h2 id="binary-cross-entropy">3.1 Binary Cross Entropy</h2>
 <blockquote>
 <p><a href="https://www.scholat.com/teamwork/showPostMessage.html?id=8939&amp;teamId=1263" target="_blank">简单的交叉熵损失函数，你真的懂了吗</a></p>
 </blockquote>
 <p>对于分类问题，最常用的损失函数是交叉熵损失函数<code>Cross Entropy Loss</code></p>
-<p>考虑二分类，在二分类中我们通常使用Sigmoid函数将模型的输出压缩到$(0,1)$区间内<script type="math/tex; ">\hat{y_{i}} \in(0,1)</script>，用来代表给定输入<script type="math/tex; ">x_{i}</script>，模型判断为正类的概率</p>
+<p>考虑二分类，在二分类中我们通常使用Sigmoid函数将模型的输出压缩到<script type="math/tex; ">(0,1)</script>区间内<script type="math/tex; ">\hat{y_{i}} \in(0,1)</script>，用来代表给定输入<script type="math/tex; ">x_{i}</script>，模型判断为正类的概率</p>
 <p>由于只有正负两类， 因此同时也得到了负类的概率
 <script type="math/tex; mode=display">
 \begin{array}{l}
@@ -482,43 +482,43 @@ N L L(x, y)=J_{C E}=-\sum_{i=1}^{N}\left(y_{i} \log \left(\hat{y}_{i}\right)+\le
 <p>可视化</p>
 </blockquote>
 <p>下图是对二分类的交叉熵损失函数的可视化，蓝线是目标值为0时输出不同输出的损失，黄线是目标值为1时的损失</p>
-<p><a data-lightbox="9c5550b9-ee5f-4681-be80-43057b7f70b6" data-title="二分类的交叉熵损失函数的可视化" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/二分类的交叉熵损失函数的可视化.webp" target="_blank"><img alt="二分类的交叉熵损失函数的可视化" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/二分类的交叉熵损失函数的可视化.webp"/></a></p>
+<p><a data-lightbox="7bd21034-9555-4873-897c-1be2476619e5" data-title="二分类的交叉熵损失函数的可视化" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/二分类的交叉熵损失函数的可视化.webp" target="_blank"><img alt="二分类的交叉熵损失函数的可视化" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/二分类的交叉熵损失函数的可视化.webp"/></a></p>
 <p>可以看到约接近目标值损失越小，随着误差变差，损失呈指数增长</p>
-<p>图中<code>蓝线</code>是$y<em>i=0$的图线，此时损失函数变为
+<p>图中<code>蓝线</code>是<script type="math/tex; ">y_i=0</script>的图线，此时损失函数变为
 <script type="math/tex; mode=display">
 J_{CE} = -log(1-\hat{y_{i}})
 </script>
-图中<code>黄线</code>是$y_i=1$的图线，此时损失函数变为
+图中<code>黄线</code>是<script type="math/tex; ">y_i=1</script>的图线，此时损失函数变为
 <script type="math/tex; mode=display">
 J_{CE} = -log (\hat{y_{i}})
 </script>
-<strong>从图形中我们可以发现</strong>：预测输出与$y$差得越多，$J</em>{CE}$的值越大，也就是说对当前模型的<strong>惩罚</strong>越大，而且是<strong>非线性增大</strong>，是一种类似指数增长的级别</p>
-<p>这是由log函数本身的特性所决定的，这样的好处是模型会倾向于让预测输出更接近真实样本标签$y$</p>
+<strong>从图形中我们可以发现</strong>：预测输出与<script type="math/tex; ">y</script>差得越多，<script type="math/tex; ">J_{CE}</script>的值越大，也就是说对当前模型的<strong>惩罚</strong>越大，而且是<strong>非线性增大</strong>，是一种类似指数增长的级别</p>
+<p>这是由log函数本身的特性所决定的，这样的好处是模型会倾向于让预测输出更接近真实样本标签<script type="math/tex; ">y</script></p>
 <h2 id="cross-entropy-loss">3.2 Cross Entropy Loss</h2>
 <blockquote>
 <p><a href="https://zhuanlan.zhihu.com/p/518626935" target="_blank">交叉熵损失函数（CrossEntropy Loss）</a></p>
 </blockquote>
 <p>在多分类的任务中，交叉樀损失函数的推导思路和二分类是一样的，变化的地方主要有两个</p>
 <ol>
-<li><strong>维度变化</strong>: 真实值$y_{i}$现在是一个one-hot向量</li>
+<li><strong>维度变化</strong>: 真实值<script type="math/tex; ">y_{i}</script>现在是一个one-hot向量</li>
 <li><strong>激活函数</strong>: 模型输出的最后的激活函数由原来的<strong>Sigmoid函数</strong>换成<strong>Softmax函数</strong></li>
 </ol>
-<p><a data-lightbox="d9001b82-3147-4abd-a419-5ff775defbbb" data-title="Cross Entropy Loss损失函数" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/Cross Entropy Loss损失函数.webp" target="_blank"><img alt="Cross Entropy Loss损失函数" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/Cross Entropy Loss损失函数.webp"/></a></p>
+<p><a data-lightbox="346677ac-3653-42cb-8567-65d68850eb1b" data-title="Cross Entropy Loss损失函数" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/Cross Entropy Loss损失函数.webp" target="_blank"><img alt="Cross Entropy Loss损失函数" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/Cross Entropy Loss损失函数.webp"/></a></p>
 <blockquote>
 <p>为什么分类用交叉熵损失，而不是均方差损失</p>
 </blockquote>
 <p>均方差损失实际上均方差损失<strong>假设了误差服从高斯分布</strong>，在分类任务下这个假设没办法被满足，因此效果会很差</p>
 <p>为什么是交叉熵损失呢? 有两个角度可以解释这个事情，一个角度从<code>最大似然</code>的角度，另一个角度是可以用<code>信息论</code>来解释交叉熵损失</p>
 <h3 id="最大似然角度">3.2.1 最大似然角度</h3>
-<p>Softmax函数将每个维度的输出范围都限定在$(0,1)$之间，同时所有维度的输出和为1，用于表示一个概率分布
+<p>Softmax函数将每个维度的输出范围都限定在<script type="math/tex; ">(0,1)</script>之间，同时所有维度的输出和为1，用于表示一个概率分布
 <script type="math/tex; mode=display">
 p\left(y_{i} \mid x_{i}\right)=\prod_{k=1}^{K}\left(y_{i}^{k}\right)^{y_{i}^{k}}
 </script>
-其中$k \in K$表示$\mathrm{K}$个类别中的一类，同样的假设数据点之间独立同分布，可得到负对数似然为
+其中<script type="math/tex; ">k \in K</script>表示<script type="math/tex; ">\mathrm{K}</script>个类别中的一类，同样的假设数据点之间独立同分布，可得到负对数似然为
 <script type="math/tex; mode=display">
 N L L(x, y)=J_{C E}=-\sum_{i=1}^{N} \sum_{k=1}^{K} y_{i}^{k} \log \left(y_{i}^{k}\right)
 </script>
-由于$y_{i}$是一个<strong>one-hot向量</strong>，除了目标类为1之外<strong>其他类别上的输出都为0</strong>，因此上式也可以写为
+由于<script type="math/tex; ">y_{i}</script>是一个<strong>one-hot向量</strong>，除了目标类为1之外<strong>其他类别上的输出都为0</strong>，因此上式也可以写为
 <script type="math/tex; mode=display">
 J_{C E}=-\sum_{i=1}^{N} y_{i}^{c_{i}} \log \left(y_{i}^{\hat{c}_{i}}\right)
 </script>
@@ -526,7 +526,7 @@ J_{C E}=-\sum_{i=1}^{N} y_{i}^{c_{i}} \log \left(y_{i}^{\hat{c}_{i}}\right)
 <h3 id="信息论角度">3.2.2 信息论角度</h3>
 <p>假设对于样本<script type="math/tex; ">x_{i}</script>存在一个最优分布<script type="math/tex; ">y_{i}^{\star}</script>真实地表明了这个样本属于各个类别的概率，那么我们希望模型的输出<script type="math/tex; ">\hat{y}_{i}</script>尽可能地逼近这个最优分布</p>
 <p>在信息论中，我们可以使用<code>KL散度(Kullback-Leibler Divergence)</code>来衡量两个分布的相似性</p>
-<p>给定分布$p$和分布$q$，两者的KL散度公式如下
+<p>给定分布<script type="math/tex; ">p</script>和分布<script type="math/tex; ">q</script>，两者的KL散度公式如下
 <script type="math/tex; mode=display">
 K L(p, q)=\sum_{k=1}^{K} p^{k} \log \left(p^{k}\right)-\sum_{k=1}^{K} p^{k} \log \left(q^{k}\right)
 </script>
@@ -552,9 +552,9 @@ J_{K L}=-\sum_{i=1}^{N} \sum_{k=1}^{K} y_{i}^{k} \log \left(y_{i}^{\hat{k}}\righ
 <script type="math/tex; mode=display">
 J_{\text {hinge }}=\sum_{i=1}^{N} \max \left(0,1-\operatorname{sgn}\left(y_{i}\right) \hat{y_{i}}\right)
 </script>
-下图是$y$为正类，即$sgn(y)=1$时，不同输出的合页损失示意图</p>
-<p><a data-lightbox="b0b388a3-3c7c-42fc-8234-582d024a78b2" data-title="Hinge Loss损失函数" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/Hinge Loss损失函数.webp" target="_blank"><img alt="Hinge Loss损失函数" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/Hinge Loss损失函数.webp"/></a></p>
-<p>可以看到当$y$为正类时，模型输出负值会有较大的惩罚，当模型输出为正值且在区间时还会有一个较小的惩罚</p>
+下图是<script type="math/tex; ">y</script>为正类，即<script type="math/tex; ">sgn(y)=1</script>时，不同输出的合页损失示意图</p>
+<p><a data-lightbox="c2844e2a-c856-4dab-bb81-59ce79e2e144" data-title="Hinge Loss损失函数" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/Hinge Loss损失函数.webp" target="_blank"><img alt="Hinge Loss损失函数" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/Hinge Loss损失函数.webp"/></a></p>
+<p>可以看到当<script type="math/tex; ">y</script>为正类时，模型输出负值会有较大的惩罚，当模型输出为正值且在区间时还会有一个较小的惩罚</p>
 <p><strong>即合页损失不仅惩罚预测错的，并且对于预测对了但是置信度不高的也会给一个惩罚，只有置信度高的才会有零损失</strong></p>
 <p>使用合页损失直觉上理解是要找到一个决策边界，使得所有数据点被这个边界正确地、高置信地被分类</p>
 <h2 id="focal-loss">3.4 Focal Loss</h2>
@@ -577,7 +577,7 @@ J_{\text {hinge }}=\sum_{i=1}^{N} \max \left(0,1-\operatorname{sgn}\left(y_{i}\r
 <blockquote>
 <p>引出Focal loss</p>
 </blockquote>
-<p>为了方便接下来的描述，这里先定义$p_t$为
+<p>为了方便接下来的描述，这里先定义<script type="math/tex; ">p_t</script>为
 <script type="math/tex; mode=display">
 p_{\mathrm{t}}=\left\{\begin{array}{ll}p & \text { if } y=1 \\ 1-p & \text { otherwise }\end{array}\right.
 </script>
@@ -589,30 +589,30 @@ J_{FL}(p, y)=\left\{\begin{array}{ll}-\log (p) & \text { if } y=1 \\ -\log (1-p)
  
 J_{FL}(p, y)=J_{FL}\left(p_{\mathrm{t}}\right)=-\log \left(p_{\mathrm{t}}\right)
 </script>
-解决类别不平衡的常见方法是为类别1引入一个权重因子$ \alpha \in [0, 1]$，而对于类别非1引入权重因子$1-\alpha$，这里引出<code>Balanced Cross Entropy(平衡交叉熵)</code>
+解决类别不平衡的常见方法是为类别1引入一个权重因子<script type="math/tex; "> \alpha \in [0, 1]</script>，而对于类别非1引入权重因子<script type="math/tex; ">1-\alpha</script>，这里引出<code>Balanced Cross Entropy(平衡交叉熵)</code>
 <script type="math/tex; mode=display">
 J_{FL}\left(p_{\mathrm{t}}\right)=-\alpha_{\mathrm{t}} \log \left(p_{\mathrm{t}}\right)
 </script>
 在论文实验中显示，密集检测器训练过程中遇到的类别不平衡问题使得交叉熵损失失去了效果，<strong>易于分类的负样本占据了大部分损失并主导了梯度</strong></p>
-<p>虽然$\alpha$平衡了正样本和负样本的重要性，但它<code>无法区分易于和困难的样本</code></p>
-<p>因此，论文提出了新的损失函数以减小易于样本的权重，从而将训练的重点放在困难的负样本上，更具体地说，论文提出在交叉熵损失中添加一个<code>调制因子</code>$\left(1-p_{\mathrm{t}}\right)^{\gamma}$，其中$\gamma$是可调的<code>Focal参数</code>。我们将这个损失函数称为<code>Focal loss</code>，定义Focal Loss公式如下
+<p>虽然<script type="math/tex; ">\alpha</script>平衡了正样本和负样本的重要性，但它<code>无法区分易于和困难的样本</code></p>
+<p>因此，论文提出了新的损失函数以减小易于样本的权重，从而将训练的重点放在困难的负样本上，更具体地说，论文提出在交叉熵损失中添加一个<code>调制因子</code><script type="math/tex; ">\left(1-p_{\mathrm{t}}\right)^{\gamma}</script>，其中<script type="math/tex; ">\gamma</script>是可调的<code>Focal参数</code>。我们将这个损失函数称为<code>Focal loss</code>，定义Focal Loss公式如下
 <script type="math/tex; mode=display">
 J_{FL}\left(p_{\mathrm{t}}\right) = - \alpha_{t} \left(1-p_{\mathrm{t}}\right)^{\gamma} \log \left(p_{\mathrm{t}}\right)
 </script>
-其中$\gamma$作用是调节难易，较小的$\gamma$值会使得易样本的损失权重下降更慢，而较大的$\gamma$值则会加速易样本的损失权重下降</p>
-<p>$\alpha$作用是平衡正负样(正负样本数量不均衡)，当$\alpha$接近0时，负样本的损失贡献被放大，从而平衡了正负样本之间的重要性</p>
-<p>通过调整$\alpha$和$\gamma$的值，可以根据具体情况调节模型对不同样本的关注程度，提高模型对难样本的学习和训练效果</p>
+其中<script type="math/tex; ">\gamma</script>作用是调节难易，较小的<script type="math/tex; ">\gamma</script>值会使得易样本的损失权重下降更慢，而较大的<script type="math/tex; ">\gamma</script>值则会加速易样本的损失权重下降</p>
+<p><script type="math/tex; ">\alpha</script>作用是平衡正负样(正负样本数量不均衡)，当<script type="math/tex; ">\alpha</script>接近0时，负样本的损失贡献被放大，从而平衡了正负样本之间的重要性</p>
+<p>通过调整<script type="math/tex; ">\alpha</script>和<script type="math/tex; ">\gamma</script>的值，可以根据具体情况调节模型对不同样本的关注程度，提高模型对难样本的学习和训练效果</p>
 <blockquote>
 <p>可视化</p>
 </blockquote>
-<p>下图可视化了$\gamma \in[0,5]$的值，可以观察到</p>
+<p>下图可视化了<script type="math/tex; ">\gamma \in[0,5]</script>的值，可以观察到</p>
 <ol>
 <li>增加了<strong>分类不准确样本</strong>在损失函数中的权重</li>
 <li>增加了<strong>难分样本</strong>在损失函数的权重，使得损失函数倾向于难分的样本，有助于提高难分样本的准确度</li>
 </ol>
-<p><a data-lightbox="76182b76-14ae-45ab-9ac5-5b7bf613259b" data-title="Focal Loss在不同Upsilon下的损失曲线" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/Focal Loss在不同Upsilon下的损失曲线.webp" target="_blank"><img alt="Focal Loss在不同Upsilon下的损失曲线" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/Focal Loss在不同Upsilon下的损失曲线.webp"/></a></p>
-<p>$\gamma$作用是调节难易样本对于总loss的权重(正负样本中都有难易，都进行了调节)</p>
-<p>$\gamma$调节简单样本权重降低的速率，当$\gamma=0$时即为交叉熵损失函数，当$\gamma$增加时，调整因子的影响也在增加。实验发现$\gamma=2$是最优</p>
+<p><a data-lightbox="203114ce-549f-4f8b-a186-615469b1a373" data-title="Focal Loss在不同Upsilon下的损失曲线" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/Focal Loss在不同Upsilon下的损失曲线.webp" target="_blank"><img alt="Focal Loss在不同Upsilon下的损失曲线" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之损失函数/Focal Loss在不同Upsilon下的损失曲线.webp"/></a></p>
+<p><script type="math/tex; ">\gamma</script>作用是调节难易样本对于总loss的权重(正负样本中都有难易，都进行了调节)</p>
+<p><script type="math/tex; ">\gamma</script>调节简单样本权重降低的速率，当<script type="math/tex; ">\gamma=0</script>时即为交叉熵损失函数，当<script type="math/tex; ">\gamma</script>增加时，调整因子的影响也在增加。实验发现<script type="math/tex; ">\gamma=2</script>是最优</p>
 <h1 id="基于概率的损失">4 基于概率的损失</h1>
 <h2 id="kl散度">4.1 KL散度</h2>
 <p>KL-散度损失函数的定义如下
@@ -640,7 +640,7 @@ J_{KL} = -\sum_{i=0}^{C} y_{i} \log \left(\hat{y}_{i}\right)-y_{i} \log \left(y_
 <p>数据增强(Data Augmentation)：数据增强是一种通过对训练数据进行随机变换来扩充数据集的技术。常见的数据增强操作包括随机裁剪、旋转、翻转、平移、缩放等。数据增强可以增加训练数据的多样性，提高模型的泛化能力和鲁棒性</p>
 <p>图像增强技术：了解常见的图像增强方法，如对比度调整、亮度调整、色彩平衡、直方图均衡化等，以及它们在图像处理和计算机视觉中的应用</p>
 <p></p><footer class="page-footer"><span class="copyright">Copyright © narutohyc.com 2021 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
-2023-08-14 07:54:39
+2023-08-14 08:50:44
 </span></footer><hr/><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz',appKey: 'utUrzoiqNaDEGlgr09JL1pXB',placeholder: '欢迎留下评论交流~',avatar: 'wavatar',meta: undefined,pageSize: 15,lang: 'zh-CN',recordIP: false})</script><p></p>
 </section>
 </div>
@@ -667,7 +667,7 @@ J_{KL} = -\sum_{i=0}^{C} y_{i} \log \left(\hat{y}_{i}\right)-y_{i} \log \left(y_
 <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"abbrlink":46832,"date":"2023/05/26 16:25:15","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆8.webp","title":"深度学习核心之损失函数.md","tags":["深度学习","神经网络","损失函数"],"top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆8.webp","mathjax":true,"categories":["deep_learning"],"description":"深度学习核心之损失函数","level":"1.13","depth":1,"next":{"title":"深度学习核心之激活函数.md","level":"1.14","depth":1,"path":"chapters/深度学习核心之激活函数.md","ref":"chapters/深度学习核心之激活函数.md","articles":[]},"previous":{"title":"深度学习核心之优化器.md","level":"1.12","depth":1,"path":"chapters/深度学习核心之优化器.md","ref":"chapters/深度学习核心之优化器.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":true,"enableFooter":false,"site":"https://hycbook.github.io/bk_python/","author":"narutohyc","website":"python元知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Python相关学习记录","language":"zh-hans","mathjax":{"forceSVG":true},"links":{"sidebar":{"书籍主页":"https://hycbook.github.io/bk_index/"}},"gitbook":"*","description":"记录 Python 的学习和一些技巧的使用"},"file":{"path":"chapters/深度学习核心之损失函数.md","mtime":"2023-08-14T07:54:39.438Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-14T07:55:45.443Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"abbrlink":46832,"date":"2023/05/26 16:25:15","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆8.webp","title":"深度学习核心之损失函数.md","tags":["深度学习","神经网络","损失函数"],"top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆8.webp","mathjax":true,"categories":["deep_learning"],"description":"深度学习核心之损失函数","level":"1.13","depth":1,"next":{"title":"深度学习核心之激活函数.md","level":"1.14","depth":1,"path":"chapters/深度学习核心之激活函数.md","ref":"chapters/深度学习核心之激活函数.md","articles":[]},"previous":{"title":"深度学习核心之优化器.md","level":"1.12","depth":1,"path":"chapters/深度学习核心之优化器.md","ref":"chapters/深度学习核心之优化器.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":true,"enableFooter":false,"site":"https://hycbook.github.io/bk_python/","author":"narutohyc","website":"python元知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Python相关学习记录","language":"zh-hans","mathjax":{"forceSVG":true},"links":{"sidebar":{"书籍主页":"https://hycbook.github.io/bk_index/"}},"gitbook":"*","description":"记录 Python 的学习和一些技巧的使用"},"file":{"path":"chapters/深度学习核心之损失函数.md","mtime":"2023-08-14T08:50:44.997Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-14T08:51:41.814Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 <canvas class="fireworks"></canvas><script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script></div>

@@ -290,7 +290,7 @@
 <p><a href="https://blog.csdn.net/weixin_34161083/article/details/88860528" target="_blank">激活函数可视化</a></p>
 </blockquote>
 <p><code>激活函数(Activation Function)</code>是一种添加到人工神经网络中的函数，旨在帮助网络学习数据中的复杂模式</p>
-<p><a data-lightbox="4a85a33e-0352-49d5-9ca6-4d8c140db8dc" data-title="神经网络中的激活函数" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/神经网络中的激活函数.webp" target="_blank"><img alt="神经网络中的激活函数" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/神经网络中的激活函数.webp"/></a></p>
+<p><a data-lightbox="ba831c4a-5099-4c5b-8263-ba0cd5ffa84b" data-title="神经网络中的激活函数" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/神经网络中的激活函数.webp" target="_blank"><img alt="神经网络中的激活函数" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/神经网络中的激活函数.webp"/></a></p>
 <blockquote>
 <p>引入激活函数的目的</p>
 </blockquote>
@@ -372,7 +372,7 @@
 <p><a href="https://arxiv.org/pdf/1710.05941.pdf" target="_blank">Searching for Activation Functions (Swish) 2017</a></p>
 <p><a href="https://arxiv.org/pdf/1710.05941v1.pdf" target="_blank">Swish: a Self-Gated Activation Function 2017</a></p>
 <p><a href="https://arxiv.org/vc/arxiv/papers/1908/1908.08681v2.pdf" target="_blank">Mish: A Self Regularized Non-Monotonic Neural Activation Function 2019</a></p>
-<p><a data-lightbox="aa23eda6-08b9-47ad-a24c-051446b8de8a" data-title="激活函数之间的关系脉络" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/激活函数之间的关系脉络.svg" target="_blank"><img alt="激活函数之间的关系脉络" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/激活函数之间的关系脉络.svg"/></a></p>
+<p><a data-lightbox="85dd3721-75f6-43b8-a4ff-f813c8a8dc10" data-title="激活函数之间的关系脉络" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/激活函数之间的关系脉络.svg" target="_blank"><img alt="激活函数之间的关系脉络" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/激活函数之间的关系脉络.svg"/></a></p>
 <h2 id="sigmoid">2.1 Sigmoid</h2>
 <p><code>Sigmoid函数</code>(<code>Logistic函数</code>)函数的图像看起来像一个S形曲线，函数表达式如下
 <script type="math/tex; mode=display">
@@ -383,7 +383,7 @@ f(x) = \frac{1}{1 + e^{-x}}
 \begin{array}{l}f^{\prime}(x)=-\frac{1}{\left(1+e^{-x}\right)^{2}} \times\left(1+e^{-x}\right)^{\prime}=-\frac{1}{\left(1+e^{-x}\right)^{2}} \times\left(-e^{-x}\right)=\frac{1}{1+e^{-x}} \times \frac{e^{-x}}{1+e^{-x}} \\ =\frac{1}{1+e^{-x}} \times \frac{1+e^{-x}-1}{1+e^{-x}}=f(x)(1-f(x))\end{array}
 </script>
 函数图像和对应的导数图像如下图所示</p>
-<p><a data-lightbox="0dccd255-027a-42d4-a559-f77eae71d054" data-title="sigmoid函数以及导数" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/sigmoid函数以及导数.webp" target="_blank"><img alt="sigmoid函数以及导数" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/sigmoid函数以及导数.webp"/></a></p>
+<p><a data-lightbox="e1be1ef9-5d13-46b4-ac38-64f99b1bd526" data-title="sigmoid函数以及导数" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/sigmoid函数以及导数.webp" target="_blank"><img alt="sigmoid函数以及导数" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/sigmoid函数以及导数.webp"/></a></p>
 <blockquote>
 <p>作用</p>
 </blockquote>
@@ -399,7 +399,7 @@ f(x) = \frac{1}{1 + e^{-x}}
 </ol>
 <p>缺点</p>
 <ol>
-<li><p><strong>梯度消失</strong>: Sigmoid函数的导数形式为$ f'(x) = f(x)(1-f(x))$，其中$f(x)$是Sigmoid函数</p>
+<li><p><strong>梯度消失</strong>: Sigmoid函数的导数形式为<script type="math/tex; "> f'(x) = f(x)(1-f(x))</script>，其中<script type="math/tex; ">f(x)</script>是Sigmoid函数</p>
 <p>当输入值非常大时，Sigmoid函数接近于1，导数接近于0，而当输入值非常小时，Sigmoid函数接近于0，导数同样接近于0</p>
 <p>这意味着在<strong>反向传播时，梯度逐渐变小并趋近于零，传递到较早层时，梯度几乎消失</strong>了</p>
 </li>
@@ -419,7 +419,7 @@ f(x) = \frac{1}{1 + e^{-x}}
 \begin{aligned} \tanh ^{\prime}(x) & =\left(\left(e^{x}-e^{-x}\right)\left(e^{x}+e^{-x}\right)^{-1}\right)^{\prime} \\ & =\left(e^{x}+e^{-x}\right)\left(e^{x}+e^{-x}\right)^{-1}-\left(e^{x}-e^{-x}\right)\left(e^{x}+e^{-x}\right)^{-2}\left(e^{x}-e^{-x}\right) \\ & =1-\frac{\left(e^{x}-e^{-x}\right)^{2}}{\left(e^{x}+e^{-x}\right)^{2}} \\ & =1-\tanh ^{2}(x)\end{aligned}
 </script>
 Tanh图像和sigmoid函数比较如下图所示</p>
-<p><a data-lightbox="5c12c952-016d-45aa-a1cb-25f73c7eca8d" data-title="tanh函数以及导数和Sigmoid比较" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/tanh函数以及导数和Sigmoid比较.webp" target="_blank"><img alt="tanh函数以及导数和Sigmoid比较" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/tanh函数以及导数和Sigmoid比较.webp"/></a></p>
+<p><a data-lightbox="d4905bcf-7f63-48b9-b1af-c917fd4453cc" data-title="tanh函数以及导数和Sigmoid比较" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/tanh函数以及导数和Sigmoid比较.webp" target="_blank"><img alt="tanh函数以及导数和Sigmoid比较" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/tanh函数以及导数和Sigmoid比较.webp"/></a></p>
 <blockquote>
 <p>与Sigmoid函数对比</p>
 </blockquote>
@@ -445,7 +445,7 @@ Tanh图像和sigmoid函数比较如下图所示</p>
 \operatorname{ReLU} ^{\prime} (x)=\left\{\begin{array}{ll}1 & \text { if } x>0 \\ 0 & \text { if } x \leq 0\end{array}\right.
 </script>
 函数图像和对应的导数图像如下图所示</p>
-<p><a data-lightbox="32a7e901-c6ab-471c-bc5a-b4ef6d0cc7d8" data-title="relu函数以及导数" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/relu函数以及导数.webp" target="_blank"><img alt="relu函数以及导数" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/relu函数以及导数.webp"/></a></p>
+<p><a data-lightbox="d71a8862-a01a-40dd-a60d-22df8f918489" data-title="relu函数以及导数" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/relu函数以及导数.webp" target="_blank"><img alt="relu函数以及导数" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/relu函数以及导数.webp"/></a></p>
 <blockquote>
 <p>主要优缺点</p>
 </blockquote>
@@ -458,7 +458,7 @@ Tanh图像和sigmoid函数比较如下图所示</p>
 <p>缺点：</p>
 <ol>
 <li><strong>神经元死亡问题</strong>：ReLU函数在负区间上输出恒为0，当神经元在训练过程中出现负输入时，会导致该神经元永远不会被激活，称为神经元死亡问题。这会导致一部分神经元失去了学习能力</li>
-<li><strong>输出不是零中心</strong>：ReLU函数的输出范围是$[0, + \infty)$，并不以0为中心，这可能会对某些优化算法的收敛速度产生影响</li>
+<li><strong>输出不是零中心</strong>：ReLU函数的输出范围是<script type="math/tex; ">[0, + \infty)</script>，并不以0为中心，这可能会对某些优化算法的收敛速度产生影响</li>
 </ol>
 <p>训练神经网络的时候，一旦学习率没有设置好，第一次更新权重的时候，输入的是负值，那么这个含有ReLU的神经节点就会死亡，再也不会被激活</p>
 <p>在实际训练中，如果学习率设置的太高，可能会发现网络中40%的神经元都会死掉，且在整个训练集中这些神经元都不会被激活</p>
@@ -474,7 +474,7 @@ f(x)=\left\{\begin{array}{cc}x & x>0 \\ \alpha x & x \leq 0\end{array}\right.
 f^{\prime}(x)=\left\{\begin{array}{ll}1 & x>0 \\ \alpha & x<0\end{array}\right.
 </script>
 函数图像和对应的导数图像如下图所示</p>
-<p><a data-lightbox="c52bac03-4bbd-4ce2-88b2-5d47b8307b67" data-title="leak relu函数与导数" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/leak relu函数与导数.webp" target="_blank"><img alt="leak relu函数与导数" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/leak relu函数与导数.webp"/></a></p>
+<p><a data-lightbox="f594578c-6bae-4ae4-bbe1-725d543f44ec" data-title="leak relu函数与导数" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/leak relu函数与导数.webp" target="_blank"><img alt="leak relu函数与导数" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/leak relu函数与导数.webp"/></a></p>
 <blockquote>
 <p>优缺点</p>
 </blockquote>
@@ -483,15 +483,15 @@ f^{\prime}(x)=\left\{\begin{array}{ll}1 & x>0 \\ \alpha & x<0\end{array}\right.
 <p>缺点:</p>
 <ol>
 <li><strong>稀疏性差</strong>: 相较于ReLU，神经网络的稀疏性要差一些</li>
-<li><strong>额外的超参数</strong>: 引入了额外的超参数$\alpha$</li>
-<li>神经网络不学习$\alpha$值</li>
+<li><strong>额外的超参数</strong>: 引入了额外的超参数<script type="math/tex; ">\alpha</script></li>
+<li>神经网络不学习<script type="math/tex; ">\alpha</script>值</li>
 </ol>
 <blockquote>
 <p>为什么Leaky ReLU比ReLU更好</p>
 </blockquote>
 <ol>
 <li><strong>调整负值的零梯度</strong>: Leaky ReLU通过把x的非常小的线性分量给予负输入(0.01x)来调整负值的零梯度(zero gradients)问题</li>
-<li><strong>扩大函数的范围</strong>: Leaky ReLU有助于扩大ReLU函数的范围，通常$\alpha$的值为0.01左右</li>
+<li><strong>扩大函数的范围</strong>: Leaky ReLU有助于扩大ReLU函数的范围，通常<script type="math/tex; ">\alpha</script>的值为0.01左右</li>
 <li><strong>取值范围</strong>: Leaky ReLU的函数范围是(负无穷到正无穷)</li>
 </ol>
 <p>从理论上讲，Leaky ReLU具有ReLU的所有优点，而且Dead ReLU不会有任何问题，但在实际操作中，尚未完全证明Leaky ReLU总是比ReLU更好</p>
@@ -501,24 +501,24 @@ f^{\prime}(x)=\left\{\begin{array}{ll}1 & x>0 \\ \alpha & x<0\end{array}\right.
 f\left(x\right)=\left\{\begin{array}{ll}x, & \text { if } x>0 \\ \alpha_{i} x, & \text { if } x \leq 0\end{array}\right.
 </script>
 P-Relu函数及其导数的图像如下图所示</p>
-<p><a data-lightbox="b149afd6-aa23-472a-9f4f-44c3c7f1c7a0" data-title="P-Relu函数与导数" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/P-Relu函数与导数.webp" target="_blank"><img alt="P-Relu函数与导数" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/P-Relu函数与导数.webp"/></a></p>
-<p>其中$\alpha$是超参数。这里引入了一个随机的超参数$\alpha$，它可以被学习，因为你可以对它进行反向传播</p>
+<p><a data-lightbox="a268f9e6-0599-4405-832a-88cf0782f613" data-title="P-Relu函数与导数" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/P-Relu函数与导数.webp" target="_blank"><img alt="P-Relu函数与导数" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/P-Relu函数与导数.webp"/></a></p>
+<p>其中<script type="math/tex; ">\alpha</script>是超参数。这里引入了一个随机的超参数<script type="math/tex; ">\alpha</script>，它可以被学习，因为你可以对它进行反向传播</p>
 <p>这使神经元能够选择负区域最好的梯度，有了这种能力，它们可以变成ReLU或Leaky ReLU</p>
 <blockquote>
 <p>与ReLU和Leaky ReLU的关系</p>
 </blockquote>
 <p>看一下PReLU的公式：参数α通常为0到1之间的数字，并且通常相对较小</p>
 <ul>
-<li>如果$\alpha_{i}=0$，则$f$变为ReLU</li>
-<li>如果$\alpha_{i} \gt 0$，则$f$变为Leaky ReLU</li>
-<li>如果$\alpha_{i}$是可学习的参数，则$f$变为PReLU</li>
+<li>如果<script type="math/tex; ">\alpha_{i}=0</script>，则<script type="math/tex; ">f</script>变为ReLU</li>
+<li>如果<script type="math/tex; ">\alpha_{i} \gt 0</script>，则<script type="math/tex; ">f</script>变为Leaky ReLU</li>
+<li>如果<script type="math/tex; ">\alpha_{i}</script>是可学习的参数，则<script type="math/tex; ">f</script>变为PReLU</li>
 </ul>
 <h2 id="elu">2.6 ELU</h2>
 <blockquote>
 <p><a href="https://deeplearninguniversity.com/elu-as-an-activation-function-in-neural-networks/" target="_blank">ELU as an Activation Function in Neural Networks</a></p>
 <p><a href="https://zhuanlan.zhihu.com/p/546016151" target="_blank">CUDA编程入门之激活函数ELU</a></p>
 </blockquote>
-<p><code>ELU激活函数</code>解决了ReLU的一些问题，同时也保留了一些好的方面。这种激活函数要选取一个$\alpha$值；常见的取值是在0.1到0.3之间
+<p><code>ELU激活函数</code>解决了ReLU的一些问题，同时也保留了一些好的方面。这种激活函数要选取一个<script type="math/tex; ">\alpha</script>值；常见的取值是在0.1到0.3之间
 <script type="math/tex; mode=display">
 f(x)=\left\{\begin{aligned} a\left(e^{x}-1\right) \quad \quad & x<0 \\ x \quad \quad & x \geq 0\end{aligned}\right.
 </script>
@@ -533,8 +533,8 @@ f(x)=\left\{\begin{aligned} a\left(e^{x}-1\right) \quad \quad & x<0 \\ x \quad \
 \end{array}\right.
 </script>
 函数及其导数的图像如下图所示</p>
-<p><a data-lightbox="3a6a25d7-e2d2-455c-92bc-739a8cfe2f5e" data-title="Elu函数与导数" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/Elu函数与导数.webp" target="_blank"><img alt="Elu函数与导数" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/Elu函数与导数.webp"/></a></p>
-<p>如果我们输入的$x$值大于0，则结果与ReLU一样，即$y$值等于$x$值；但如果输入的$x$值小于0，则我们会得到一个稍微小于0的值，所得到的$y$值取决于输入的$x$值，但还要兼顾参数$\alpha$你可以根据需要来调整这个参数。更进一步，我们引入了指数运算$e^x$，因此ELU的计算成本比ReLU高</p>
+<p><a data-lightbox="b81793ca-fad7-4577-9b59-4f7c35e65b09" data-title="Elu函数与导数" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/Elu函数与导数.webp" target="_blank"><img alt="Elu函数与导数" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/Elu函数与导数.webp"/></a></p>
+<p>如果我们输入的<script type="math/tex; ">x</script>值大于0，则结果与ReLU一样，即<script type="math/tex; ">y</script>值等于<script type="math/tex; ">x</script>值；但如果输入的<script type="math/tex; ">x</script>值小于0，则我们会得到一个稍微小于0的值，所得到的<script type="math/tex; ">y</script>值取决于输入的<script type="math/tex; ">x</script>值，但还要兼顾参数<script type="math/tex; ">\alpha</script>你可以根据需要来调整这个参数。更进一步，我们引入了指数运算<script type="math/tex; ">e^x</script>，因此ELU的计算成本比ReLU高</p>
 <blockquote>
 <p>优缺点</p>
 </blockquote>
@@ -549,7 +549,7 @@ f(x)=\left\{\begin{aligned} a\left(e^{x}-1\right) \quad \quad & x<0 \\ x \quad \
 <ol>
 <li>包含指数运算，计算时间长</li>
 <li>无法避免梯度爆炸问题</li>
-<li>神经网络无法学习$\alpha $值</li>
+<li>神经网络无法学习<script type="math/tex; ">\alpha </script>值</li>
 </ol>
 <p>与Leaky-ReLU和PReLU类似，与ReLU不同的是，ELU没有神经元死亡的问题(ReLU Dying 问题是指当出现异常输入时，在反向传播中会产生大的梯度，这种大的梯度会导致神经元死亡和梯度消失)。</p>
 <p>它已被证明优于ReLU及其变体，如Leaky-ReLU(LReLU)和Parameterized-ReLU(PReLU)。与ReLU及其变体相比，使用ELU可在神经网络中缩短训练时间并提高准确度</p>
@@ -572,10 +572,10 @@ x \sigma(1.702 x)
 \end{array}
 </script>
 在预训练语言模型中，GELU可以说是主流的激活函数；Bert，RoBERTa，ALBERT，GPT-2等顶尖的NLP预训练模型都是使用的GELU</p>
-<p><a data-lightbox="9742c802-c7a9-41c1-8aad-d3a5756b214b" data-title="Gelu函数与导数" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/Gelu函数与导数.webp" target="_blank"><img alt="Gelu函数与导数" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/Gelu函数与导数.webp"/></a></p>
+<p><a data-lightbox="ffec1be6-c7d0-4c7f-89e2-300e84c557df" data-title="Gelu函数与导数" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/Gelu函数与导数.webp" target="_blank"><img alt="Gelu函数与导数" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/Gelu函数与导数.webp"/></a></p>
 <p>bert中使用的激活函数，作者经过实验证明比relu等要好。原点可导，不会有Dead ReLU问题</p>
 <p>与Relu和ELU比较如下</p>
-<p><a data-lightbox="5fab1396-fa8f-4551-9ce3-952b0f11324c" data-title="GELU和RELU、ELU比较" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/GELU和RELU、ELU比较.webp" target="_blank"><img alt="GELU和RELU、ELU比较" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/GELU和RELU、ELU比较.webp"/></a></p>
+<p><a data-lightbox="75b0ca75-79bc-4311-95a4-03d9a51d2800" data-title="GELU和RELU、ELU比较" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/GELU和RELU、ELU比较.webp" target="_blank"><img alt="GELU和RELU、ELU比较" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/GELU和RELU、ELU比较.webp"/></a></p>
 <h2 id="softplus">2.8 Softplus</h2>
 <p>Softplus函数类似于ReLU函数，但是相对较平滑，像ReLU一样是单侧抑制，它的接受范围很广
 <script type="math/tex; mode=display">
@@ -585,7 +585,7 @@ f(x)=\ln \left(1+e^{x}\right)
 <script type="math/tex; mode=display">
 \left.f^{\prime}(x)=\ln \left(e^{x}+1\right)\right)^{\prime} = \frac{1}{1 + e^{-x}}
 </script></p>
-<p><a data-lightbox="a7118b47-4ed6-4a6d-a43b-0ab581fe5c4b" data-title="softplus" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/softplus.webp" target="_blank"><img alt="softplus" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/softplus.webp"/></a></p>
+<p><a data-lightbox="69c5ef73-6cb8-48ce-bbff-615a72d3f0f9" data-title="softplus" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/softplus.webp" target="_blank"><img alt="softplus" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/softplus.webp"/></a></p>
 <p>优点：</p>
 <ol>
 <li>作为relu的一个不错的替代选择，softplus能够返回任何大于0的值</li>
@@ -608,7 +608,7 @@ f(x)=\ln \left(1+e^{x}\right)
 f(x)=x \tanh (\operatorname{softplus}(x))=x \tanh \left(\ln \left(1+e^{x}\right)\right)
 </script></p>
 <h2 id="softsign">2.12 SoftSign</h2>
-<p><a data-lightbox="e5cacaf7-e1c4-4e18-bc60-12f3bfb714c9" data-title="softsign" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/softsign.webp" target="_blank"><img alt="softsign" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/softsign.webp"/></a></p>
+<p><a data-lightbox="374a8a72-4ff2-4448-92fe-dbfaac3ecff0" data-title="softsign" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/softsign.webp" target="_blank"><img alt="softsign" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之激活函数/softsign.webp"/></a></p>
 <p>优点：</p>
 <ol>
 <li>softsign是 tanh激活函数的另一个替代选择</li>
@@ -632,7 +632,7 @@ f(x)=x \tanh (\operatorname{softplus}(x))=x \tanh \left(\ln \left(1+e^{x}\right)
 <li>如果遇到了一些死的神经元，我们可以使 Leaky ReLU函数</li>
 </ol>
 <p></p><footer class="page-footer"><span class="copyright">Copyright © narutohyc.com 2021 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
-2023-08-14 07:54:39
+2023-08-14 08:50:44
 </span></footer><hr/><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz',appKey: 'utUrzoiqNaDEGlgr09JL1pXB',placeholder: '欢迎留下评论交流~',avatar: 'wavatar',meta: undefined,pageSize: 15,lang: 'zh-CN',recordIP: false})</script><p></p>
 </section>
 </div>
@@ -659,7 +659,7 @@ f(x)=x \tanh (\operatorname{softplus}(x))=x \tanh \left(\ln \left(1+e^{x}\right)
 <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"abbrlink":22410,"date":"2023/05/26 16:21:47","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆7.webp","title":"深度学习核心之激活函数.md","tags":["深度学习","神经网络","激活函数"],"top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆7.webp","mathjax":true,"categories":["deep_learning"],"description":"深度学习核心之激活函数","level":"1.14","depth":1,"next":{"title":"深度学习核心基础知识点.md","level":"1.15","depth":1,"path":"chapters/深度学习核心基础知识点.md","ref":"chapters/深度学习核心基础知识点.md","articles":[]},"previous":{"title":"深度学习核心之损失函数.md","level":"1.13","depth":1,"path":"chapters/深度学习核心之损失函数.md","ref":"chapters/深度学习核心之损失函数.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":true,"enableFooter":false,"site":"https://hycbook.github.io/bk_python/","author":"narutohyc","website":"python元知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Python相关学习记录","language":"zh-hans","mathjax":{"forceSVG":true},"links":{"sidebar":{"书籍主页":"https://hycbook.github.io/bk_index/"}},"gitbook":"*","description":"记录 Python 的学习和一些技巧的使用"},"file":{"path":"chapters/深度学习核心之激活函数.md","mtime":"2023-08-14T07:54:39.438Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-14T07:55:45.443Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"abbrlink":22410,"date":"2023/05/26 16:21:47","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆7.webp","title":"深度学习核心之激活函数.md","tags":["深度学习","神经网络","激活函数"],"top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆7.webp","mathjax":true,"categories":["deep_learning"],"description":"深度学习核心之激活函数","level":"1.14","depth":1,"next":{"title":"深度学习核心基础知识点.md","level":"1.15","depth":1,"path":"chapters/深度学习核心基础知识点.md","ref":"chapters/深度学习核心基础知识点.md","articles":[]},"previous":{"title":"深度学习核心之损失函数.md","level":"1.13","depth":1,"path":"chapters/深度学习核心之损失函数.md","ref":"chapters/深度学习核心之损失函数.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":true,"enableFooter":false,"site":"https://hycbook.github.io/bk_python/","author":"narutohyc","website":"python元知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Python相关学习记录","language":"zh-hans","mathjax":{"forceSVG":true},"links":{"sidebar":{"书籍主页":"https://hycbook.github.io/bk_index/"}},"gitbook":"*","description":"记录 Python 的学习和一些技巧的使用"},"file":{"path":"chapters/深度学习核心之激活函数.md","mtime":"2023-08-14T08:50:44.997Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-14T08:51:41.814Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 <canvas class="fireworks"></canvas><script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script></div>

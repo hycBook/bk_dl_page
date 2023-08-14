@@ -288,7 +288,7 @@
 <p>最优化是指<code>非线性最优化</code>，解非线性最优化的方法有很多</p>
 <p>比如<code>梯度下降法</code>、<code>共轭梯度法</code>、<code>变尺度法</code>和<code>步长加速</code>法等</p>
 <p>参考本站链接<a href="https://hycbook.com/article/58730.html" target="_blank">机器学习_最优化方法</a></p>
-<p><a data-lightbox="0128bfc1-a922-4905-bae2-a77441abef96" data-title="优化器之间的关系脉络" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之优化器/优化器之间的关系脉络.svg" target="_blank"><img alt="优化器之间的关系脉络" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之优化器/优化器之间的关系脉络.svg"/></a></p>
+<p><a data-lightbox="7104738c-a8a8-4bae-94fa-a9288ad38a5b" data-title="优化器之间的关系脉络" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之优化器/优化器之间的关系脉络.svg" target="_blank"><img alt="优化器之间的关系脉络" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之优化器/优化器之间的关系脉络.svg"/></a></p>
 <h2 id="概述">1.1 概述</h2>
 <blockquote>
 <p><a href="https://pytorch.org/docs/stable/optim.html" target="_blank">pytorch优化器</a></p>
@@ -431,7 +431,7 @@
 <script type="math/tex; mode=display">
 w_{t+1}=w_{t}-\alpha \Delta L\left(w_{t}\right)
 </script>
-其中$\alpha $为学习率，而$\Delta L\left(w_{t}\right)$为损失函数的一阶导数</p>
+其中<script type="math/tex; ">\alpha </script>为学习率，而<script type="math/tex; ">\Delta L\left(w_{t}\right)</script>为损失函数的一阶导数</p>
 <blockquote>
 <p>BGD在计算梯度时会出现冗余</p>
 </blockquote>
@@ -457,7 +457,7 @@ w_{t+1}=w_{t}-\alpha \Delta L\left(w_{t}\right)
 <script type="math/tex; mode=display">
 w_{t+1}=w_{t}-\alpha \frac{1}{m} \sum_{i=1}^{m} \Delta L\left(w_{i}\right)
 </script>
-其中$\alpha $为学习率，而$\Delta L\left(w_{t}\right)$为损失函数的一阶导数，$m$为batch_size，当$m=1$就是SGD，否则就是MBGD</p>
+其中<script type="math/tex; ">\alpha </script>为学习率，而<script type="math/tex; ">\Delta L\left(w_{t}\right)</script>为损失函数的一阶导数，<script type="math/tex; ">m</script>为batch_size，当<script type="math/tex; ">m=1</script>就是SGD，否则就是MBGD</p>
 <blockquote>
 <p>优点</p>
 </blockquote>
@@ -473,11 +473,11 @@ w_{t+1}=w_{t}-\alpha \frac{1}{m} \sum_{i=1}^{m} \Delta L\left(w_{i}\right)
 <li><strong>收敛速度较慢</strong>：由于参数更新的不稳定性，收敛速度相对较慢</li>
 </ol>
 <h3 id="mbgd">1.2.3 MBGD</h3>
-<p><code>MBGD(Mini-Batch Gradient Descent)</code>每一次利用一小批样本，即batch<em>size个样本进行计算，这样它可以降低参数更新时的方差，收敛更稳定，另一方面可以充分地利用深度学习库中高度优化的矩阵操作来进行更有效的梯度计算
+<p><code>MBGD(Mini-Batch Gradient Descent)</code>每一次利用一小批样本，即batch_size个样本进行计算，这样它可以降低参数更新时的方差，收敛更稳定，另一方面可以充分地利用深度学习库中高度优化的矩阵操作来进行更有效的梯度计算
 <script type="math/tex; mode=display">
 w_{t+1}=w_{t}-\alpha \frac{1}{m} \sum_{i=1}^{m} \Delta L\left(w_{i}\right)
 </script>
-其中$\alpha $为学习率，而$\Delta L\left(w</em>{t}\right)$为损失函数的一阶导数，$m$为batch_size，当$m=1$就是SGD，否则就是MBGD</p>
+其中<script type="math/tex; ">\alpha </script>为学习率，而<script type="math/tex; ">\Delta L\left(w_{t}\right)</script>为损失函数的一阶导数，<script type="math/tex; ">m</script>为batch_size，当<script type="math/tex; ">m=1</script>就是SGD，否则就是MBGD</p>
 <blockquote>
 <p>优点</p>
 </blockquote>
@@ -504,16 +504,16 @@ m_{t}=\lambda m_{t-1}+ \alpha \Delta L(w_t) \\
 w_{t+1}=w_{t}-m_{t}
 \end{array}
 </script>
-其中$\alpha $为学习率，$\Delta L(w_t)$表示当前t时刻梯度，$m_t$表示当前时刻的加权后的梯度，$\lambda$是<code>动量系数</code></p>
-<p>$\lambda$的经验值为0.9(表示最大速度10倍于SGD)，这就意味着下降方向主要是此前累积的下降方向，并略微偏向当前时刻的下降方向</p>
+其中<script type="math/tex; ">\alpha </script>为学习率，<script type="math/tex; ">\Delta L(w_t)</script>表示当前t时刻梯度，<script type="math/tex; ">m_t</script>表示当前时刻的加权后的梯度，<script type="math/tex; ">\lambda</script>是<code>动量系数</code></p>
+<p><script type="math/tex; ">\lambda</script>的经验值为0.9(表示最大速度10倍于SGD)，这就意味着下降方向主要是此前累积的下降方向，并略微偏向当前时刻的下降方向</p>
 <p>一阶动量是各个时刻梯度方向的指数移动平均值，也就是说，<script type="math/tex; ">t</script>时刻的下降方向，不仅由当前点的梯度方向<script type="math/tex; ">\Delta L(w_t)</script>决定，而且由此前累积的下降方向<script type="math/tex; ">m_{t-1}</script>决定</p>
 <blockquote>
 <p>梯度是如何累积的</p>
 </blockquote>
-<p>这里将$m_t$展开，可以看到<strong>当前时刻的梯度是对历史梯度进行加权得到的</strong>，其中，$\lambda$是一个介于0和1之间的参数，控制了历史梯度对当前动量的贡献程度</p>
+<p>这里将<script type="math/tex; ">m_t</script>展开，可以看到<strong>当前时刻的梯度是对历史梯度进行加权得到的</strong>，其中，<script type="math/tex; ">\lambda</script>是一个介于0和1之间的参数，控制了历史梯度对当前动量的贡献程度</p>
 <ul>
-<li>较大的$\lambda$值会使历史梯度的贡献更大，从而使动量更加平滑</li>
-<li>较小的$\lambda$值会使当前梯度的贡献更大，从而对变化更为敏感</li>
+<li>较大的<script type="math/tex; ">\lambda</script>值会使历史梯度的贡献更大，从而使动量更加平滑</li>
+<li>较小的<script type="math/tex; ">\lambda</script>值会使当前梯度的贡献更大，从而对变化更为敏感</li>
 </ul>
 <p>这种权重衰减的方式使得历史梯度的贡献逐渐减小，更加关注近期的梯度变化，有助于适应变化的数据和模型参数
 <script type="math/tex; mode=display">
@@ -562,7 +562,7 @@ m_{t}= & -\alpha \Delta L(w_t) -\alpha \lambda \Delta L(w_{t-1})-\alpha \lambda^
 </script></p>
 <p>既然知道会走<script type="math/tex; ">\lambda m_{t-1}</script>，就不需要还用当前位置的梯度，可以直接走到<script type="math/tex; ">\lambda m_{t-1}</script>的位置计算梯度，这样子就有了<code>超前眼光</code></p>
 <p>有了超前的眼光，小球就会更加<strong>聪明</strong>, 这种方法被命名为<code>牛顿加速梯度(Nesterov accelerated gradient)</code>简称<code>NAG</code>，下图是SGDM下降法与NAG下降法的可视化比较</p>
-<p><a data-lightbox="77afc738-4c4f-4f92-9677-8c011588b04a" data-title="momentum下降法与NAG下降法比较" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之优化器/momentum下降法与NAG下降法比较.webp" target="_blank"><img alt="momentum下降法与NAG下降法比较" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之优化器/momentum下降法与NAG下降法比较.webp"/></a></p>
+<p><a data-lightbox="d6397d42-2f65-4dca-924f-09c0e7810576" data-title="momentum下降法与NAG下降法比较" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之优化器/momentum下降法与NAG下降法比较.webp" target="_blank"><img alt="momentum下降法与NAG下降法比较" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心之优化器/momentum下降法与NAG下降法比较.webp"/></a></p>
 <p>NAG算法公式表达如下：
 <script type="math/tex; mode=display">
 \begin{array}{c}
@@ -610,8 +610,8 @@ w_{t+1}=w_{t}-m_{t}
 <p><script type="math/tex; mode=display">
 w_{t+1} =w_{t}-\frac{\alpha}{\sqrt{G_{t}+\epsilon }} \odot \eta \Delta L(w_t)
 </script></p>
-<p>其中$\eta$为学习率，而$\Delta L\left(w_{t}\right)$为损失函数的一阶导数，$\epsilon$是一个平滑项，避免了除以零(通常取值在$1e-8$左右)，$\odot$表示元素逐元素相乘操作</p>
-<p>$G_{t+1}$可以写成下式，每个参数的所有偏微分的平方和，$g_i$是对梯度的缩写</p>
+<p>其中<script type="math/tex; ">\eta</script>为学习率，而<script type="math/tex; ">\Delta L\left(w_{t}\right)</script>为损失函数的一阶导数，<script type="math/tex; ">\epsilon</script>是一个平滑项，避免了除以零(通常取值在<script type="math/tex; ">1e-8</script>左右)，<script type="math/tex; ">\odot</script>表示元素逐元素相乘操作</p>
+<p><script type="math/tex; ">G_{t+1}</script>可以写成下式，每个参数的所有偏微分的平方和，<script type="math/tex; ">g_i</script>是对梯度的缩写</p>
 <p><script type="math/tex; mode=display">
 G_{t+1} =G_{t}+g_{t+1} \odot g_{t+1} = \sum _{i=0}^{t} { {g_i} ^2 }
 </script></p>
@@ -625,7 +625,7 @@ G_{t+1} =G_{t}+g_{t+1} \odot g_{t+1} = \sum _{i=0}^{t} { {g_i} ^2 }
 </ul>
 <p><strong>缺点</strong>：</p>
 <ul>
-<li><strong>全局学习率</strong>: 仍需要手工设置一个全局学习率$\eta$, 如果$\eta$设置过大的话，会使regularizer过于敏感，对梯度的调节太大</li>
+<li><strong>全局学习率</strong>: 仍需要手工设置一个全局学习率<script type="math/tex; ">\eta</script>, 如果<script type="math/tex; ">\eta</script>设置过大的话，会使regularizer过于敏感，对梯度的调节太大</li>
 <li><strong>训练停止</strong>: 由于梯度平方和的累积，<strong>学习率会不断衰减</strong>，可能导致在训练后期学习率过小，造成收敛速度过慢或者提前停止训练的问题(<code>Adadelta</code>算法解决)</li>
 </ul>
 <blockquote>
@@ -651,8 +651,8 @@ G_{t+1} = \beta G_t + (1-\beta) \Delta L (w_{t})^2
 w_{t+1} = w_t -  \frac {\alpha}{\sqrt{ G_{t} + \epsilon }} \odot \Delta L (w_t)
 \end{array}
 </script>
-$\alpha$是学习率，$\beta$则类似于动量梯度下降法中的衰减因子，代表过去梯度对当前梯度的影响，一般取值0.9，$\epsilon$是一个平滑项，避免了除以零(通常取值在$1e-8$左右)，$\odot$表示元素逐元素相乘操作(也可以省略不写)</p>
-<p>公式里的<code>累积梯度平方和</code>$G_{t+1}$可以展开写成下面的形式，$g_i$是对梯度的缩写(同AdaGrad)
+<script type="math/tex; ">\alpha</script>是学习率，<script type="math/tex; ">\beta</script>则类似于动量梯度下降法中的衰减因子，代表过去梯度对当前梯度的影响，一般取值0.9，<script type="math/tex; ">\epsilon</script>是一个平滑项，避免了除以零(通常取值在<script type="math/tex; ">1e-8</script>左右)，<script type="math/tex; ">\odot</script>表示元素逐元素相乘操作(也可以省略不写)</p>
+<p>公式里的<code>累积梯度平方和</code><script type="math/tex; ">G_{t+1}</script>可以展开写成下面的形式，<script type="math/tex; ">g_i</script>是对梯度的缩写(同AdaGrad)
 <script type="math/tex; mode=display">
 G_{t+1} = \beta G_t + (1-\beta) \sum _{i=0}^{t} { {g_i} ^2 }
 </script></p>
@@ -683,7 +683,7 @@ G_{t+1} = \beta G_t + (1-\beta) \sum _{i=0}^{t} { {g_i} ^2 }
 <script type="math/tex; mode=display">
 \mathrm{E}\left[\mathrm{g}^{2}\right]_{\mathrm{t}}=\rho * \mathrm{E}\left[\mathrm{g}^{2}\right]_{\mathrm{t}-1}+(1-\rho) * \mathrm{~g}_{\mathrm{t}}^{2}
 </script>
-相当于历史梯度信息的累计乘上一个衰减系数$\rho$，然后用$\rho$作为当前梯度的平方加权系数相加</p>
+相当于历史梯度信息的累计乘上一个衰减系数<script type="math/tex; ">\rho</script>，然后用<script type="math/tex; ">\rho</script>作为当前梯度的平方加权系数相加</p>
 <p>梯度更新公式为
 <script type="math/tex; mode=display">
 \mathrm{w}_{\mathrm{t+1}}=\mathrm{w}_{\mathrm{t}}-\frac{\eta}{\sqrt{\mathrm{E}\left[\mathrm{g}^{2}\right]_{\mathrm{t}}+\epsilon}} * \mathrm{~g}_{\mathrm{t}}
@@ -696,14 +696,14 @@ G_{t+1} = \beta G_t + (1-\beta) \sum _{i=0}^{t} { {g_i} ^2 }
 <script type="math/tex; mode=display">
 \Delta x_{t}=-\frac{1}{\left|\operatorname{diag}\left(H_{t}\right)\right|+\mu} g_{t}
 </script>
-diag函数指的是构造Hessian矩阵的对角矩阵，$\mu$是常数项，防止分母为0</p>
+diag函数指的是构造Hessian矩阵的对角矩阵，<script type="math/tex; ">\mu</script>是常数项，防止分母为0</p>
 <p>如果学过数值分析的同学应该知道，<strong>牛顿法用Hessian矩阵替代人工设置的学习率</strong>，在梯度下降的时候，可以完美的找出下降方向，不会陷入局部最小值当中，是理想的方法，但是<strong>Hessian矩阵的逆在数据很大的情况下根本没办法求</strong></p>
 <p>2012年，[Schaul&amp;S. Zhang&amp;LeCun]借鉴了AdaGrad的做法，提出了更精确的近似
 <script type="math/tex; mode=display">
 \Delta x_{t}=-\frac{1}{\left|\operatorname{diag}\left(H_{t}\right)\right|} \frac{E\left[g_{t-w: t}\right]^{2}}{E\left[g_{t-w: t}^{2}\right]} g_{t}
 </script>
-$E\left[g_{t-w: t}\right]$指的是从当前t开始的前w个梯度状态的期望值</p>
-<p>$E\left[g_{t-w: t}^{2}\right]$指的是从当前t开始的前w个梯度状态的<strong>平方</strong>的期望值</p>
+<script type="math/tex; ">E\left[g_{t-w: t}\right]</script>指的是从当前t开始的前w个梯度状态的期望值</p>
+<p><script type="math/tex; ">E\left[g_{t-w: t}^{2}\right]</script>指的是从当前t开始的前w个梯度状态的<strong>平方</strong>的期望值</p>
 <p>同样是基于Gradient的Regularizer，不过<strong>只取最近的w个状态</strong>，这样不会让梯度被惩罚至0</p>
 <p>这里如果求期望的话，非常的麻烦，所以采取了移动平均法来计算。这里作者在论文中也给出了近似的证明
 <script type="math/tex; mode=display">
@@ -751,11 +751,11 @@ $E\left[g_{t-w: t}\right]$指的是从当前t开始的前w个梯度状态的期�
 </blockquote>
 <ol>
 <li><strong>存储额外的状态信息</strong>：Adadelta需要保存额外的状态信息(如梯度平方的累积)，增加了存储的开销</li>
-<li><strong>算法参数要调整</strong>：Adadelta中的衰减系数$\rho$需要进行适当的调整，不同任务可能需要不同的设置</li>
+<li><strong>算法参数要调整</strong>：Adadelta中的衰减系数<script type="math/tex; ">\rho</script>需要进行适当的调整，不同任务可能需要不同的设置</li>
 </ol>
 <h3 id="adam">1.4.4 Adam</h3>
 <p><code>Adam(Adaptive Moment Estimation)</code>自适应矩估计，是另一种<strong>自适应学习率</strong>的算法，<strong>本质上是带有动量项的Adadelta或RMSprop</strong></p>
-<p>是Diederik P. Kingma等人在2014年提出的优化算法，引入了两个参数$\beta 1$和$\beta 2$</p>
+<p>是Diederik P. Kingma等人在2014年提出的优化算法，引入了两个参数<script type="math/tex; ">\beta 1</script>和<script type="math/tex; ">\beta 2</script></p>
 <blockquote>
 <p>思路</p>
 </blockquote>
@@ -773,12 +773,12 @@ v_{t} & =\beta_{2} v_{t-1}+\left(1-\beta_{2}\right) g_{t}^{2} \\ \\
 
 \end{aligned}
 </script></p>
-<p>其中$\beta _1$控制一阶动量，$\beta _2$控制二阶动量</p>
+<p>其中<script type="math/tex; ">\beta _1</script>控制一阶动量，<script type="math/tex; ">\beta _2</script>控制二阶动量</p>
 <p>最终的参数更新公式为
 <script type="math/tex; mode=display">
 w_{t+1} = w_{t}- \eta \frac{\hat{m}_{t}}{\sqrt{\hat{v}_{t}}+\epsilon} 
 </script>
-默认值设置$\alpha=0.001 $，$ \beta 1=0.9 $，$ \beta 2=0.999 $，$ \varepsilon=10-8$ </p>
+默认值设置<script type="math/tex; ">\alpha=0.001 </script>，<script type="math/tex; "> \beta 1=0.9 </script>，<script type="math/tex; "> \beta 2=0.999 </script>，<script type="math/tex; "> \varepsilon=10-8</script> </p>
 <blockquote>
 <p>优点</p>
 </blockquote>
@@ -800,14 +800,14 @@ w_{t+1} = w_{t}- \eta \frac{\hat{m}_{t}}{\sqrt{\hat{v}_{t}}+\epsilon}
 <script type="math/tex; mode=display">
 v_{t} = \beta_{2} v_{t-1}+\left(1-\beta_{2}\right) g_{t}^{2}  \longrightarrow v_{t} = \beta_{2} v_{t-1}+\left(1-\beta_{2}\right) |g_{t}|^{p}
 </script>
-论文中AdaMax的$p= \infty$</p>
+论文中AdaMax的<script type="math/tex; ">p= \infty</script></p>
 <blockquote>
 <p>为什么是选择了无穷范数</p>
 </blockquote>
-<p>AdaMax选择了无穷范数($\infty$范数)是因为在大多数情况下，$\infty$范数具有稳定的行为</p>
-<p>对于一些问题，特别是在深度学习中，$\infty$范数可以提供更好的数值稳定性和收敛性</p>
-<p>相比于其他范数，$\infty$范数能够更好地控制梯度的最大值，从而减少参数更新的不稳定性</p>
-<p>因此，AdaMax选择了$\infty$范数作为其更新规则的一部分，以提高优化算法的稳定性和效果</p>
+<p>AdaMax选择了无穷范数(<script type="math/tex; ">\infty</script>范数)是因为在大多数情况下，<script type="math/tex; ">\infty</script>范数具有稳定的行为</p>
+<p>对于一些问题，特别是在深度学习中，<script type="math/tex; ">\infty</script>范数可以提供更好的数值稳定性和收敛性</p>
+<p>相比于其他范数，<script type="math/tex; ">\infty</script>范数能够更好地控制梯度的最大值，从而减少参数更新的不稳定性</p>
+<p>因此，AdaMax选择了<script type="math/tex; ">\infty</script>范数作为其更新规则的一部分，以提高优化算法的稳定性和效果</p>
 <h3 id="nadam">1.4.6 Nadam</h3>
 <blockquote>
 <p><a href="https://paddlepedia.readthedocs.io/en/latest/tutorials/deep_learning/optimizers/nadam.html" target="_blank">深度学习优化策略Nadam</a></p>
@@ -828,7 +828,7 @@ v_{t} = \beta_{2} v_{t-1}+\left(1-\beta_{2}\right) g_{t}^{2}  \longrightarrow v_
 <p>在模型优化中，常用到的几种学习率衰减方法有：分段常数衰减、多项式衰减、指数衰减、自然指数衰减、余弦衰减、线性余弦衰减、噪声线性余弦衰减</p>
 <p><a href="https://www.hanspub.org/journal/PaperInformation.aspx?paperID=27016&amp;btwaf=50696508" target="_blank">深度学习优化器方法及学习率衰减方式综述</a> </p>
 <p></p><footer class="page-footer"><span class="copyright">Copyright © narutohyc.com 2021 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
-2023-08-14 07:54:39
+2023-08-14 08:50:44
 </span></footer><hr/><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz',appKey: 'utUrzoiqNaDEGlgr09JL1pXB',placeholder: '欢迎留下评论交流~',avatar: 'wavatar',meta: undefined,pageSize: 15,lang: 'zh-CN',recordIP: false})</script><p></p>
 </section>
 </div>
@@ -855,7 +855,7 @@ v_{t} = \beta_{2} v_{t-1}+\left(1-\beta_{2}\right) g_{t}^{2}  \longrightarrow v_
 <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"abbrlink":36065,"date":"2023/05/26 16:31:14","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆9.webp","title":"深度学习核心之优化器.md","tags":["深度学习","神经网络","优化算法"],"top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆9.webp","mathjax":true,"categories":["deep_learning"],"description":"深度学习核心之优化器","level":"1.12","depth":1,"next":{"title":"深度学习核心之损失函数.md","level":"1.13","depth":1,"path":"chapters/深度学习核心之损失函数.md","ref":"chapters/深度学习核心之损失函数.md","articles":[]},"previous":{"title":"数据标注工具.md","level":"1.11","depth":1,"path":"chapters/数据标注工具.md","ref":"chapters/数据标注工具.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":true,"enableFooter":false,"site":"https://hycbook.github.io/bk_python/","author":"narutohyc","website":"python元知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Python相关学习记录","language":"zh-hans","mathjax":{"forceSVG":true},"links":{"sidebar":{"书籍主页":"https://hycbook.github.io/bk_index/"}},"gitbook":"*","description":"记录 Python 的学习和一些技巧的使用"},"file":{"path":"chapters/深度学习核心之优化器.md","mtime":"2023-08-14T07:54:39.438Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-14T07:55:45.443Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"abbrlink":36065,"date":"2023/05/26 16:31:14","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆9.webp","title":"深度学习核心之优化器.md","tags":["深度学习","神经网络","优化算法"],"top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆9.webp","mathjax":true,"categories":["deep_learning"],"description":"深度学习核心之优化器","level":"1.12","depth":1,"next":{"title":"深度学习核心之损失函数.md","level":"1.13","depth":1,"path":"chapters/深度学习核心之损失函数.md","ref":"chapters/深度学习核心之损失函数.md","articles":[]},"previous":{"title":"数据标注工具.md","level":"1.11","depth":1,"path":"chapters/数据标注工具.md","ref":"chapters/数据标注工具.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":true,"enableFooter":false,"site":"https://hycbook.github.io/bk_python/","author":"narutohyc","website":"python元知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Python相关学习记录","language":"zh-hans","mathjax":{"forceSVG":true},"links":{"sidebar":{"书籍主页":"https://hycbook.github.io/bk_index/"}},"gitbook":"*","description":"记录 Python 的学习和一些技巧的使用"},"file":{"path":"chapters/深度学习核心之优化器.md","mtime":"2023-08-14T08:50:44.997Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-14T08:51:41.814Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 <canvas class="fireworks"></canvas><script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script></div>

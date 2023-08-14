@@ -414,7 +414,7 @@
 <p><a href="https://www.jianshu.com/p/99e121c3beb8" target="_blank">选择性搜索算法 （Selective Search)</a></p>
 <p><a href="https://blog.csdn.net/weixin_43694096/article/details/121610856" target="_blank">选择性搜索算法(Selective Search)超详解（通俗易懂版）</a></p>
 </blockquote>
-<p><a data-lightbox="dea48d02-304e-4ed9-8535-1ed63187c099" data-title="RCNN系列发展脉络" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/RCNN系列发展脉络.svg" target="_blank"><img alt="RCNN系列发展脉络" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/RCNN系列发展脉络.svg"/></a></p>
+<p><a data-lightbox="12c3b1b7-160b-46b1-894a-1e0e0f6e4fd8" data-title="RCNN系列发展脉络" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/RCNN系列发展脉络.svg" target="_blank"><img alt="RCNN系列发展脉络" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/RCNN系列发展脉络.svg"/></a></p>
 <p>很多目标检测技术都会涉及候选框(bounding boxes)的生成，物体候选框获取当前主要使用图像分割与区域生长技术。<code>区域生长</code>(合并)主要由于检测图像中存在的物体具有局部区域相似性(颜色、纹理等)</p>
 <ol>
 <li><p><code>滑动窗口法</code></p>
@@ -511,7 +511,7 @@ f\left(P_{x}, P_{y}, P_{w}, P_{h}\right)=\left(G_{x}^{\prime}, G_{y}^{\prime}, G
 <ul>
 <li><p>本文每个区域提取到的固定长度的特征向量是4096，使用的网络是AlexNet</p>
 </li>
-<li><p>需要注意的是 Alextnet 的输入图像大小是$ 227\times227$，而通过 Selective Search 产生的候选区域大小不一，为了与 Alexnet 兼容，R-CNN 采用了非常暴力的手段，那就是无视候选区域的大小和形状，统一变换到$ 227\times227$的尺寸(就是只有候选框里保留，剩余部分填充其它像素，或者先在候选框周围加上16的padding，再进行各向异性缩放，这种形变使得mAp提高了3到5个百分点)。有一个细节，在对 Region 进行变换的时候，首先对这些区域进行膨胀处理，在其 box 周围附加了 p 个像素，也就是人为添加了边框，在这里 p=16</p>
+<li><p>需要注意的是 Alextnet 的输入图像大小是<script type="math/tex; "> 227\times227</script>，而通过 Selective Search 产生的候选区域大小不一，为了与 Alexnet 兼容，R-CNN 采用了非常暴力的手段，那就是无视候选区域的大小和形状，统一变换到<script type="math/tex; "> 227\times227</script>的尺寸(就是只有候选框里保留，剩余部分填充其它像素，或者先在候选框周围加上16的padding，再进行各向异性缩放，这种形变使得mAp提高了3到5个百分点)。有一个细节，在对 Region 进行变换的时候，首先对这些区域进行膨胀处理，在其 box 周围附加了 p 个像素，也就是人为添加了边框，在这里 p=16</p>
 </li>
 <li><p>在 ImageNet 上先进行预训练，然后利用成熟的权重参数在 PASCAL VOC 数据集上进行 fine-tune，如果不针对特定任务进行fine-tuning，而是把CNN当做特征提取器，卷积层所学到的特征其实就是基础的共享特征提取层，就类似于SIFT算法一样，可以用于提取各种图片的特征，而f6、f7所学习到的特征是用于针对特定任务的特征。</p>
 <p><code>训练过程</code>：首先对 <strong>PASCAL VOC数据集</strong> 进行<code>Selective Search</code>，搜索到2000个<code>Region Proposal</code>对Pre-trained模型进行fine-tuning。将原来预训练模型最后的1000-way的全连接层（分类层）换成21-way的分类层（20类物体+背景），然后计算每个region proposal和ground truth 的IoU，对于IoU&gt;0.5的region proposal被视为正样本，否则为负样本（即背景）。另外，由于对于一张图片的多有候选区域来说，负样本是远远大于正样本数，所以需要<strong>将正样本进行上采样</strong>来保证样本分布均衡。在每次迭代的过程中，选择层次采样，每个mini-batch中采样两张图像，从中随机选取32个正样本和96个负样本组成一个mini-batch（128，正负比：1：3）。我们使用0.001的学习率和SGD来进行训练，提取特征的CNN网络经过了预训练和微调后不再训练，就固定不变了，只单纯的作为一个<code>提特征的工具</code>了</p>
@@ -534,9 +534,9 @@ f\left(P_{x}, P_{y}, P_{w}, P_{h}\right)=\left(G_{x}^{\prime}, G_{y}^{\prime}, G
 <ol>
 <li><p>Region proposal的确定：VOC测试图像输入后，利用SS搜索方法，根据相似度从大到小排序，筛选出2000个region proposals</p>
 </li>
-<li><p>RP的Features提取：将RP通过resize成$ 227 \times 227$，然后分别输入进CNN特征提取网络，得到了2000个4096维features</p>
+<li><p>RP的Features提取：将RP通过resize成<script type="math/tex; "> 227 \times 227</script>，然后分别输入进CNN特征提取网络，得到了2000个4096维features</p>
 </li>
-<li><p>SVM分类：将<code>(2000,4096)</code>维矩阵输入进SVM分类器中，最终得到<code>(2000，21)</code>矩阵。每一行的21个列值，分别代表了这个RP属于每一个类的可能性。通过提前设置好的background阈值$\alpha$和所属于类的阈值$\beta$，筛选出满足条件的m个RP区域</p>
+<li><p>SVM分类：将<code>(2000,4096)</code>维矩阵输入进SVM分类器中，最终得到<code>(2000，21)</code>矩阵。每一行的21个列值，分别代表了这个RP属于每一个类的可能性。通过提前设置好的background阈值<script type="math/tex; ">\alpha</script>和所属于类的阈值<script type="math/tex; ">\beta</script>，筛选出满足条件的m个RP区域</p>
 </li>
 <li><p>BoundingBox-Regression：将<code>(m,4096)</code>维矩阵输入进 <code>(4096,4)</code>的回归矩阵 d d<em>d</em> 中，最后输出<code>(m,4)</code>偏移矩阵。代表RP中心点的位置偏移 和 bbox的尺寸变换</p>
 <p>将SVM筛选出的m个RP区域对应的特征向量，组成<code>(m,4096)</code>矩阵 代入 <code>(4096,4)</code>的回归矩阵d中，最后输出<code>(m,4)</code>偏移矩阵</p>
@@ -554,10 +554,10 @@ f\left(P_{x}, P_{y}, P_{w}, P_{h}\right)=\left(G_{x}^{\prime}, G_{y}^{\prime}, G
 <blockquote>
 <p><a href="https://blog.csdn.net/v1_vivian/article/details/73275259" target="_blank">SPP-Net</a>: 出自2015年发表在IEEE上的论文-《Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition》</p>
 </blockquote>
-<p>所有的神经网络都是需要输入固定尺寸的图片，比如$ 224 \times 224$(ImageNet)、$ 32 \times 32$(LenNet)、$ 96\times 96$等。这样对于我们希望检测各种大小的图片的时候，需要经过crop，或者warp等一系列操作，这都在一定程度上导致图片信息的丢失和变形，限制了识别精确度</p>
+<p>所有的神经网络都是需要输入固定尺寸的图片，比如<script type="math/tex; "> 224 \times 224</script>(ImageNet)、<script type="math/tex; "> 32 \times 32</script>(LenNet)、<script type="math/tex; "> 96\times 96</script>等。这样对于我们希望检测各种大小的图片的时候，需要经过crop，或者warp等一系列操作，这都在一定程度上导致图片信息的丢失和变形，限制了识别精确度</p>
 <p>为什么要固定输入图片的大小？：卷积层的参数和输入大小无关，它仅仅是一个卷积核在图像上滑动，不管输入图像多大都没关系，只是对不同大小的图片卷积出不同大小的特征图，但是全连接层的参数就和输入图像大小有关，因为它要把输入的所有像素点连接起来,需要指定输入层神经元个数和输出层神经元个数，所以需要规定输入的feature的大小，因此，<strong>固定长度的约束仅限于全连接层</strong></p>
 <p><code>SPP-Net在最后一个卷积层后，接入了金字塔池化层，使用这种方式，可以让网络输入任意的图片，而且还会生成固定大小的输出</code></p>
-<p><a data-lightbox="4a3498e7-3d24-4930-9b61-65cfcacf3890" data-title="SSP池化层" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/SSP池化层.png" target="_blank"><img alt="SSP池化层" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/SSP池化层.png"/></a></p>
+<p><a data-lightbox="c10f5ea6-2013-448e-947e-2a81016d2ae4" data-title="SSP池化层" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/SSP池化层.png" target="_blank"><img alt="SSP池化层" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/SSP池化层.png"/></a></p>
 <p>金字塔池化，使得任意大小的特征图都能够转换成固定大小的特征向量，这就是空间金字塔池化的意义(多尺度特征提取出固定大小的特征向量)</p>
 <p>SPP-Net，整个过程是：</p>
 <ol>
@@ -569,11 +569,11 @@ f\left(P_{x}, P_{y}, P_{w}, P_{h}\right)=\left(G_{x}^{\prime}, G_{y}^{\prime}, G
 <p>难点</p>
 <p><a href="https://blog.csdn.net/weixin_39190382/article/details/125848297" target="_blank">候选区域（原图与特征图）的映射</a></p>
 </blockquote>
-<p>假设$(x’,y’)$表示特征图上的坐标点，坐标点$(x,y)$表示原输入图片上的点，那么它们之间有如下转换关系，这种映射关心与网络结构有关：
+<p>假设<script type="math/tex; ">(x’,y’)</script>表示特征图上的坐标点，坐标点<script type="math/tex; ">(x,y)</script>表示原输入图片上的点，那么它们之间有如下转换关系，这种映射关心与网络结构有关：
 <script type="math/tex; mode=display">
 (x,y) = (S \times x' , S \times y' )
 </script>
-其中$S$就是CNN中所有的strides的乘积，包含了池化、卷积的stride</p>
+其中<script type="math/tex; ">S</script>就是CNN中所有的strides的乘积，包含了池化、卷积的stride</p>
 <h2 id="fast-rcnn">2.3 fast-rcnn</h2>
 <blockquote>
 <p>Fast-Rcnn：提出了<strong>ROI pooling</strong></p>
@@ -595,7 +595,7 @@ f\left(P_{x}, P_{y}, P_{w}, P_{h}\right)=\left(G_{x}^{\prime}, G_{y}^{\prime}, G
 <li><p><strong>网络有两个输入</strong>：图像和对应的region proposal。其中region proposal由selective search方法得到，没有表示在流程图中</p>
 </li>
 <li>对每个类别都训练一个回归器，且只有非背景的region proposal才需要进行回归</li>
-<li><strong>ROI pooling</strong>：ROI Pooling的作用是对不同大小的region proposal，从最后卷积层输出的feature map提取大小固定的feature map(ROI Pooling使用自适应(根据输入feature的大小自调整)池化区域，不再固定池化区域大小，而固定池化区域个数，这样就确保了输入什么大小的feature，输出的feature大小完全相等，等于池化区域个数)。<code>简单讲可以看做是SPPNet的简化版本</code>，因为全连接层的输入需要尺寸大小一样，所以不能直接将不同大小的region proposal映射到feature map作为输出，需要做尺寸变换。在文章中，VGG16网络使用$H = W = 7$的参数，即将一个$h \times w$的region proposal分割成$ H \times W$大小的网格，然后将这个region proposal映射到最后一个卷积层输出的feature map，最后计算每个网格里的最大值作为该网格的输出，所以不管ROI pooling之前的feature map大小是多少，ROI pooling后得到的feature map大小都是$ H \times W$</li>
+<li><strong>ROI pooling</strong>：ROI Pooling的作用是对不同大小的region proposal，从最后卷积层输出的feature map提取大小固定的feature map(ROI Pooling使用自适应(根据输入feature的大小自调整)池化区域，不再固定池化区域大小，而固定池化区域个数，这样就确保了输入什么大小的feature，输出的feature大小完全相等，等于池化区域个数)。<code>简单讲可以看做是SPPNet的简化版本</code>，因为全连接层的输入需要尺寸大小一样，所以不能直接将不同大小的region proposal映射到feature map作为输出，需要做尺寸变换。在文章中，VGG16网络使用<script type="math/tex; ">H = W = 7</script>的参数，即将一个<script type="math/tex; ">h \times w</script>的region proposal分割成<script type="math/tex; "> H \times W</script>大小的网格，然后将这个region proposal映射到最后一个卷积层输出的feature map，最后计算每个网格里的最大值作为该网格的输出，所以不管ROI pooling之前的feature map大小是多少，ROI pooling后得到的feature map大小都是<script type="math/tex; "> H \times W</script></li>
 <li>简单说ROI pooling就是：<ul>
 <li>把图片上selective search选出的候选框映射到<strong>特征图上对应的位置</strong>，这个映射是根据输入图片缩小的尺寸来的；</li>
 <li>将映射后的区域划分为相同大小的sections（sections数量与输出的维度相同）</li>
@@ -677,7 +677,7 @@ f\left(P_{x}, P_{y}, P_{w}, P_{h}\right)=\left(G_{x}^{\prime}, G_{y}^{\prime}, G
 <p>推荐有关RPN层的文章：<a href="https://blog.csdn.net/Missayaaa/article/details/81561183" target="_blank">RPN层解析</a></p>
 <p>RPN只是将框内认为是目标，框外认为是背景，做了个<strong>二分类</strong>，至于框内目标具体是啥，最终是交给分类网络去做</p>
 <p>下图来自<a href="https://blog.csdn.net/xue_csdn/article/details/98522585" target="_blank">Faster-RCNN（二）之RPN层</a></p>
-<p><a data-lightbox="d81b3093-4f00-4f3f-b0bb-474486bd4da2" data-title="Faster-RCNN网络结构图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/Faster-RCNN网络结构图.webp" target="_blank"><img alt="Faster-RCNN网络结构图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/Faster-RCNN网络结构图.webp"/></a></p>
+<p><a data-lightbox="a7a86f28-6b1b-4ec7-947a-131f032798af" data-title="Faster-RCNN网络结构图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/Faster-RCNN网络结构图.webp" target="_blank"><img alt="Faster-RCNN网络结构图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/Faster-RCNN网络结构图.webp"/></a></p>
 <p><strong>Faster-RCNN</strong>: RPN(region proposal network)，就是在卷积提取特征之后，多出一条路来进行候选框的提取</p>
 <ol>
 <li>将整张图片输入CNN，进行特征提取</li>
@@ -691,18 +691,18 @@ f\left(P_{x}, P_{y}, P_{w}, P_{h}\right)=\left(G_{x}^{\prime}, G_{y}^{\prime}, G
 <p>如何高效快速产生建议框？</p>
 <p>Faster R-CNN创造性地采用卷积网络自行产生建议框，并且和目标检测网络共享卷积网络，使得建议框数目从原有的约2000个减少为300个，且建议框的质量也有本质的提高</p>
 <h1 id="yolo系列">3 Yolo系列</h1>
-<p><a data-lightbox="51420fe4-b016-4013-95e4-16253a136cf2" data-title="Yolo系列发展脉络" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/Yolo系列发展脉络.svg" target="_blank"><img alt="Yolo系列发展脉络" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/Yolo系列发展脉络.svg"/></a></p>
+<p><a data-lightbox="1ccad2ee-cd1e-49d6-976d-b43e9384e29e" data-title="Yolo系列发展脉络" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/Yolo系列发展脉络.svg" target="_blank"><img alt="Yolo系列发展脉络" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/Yolo系列发展脉络.svg"/></a></p>
 <h2 id="yolov1">3.1 Yolov1</h2>
 <h3 id="网络结构">3.1.1 网络结构</h3>
 <blockquote>
 <p><a href="https://blog.csdn.net/weixin_43702653/article/details/123959840" target="_blank">YOLO_v1讲解</a></p>
 <p><a href="https://blog.csdn.net/weixin_48778017/article/details/128508694" target="_blank">浅谈不同版本YOLO的区别（V1-V3）</a></p>
 </blockquote>
-<p><a data-lightbox="c16f39ab-5978-447d-aa47-bb833d5c26be" data-title="yolov1结构图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/yolov1结构图.webp" target="_blank"><img alt="yolov1结构图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/yolov1结构图.webp"/></a></p>
+<p><a data-lightbox="40304a46-8aae-4f9b-8eb2-c7575bdde876" data-title="yolov1结构图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/yolov1结构图.webp" target="_blank"><img alt="yolov1结构图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/yolov1结构图.webp"/></a></p>
 <blockquote>
-<p>输出层$7 \times 7 \times 30$的含义</p>
+<p>输出层<script type="math/tex; ">7 \times 7 \times 30</script>的含义</p>
 </blockquote>
-<p>$7 \times 7$把原图平均分成49个网格，每个网格允许预测出2个边框，总共 49*2=98 个bounding box。可以理解为98个候选区，它们很粗略的覆盖了图片的整个区域</p>
+<p><script type="math/tex; ">7 \times 7</script>把原图平均分成49个网格，每个网格允许预测出2个边框，总共 49*2=98 个bounding box。可以理解为98个候选区，它们很粗略的覆盖了图片的整个区域</p>
 <p>30代表20个类别的条件概率和两个boundingbox的五个参数（中心坐标x，y，框的宽和高，置信度）</p>
 <p>每个cell只能预测一个类别，并且无法解决物体重叠的问题，此外，YOLOV1对小物体的检测效果也不理想</p>
 <h3 id="loss">3.1.2 loss</h3>
@@ -732,14 +732,14 @@ loss = \lambda_{\text {coord }} \sum_{i=0}^{S^{2}} \sum_{j=0}^{B} \mathbb{1}_{i 
 <li><strong>含目标的xy</strong>: 含有物体中心点的cell里，负责预测的bbox预测出的xy的MSE</li>
 <li><strong>含目标的wh</strong>: 含有物体中心点的cell里，负责预测的bbox预测出的wh的MSE</li>
 <li><strong>含目标的置信度</strong>: 含有物体中心点的cell里，负责预测的bbox预测出的存在物体的置信度的误差</li>
-<li><strong>不含目标的置信度</strong>: 不含有物体中心点的cell里，每一个bbox都要参与到loss的计算，$C<em>i=0$；$\hat{C}</em>{i}$=bbox的预测值，然后累加MSE</li>
+<li><strong>不含目标的置信度</strong>: 不含有物体中心点的cell里，每一个bbox都要参与到loss的计算，<script type="math/tex; ">C_i=0</script>；<script type="math/tex; ">\hat{C}_{i}</script>=bbox的预测值，然后累加MSE</li>
 <li><strong>含目标的分类损失</strong>: 含有物体中心点的cell里，预测出的物体类别向量和GT对应的向量的MSE</li>
 </ol>
 <blockquote>
 <p>不含目标的loss</p>
 </blockquote>
 <p>当cell中不包含物体的中心点，那这个cell的bbox预测出物体的置信度就要趋近于0</p>
-<p><a data-lightbox="322093b0-aeec-4dcd-a8ae-563b4b00e368" data-title="不含目标的loss" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/YoloV1不含目标的loss.webp" target="_blank"><img alt="不含目标的loss" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/YoloV1不含目标的loss.webp"/></a></p>
+<p><a data-lightbox="731384ca-e24b-4cd1-b6fd-2c32fcb70704" data-title="不含目标的loss" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/YoloV1不含目标的loss.webp" target="_blank"><img alt="不含目标的loss" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/YoloV1不含目标的loss.webp"/></a></p>
 <ul>
 <li><strong>A步骤</strong>：Yolo对输入图像前向传播的输出张量，下面是该图的目标张量</li>
 <li><strong>B步骤</strong>：乘以不含物体中心点的cell的掩码，相当于只留下<strong>无目标</strong>的cell</li>
@@ -751,7 +751,7 @@ loss = \lambda_{\text {coord }} \sum_{i=0}^{S^{2}} \sum_{j=0}^{B} \mathbb{1}_{i 
 <p>含目标的loss</p>
 </blockquote>
 <p>如果有物体，预测正确类别误差就等于0</p>
-<p><a data-lightbox="1e2272a1-c5be-41c4-bb07-bc65adcbb556" data-title="含目标的loss" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/YoloV1含目标的loss.webp" target="_blank"><img alt="含目标的loss" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/YoloV1含目标的loss.webp"/></a></p>
+<p><a data-lightbox="3ea718fa-c356-4ab2-a391-bff33c66779a" data-title="含目标的loss" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/YoloV1含目标的loss.webp" target="_blank"><img alt="含目标的loss" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/YoloV1含目标的loss.webp"/></a></p>
 <ul>
 <li><strong>A步骤</strong>：Yolo对输入图像前向传播的输出张量，下面是该图的目标张量</li>
 <li><strong>B步骤</strong>：乘以含物体中心点的cell的掩码，，相当于只留下<strong>含目标</strong>的cell</li>
@@ -769,7 +769,7 @@ loss = \lambda_{\text {coord }} \sum_{i=0}^{S^{2}} \sum_{j=0}^{B} \mathbb{1}_{i 
 <p>测试阶段</p>
 </blockquote>
 <ol>
-<li><p>输入图像，经过YOLO网络后，输出$ 7 \times 7 \times (2 \times 5 + 20 )$的张量</p>
+<li><p>输入图像，经过YOLO网络后，输出<script type="math/tex; "> 7 \times 7 \times (2 \times 5 + 20 )</script>的张量</p>
 </li>
 <li><p>计算每个bbox的类别得分</p>
 <p>从每一个cell中找出20个类别score中最大的类别，作为cell中两box预测出的类别</p>
@@ -791,7 +791,7 @@ Score_{i j} = P ( C_{i} |  Object ) * Confidence _{j}
 </li>
 <li><p><strong>加入BN</strong>：使用Batch Normalization对网络进行优化，让网络提高了收敛性，同时还消除了对其他形式的正则化(regularization)的依赖</p>
 </li>
-<li><p><strong>HighResolution Classifier</strong>：新的YOLO网络把分辨率直接提升到了$448 \times 448$，这也意味着原有的网络模型必须进行某种调整以适应新的分辨率输入，mAP获得了4%的提升</p>
+<li><p><strong>HighResolution Classifier</strong>：新的YOLO网络把分辨率直接提升到了<script type="math/tex; ">448 \times 448</script>，这也意味着原有的网络模型必须进行某种调整以适应新的分辨率输入，mAP获得了4%的提升</p>
 </li>
 <li><p><strong>Multi-ScaleTraining</strong>：让网络在不同的输入尺寸上都能达到一个很好的预测效果，同一网络能在不同分辨率上进行检测。当输入图片尺寸比较小的时候跑的比较快，输入图片尺寸比较大的时候精度高</p>
 </li>
@@ -809,21 +809,21 @@ Score_{i j} = P ( C_{i} |  Object ) * Confidence _{j}
 <p>输出和Yolov1比较如下</p>
 </blockquote>
 <ul>
-<li>YOLOv1是的输出$7 \times 7 \times 30$的多维向量，其中$7 \times 7$是分辨率，对原图进行了$7 \times 7$的分割，每个网格对应一个包含30个参数的向量，每个向量中包含两个bbox，每个bbox中包含5个向量，分别是bbox的质心坐标（x, y）和bbox的长和宽，还有一个bbox的置信度，剩下20个则是类别概率</li>
-<li>YOLOv2输出的是$13 \times 13 \times 5 \times 25$的一个多维向量，其中$13 \times 13$是分辨率，也就是说网络将输入图片分成了$13 \times 13$的网格，每一个网格对应一个包含$5 \times 25 =125 $个参数的一维向量，其中5代表5个Anchor bbox，每个Anchor bbox中包含25个参数，分别是bbox的质心坐标$(x,y)$和bbox的长和宽，还有一个bbox的置信度，剩下20个则是类别概率。这样的好处是YOLOv2可以对一个区域进行多个标签的预测，最主要的改变是：bbox的四个位置参数的损失函数计算方法发生了改变</li>
+<li>YOLOv1是的输出<script type="math/tex; ">7 \times 7 \times 30</script>的多维向量，其中<script type="math/tex; ">7 \times 7</script>是分辨率，对原图进行了<script type="math/tex; ">7 \times 7</script>的分割，每个网格对应一个包含30个参数的向量，每个向量中包含两个bbox，每个bbox中包含5个向量，分别是bbox的质心坐标（x, y）和bbox的长和宽，还有一个bbox的置信度，剩下20个则是类别概率</li>
+<li>YOLOv2输出的是<script type="math/tex; ">13 \times 13 \times 5 \times 25</script>的一个多维向量，其中<script type="math/tex; ">13 \times 13</script>是分辨率，也就是说网络将输入图片分成了<script type="math/tex; ">13 \times 13</script>的网格，每一个网格对应一个包含<script type="math/tex; ">5 \times 25 =125 </script>个参数的一维向量，其中5代表5个Anchor bbox，每个Anchor bbox中包含25个参数，分别是bbox的质心坐标<script type="math/tex; ">(x,y)</script>和bbox的长和宽，还有一个bbox的置信度，剩下20个则是类别概率。这样的好处是YOLOv2可以对一个区域进行多个标签的预测，最主要的改变是：bbox的四个位置参数的损失函数计算方法发生了改变</li>
 </ul>
-<p><a data-lightbox="fdb22e72-7d6d-4e70-897d-768e06756775" data-title="yolov2的anchor" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/yolov2的anchor.webp" target="_blank"><img alt="yolov2的anchor" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/yolov2的anchor.webp"/></a></p>
+<p><a data-lightbox="d3b25943-9773-47a5-ac13-ec67146fa82f" data-title="yolov2的anchor" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/yolov2的anchor.webp" target="_blank"><img alt="yolov2的anchor" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/yolov2的anchor.webp"/></a></p>
 <p>训练主要包括以下三个阶段：</p>
 <ol>
-<li>先在ImageNet分类数据集上预训练Darknet-19，此时模型输入$224 \times 224$，共训练160个epochs。</li>
-<li>将网络的输入调整为$448 \times 448$，继续在ImageNet数据集上finetune分类模型，训练10个epochs，此时分类模型的top-1准确度为76.5%，而top-5准确度为93.3%。</li>
-<li>修改Darknet-19分类模型为检测模型：即移除最后一个卷积层、global avg pooling层以及softmax层，并且新增了三个$3 \times 3 \times 2014$卷积层，同时增加了一个passthrough层，最后使用$1 \times 1$卷积层输出预测结果，并在检测数据集上继续finetune网络</li>
+<li>先在ImageNet分类数据集上预训练Darknet-19，此时模型输入<script type="math/tex; ">224 \times 224</script>，共训练160个epochs。</li>
+<li>将网络的输入调整为<script type="math/tex; ">448 \times 448</script>，继续在ImageNet数据集上finetune分类模型，训练10个epochs，此时分类模型的top-1准确度为76.5%，而top-5准确度为93.3%。</li>
+<li>修改Darknet-19分类模型为检测模型：即移除最后一个卷积层、global avg pooling层以及softmax层，并且新增了三个<script type="math/tex; ">3 \times 3 \times 2014</script>卷积层，同时增加了一个passthrough层，最后使用<script type="math/tex; ">1 \times 1</script>卷积层输出预测结果，并在检测数据集上继续finetune网络</li>
 </ol>
 <h2 id="yolov3">3.3 yolov3</h2>
 <blockquote>
 <p><a href="https://blog.csdn.net/weixin_44791964/article/details/105310627" target="_blank">睿智的目标检测26——Pytorch搭建yolo3目标检测平台</a></p>
 </blockquote>
-<p><a data-lightbox="6f793333-f274-4ef8-81ec-5fb12c6682bf" data-title="yolov3结构图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/yolov3结构图.webp" target="_blank"><img alt="yolov3结构图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/yolov3结构图.webp"/></a></p>
+<p><a data-lightbox="25e44c8d-019b-4164-a454-30e5b8b1e265" data-title="yolov3结构图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/yolov3结构图.webp" target="_blank"><img alt="yolov3结构图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/yolov3结构图.webp"/></a></p>
 <p>从<strong>特征获取预测结果的过程</strong>可以分为两个部分，分别是：</p>
 <ul>
 <li>构建<strong>FPN特征金字塔进行加强特征提取</strong></li>
@@ -834,9 +834,9 @@ Score_{i j} = P ( C_{i} |  Object ) * Confidence _{j}
 <blockquote>
 <p>输出维度解析</p>
 </blockquote>
-<p>网络有三个输出，维度分别为$bs \times 13 \times 13 \times 75$、$bs \times 26 \times 26 \times 75$和$bs \times 52 \times 52 \times 75$，其中75可以分解成$3 \times (4+1+20)$</p>
+<p>网络有三个输出，维度分别为<script type="math/tex; ">bs \times 13 \times 13 \times 75</script>、<script type="math/tex; ">bs \times 26 \times 26 \times 75</script>和<script type="math/tex; ">bs \times 52 \times 52 \times 75</script>，其中75可以分解成<script type="math/tex; ">3 \times (4+1+20)</script></p>
 <p>3表示三个候选框，4表示的是xywh的位置信息，1表示是否为背景，20为物体的类别数(这里用的是<strong>voc</strong>数据集)</p>
-<p>因为有三个输出，因此该网络有个$13 \times 13 \times 3 + 26\times 26\times 3 + 52 \times 52\times 3 = 10647$预测框</p>
+<p>因为有三个输出，因此该网络有个<script type="math/tex; ">13 \times 13 \times 3 + 26\times 26\times 3 + 52 \times 52\times 3 = 10647</script>预测框</p>
 <p>对于这些预测框，如果其与任何真实框的IoU大于一定的阈值（如0.5），则将其分配给对应的输出层作为正样本。否则，将其视为负样本</p>
 <p>YOLOv3 使用的损失函数是组合了多个部分的综合损失函数，其中包括定位损失（Localization Loss）、分类损失（Classification Loss）和置信度损失（Confidence Loss）</p>
 <p><script type="math/tex; mode=display">
@@ -883,7 +883,7 @@ L=L_{c l s}+L_{c o n f}+L_{l o c}
 <p>至于负样本的选择，一般会设置一个阈值来确定预测框与真实框之间的 IoU 阈值。如果预测框的 IoU 低于该阈值，则被视为负样本。对于每个负样本，可以选择保留一定数量的负样本，以确保正负样本的平衡性。</p>
 <p>具体来说，关于正负样本的选择数量并没有一个固定的标准，它可以根据具体的数据集和应用场景来确定。在实践中，可以根据数据集的统计信息和训练效果进行调整，以找到一个适合的正负样本比例，从而平衡目标检测的准确性和效率。</p>
 <h2 id="yolov5">3.4 yolov5</h2>
-<p><a data-lightbox="bf46fdc8-de96-4056-b109-39f5dc743537" data-title="yolov5架构图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/yolov5架构图.webp" target="_blank"><img alt="yolov5架构图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/yolov5架构图.webp"/></a></p>
+<p><a data-lightbox="16e35318-dda8-4078-821c-0230f9b4be7d" data-title="yolov5架构图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/yolov5架构图.webp" target="_blank"><img alt="yolov5架构图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/yolov5架构图.webp"/></a></p>
 <h2 id="yolov8">3.5 Yolov8</h2>
 <blockquote>
 <p>Yolov8 <a href="https://github.com/ultralytics/ultralytics" target="_blank">github地址</a>和<a href="https://docs.ultralytics.com/" target="_blank">文档</a></p>
@@ -1021,7 +1021,7 @@ L=L_{c l s}+L_{c o n f}+L_{l o c}
 <p>特征金字塔图示，越粗表示特征语义更强</p>
 <p><a href="https://zhuanlan.zhihu.com/p/78160468" target="_blank">薰风读论文：Feature Pyramid Network 详解特征金字塔网络FPN的来龙去脉</a></p>
 </blockquote>
-<p><a data-lightbox="dcd7ac34-7a16-4f0d-97b3-71b3f2260922" data-title="FPN网络结构比较图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/FPN网络结构比较图.webp" target="_blank"><img alt="FPN网络结构比较图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/FPN网络结构比较图.webp"/></a></p>
+<p><a data-lightbox="bbb88276-988d-44e5-9064-93c2d69d588c" data-title="FPN网络结构比较图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/FPN网络结构比较图.webp" target="_blank"><img alt="FPN网络结构比较图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/FPN网络结构比较图.webp"/></a></p>
 <p>图中将特征金字塔和其他的金字塔做了比较</p>
 <ul>
 <li><strong>(a)</strong>是传统中的图片金字塔，图片缩放到不同的大小，分别预测，每个特征提取/预测都是独立进行的，同一张图片的不同分辨率，也很难共享它们中间提取的特征，让模型预测的过程费时费力</li>
@@ -1036,7 +1036,7 @@ L=L_{c l s}+L_{c o n f}+L_{l o c}
 </blockquote>
 <p><code>RetinaNet</code>是使用<code>FPN</code>和<code>Focal Loss</code>(详情看本站<a href="https://hycbook.com/article/46832.html" target="_blank">深度学习核心之损失函数</a>部分)的目标检测模型，能够有效解决类别不平衡问题</p>
 <p>它通过<strong>特征金字塔网络</strong>生成多尺度的特征图，并使用Focal Loss重点关注难以分类的样本，从而提高了检测性能</p>
-<p><a data-lightbox="f86fad4e-b3f7-4637-89c3-ebab5aed00b5" data-title="RetinaNet网络架构图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/RetinaNet网络架构图.webp" target="_blank"><img alt="RetinaNet网络架构图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/RetinaNet网络架构图.webp"/></a></p>
+<p><a data-lightbox="3ea4249a-5bb9-4e68-a18d-ba65320d5d25" data-title="RetinaNet网络架构图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/RetinaNet网络架构图.webp" target="_blank"><img alt="RetinaNet网络架构图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/RetinaNet网络架构图.webp"/></a></p>
 <h2 id="detr">4.4 DETR</h2>
 <blockquote>
 <p><a href="https://arxiv.org/pdf/2005.12872.pdf" target="_blank">End-to-End Object Detection with Transformers DETR 2020</a></p>
@@ -1044,7 +1044,7 @@ L=L_{c l s}+L_{c o n f}+L_{l o c}
 </blockquote>
 <p>继Transformer应用于图像分类后，Transformer应用于图像目标检测的开山之作–DEtection TRansformer，其大大简化了目标检测的框架，更直观</p>
 <p><code>DETR</code>是Facebook团队于2020年提出的基于Transformer的端到端目标检测，没有非极大值抑制NMS后处理步骤、没有anchor等先验知识和约束，整个由网络实现端到端的目标检测实现，大大简化了目标检测的pipeline。结果在COCO数据集上效果与Faster RCNN相当，在<strong>大目标</strong>上效果比Faster RCNN好，且可以很容易地将DETR迁移到其他任务例如全景分割</p>
-<p><a data-lightbox="f0b2833d-7fd4-4602-b105-da2859c8b816" data-title="DETR模型结构" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/DETR模型结构.webp" target="_blank"><img alt="DETR模型结构" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/DETR模型结构.webp"/></a></p>
+<p><a data-lightbox="d92fa613-a083-43f3-b9af-6f3095603ca2" data-title="DETR模型结构" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/DETR模型结构.webp" target="_blank"><img alt="DETR模型结构" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/DETR模型结构.webp"/></a></p>
 <h1 id="目标跟踪">5 目标跟踪</h1>
 <blockquote>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzU2NjU3OTc5NA==&amp;mid=2247552006&amp;idx=2&amp;sn=925d1cbb7e8e3cca57b12274863486f8&amp;chksm=fca80b3bcbdf822df3e5b43342d750bd9cd9b01de79193057fead4c0f588bdcb1ee9a998c89d&amp;scene=27" target="_blank">万字长文 | 多目标跟踪最新综述(基于Transformer/图模型/检测和关联/孪生网络)</a></p>
@@ -1087,7 +1087,7 @@ L=L_{c l s}+L_{c o n f}+L_{l o c}
 <p><a href="https://zhuanlan.zhihu.com/p/499240427" target="_blank">目标跟踪基础——DeepSORT</a></p>
 <p><a href="https://zhuanlan.zhihu.com/p/202993073" target="_blank">【MOT】详解DeepSORT多目标追踪模型</a></p>
 </blockquote>
-<p><a data-lightbox="52d51bc4-909a-437d-b588-7640f448f894" data-title="deepsort 算法简要的草图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/deepsort 算法简要的草图.webp" target="_blank"><img alt="deepsort 算法简要的草图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/deepsort 算法简要的草图.webp"/></a></p>
+<p><a data-lightbox="4006c4fc-75df-4513-9425-1d6dead67e9a" data-title="deepsort 算法简要的草图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/deepsort 算法简要的草图.webp" target="_blank"><img alt="deepsort 算法简要的草图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/deepsort 算法简要的草图.webp"/></a></p>
 <h2 id="strongsort">5.3 StrongSort</h2>
 <p>StrongSort相比于DeepSort的区别：</p>
 <ul>
@@ -1112,13 +1112,13 @@ L=L_{c l s}+L_{c o n f}+L_{l o c}
 <blockquote>
 <p><a href="https://arxiv.org/abs/2110.06864v1" target="_blank">ByteTrack: Multi-Object Tracking by Associating Every Detection Box</a></p>
 </blockquote>
-<p><a data-lightbox="4dc1e92a-6812-4022-862f-9f602281829b" data-title="ByteTrack_算法流程图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/ByteTrack_算法流程图.svg" target="_blank"><img alt="ByteTrack_算法流程图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/ByteTrack_算法流程图.svg"/></a></p>
+<p><a data-lightbox="7cda01ae-ab97-4b19-a4b8-e8d6bf62e87f" data-title="ByteTrack_算法流程图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/ByteTrack_算法流程图.svg" target="_blank"><img alt="ByteTrack_算法流程图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/目标检测与跟踪算法/ByteTrack_算法流程图.svg"/></a></p>
 <h2 id="依赖的算法">5.6 依赖的算法</h2>
 <h3 id="卡尔曼滤波">5.6.1 卡尔曼滤波</h3>
 <p>卡尔曼滤波被广泛应用于无人机、自动驾驶、卫星导航等领域</p>
 <p>简单来说，其作用就是<strong>基于传感器的测量值来更新预测值，以达到更精确的估计</strong></p>
 <p>假设我们要跟踪小车的位置变化，如下图所示，蓝色的分布是卡尔曼滤波预测值，棕色的分布是传感器的测量值，灰色的分布就是预测值基于测量值更新后的最优估计</p>
-<p><a data-lightbox="3b542994-cc6d-4337-b54f-331e22c4f3fd" data-title="卡尔曼滤波" href="https://pic4.zhimg.com/80/v2-ec9fb1fee9048ae99f553c18d77605fb_720w.webp" target="_blank"><img alt="卡尔曼滤波" src="https://pic4.zhimg.com/80/v2-ec9fb1fee9048ae99f553c18d77605fb_720w.webp"/></a></p>
+<p><a data-lightbox="f832a4b5-9577-4352-834b-148e41e1958a" data-title="卡尔曼滤波" href="https://pic4.zhimg.com/80/v2-ec9fb1fee9048ae99f553c18d77605fb_720w.webp" target="_blank"><img alt="卡尔曼滤波" src="https://pic4.zhimg.com/80/v2-ec9fb1fee9048ae99f553c18d77605fb_720w.webp"/></a></p>
 <p>在目标跟踪中，需要估计track的以下两个状态：</p>
 <ul>
 <li><p><strong>均值(Mean)：</strong>表示目标的位置信息，由bbox的中心坐标 (cx, cy)，宽高比r，高h，以及各自的速度变化值组成</p>
@@ -1451,7 +1451,7 @@ MOTA指标是衡量多目标跟踪算法精确性方面最重要的指标，以1
 </blockquote>
 <p><strong>强化学习</strong>：强化学习是一个非常吸引人的人工智能领域，2016年 Alpha Go在围棋领域挑战李世石，以几乎碾压的结果夺冠，引起了人们对于人工智能的广泛讨论。2019年Alpha Star横空出世，在复杂的星际争霸2游戏中达到能和人类顶级玩家PK的水平，登上Nature。这两次与人类顶级玩家的抗衡之战，背后的技术都是强化学习。强化学习是机器学习领域的一个分支，强调基于环境而行动，以取得最大化的长期利益。与监督学习、非监督学习不同，监督学习解决如分类、回归等感知和认知类的任务，而强化学习处理决策问题，着重于环境的交互、序列决策、和长期收益。强化学习与环境的交互模式可以抽象为：智能体Agent在环境Environment中学习，根绝环境的状态State，执行动作Action，并根据环境反馈的奖励Reward来指导输出更好的动作</p>
 <p></p><footer class="page-footer"><span class="copyright">Copyright © narutohyc.com 2021 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
-2023-08-14 07:54:39
+2023-08-14 08:50:44
 </span></footer><hr/><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz',appKey: 'utUrzoiqNaDEGlgr09JL1pXB',placeholder: '欢迎留下评论交流~',avatar: 'wavatar',meta: undefined,pageSize: 15,lang: 'zh-CN',recordIP: false})</script><p></p>
 </section>
 </div>
@@ -1475,7 +1475,7 @@ MOTA指标是衡量多目标跟踪算法精确性方面最重要的指标，以1
 <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"abbrlink":34192,"date":"2023/04/16 16:52:47","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆4.webp","title":"目标检测与跟踪算法.md","tags":["目标检测算法","Yolo","Rcnn","SPP-Net","目标跟踪","目标追踪"],"top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆4.webp","mathjax":true,"categories":["deep_learning"],"description":"目标检测与跟踪算法","level":"1.17","depth":1,"previous":{"title":"深度学习模型压缩技术.md","level":"1.16","depth":1,"path":"chapters/深度学习模型压缩技术.md","ref":"chapters/深度学习模型压缩技术.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":true,"enableFooter":false,"site":"https://hycbook.github.io/bk_python/","author":"narutohyc","website":"python元知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Python相关学习记录","language":"zh-hans","mathjax":{"forceSVG":true},"links":{"sidebar":{"书籍主页":"https://hycbook.github.io/bk_index/"}},"gitbook":"*","description":"记录 Python 的学习和一些技巧的使用"},"file":{"path":"chapters/目标检测与跟踪算法.md","mtime":"2023-08-14T07:54:39.438Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-14T07:55:45.443Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"abbrlink":34192,"date":"2023/04/16 16:52:47","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆4.webp","title":"目标检测与跟踪算法.md","tags":["目标检测算法","Yolo","Rcnn","SPP-Net","目标跟踪","目标追踪"],"top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆4.webp","mathjax":true,"categories":["deep_learning"],"description":"目标检测与跟踪算法","level":"1.17","depth":1,"previous":{"title":"深度学习模型压缩技术.md","level":"1.16","depth":1,"path":"chapters/深度学习模型压缩技术.md","ref":"chapters/深度学习模型压缩技术.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":true,"enableFooter":false,"site":"https://hycbook.github.io/bk_python/","author":"narutohyc","website":"python元知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Python相关学习记录","language":"zh-hans","mathjax":{"forceSVG":true},"links":{"sidebar":{"书籍主页":"https://hycbook.github.io/bk_index/"}},"gitbook":"*","description":"记录 Python 的学习和一些技巧的使用"},"file":{"path":"chapters/目标检测与跟踪算法.md","mtime":"2023-08-14T08:50:44.997Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-14T08:51:41.814Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 <canvas class="fireworks"></canvas><script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script></div>
