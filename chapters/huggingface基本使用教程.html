@@ -1,0 +1,1955 @@
+<!DOCTYPE HTML>
+<html lang="zh-hans">
+<head>
+<meta charset="utf-8"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>huggingface基本使用教程.md · Python相关学习记录</title>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="huggingface基本使用教程" name="description"/>
+<meta content="GitBook 3.2.3" name="generator"/>
+<meta content="narutohyc" name="author"/>
+<link href="../gitbook/style.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-splitter/splitter.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-anchors/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-donate/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-code/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-search-plus/search.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-pageview-count/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-highlight/website.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-fontsettings/website.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-theme-comscore/test.css" rel="stylesheet"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<link href="../gitbook/images/apple-touch-icon-precomposed-152.png" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+<link href="../gitbook/images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="nlp关键词和摘要提取技术整理.html" rel="next"/>
+<link href="dl_in_vision_field.html" rel="prev"/>
+<link href="./chapters/res/other/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="./chapters/res/other/favicon.ico" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+<style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+<script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]};
+    </script>
+</head>
+<body>
+          <div class="mountain_a"></div>
+          <div class="mountain_b"></div>
+          <div class="house right">
+            <div class="fence"></div>
+            <div class="wall"></div>
+            <div class="roof left"></div>
+            <div class="roof right"></div>
+            <div class="door"></div>
+          </div>
+          <div class="house left">
+            <div class="fence"></div>
+            <div class="wall"></div>
+            <div class="roof left"></div>
+            <div class="roof right"></div>
+            <div class="door"></div>
+          </div>
+          <div class="tree_back"></div>
+          <div class="tree"></div>
+          <div class="postbox_a">
+            <div class="hole"></div>
+          </div>
+          <div class="postbox_b">
+            <div class="hole"></div>
+          </div>
+          <div class="windmill">
+            <div class="tower"></div>
+            <div class="t1"></div>
+            <div class="t2"></div>
+            <div class="blade">
+              <div class="windblade"></div>
+              <div class="windblade windblade2"></div>
+              <div class="windblade windblade3"></div>
+              <div class="windblade windblade4"></div>
+            </div>
+          </div>
+          <div class="allsnows">
+            <div class="snow1"></div>
+            <div class="snow2"></div>
+            <div class="snow3"></div>
+            <div class="snow4"></div>
+            <div class="snow5"></div>
+            <div class="snow6"></div>
+            <div class="snow7"></div>
+            <div class="snow8"></div>
+            <div class="snow9"></div>
+            <div class="snow10"></div>
+            <div class="snow11"></div>
+            <div class="snow12"></div>
+            <div class="snow13"></div>
+            <div class="snow14"></div>
+            <div class="snow15"></div>
+            <div class="snow16"></div>
+            <div class="snow17"></div>
+            <div class="snow18"></div>
+            <div class="snow19"></div>
+            <div class="snow20"></div>
+          </div>
+          <div class="ground">
+            <div class="g1"></div>
+            <div class="g2"></div>
+            <div class="g3"></div>
+            <div class="ice">
+              <div class="glare"></div>
+              <div class="ice_shadow"></div>
+            </div>
+
+          </div>
+    
+<div class="book">
+<div class="book-summary">
+<div id="book-search-input" role="search">
+<input placeholder="输入并搜索" type="text"/>
+</div>
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a class="custom-link" href="https://hycbook.github.io/bk_index/" target="_blank">书籍主页</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-level="1.1" data-path="../" id="chapter_id_0">
+<a href="../">
+<b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.2" data-path="LLM模型微调系列.html" id="chapter_id_1">
+<a href="LLM模型微调系列.html">
+<b>1.2.</b>
+                    
+                    LLM模型微调系列.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.3" data-path="LLM模型部署调试推理.html" id="chapter_id_2">
+<a href="LLM模型部署调试推理.html">
+<b>1.3.</b>
+                    
+                    LLM模型部署调试推理.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.4" data-path="dl_in_vision_field.html" id="chapter_id_3">
+<a href="dl_in_vision_field.html">
+<b>1.4.</b>
+                    
+                    dl_in_vision_field.md
+            
+                </a>
+</li>
+<li class="chapter active" data-level="1.5" data-path="huggingface基本使用教程.html" id="chapter_id_4">
+<a href="huggingface基本使用教程.html">
+<b>1.5.</b>
+                    
+                    huggingface基本使用教程.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.6" data-path="nlp关键词和摘要提取技术整理.html" id="chapter_id_5">
+<a href="nlp关键词和摘要提取技术整理.html">
+<b>1.6.</b>
+                    
+                    nlp关键词和摘要提取技术整理.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.7" data-path="pytorch学习.html" id="chapter_id_6">
+<a href="pytorch学习.html">
+<b>1.7.</b>
+                    
+                    pytorch学习.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.8" data-path="transformer.html" id="chapter_id_7">
+<a href="transformer.html">
+<b>1.8.</b>
+                    
+                    transformer.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.9" data-path="图像分割算法.html" id="chapter_id_8">
+<a href="图像分割算法.html">
+<b>1.9.</b>
+                    
+                    图像分割算法.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.10" data-path="图像分类算法.html" id="chapter_id_9">
+<a href="图像分类算法.html">
+<b>1.10.</b>
+                    
+                    图像分类算法.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.11" data-path="数据标注工具.html" id="chapter_id_10">
+<a href="数据标注工具.html">
+<b>1.11.</b>
+                    
+                    数据标注工具.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.12" data-path="深度学习核心之优化器.html" id="chapter_id_11">
+<a href="深度学习核心之优化器.html">
+<b>1.12.</b>
+                    
+                    深度学习核心之优化器.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.13" data-path="深度学习核心之损失函数.html" id="chapter_id_12">
+<a href="深度学习核心之损失函数.html">
+<b>1.13.</b>
+                    
+                    深度学习核心之损失函数.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.14" data-path="深度学习核心之激活函数.html" id="chapter_id_13">
+<a href="深度学习核心之激活函数.html">
+<b>1.14.</b>
+                    
+                    深度学习核心之激活函数.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.15" data-path="深度学习核心基础知识点.html" id="chapter_id_14">
+<a href="深度学习核心基础知识点.html">
+<b>1.15.</b>
+                    
+                    深度学习核心基础知识点.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.16" data-path="深度学习模型压缩技术.html" id="chapter_id_15">
+<a href="深度学习模型压缩技术.html">
+<b>1.16.</b>
+                    
+                    深度学习模型压缩技术.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.17" data-path="目标检测与跟踪算法.html" id="chapter_id_16">
+<a href="目标检测与跟踪算法.html">
+<b>1.17.</b>
+                    
+                    目标检测与跟踪算法.md
+            
+                </a>
+</li>
+<li class="divider"></li>
+<li>
+<a class="gitbook-link" href="https://www.gitbook.com" target="blank">
+            本书使用 GitBook 发布
+        </a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="..">huggingface基本使用教程.md</a>
+</h1>
+</div>
+<div class="page-wrapper" role="main" tabindex="-1">
+<div class="page-inner">
+<div class="search-plus" id="book-search-results">
+<div class="search-noresults">
+<section class="normal markdown-section">
+<div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon"></span><a href="#huggingface">1 huggingface</a></li><ul><li><span class="title-icon"></span><a href="#概述">1.1 概述</a></li><li><span class="title-icon"></span><a href="#安装">1.2 安装</a></li></ul><li><span class="title-icon"></span><a href="#datasets">2 datasets</a></li><ul><li><span class="title-icon"></span><a href="#安装_1">2.1 安装</a></li><li><span class="title-icon"></span><a href="#快速开始">2.2 快速开始</a></li><ul><li><span class="title-icon"></span><a href="#视觉">2.2.1 视觉</a></li><li><span class="title-icon"></span><a href="#nlp">2.2.2 nlp</a></li></ul><li><span class="title-icon"></span><a href="#加载数据集">2.3 加载数据集</a></li><li><span class="title-icon"></span><a href="#进阶加载数据集">2.4 进阶加载数据集</a></li><li><span class="title-icon"></span><a href="#探索数据集">2.5 探索数据集</a></li><li><span class="title-icon"></span><a href="#preprocess处理">2.6 Preprocess处理</a></li><li><span class="title-icon"></span><a href="#构建数据集">2.7 构建数据集</a></li><li><span class="title-icon"></span><a href="#分享数据集">2.8 分享数据集</a></li></ul><li><span class="title-icon"></span><a href="#评估指标">3 评估指标</a></li><ul><li><span class="title-icon"></span><a href="#安装_2">3.1 安装</a></li><li><span class="title-icon"></span><a href="#快速开始_1">3.2 快速开始</a></li><ul><li><span class="title-icon"></span><a href="#指标种类">3.2.1 指标种类</a></li><li><span class="title-icon"></span><a href="#指标加载">3.2.2 指标加载</a></li><li><span class="title-icon"></span><a href="#指标计算">3.2.3 指标计算</a></li><li><span class="title-icon"></span><a href="#结果存储">3.2.4 结果存储</a></li><li><span class="title-icon"></span><a href="#可视化">3.2.5 可视化</a></li><li><span class="title-icon"></span><a href="#选择合适指标">3.2.6 选择合适指标</a></li></ul></ul><li><span class="title-icon"></span><a href="#transformers">4 transformers</a></li><ul><li><span class="title-icon"></span><a href="#概述_1">4.1 概述</a></li><li><span class="title-icon"></span><a href="#安装_3">4.2 安装</a></li><li><span class="title-icon"></span><a href="#快速开始_2">4.3 快速开始</a></li><ul><li><span class="title-icon"></span><a href="#pipeline">4.3.1 Pipeline</a></li><li><span class="title-icon"></span><a href="#autoclass">4.3.2 AutoClass</a></li><li><span class="title-icon"></span><a href="#autoconfig">4.3.3 AutoConfig</a></li><li><span class="title-icon"></span><a href="#trainer">4.3.4 Trainer</a></li></ul></ul><li><span class="title-icon"></span><a href="#教程">5 教程</a></li><ul><li><span class="title-icon"></span><a href="#模型训练">5.1 模型训练</a></li><li><span class="title-icon"></span><a href="#分布式加速">5.2 分布式加速</a></li><li><span class="title-icon"></span><a href="#示例代码">5.3 示例代码</a></li></ul><li><span class="title-icon"></span><a href="#peft模块">6 PEFT模块</a></li><li><span class="title-icon"></span><a href="#其他模块">7 其他模块</a></li><ul><li><span class="title-icon"></span><a href="#autotrain">7.1 AutoTrain</a></li><li><span class="title-icon"></span><a href="#gradio">7.2 Gradio</a></li><li><span class="title-icon"></span><a href="#diffusers">7.3 Diffusers</a></li><li><span class="title-icon"></span><a href="#accelerate">7.4 Accelerate</a></li></ul></ul></div><a href="#huggingface" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><hr/>
+<h1 id="huggingface">1 huggingface</h1>
+<h2 id="概述">1.1 概述</h2>
+<blockquote>
+<p><a href="https://huggingface.co/docs" target="_blank">Hugging Face</a></p>
+<p><a href="https://huggingface.co/tasks" target="_blank">官网任务分类和示例</a></p>
+</blockquote>
+<p><code>Hugging Face</code>是一个知名的开源社区和公司，专注于自然语言处理(NLP)和机器学习(ML)领域。他们开发了许多流行的开源工具和库，使得构建和应用NLP模型更加便捷</p>
+<p>Hugging face起初是一家总部位于纽约的聊天机器人初创服务商，他们本来打算创业做聊天机器人，然后在github上开源了一个Transformers库，虽然聊天机器人业务没搞起来，但是他们的这个库在机器学习社区迅速大火起来。目前已经共享了超100,000个预训练模型，10,000个数据集，变成了机器学习界的github</p>
+<blockquote>
+<p>在这里主要有以下大家需要的资源</p>
+</blockquote>
+<ol>
+<li><p><strong>Datasets</strong>：数据集，以及数据集的下载地址</p>
+</li>
+<li><p><strong>Models</strong>：包括各种处理CV和NLP等任务的模型，上面模型都是可以免费获得</p>
+<p>主要包括计算机视觉、自然语言处理、语音处理、多模态、表格处理、强化学习</p>
+</li>
+<li><p><strong>course</strong>：免费的nlp课程</p>
+</li>
+<li><p><strong>docs</strong>：文档</p>
+</li>
+</ol>
+<blockquote>
+<p>展开细节</p>
+</blockquote>
+<ul>
+<li><strong>Computer Vision(计算机视觉任务)</strong>：包括lmage Classification(图像分类)，lmage Segmentation(图像分割)、zero-Shot lmage Classification(零样本图像分类)、lmage-to-Image(图像到图像的任务)、Unconditional lmage Generation(无条件图像生成)、Object Detection(目标检测)、Video Classification(视频分类)、Depth Estimation(深度估计，估计拍摄者距离图像各处的距离)</li>
+<li><strong>Natural Language Processing(自然语言处理)</strong>：包括Translation(机器翻译)、Fill-Mask(填充掩码，预测句子中被遮掩的词)、Token Classification(词分类)、Sentence Similarity(句子相似度)、Question Answering(问答系统)，Summarization(总结，缩句)、Zero-Shot Classification (零样本分类)、Text Classification(文本分类)、Text2Text(文本到文本的生成)、Text Generation(文本生成)、Conversational(聊天)、Table Question Answer(表问答，1.预测表格中被遮掩单词2.数字推理，判断句子是否被表格数据支持)</li>
+<li><strong>Audio(语音)</strong>：Automatic Speech Recognition(语音识别)、Audio Classification(语音分类)、Text-to-Speech(文本到语音的生成)、Audio-to-Audio(语音到语音的生成)、Voice Activity Detection(声音检测、检测识别出需要的声音部分)</li>
+<li><strong>Multimodal(多模态)</strong>：Feature Extraction(特征提取)、Text-to-Image(文本到图像)、Visual Question Answering(视觉问答)、Image2Text(图像到文本)、Document Question Answering(文档问答)</li>
+<li><strong>Tabular(表格)</strong>：Tabular Classification(表分类)、Tabular Regression(表回归)</li>
+<li><strong>Reinforcement Learning(强化学习)</strong>：Reinforcement Learning(强化学习)、Robotics(机器人)</li>
+</ul>
+<h2 id="安装">1.2 安装</h2>
+<blockquote>
+<p>安装transformers库</p>
+</blockquote>
+<pre><code class="lang-sh">pip install transformers
+</code></pre>
+<h1 id="datasets">2 datasets</h1>
+<blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/582687507" target="_blank">HuggingFace datasets库总结</a></p>
+</blockquote>
+<h2 id="安装_1">2.1 安装</h2>
+<p>下面三个命令都用于安装Hugging Face的<code>datasets</code>库的不同配置</p>
+<ol>
+<li><code>pip install datasets</code>：这个命令安装的是<code>datasets</code>库的基本配置，它提供了对常见的自然语言处理(NLP)任务和数据集的支持，例如文本分类、命名实体识别、问答系统等。如果您只需要处理文本数据或进行常见的NLP任务，这个基本配置就足够了</li>
+<li><code>pip install datasets[audio]</code>：这个命令安装的是<code>datasets</code>库的"audio"配置。它包含了对声音和音频数据集的支持，例如自动语音识别(ASR)和音频分类任务。如果您需要处理声音和音频数据，比如进行语音识别或音频分类，安装这个配置会提供相应的功能和数据集支持</li>
+<li><code>pip install datasets[vision]</code>：这个命令安装的是<code>datasets</code>库的"vision"配置。它包含了对图像和计算机视觉任务的支持，例如图像分类、目标检测和分割等。如果您需要处理图像数据或进行计算机视觉任务，安装这个配置会提供相应的功能和数据集支持</li>
+</ol>
+<p>通过安装不同的配置，您可以选择仅安装您需要的功能和支持的任务类型，以减少库的安装和存储空间。根据您的具体需求，选择适合的配置进行安装即可</p>
+<pre><code class="lang-sh"><span class="hljs-comment"># 安装基础版</span>
+pip install datasets
+<span class="hljs-comment"># 安装for声音</span>
+pip install datasets[audio]
+<span class="hljs-comment"># 安装for图像</span>
+pip install datasets[vision]
+</code></pre>
+<h2 id="快速开始">2.2 快速开始</h2>
+<h3 id="视觉">2.2.1 视觉</h3>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> load_dataset, Image
+<span class="hljs-keyword">from</span> torch.utils.data <span class="hljs-keyword">import</span> DataLoader
+<span class="hljs-keyword">from</span> torchvision.transforms <span class="hljs-keyword">import</span> Compose, ColorJitter, ToTensor
+
+<span class="hljs-comment"># 加载数据集</span>
+dataset = load_dataset(<span class="hljs-string">"beans"</span>, split=<span class="hljs-string">"train"</span>)
+
+jitter = Compose(
+    [ColorJitter(brightness=<span class="hljs-number">0.5</span>, hue=<span class="hljs-number">0.5</span>), ToTensor()]
+)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">transforms</span><span class="hljs-params">(examples)</span>:</span>
+    examples[<span class="hljs-string">"pixel_values"</span>] = [jitter(image.convert(<span class="hljs-string">"RGB"</span>)) <span class="hljs-keyword">for</span> image <span class="hljs-keyword">in</span> examples[<span class="hljs-string">"image"</span>]]
+    <span class="hljs-keyword">return</span> examples
+
+dataset = dataset.with_transform(transforms)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">collate_fn</span><span class="hljs-params">(examples)</span>:</span>
+    images = []
+    labels = []
+    <span class="hljs-keyword">for</span> example <span class="hljs-keyword">in</span> examples:
+        images.append((example[<span class="hljs-string">"pixel_values"</span>]))
+        labels.append(example[<span class="hljs-string">"labels"</span>])
+
+    pixel_values = torch.stack(images)
+    labels = torch.tensor(labels)
+    <span class="hljs-keyword">return</span> {<span class="hljs-string">"pixel_values"</span>: pixel_values, <span class="hljs-string">"labels"</span>: labels}
+
+<span class="hljs-comment"># 定义DataLoader</span>
+dataloader = DataLoader(dataset, collate_fn=collate_fn, batch_size=<span class="hljs-number">4</span>)
+</code></pre>
+<h3 id="nlp">2.2.2 nlp</h3>
+<p>使用 Hugging Face 提供的<code>datasets</code>库加载了<a href="https://huggingface.co/datasets/glue/viewer/mrpc/test" target="_blank">GLUE</a>(General Language Understanding Evaluation)数据集中的MRPC(Microsoft Research Paraphrase Corpus)部分的训练集。这个数据集用于句子对的相似性判断任务</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> load_dataset
+<span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> AutoModelForSequenceClassification, AutoTokenizer
+<span class="hljs-keyword">import</span> torch
+
+dataset = load_dataset(<span class="hljs-string">"glue"</span>, <span class="hljs-string">"mrpc"</span>, split=<span class="hljs-string">"test"</span>)
+
+<span class="hljs-comment"># load a pretrained BERT model and its corresponding tokenizer from the 🤗 Transformers library.</span>
+model = AutoModelForSequenceClassification.from_pretrained(<span class="hljs-string">"bert-base-uncased"</span>)
+tokenizer = AutoTokenizer.from_pretrained(<span class="hljs-string">"bert-base-uncased"</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">encode</span><span class="hljs-params">(examples)</span>:</span>
+    <span class="hljs-keyword">return</span> tokenizer(examples[<span class="hljs-string">"sentence1"</span>], examples[<span class="hljs-string">"sentence2"</span>], truncation=<span class="hljs-keyword">True</span>, padding=<span class="hljs-string">"max_length"</span>)
+
+dataset = dataset.map(encode, batched=<span class="hljs-keyword">True</span>)
+dataset[<span class="hljs-number">0</span>]
+
+{<span class="hljs-string">'sentence1'</span>: <span class="hljs-string">'Amrozi accused his brother , whom he called " the witness " , of deliberately distorting his evidence .'</span>,
+<span class="hljs-string">'sentence2'</span>: <span class="hljs-string">'Referring to him as only " the witness " , Amrozi accused his brother of deliberately distorting his evidence .'</span>,
+<span class="hljs-string">'label'</span>: <span class="hljs-number">1</span>,
+<span class="hljs-string">'idx'</span>: <span class="hljs-number">0</span>,
+<span class="hljs-string">'input_ids'</span>: array([  <span class="hljs-number">101</span>,  <span class="hljs-number">7277</span>,  <span class="hljs-number">2180</span>,  <span class="hljs-number">5303</span>,  <span class="hljs-number">4806</span>,  <span class="hljs-number">1117</span>,  <span class="hljs-number">1711</span>,   <span class="hljs-number">117</span>,  <span class="hljs-number">2292</span>, <span class="hljs-number">1119</span>,  <span class="hljs-number">1270</span>,   <span class="hljs-number">107</span>,  <span class="hljs-number">1103</span>,  <span class="hljs-number">7737</span>,   <span class="hljs-number">107</span>,   <span class="hljs-number">117</span>,  <span class="hljs-number">1104</span>,  <span class="hljs-number">9938</span>, <span class="hljs-number">4267</span>, <span class="hljs-number">12223</span>, <span class="hljs-number">21811</span>,  <span class="hljs-number">1117</span>,  <span class="hljs-number">2554</span>,   <span class="hljs-number">119</span>,   <span class="hljs-number">102</span>, <span class="hljs-number">11336</span>,  <span class="hljs-number">6732</span>, <span class="hljs-number">3384</span>,  <span class="hljs-number">1106</span>,  <span class="hljs-number">1140</span>,  <span class="hljs-number">1112</span>,  <span class="hljs-number">1178</span>,   <span class="hljs-number">107</span>,  <span class="hljs-number">1103</span>,  <span class="hljs-number">7737</span>,   <span class="hljs-number">107</span>, <span class="hljs-number">117</span>,  <span class="hljs-number">7277</span>,  <span class="hljs-number">2180</span>,  <span class="hljs-number">5303</span>,  <span class="hljs-number">4806</span>,  <span class="hljs-number">1117</span>,  <span class="hljs-number">1711</span>,  <span class="hljs-number">1104</span>,  <span class="hljs-number">9938</span>, <span class="hljs-number">4267</span>, <span class="hljs-number">12223</span>, <span class="hljs-number">21811</span>,  <span class="hljs-number">1117</span>,  <span class="hljs-number">2554</span>,   <span class="hljs-number">119</span>,   <span class="hljs-number">102</span>]),
+<span class="hljs-string">'token_type_ids'</span>: array([<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>]),
+<span class="hljs-string">'attention_mask'</span>: array([<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>])}
+
+<span class="hljs-comment">#  Rename the label column to labels, which is the expected input name in BertForSequenceClassification</span>
+dataset = dataset.map(<span class="hljs-keyword">lambda</span> examples: {<span class="hljs-string">"labels"</span>: examples[<span class="hljs-string">"label"</span>]}, batched=<span class="hljs-keyword">True</span>)
+
+dataset.set_format(type=<span class="hljs-string">"torch"</span>, columns=[<span class="hljs-string">"input_ids"</span>, <span class="hljs-string">"token_type_ids"</span>, <span class="hljs-string">"attention_mask"</span>, <span class="hljs-string">"labels"</span>])
+dataloader = torch.utils.data.DataLoader(dataset, batch_size=<span class="hljs-number">32</span>)
+</code></pre>
+<h2 id="加载数据集">2.3 加载数据集</h2>
+<blockquote>
+<p>查看数据集描述</p>
+</blockquote>
+<pre><code class="lang-python">from datasets import load_dataset_builder
+ds_builder = load_dataset_builder("rotten_tomatoes")
+
+ds_builder.info.description
+Movie Review Dataset. This is a dataset of containing 5,331 positive and 5,331 negative processed sentences from Rotten Tomatoes movie reviews. This data was first used in Bo Pang and Lillian Lee, ``Seeing stars: Exploiting class relationships for sentiment categorization with respect to rating scales.'', Proceedings of the ACL, 2005.
+
+
+ds_builder.info.features
+{'label': ClassLabel(num_classes=2, names=['neg', 'pos'], id=None),
+ 'text': Value(dtype='string', id=None)}
+</code></pre>
+<blockquote>
+<p>加载数据集</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> load_dataset
+
+dataset = load_dataset(<span class="hljs-string">"rotten_tomatoes"</span>, split=<span class="hljs-string">"train"</span>)
+</code></pre>
+<p>当一个数据集由多个文件(我们称之为<strong>分片</strong>)组成时，可以显著加快数据集的下载和准备步骤</p>
+<p>您可以使用num_proc参数选择并行准备数据集时要使用的进程数。在这种情况下，每个进程被分配了一部分分片来进行准备</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> load_dataset
+
+oscar_afrikaans = load_dataset(<span class="hljs-string">"oscar-corpus/OSCAR-2201"</span>, <span class="hljs-string">"af"</span>, num_proc=<span class="hljs-number">8</span>)
+imagenet = load_dataset(<span class="hljs-string">"imagenet-1k"</span>, num_proc=<span class="hljs-number">8</span>)
+ml_librispeech_spanish = load_dataset(<span class="hljs-string">"facebook/multilingual_librispeech"</span>, <span class="hljs-string">"spanish"</span>, num_proc=<span class="hljs-number">8</span>)
+</code></pre>
+<blockquote>
+<p>查看数据集的分片名称，并加载指定的分片名称</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> get_dataset_split_names
+<span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> load_dataset
+
+get_dataset_split_names(<span class="hljs-string">"rotten_tomatoes"</span>)
+[<span class="hljs-string">'train'</span>, <span class="hljs-string">'validation'</span>, <span class="hljs-string">'test'</span>]
+
+<span class="hljs-comment"># 加载指定分片</span>
+dataset = load_dataset(<span class="hljs-string">"rotten_tomatoes"</span>, split=<span class="hljs-string">"train"</span>)
+
+Dataset({
+    features: [<span class="hljs-string">'text'</span>, <span class="hljs-string">'label'</span>],
+    num_rows: <span class="hljs-number">8530</span>
+})
+
+<span class="hljs-comment"># 还可以这么写：</span>
+train_test_ds = datasets.load_dataset(<span class="hljs-string">"bookcorpus"</span>, split=<span class="hljs-string">"train+test"</span>)
+train_10_20_ds = datasets.load_dataset(<span class="hljs-string">"bookcorpus"</span>, split=<span class="hljs-string">"train[10:20]"</span>)
+train_10pct_ds = datasets.load_dataset(<span class="hljs-string">"bookcorpus"</span>, split=<span class="hljs-string">"train[:10%]"</span>)
+train_10_80pct_ds = datasets.load_dataset(<span class="hljs-string">"bookcorpus"</span>, split=<span class="hljs-string">"train[:10%]+train[-80%:]"</span>)
+val_ds = datasets.load_dataset(<span class="hljs-string">"bookcorpus"</span>, split=[f<span class="hljs-string">"train[{k}%:{k+10}%]"</span> <span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, <span class="hljs-number">100</span>, <span class="hljs-number">10</span>)])
+train_ds = datasets.load_dataset(<span class="hljs-string">"bookcorpus"</span>, split=[f<span class="hljs-string">"train[:{k}%]+train[{k+10}%:]"</span> <span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, <span class="hljs-number">100</span>, <span class="hljs-number">10</span>)])
+train_50_52_ds = datasets.load_dataset(<span class="hljs-string">"bookcorpus"</span>, split=<span class="hljs-string">"train[50%:52%]"</span>)
+train_52_54_ds = datasets.load_dataset(<span class="hljs-string">"bookcorpus"</span>, split=<span class="hljs-string">"train[52%:54%]"</span>)
+
+<span class="hljs-comment"># 18 records, from 450 (included) to 468 (excluded).</span>
+train_50_52pct1_ds = datasets.load_dataset(<span class="hljs-string">"bookcorpus"</span>, split=datasets.ReadInstruction(<span class="hljs-string">"train"</span>, from_=<span class="hljs-number">50</span>, to=<span class="hljs-number">52</span>, unit=<span class="hljs-string">"%"</span>, rounding=<span class="hljs-string">"pct1_dropremainder"</span>))
+<span class="hljs-comment"># 18 records, from 468 (included) to 486 (excluded).</span>
+train_52_54pct1_ds = datasets.load_dataset(<span class="hljs-string">"bookcorpus"</span>, split=datasets.ReadInstruction(<span class="hljs-string">"train"</span>,from_=<span class="hljs-number">52</span>, to=<span class="hljs-number">54</span>, unit=<span class="hljs-string">"%"</span>, rounding=<span class="hljs-string">"pct1_dropremainder"</span>))
+<span class="hljs-comment"># Or equivalently:</span>
+train_50_52pct1_ds = datasets.load_dataset(<span class="hljs-string">"bookcorpus"</span>, split=<span class="hljs-string">"train[50%:52%](pct1_dropremainder)"</span>)
+train_52_54pct1_ds = datasets.load_dataset(<span class="hljs-string">"bookcorpus"</span>, split=<span class="hljs-string">"train[52%:54%](pct1_dropremainder)"</span>)
+
+<span class="hljs-comment"># 加载全部数据</span>
+dataset = load_dataset(<span class="hljs-string">"rotten_tomatoes"</span>)
+DatasetDict({
+    train: Dataset({
+        features: [<span class="hljs-string">'text'</span>, <span class="hljs-string">'label'</span>],
+        num_rows: <span class="hljs-number">8530</span>
+    })
+    validation: Dataset({
+        features: [<span class="hljs-string">'text'</span>, <span class="hljs-string">'label'</span>],
+        num_rows: <span class="hljs-number">1066</span>
+    })
+    test: Dataset({
+        features: [<span class="hljs-string">'text'</span>, <span class="hljs-string">'label'</span>],
+        num_rows: <span class="hljs-number">1066</span>
+    })
+})
+</code></pre>
+<blockquote>
+<p>查看数据集子集，一个数据下可能还有很多子数据集</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> get_dataset_config_names
+
+configs = get_dataset_config_names(<span class="hljs-string">"PolyAI/minds14"</span>)
+print(configs)
+
+[<span class="hljs-string">'cs-CZ'</span>, <span class="hljs-string">'de-DE'</span>, <span class="hljs-string">'en-AU'</span>, <span class="hljs-string">'en-GB'</span>, <span class="hljs-string">'en-US'</span>, <span class="hljs-string">'es-ES'</span>, <span class="hljs-string">'fr-FR'</span>, <span class="hljs-string">'it-IT'</span>, <span class="hljs-string">'ko-KR'</span>, <span class="hljs-string">'nl-NL'</span>, <span class="hljs-string">'pl-PL'</span>, <span class="hljs-string">'pt-PT'</span>, <span class="hljs-string">'ru-RU'</span>, <span class="hljs-string">'zh-CN'</span>, <span class="hljs-string">'all'</span>]
+</code></pre>
+<blockquote>
+<p>加载指定子数据集</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> load_dataset
+
+mindsFR = load_dataset(<span class="hljs-string">"PolyAI/minds14"</span>, <span class="hljs-string">"fr-FR"</span>, split=<span class="hljs-string">"train"</span>) <span class="hljs-comment"># 指定子数据集是fr-FR</span>
+</code></pre>
+<blockquote>
+<p>指定数据集的文件, 避免load过多的数据</p>
+</blockquote>
+<pre><code class="lang-python">data_files = {<span class="hljs-string">"validation"</span>: <span class="hljs-string">"en/c4-validation.*.json.gz"</span>}
+c4_validation = load_dataset(<span class="hljs-string">"allenai/c4"</span>, data_files=data_files, split=<span class="hljs-string">"validation"</span>)
+</code></pre>
+<blockquote>
+<p>load本地的json、csv文件等，可以load远程文件、sql等</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-comment">#{"version": "0.1.0",</span>
+<span class="hljs-comment"># "data": [{"a": 1, "b": 2.0, "c": "foo", "d": false},</span>
+<span class="hljs-comment">#          {"a": 4, "b": -5.5, "c": null, "d": true}]</span>
+<span class="hljs-comment">#}</span>
+
+<span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> load_dataset
+dataset = load_dataset(<span class="hljs-string">"json"</span>, data_files=<span class="hljs-string">"my_file.json"</span>, field=<span class="hljs-string">"data"</span>)
+</code></pre>
+<blockquote>
+<p>通过python对象来创建dataset</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> Dataset
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+
+<span class="hljs-comment"># 字典方式</span>
+my_dict = {<span class="hljs-string">"a"</span>: [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]}
+dataset = Dataset.from_dict(my_dict)
+
+<span class="hljs-comment"># list方式</span>
+my_list = [{<span class="hljs-string">"a"</span>: <span class="hljs-number">1</span>}, {<span class="hljs-string">"a"</span>: <span class="hljs-number">2</span>}, {<span class="hljs-string">"a"</span>: <span class="hljs-number">3</span>}]
+dataset = Dataset.from_list(my_list)
+
+<span class="hljs-comment"># pandas方式</span>
+df = pd.DataFrame({<span class="hljs-string">"a"</span>: [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]})
+dataset = Dataset.from_pandas(df)
+</code></pre>
+<blockquote>
+<p>load多个文本文件: 文本必须一行就是一条样本</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> load_dataset
+dataset = load_dataset(<span class="hljs-string">"text"</span>, data_files={<span class="hljs-string">"train"</span>: [<span class="hljs-string">"my_text_1.txt"</span>, <span class="hljs-string">"my_text_2.txt"</span>], <span class="hljs-string">"test"</span>: <span class="hljs-string">"my_test_file.txt"</span>})
+
+<span class="hljs-comment"># Load from a directory</span>
+dataset = load_dataset(<span class="hljs-string">"text"</span>, data_dir=<span class="hljs-string">"path/to/text/dataset"</span>)
+</code></pre>
+<p>离线load: 将环境变量<code>HF_DATASETS_OFFLINE</code>设置为1以启用完全离线模式</p>
+<h2 id="进阶加载数据集">2.4 进阶加载数据集</h2>
+<blockquote>
+<p>从脚本加载数据集</p>
+</blockquote>
+<p>您可能在本地计算机上有一个🤗Datasets的加载脚本。在这种情况下，通过将以下路径之一传递给load_dataset()来加载数据集：</p>
+<p>加载脚本文件的本地路径。 包含加载脚本文件的目录的本地路径(仅当脚本文件与目录具有相同的名称时)</p>
+<pre><code class="lang-python">dataset = load_dataset(<span class="hljs-string">"path/to/local/loading_script/loading_script.py"</span>, split=<span class="hljs-string">"train"</span>)
+
+<span class="hljs-comment"># equivalent because the file has the same name as the directory</span>
+dataset = load_dataset(<span class="hljs-string">"path/to/local/loading_script"</span>, split=<span class="hljs-string">"train"</span>)
+</code></pre>
+<p>可以从Hub上下载加载脚本，并对其进行编辑以添加自己的修改。将数据集仓库下载到本地，以便加载脚本中相对路径引用的任何数据文件都可以被加载</p>
+<pre><code class="lang-cmd">git clone https://huggingface.co/datasets/eli5
+</code></pre>
+<p>在加载脚本上进行编辑后，通过将其本地路径传递给load_dataset()来加载它</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> load_dataset
+
+eli5 = load_dataset(<span class="hljs-string">"path/to/local/eli5"</span>)
+</code></pre>
+<blockquote>
+<p>csv+json方式</p>
+</blockquote>
+<p>数据集可以从存储在计算机上的本地文件和远程文件中加载。这些数据集很可能以csv、json、txt或parquet文件的形式存储。load_dataset()函数可以加载这些文件类型的数据集</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> load_dataset
+
+<span class="hljs-comment"># csv方式</span>
+dataset = load_dataset(<span class="hljs-string">"csv"</span>, data_files=<span class="hljs-string">"my_file.csv"</span>)
+
+<span class="hljs-comment"># json方式</span>
+<span class="hljs-comment"># {"a": 1, "b": 2.0, "c": "foo", "d": false}</span>
+<span class="hljs-comment"># {"a": 4, "b": -5.5, "c": null, "d": true}</span>
+dataset = load_dataset(<span class="hljs-string">"json"</span>, data_files=<span class="hljs-string">"my_file.json"</span>)
+
+<span class="hljs-comment"># {"version": "0.1.0",</span>
+<span class="hljs-comment">#  "data": [{"a": 1, "b": 2.0, "c": "foo", "d": false},</span>
+<span class="hljs-comment">#           {"a": 4, "b": -5.5, "c": null, "d": true}]</span>
+<span class="hljs-comment"># }</span>
+dataset = load_dataset(<span class="hljs-string">"json"</span>, data_files=<span class="hljs-string">"my_file.json"</span>, field=<span class="hljs-string">"data"</span>)
+
+<span class="hljs-comment"># 从http方式加载csv</span>
+base_url = <span class="hljs-string">"https://rajpurkar.github.io/SQuAD-explorer/dataset/"</span>
+dataset = load_dataset(<span class="hljs-string">"json"</span>, data_files={<span class="hljs-string">"train"</span>: base_url + <span class="hljs-string">"train-v1.1.json"</span>, <span class="hljs-string">"validation"</span>: base_url + <span class="hljs-string">"dev-v1.1.json"</span>}, field=<span class="hljs-string">"data"</span>)
+
+<span class="hljs-comment"># Parquet方式</span>
+dataset = load_dataset(<span class="hljs-string">"parquet"</span>, data_files={<span class="hljs-string">'train'</span>: <span class="hljs-string">'train.parquet'</span>, <span class="hljs-string">'test'</span>: <span class="hljs-string">'test.parquet'</span>})
+
+base_url = <span class="hljs-string">"https://storage.googleapis.com/huggingface-nlp/cache/datasets/wikipedia/20200501.en/1.0.0/"</span>
+data_files = {<span class="hljs-string">"train"</span>: base_url + <span class="hljs-string">"wikipedia-train.parquet"</span>}
+wiki = load_dataset(<span class="hljs-string">"parquet"</span>, data_files=data_files, split=<span class="hljs-string">"train"</span>)
+</code></pre>
+<blockquote>
+<p>sql方式</p>
+</blockquote>
+<p>使用from_sql()方法可以通过指定连接到数据库的URI来读取数据库内容。您可以读取表名或执行查询操作</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> Dataset
+
+dataset = Dataset.from_sql(<span class="hljs-string">"data_table_name"</span>, con=<span class="hljs-string">"sqlite:///sqlite_file.db"</span>)
+dataset = Dataset.from_sql(<span class="hljs-string">"SELECT text FROM table WHERE length(text) &gt; 100 LIMIT 10"</span>, con=<span class="hljs-string">"sqlite:///sqlite_file.db"</span>)
+</code></pre>
+<p>For more details, check out the <a href="https://huggingface.co/docs/datasets/tabular_load#databases" target="_blank">how to load tabular datasets from SQL databases</a> guide.</p>
+<h2 id="探索数据集">2.5 探索数据集</h2>
+<blockquote>
+<p>下标</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-comment"># 第一个样本</span>
+dataset[<span class="hljs-number">0</span>]
+<span class="hljs-comment">#{'label': 1,</span>
+<span class="hljs-comment"># 'text': 'the rock is destined to be the 21st century\'s new " conan " and that he\'s going to make a splash even greater than arnold schwarzenegger , jean-claud van damme or steven segal .'}</span>
+
+<span class="hljs-comment"># 最后一个样本</span>
+dataset[<span class="hljs-number">-1</span>]
+
+<span class="hljs-comment"># 只取text列</span>
+dataset[<span class="hljs-string">"text"</span>] <span class="hljs-comment"># 返回a list of 样本列</span>
+
+<span class="hljs-comment"># 第一个样本text列</span>
+dataset[<span class="hljs-number">0</span>][<span class="hljs-string">"text"</span>] <span class="hljs-comment"># 性能：dataset[0]['text']比dataset['text'][0]快2倍。</span>
+</code></pre>
+<blockquote>
+<p>数据切片</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-comment"># Get the first three rows</span>
+dataset[:<span class="hljs-number">3</span>]
+
+<span class="hljs-comment"># Get rows between three and six</span>
+dataset[<span class="hljs-number">3</span>:<span class="hljs-number">6</span>]
+</code></pre>
+<blockquote>
+<p>迭代方式，streaming=True</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> load_dataset
+
+iterable_dataset = load_dataset(<span class="hljs-string">"food101"</span>, split=<span class="hljs-string">"train"</span>, streaming=<span class="hljs-keyword">True</span>)
+<span class="hljs-keyword">for</span> example <span class="hljs-keyword">in</span> iterable_dataset:
+    print(example)
+    <span class="hljs-keyword">break</span>
+
+{<span class="hljs-string">'image'</span>: &lt;PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=<span class="hljs-number">384</span>x512 at <span class="hljs-number">0x7F0681F5C520</span>&gt;, <span class="hljs-string">'label'</span>: <span class="hljs-number">6</span>}
+
+<span class="hljs-comment"># Get first three examples</span>
+list(iterable_dataset.take(<span class="hljs-number">3</span>))
+[{<span class="hljs-string">'image'</span>: &lt;PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=<span class="hljs-number">384</span>x512 at <span class="hljs-number">0x7F7479DEE9D0</span>&gt;,
+  <span class="hljs-string">'label'</span>: <span class="hljs-number">6</span>},
+ {<span class="hljs-string">'image'</span>: &lt;PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=<span class="hljs-number">512</span>x512 at <span class="hljs-number">0x7F7479DE8190</span>&gt;,
+  <span class="hljs-string">'label'</span>: <span class="hljs-number">6</span>},
+ {<span class="hljs-string">'image'</span>: &lt;PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=<span class="hljs-number">512</span>x383 at <span class="hljs-number">0x7F7479DE8310</span>&gt;,
+  <span class="hljs-string">'label'</span>: <span class="hljs-number">6</span>}]
+</code></pre>
+<blockquote>
+<p>排序+shuffle+选择+filter+切分数据集+分片</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-comment"># sort: 按某一列排序</span>
+dataset.sort(<span class="hljs-string">"label"</span>)
+
+<span class="hljs-comment"># 打乱</span>
+shuffled_dataset = sorted_dataset.shuffle(seed=<span class="hljs-number">42</span>)
+
+<span class="hljs-comment"># 选择</span>
+small_dataset = dataset.select([<span class="hljs-number">0</span>, <span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>, <span class="hljs-number">40</span>, <span class="hljs-number">50</span>])
+
+<span class="hljs-comment"># 匹配查找</span>
+start_with_ar = dataset.filter(<span class="hljs-keyword">lambda</span> example: example[<span class="hljs-string">"sentence1"</span>].startswith(<span class="hljs-string">"Ar"</span>))
+len(start_with_ar)
+start_with_ar[<span class="hljs-string">"sentence1"</span>]
+<span class="hljs-comment"># 匹配查找：根据下标</span>
+even_dataset = dataset.filter(<span class="hljs-keyword">lambda</span> example, idx: idx % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>, with_indices=<span class="hljs-keyword">True</span>)
+
+<span class="hljs-comment"># 切分</span>
+dataset.train_test_split(test_size=<span class="hljs-number">0.1</span>)
+
+<span class="hljs-comment"># 分片</span>
+<span class="hljs-comment"># 数据集支持分片，将非常大的数据集划分为预定义数量的块。 在 shard() 中指定 num_shards 参数以确定要将数据集拆分成的分片数。 您还需要使用 index 参数提供要返回的分片。</span>
+<span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> load_dataset
+datasets = load_dataset(<span class="hljs-string">"imdb"</span>, split=<span class="hljs-string">"train"</span>)
+print(dataset)
+dataset.shard(num_shards=<span class="hljs-number">4</span>, index=<span class="hljs-number">0</span>) <span class="hljs-comment"># 四分之一</span>
+</code></pre>
+<blockquote>
+<p>列重命名+移除列+转换格式+flatten</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> ClassLabel, Value
+<span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> load_dataset
+
+<span class="hljs-comment"># 列重命名</span>
+dataset = dataset.rename_column(<span class="hljs-string">"sentence1"</span>, <span class="hljs-string">"sentenceA"</span>)
+
+<span class="hljs-comment"># 去掉某一列</span>
+dataset = dataset.remove_columns([<span class="hljs-string">"sentence1"</span>, <span class="hljs-string">"sentence2"</span>])
+
+<span class="hljs-comment"># 转换格式：一列或者多列</span>
+new_features = dataset.features.copy()
+new_features[<span class="hljs-string">"label"</span>] = ClassLabel(names=[<span class="hljs-string">"negative"</span>, <span class="hljs-string">"positive"</span>])
+new_features[<span class="hljs-string">"idx"</span>] = Value(<span class="hljs-string">"int64"</span>)
+dataset = dataset.cast(new_features)
+
+<span class="hljs-comment"># 转换格式：一列</span>
+dataset = dataset.cast_column(<span class="hljs-string">"audio"</span>, Audio(sampling_rate=<span class="hljs-number">16000</span>))
+
+<span class="hljs-comment"># 将某一列的key\value拉平</span>
+dataset = load_dataset(<span class="hljs-string">"squad"</span>, split=<span class="hljs-string">"train"</span>) <span class="hljs-comment"># ???</span>
+</code></pre>
+<blockquote>
+<p>map转换</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> multiprocess <span class="hljs-keyword">import</span> set_start_method
+<span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> load_dataset
+<span class="hljs-keyword">import</span> torch
+<span class="hljs-keyword">import</span> os
+
+set_start_method(<span class="hljs-string">"spawn"</span>)
+
+
+<span class="hljs-comment"># remove_columns 转换的同时去掉某一列</span>
+updated_dataset = dataset.map(<span class="hljs-keyword">lambda</span> example: {<span class="hljs-string">"new_sentence"</span>: example[<span class="hljs-string">"sentence1"</span>]}, remove_columns=[<span class="hljs-string">"sentence1"</span>])
+updated_dataset.column_names
+
+<span class="hljs-comment"># with_indices: 对下标处理</span>
+updated_dataset = dataset.map(<span class="hljs-keyword">lambda</span> example, idx: {<span class="hljs-string">"sentence2"</span>: f<span class="hljs-string">"{idx}: "</span> + example[<span class="hljs-string">"sentence2"</span>]}, with_indices=<span class="hljs-keyword">True</span>)
+updated_dataset[<span class="hljs-string">"sentence2"</span>][:<span class="hljs-number">5</span>]
+
+<span class="hljs-comment">#如果您设置with_rank=True，map()也适用于进程的等级。 这类似于with_indices参数。 映射函数中的with_rank参数位于索引1之后(如果它已经存在)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">gpu_computation</span><span class="hljs-params">(example, rank)</span>:</span>
+    os.environ[<span class="hljs-string">"CUDA_VISIBLE_DEVICES"</span>] = str(rank % torch.cuda.device_count())
+    <span class="hljs-comment"># Your big GPU call goes here</span>
+    <span class="hljs-keyword">return</span> examples
+updated_dataset = dataset.map(gpu_computation, with_rank=<span class="hljs-keyword">True</span>)
+
+<span class="hljs-comment"># 多线程</span>
+updated_dataset = dataset.map(<span class="hljs-keyword">lambda</span> example, idx: {<span class="hljs-string">"sentence2"</span>: f<span class="hljs-string">"{idx}: "</span> + example[<span class="hljs-string">"sentence2"</span>]}, num_proc=<span class="hljs-number">4</span>)
+
+<span class="hljs-comment"># batched</span>
+chunked_dataset = dataset.map(chunk_examples, batched=<span class="hljs-keyword">True</span>, remove_columns=dataset.column_names)
+
+<span class="hljs-comment"># 数据增强</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">augment_data</span><span class="hljs-params">(examples)</span>:</span>
+    outputs = []
+    <span class="hljs-keyword">for</span> sentence <span class="hljs-keyword">in</span> examples[<span class="hljs-string">"sentence1"</span>]:
+        words = sentence.split(<span class="hljs-string">' '</span>)
+        K = randint(<span class="hljs-number">1</span>, len(words)<span class="hljs-number">-1</span>)
+        masked_sentence = <span class="hljs-string">" "</span>.join(words[:K]  + [mask_token] + words[K+<span class="hljs-number">1</span>:])
+        predictions = fillmask(masked_sentence)
+        augmented_sequences = [predictions[i][<span class="hljs-string">"sequence"</span>] <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">3</span>)]
+        outputs += [sentence] + augmented_sequences
+    <span class="hljs-keyword">return</span> {<span class="hljs-string">"data"</span>: outputs}
+augmented_dataset = smaller_dataset.map(augment_data, batched=<span class="hljs-keyword">True</span>, remove_columns=dataset.column_names, batch_size=<span class="hljs-number">8</span>)
+augmented_dataset[:<span class="hljs-number">9</span>][<span class="hljs-string">"data"</span>]
+
+<span class="hljs-comment"># 处理多split</span>
+dataset = load_dataset(<span class="hljs-string">'glue'</span>, <span class="hljs-string">'mrpc'</span>)
+encoded_dataset = dataset.map(<span class="hljs-keyword">lambda</span> examples: tokenizer(examples[<span class="hljs-string">"sentence1"</span>]), batched=<span class="hljs-keyword">True</span>)
+encoded_dataset[<span class="hljs-string">"train"</span>][<span class="hljs-number">0</span>]
+</code></pre>
+<blockquote>
+<p>合并+拼接数据集</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> concatenate_datasets, load_dataset
+<span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> Dataset
+
+<span class="hljs-comment"># 加载数据集</span>
+bookcorpus = load_dataset(<span class="hljs-string">"bookcorpus"</span>, split=<span class="hljs-string">"train"</span>)
+wiki = load_dataset(<span class="hljs-string">"wikipedia"</span>, <span class="hljs-string">"20220301.en"</span>, split=<span class="hljs-string">"train"</span>)
+wiki = wiki.remove_columns([col <span class="hljs-keyword">for</span> col <span class="hljs-keyword">in</span> wiki.column_names <span class="hljs-keyword">if</span> col != <span class="hljs-string">"text"</span>])  <span class="hljs-comment"># only keep the 'text' column</span>
+
+<span class="hljs-keyword">assert</span> bookcorpus.features.type == wiki.features.type
+bert_dataset = concatenate_datasets([bookcorpus, wiki])
+
+<span class="hljs-comment"># 可以换concate的方向</span>
+bookcorpus_ids = Dataset.from_dict({<span class="hljs-string">"ids"</span>: list(range(len(bookcorpus)))})
+bookcorpus_with_ids = concatenate_datasets([bookcorpus, bookcorpus_ids], axis=<span class="hljs-number">1</span>)
+</code></pre>
+<blockquote>
+<p>相互穿插</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> torch
+
+<span class="hljs-comment"># 按概率穿插</span>
+seed = <span class="hljs-number">42</span>
+probabilities = [<span class="hljs-number">0.3</span>, <span class="hljs-number">0.5</span>, <span class="hljs-number">0.2</span>]
+d1 = Dataset.from_dict({<span class="hljs-string">"a"</span>: [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>]})
+d2 = Dataset.from_dict({<span class="hljs-string">"a"</span>: [<span class="hljs-number">10</span>, <span class="hljs-number">11</span>, <span class="hljs-number">12</span>, <span class="hljs-number">13</span>]})
+d3 = Dataset.from_dict({<span class="hljs-string">"a"</span>: [<span class="hljs-number">20</span>, <span class="hljs-number">21</span>, <span class="hljs-number">22</span>]})
+dataset = interleave_datasets([d1, d2, d3], probabilities=probabilities, seed=seed)
+dataset[<span class="hljs-string">"a"</span>]
+
+<span class="hljs-comment"># 按所有的样本都出现过一次后，马上停止</span>
+d1 = Dataset.from_dict({<span class="hljs-string">"a"</span>: [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>]})
+d2 = Dataset.from_dict({<span class="hljs-string">"a"</span>: [<span class="hljs-number">10</span>, <span class="hljs-number">11</span>, <span class="hljs-number">12</span>, <span class="hljs-number">13</span>]})
+d3 = Dataset.from_dict({<span class="hljs-string">"a"</span>: [<span class="hljs-number">20</span>, <span class="hljs-number">21</span>, <span class="hljs-number">22</span>]})
+dataset = interleave_datasets([d1, d2, d3], stopping_strategy=<span class="hljs-string">"all_exhausted"</span>)
+dataset[<span class="hljs-string">"a"</span>]
+</code></pre>
+<blockquote>
+<p>format</p>
+</blockquote>
+<pre><code class="lang-python">dataset.set_format(type=<span class="hljs-string">"torch"</span>, columns=[<span class="hljs-string">"input_ids"</span>, <span class="hljs-string">"token_type_ids"</span>, <span class="hljs-string">"attention_mask"</span>, <span class="hljs-string">"label"</span>])
+
+<span class="hljs-comment"># 返回一个新dataset</span>
+dataset = dataset.with_format(type=<span class="hljs-string">"torch"</span>, columns=[<span class="hljs-string">"input_ids"</span>, <span class="hljs-string">"token_type_ids"</span>, <span class="hljs-string">"attention_mask"</span>, <span class="hljs-string">"label"</span>])
+
+<span class="hljs-comment"># 查看</span>
+dataset.format
+</code></pre>
+<blockquote>
+<p>保存</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> load_from_disk
+
+encoded_dataset.save_to_disk(<span class="hljs-string">"path/of/my/dataset/directory"</span>)
+
+<span class="hljs-comment"># 从本地load上来</span>
+reloaded_dataset = load_from_disk(<span class="hljs-string">"path/of/my/dataset/directory"</span>)
+encoded_dataset.to_csv(<span class="hljs-string">"path/of/my/dataset.csv"</span>)
+Dataset.to_json()
+</code></pre>
+<h2 id="preprocess处理">2.6 Preprocess处理</h2>
+<blockquote>
+<p>文本处理：用transformers的tokenizer</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> AutoTokenizer
+<span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> load_dataset
+
+tokenizer = AutoTokenizer.from_pretrained(<span class="hljs-string">"bert-base-uncased"</span>)
+dataset = load_dataset(<span class="hljs-string">"rotten_tomatoes"</span>, split=<span class="hljs-string">"train"</span>)
+
+tokenizer(dataset[<span class="hljs-number">0</span>][<span class="hljs-string">"text"</span>])
+
+{<span class="hljs-string">'input_ids'</span>: [<span class="hljs-number">101</span>, <span class="hljs-number">1103</span>, <span class="hljs-number">2067</span>, <span class="hljs-number">1110</span>, <span class="hljs-number">17348</span>, <span class="hljs-number">1106</span>, <span class="hljs-number">1129</span>, <span class="hljs-number">1103</span>, <span class="hljs-number">6880</span>, <span class="hljs-number">1432</span>, <span class="hljs-number">112</span>, <span class="hljs-number">188</span>, <span class="hljs-number">1207</span>, <span class="hljs-number">107</span>, <span class="hljs-number">14255</span>, <span class="hljs-number">1389</span>, <span class="hljs-number">107</span>, <span class="hljs-number">1105</span>, <span class="hljs-number">1115</span>, <span class="hljs-number">1119</span>, <span class="hljs-number">112</span>, <span class="hljs-number">188</span>, <span class="hljs-number">1280</span>, <span class="hljs-number">1106</span>, <span class="hljs-number">1294</span>, <span class="hljs-number">170</span>, <span class="hljs-number">24194</span>, <span class="hljs-number">1256</span>, <span class="hljs-number">3407</span>, <span class="hljs-number">1190</span>, <span class="hljs-number">170</span>, <span class="hljs-number">11791</span>, <span class="hljs-number">5253</span>, <span class="hljs-number">188</span>, <span class="hljs-number">1732</span>, <span class="hljs-number">7200</span>, <span class="hljs-number">10947</span>, <span class="hljs-number">12606</span>, <span class="hljs-number">2895</span>, <span class="hljs-number">117</span>, <span class="hljs-number">179</span>, <span class="hljs-number">7766</span>, <span class="hljs-number">118</span>, <span class="hljs-number">172</span>, <span class="hljs-number">15554</span>, <span class="hljs-number">1181</span>, <span class="hljs-number">3498</span>, <span class="hljs-number">6961</span>, <span class="hljs-number">3263</span>, <span class="hljs-number">1137</span>, <span class="hljs-number">188</span>, <span class="hljs-number">1566</span>, <span class="hljs-number">7912</span>, <span class="hljs-number">14516</span>, <span class="hljs-number">6997</span>, <span class="hljs-number">119</span>, <span class="hljs-number">102</span>], 
+ <span class="hljs-string">'token_type_ids'</span>: [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>], 
+ <span class="hljs-string">'attention_mask'</span>: [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>]}
+</code></pre>
+<p>分词器返回一个包含三个项目的字典：</p>
+<ul>
+<li><strong>input_ids</strong>：表示文本中各个标记的数字</li>
+<li><strong>token_type_ids</strong>：如果有多个序列，指示一个标记属于哪个序列</li>
+<li><strong>attention_mask</strong>：指示一个标记是否应该被掩盖(masked)</li>
+</ul>
+<pre><code class="lang-python">dataset.set_format(type=<span class="hljs-string">"torch"</span>, columns=[<span class="hljs-string">"input_ids"</span>, <span class="hljs-string">"token_type_ids"</span>, <span class="hljs-string">"attention_mask"</span>, <span class="hljs-string">"labels"</span>])
+</code></pre>
+<blockquote>
+<p>音频信号：重新采样音频信号</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> AutoFeatureExtractor
+<span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> load_dataset, Audio
+
+feature_extractor = AutoFeatureExtractor.from_pretrained(<span class="hljs-string">"facebook/wav2vec2-base-960h"</span>)
+dataset = load_dataset(<span class="hljs-string">"PolyAI/minds14"</span>, <span class="hljs-string">"en-US"</span>, split=<span class="hljs-string">"train"</span>)
+
+dataset[<span class="hljs-number">0</span>][<span class="hljs-string">"audio"</span>]
+
+{<span class="hljs-string">'array'</span>: array([ <span class="hljs-number">0.</span>        ,  <span class="hljs-number">0.00024414</span>, <span class="hljs-number">-0.00024414</span>, ..., <span class="hljs-number">-0.00024414</span>,
+         <span class="hljs-number">0.</span>        ,  <span class="hljs-number">0.</span>        ], dtype=float32),
+ <span class="hljs-string">'path'</span>: <span class="hljs-string">'/root/.cache/huggingface/datasets/downloads/extracted/f14948e0e84be638dd7943ac36518a4cf3324e8b7aa331c5ab11541518e9368c/en-US~JOINT_ACCOUNT/602ba55abb1e6d0fbce92065.wav'</span>,
+ <span class="hljs-string">'sampling_rate'</span>: <span class="hljs-number">8000</span>}
+</code></pre>
+<p>MInDS-14数据集卡会告诉您采样率为8kHz</p>
+<p>Wav2Vec2模型卡说它是在16kHz语音音频上采样的。 这意味着您需要对MInDS-14数据集进行上采样以匹配模型的采样率</p>
+<p>使用cast_column()函数并在Audio功能中设置sampling_rate参数以对音频信号进行上采样。 当您现在调用音频列时，它会被解码并重新采样到16kHz：</p>
+<pre><code class="lang-python">dataset = dataset.cast_column(<span class="hljs-string">"audio"</span>, Audio(sampling_rate=<span class="hljs-number">16</span>_000))
+dataset[<span class="hljs-number">0</span>][<span class="hljs-string">"audio"</span>]
+
+<span class="hljs-comment"># 加速：使用 map() 函数将整个数据集重新采样到16kHz</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">preprocess_function</span><span class="hljs-params">(examples)</span>:</span>
+    audio_arrays = [x[<span class="hljs-string">"array"</span>] <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> examples[<span class="hljs-string">"audio"</span>]]
+    inputs = feature_extractor(
+        audio_arrays, sampling_rate=feature_extractor.sampling_rate, max_length=<span class="hljs-number">16000</span>, truncation=<span class="hljs-keyword">True</span>
+    )
+    <span class="hljs-keyword">return</span> inputs
+
+dataset = dataset.map(preprocess_function, batched=<span class="hljs-keyword">True</span>)
+</code></pre>
+<blockquote>
+<p>图像增强</p>
+</blockquote>
+<p>在图像数据集中，最常见的预处理操作之一是<code>数据增强</code>(data augmentation)，这是一种在不改变数据含义的情况下对图像引入随机变化的过程</p>
+<p>这可以包括改变图像的颜色属性或随机裁剪图像。您可以自由选择任何数据增强库，并且🤗Datasets将帮助您将数据增强应用到您的数据集中</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> AutoFeatureExtractor
+<span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> load_dataset, Image
+<span class="hljs-keyword">from</span> torchvision.transforms <span class="hljs-keyword">import</span> RandomRotation
+
+
+feature_extractor = AutoFeatureExtractor.from_pretrained(<span class="hljs-string">"google/vit-base-patch16-224-in21k"</span>)
+dataset = load_dataset(<span class="hljs-string">"beans"</span>, split=<span class="hljs-string">"train"</span>)
+
+rotate = RandomRotation(degrees=(<span class="hljs-number">0</span>, <span class="hljs-number">90</span>))
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">transforms</span><span class="hljs-params">(examples)</span>:</span>
+    examples[<span class="hljs-string">"pixel_values"</span>] = [rotate(image.convert(<span class="hljs-string">"RGB"</span>)) <span class="hljs-keyword">for</span> image <span class="hljs-keyword">in</span> examples[<span class="hljs-string">"image"</span>]]
+    <span class="hljs-keyword">return</span> examples
+
+<span class="hljs-comment"># 应用图像转换</span>
+dataset.set_transform(transforms)
+dataset[<span class="hljs-number">0</span>][<span class="hljs-string">"pixel_values"</span>]
+</code></pre>
+<blockquote>
+<p>label id对齐</p>
+</blockquote>
+<p>在Transformers库中，<strong>label id对齐</strong>(label ID alignment)通常指的是将标签与模型输出的预测结果对齐。当使用预训练模型进行分类或回归等任务时，通常需要将标签映射为模型期望的标签ID</p>
+<p>具体来说，对于分类任务，常见的做法是将标签映射为整数标签ID。例如，如果有三个类别["cat", "dog", "bird"]，可以将它们映射为[0, 1, 2]，并将模型的输出标签预测结果与这些标签ID进行对齐</p>
+<p>对于回归任务，可能需要将连续值的标签进行离散化或归一化，并将其映射为标签ID。例如，将一个连续的目标值范围映射为一组离散的标签ID</p>
+<p>在使用Transformers库进行训练或评估时，您需要确保标签与模型的输出结果具有相同的标签ID对齐，以便正确计算损失、评估指标和解码预测结果</p>
+<p>需要注意的是，标签ID对齐的具体实现方式可能因任务和库的使用而有所不同。在具体的代码实现中，您可能需要根据您的数据集和模型设置进行相应的标签ID对齐操作</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> load_dataset
+
+
+label2id = {<span class="hljs-string">"contradiction"</span>: <span class="hljs-number">0</span>, <span class="hljs-string">"neutral"</span>: <span class="hljs-number">1</span>, <span class="hljs-string">"entailment"</span>: <span class="hljs-number">2</span>}
+mnli = load_dataset(<span class="hljs-string">"glue"</span>, <span class="hljs-string">"mnli"</span>, split=<span class="hljs-string">"train"</span>)
+mnli_aligned = mnli.align_labels_with_mapping(label2id, <span class="hljs-string">"label"</span>)
+</code></pre>
+<h2 id="构建数据集">2.7 构建数据集</h2>
+<p>如果您使用自己的数据，可能需要创建一个数据集。使用🤗Datasets创建数据集可以享受到该库的所有优势：快速加载和处理数据、流式处理大型数据集、内存映射等等。您可以使用🤗Datasets的低代码方法轻松快速地创建数据集，减少启动训练模型所需的时间。在许多情况下，只需将数据文件拖放到Hub上的数据集仓库中，就可以轻松完成</p>
+<p>在本教程中，您将学习如何使用🤗Datasets的低代码方法创建各种类型的数据集：</p>
+<ul>
+<li>基于文件夹的构建器(Folder-based builders)，用于快速创建<strong>图像或音频数据集</strong></li>
+<li>使用from_方法从本地文件创建数据集</li>
+</ul>
+<blockquote>
+<p>基于文件夹的构建器</p>
+</blockquote>
+<p>有两个基于文件夹的构建器：<code>ImageFolder(图像文件夹构建器)</code>和<code>AudioFolder(音频文件夹构建器)</code></p>
+<p>它们是低代码方法，可以快速创建包含数千个示例的图像、语音和音频数据集。它们非常适用于在扩展到更大的数据集之前，快速原型化计算机视觉和语音模型</p>
+<p>基于文件夹的构建器会使用您的数据，并自动生成数据集的特征、划分和标签。具体来说：</p>
+<ul>
+<li>ImageFolder使用Image特征来解码图像文件。它支持许多图像扩展格式，例如jpg和png，还支持其他格式。您可以查看支持的图像扩展格式的完整列表</li>
+<li>AudioFolder使用Audio特征来解码音频文件。它支持音频扩展格式，如wav和mp3，您可以查看支持的音频扩展格式的完整列表</li>
+</ul>
+<p>例如，如果您的图像数据集(对于音频数据集也是一样)存储如下所示：</p>
+<pre><code class="lang-sh">pokemon/train/grass/bulbasaur.png
+pokemon/train/fire/charmander.png
+pokemon/train/water/squirtle.png
+
+pokemon/<span class="hljs-built_in">test</span>/grass/ivysaur.png
+pokemon/<span class="hljs-built_in">test</span>/fire/charmeleon.png
+pokemon/<span class="hljs-built_in">test</span>/water/wartortle.png
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> ImageFolder
+<span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> AudioFolder
+
+dataset = load_dataset(<span class="hljs-string">"imagefolder"</span>, data_dir=<span class="hljs-string">"/path/to/pokemon"</span>)
+dataset = load_dataset(<span class="hljs-string">"audiofolder"</span>, data_dir=<span class="hljs-string">"/path/to/folder"</span>)
+</code></pre>
+<p>数据集中可以包含有关数据集的其他信息，例如文本标题或转录，可以使用包含在数据集文件夹中的metadata.csv文件来进行存储</p>
+<p>metadata文件需要有一个file_name列，将图像或音频文件与其相应的元数据进行关联</p>
+<pre><code class="lang-txt">file_name, text
+bulbasaur.png, There is a plant seed on its back right from the day this Pokémon is born.
+charmander.png, It has a preference for hot things.
+squirtle.png, When it retracts its long neck into its shell, it squirts out water with vigorous force.
+</code></pre>
+<p>To learn more about each of these folder-based builders, check out the and <a href="https://huggingface.co/docs/datasets/image_dataset#imagefolder" target="_blank">ImageFolder</a> or <a href="https://huggingface.co/docs/datasets/audio_dataset#audiofolder" target="_blank">AudioFolder</a> guides.</p>
+<blockquote>
+<p>基于文件的构建器</p>
+</blockquote>
+<p>使用 from_generator() 方法是从生成器创建数据集的最节省内存的方式，这是由于生成器的迭代行为。这在处理非常大的数据集时特别有用，因为数据集是逐步在磁盘上生成的，然后进行内存映射，这样可以避免将整个数据集加载到内存中</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> Dataset
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">gen</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">yield</span> {<span class="hljs-string">"pokemon"</span>: <span class="hljs-string">"bulbasaur"</span>, <span class="hljs-string">"type"</span>: <span class="hljs-string">"grass"</span>}
+    <span class="hljs-keyword">yield</span> {<span class="hljs-string">"pokemon"</span>: <span class="hljs-string">"squirtle"</span>, <span class="hljs-string">"type"</span>: <span class="hljs-string">"water"</span>}
+ds = Dataset.from_generator(gen)
+ds[<span class="hljs-number">0</span>]
+{<span class="hljs-string">"pokemon"</span>: <span class="hljs-string">"bulbasaur"</span>, <span class="hljs-string">"type"</span>: <span class="hljs-string">"grass"</span>}
+</code></pre>
+<p>基于生成器的IterableDataset需要使用for循环进行迭代，例如：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> IterableDataset
+ds = IterableDataset.from_generator(gen)
+<span class="hljs-keyword">for</span> example <span class="hljs-keyword">in</span> ds:
+    print(example)
+
+{<span class="hljs-string">"pokemon"</span>: <span class="hljs-string">"bulbasaur"</span>, <span class="hljs-string">"type"</span>: <span class="hljs-string">"grass"</span>}
+{<span class="hljs-string">"pokemon"</span>: <span class="hljs-string">"squirtle"</span>, <span class="hljs-string">"type"</span>: <span class="hljs-string">"water"</span>}
+</code></pre>
+<p>使用from_dict()方法是从字典创建数据集的简单直接的方式：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> Dataset
+ds = Dataset.from_dict({<span class="hljs-string">"pokemon"</span>: [<span class="hljs-string">"bulbasaur"</span>, <span class="hljs-string">"squirtle"</span>], <span class="hljs-string">"type"</span>: [<span class="hljs-string">"grass"</span>, <span class="hljs-string">"water"</span>]})
+ds[<span class="hljs-number">0</span>]
+
+{<span class="hljs-string">"pokemon"</span>: <span class="hljs-string">"bulbasaur"</span>, <span class="hljs-string">"type"</span>: <span class="hljs-string">"grass"</span>}
+</code></pre>
+<h2 id="分享数据集">2.8 分享数据集</h2>
+<p>点击您的个人资料并选择新的数据集以创建一个新的数据集仓库。 为您的数据集选择一个名称，并选择它是一个公共数据集还是私有数据集。公共数据集对任何人可见，而私有数据集只能由您或您组织的成员查看</p>
+<p>一旦您的数据集存储在Hub上，任何人都可以使用load_dataset()函数加载它：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> load_dataset
+
+dataset = load_dataset(<span class="hljs-string">"stevhliu/demo"</span>)
+</code></pre>
+<blockquote>
+<p>使用Python进行上传</p>
+</blockquote>
+<p>喜欢以编程方式上传数据集的用户可以使用huggingface_hub库。该库允许用户从Python中与Hub进行交互</p>
+<p>首先安装该库：</p>
+<pre><code class="lang-sh">pip install huggingface_hub
+</code></pre>
+<p>要在Hub上使用Python上传数据集，您需要登录到您的Hugging Face账户：</p>
+<pre><code class="lang-sh">huggingface-cli login
+</code></pre>
+<p>使用push_to_hub()函数帮助您将文件添加、提交和推送到您的仓库：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> load_dataset
+
+dataset = load_dataset(<span class="hljs-string">"stevhliu/demo"</span>)
+<span class="hljs-comment"># dataset = dataset.map(...)  # 在这里进行所有的数据处理</span>
+dataset.push_to_hub(<span class="hljs-string">"stevhliu/processed_demo"</span>)
+</code></pre>
+<p>如果要将数据集设置为私有，请将private参数设置为True。该参数仅在首次创建仓库时有效</p>
+<pre><code class="lang-python">dataset.push_to_hub(<span class="hljs-string">"stevhliu/private_processed_demo"</span>, private=<span class="hljs-keyword">True</span>)
+</code></pre>
+<h1 id="评估指标">3 评估指标</h1>
+<h2 id="安装_2">3.1 安装</h2>
+<p>一种用于轻松评估机器学习模型和数据集的库</p>
+<p>只需一行代码，您就可以访问数十种不同领域(自然语言处理、计算机视觉、强化学习等)的评估方法</p>
+<p>无论是在本地机器上还是在分布式训练环境中，您都可以以一种一致且可重复的方式评估您的模型</p>
+<blockquote>
+<p>安装</p>
+</blockquote>
+<pre><code class="lang-sh">pip install evaluate
+</code></pre>
+<blockquote>
+<p>测试</p>
+</blockquote>
+<pre><code class="lang-sh">python -c <span class="hljs-string">"import evaluate; print(evaluate.load('exact_match').compute(references=['hello'], predictions=['hello']))"</span>
+
+{<span class="hljs-string">'exact_match'</span>: 1.0}
+</code></pre>
+<h2 id="快速开始_1">3.2 快速开始</h2>
+<h3 id="指标种类">3.2.1 指标种类</h3>
+<blockquote>
+<p><a href="https://huggingface.co/evaluate-metric" target="_blank">Evaluate Metric卡片实例</a></p>
+</blockquote>
+<p>🤗Evaluate提供了广泛的评估工具。它涵盖了文本、计算机视觉、音频等多种形式，并提供了用于评估模型或数据集的工具。这些工具分为三个类别</p>
+<p>评估类型 典型的机器学习流程涉及到不同方面的评估，对于每个方面，🤗 Evaluate都提供了相应的工具：</p>
+<ul>
+<li><strong>指标(Metric)</strong>：用于评估模型的性能，通常涉及模型的预测结果和一些真实标签。您可以在evaluate-metric中找到所有集成的指标</li>
+<li><strong>比较(Comparison)</strong>：用于比较两个模型。可以通过将它们的预测结果与真实标签进行比较并计算它们的一致性来进行比较。您可以在evaluate-comparison中找到所有集成的比较方法</li>
+<li><strong>测量(Measurement)</strong>：数据集和训练在其上的模型同样重要。通过测量可以研究数据集的特性。您可以在evaluate-measurement中找到所有集成的测量方法</li>
+</ul>
+<p>每个评估模块都作为一个Space存储在Hugging Face Hub上。它们提供了一个交互式小部件和一个文档卡片，用于记录其使用方法和限制</p>
+<blockquote>
+<p>评估工具之间的关系和区别</p>
+</blockquote>
+<p>Evaluate库中的<code>Metric(指标)</code>、<code>Comparison(比较)</code>和<code>Measurement(测量)</code>是三种不同的评估工具，用于评估机器学习模型和数据集。它们之间的关系和区别如下：</p>
+<ol>
+<li>Metric(指标)：<ul>
+<li>用途：<strong>用于评估模型的性能</strong></li>
+<li>具体含义：指标通过将模型的预测结果与真实标签进行比较来衡量模型的表现</li>
+<li>示例：准确率、精确率、召回率、F1分数等</li>
+<li>目的：提供了对模型性能的定量评估，帮助衡量模型在特定任务上的表现</li>
+</ul>
+</li>
+<li>Comparison(比较)：<ul>
+<li>用途：用于<strong>比较两个模型之间的差异</strong></li>
+<li>具体含义：比较工具将两个模型的预测结果与真实标签进行对比，计算它们之间的一致性或差异程度</li>
+<li>示例：一致性指标、相对误差等</li>
+<li>目的：帮助评估不同模型之间的性能差异，找到更好的模型或进行模型选择</li>
+</ul>
+</li>
+<li>Measurement(测量)：<ul>
+<li>用途：用于<strong>研究数据集的属性和特性</strong></li>
+<li>具体含义：测量工具用于对数据集进行分析，探索数据集的结构、分布、偏差等方面的信息</li>
+<li>示例：数据集大小、样本分布、类别不平衡度等</li>
+<li>目的：提供对数据集的详细了解，帮助了解数据集的特点和潜在问题</li>
+</ul>
+</li>
+</ol>
+<p>这三种评估工具在Evaluate库中各自独立，用于不同的评估目的。Metric用于衡量模型性能，Comparison用于比较不同模型之间的性能差异，Measurement用于研究和了解数据集的特性。通过使用这些工具，可以全面评估和理解机器学习模型和数据集的表现和特点</p>
+<h3 id="指标加载">3.2.2 指标加载</h3>
+<blockquote>
+<p>官方+社区 指标</p>
+</blockquote>
+<p>在使用Hugging Face的Evaluate库加载评估工具时，可以通过显式指定评估的类型来确保加载正确的工具。这可以防止名称冲突或混淆，确保您使用的是期望的评估工具</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> evaluate
+
+accuracy = evaluate.load(<span class="hljs-string">"accuracy"</span>)
+
+<span class="hljs-comment"># 显式指定评估的类型</span>
+word_length = evaluate.load(<span class="hljs-string">"word_length"</span>, module_type=<span class="hljs-string">"measurement"</span>)
+
+<span class="hljs-comment"># 社区指标</span>
+element_count = evaluate.load(<span class="hljs-string">"lvwerra/element_count"</span>, module_type=<span class="hljs-string">"measurement"</span>)
+</code></pre>
+<blockquote>
+<p>查看可用的模块方法</p>
+</blockquote>
+<pre><code class="lang-python">evaluate.list_evaluation_modules(
+  module_type=<span class="hljs-string">"comparison"</span>,
+  include_community=<span class="hljs-keyword">False</span>,
+  with_details=<span class="hljs-keyword">True</span>)
+
+[{<span class="hljs-string">'name'</span>: <span class="hljs-string">'mcnemar'</span>, <span class="hljs-string">'type'</span>: <span class="hljs-string">'comparison'</span>, <span class="hljs-string">'community'</span>: <span class="hljs-keyword">False</span>, <span class="hljs-string">'likes'</span>: <span class="hljs-number">1</span>},
+ {<span class="hljs-string">'name'</span>: <span class="hljs-string">'exact_match'</span>, <span class="hljs-string">'type'</span>: <span class="hljs-string">'comparison'</span>, <span class="hljs-string">'community'</span>: <span class="hljs-keyword">False</span>, <span class="hljs-string">'likes'</span>: <span class="hljs-number">0</span>}]
+</code></pre>
+<h3 id="指标计算">3.2.3 指标计算</h3>
+<blockquote>
+<p>计算指标</p>
+</blockquote>
+<p>当涉及到计算实际得分时，有两种主要的方法：</p>
+<ul>
+<li><p><strong>一体式计算(All-in-one)</strong>：通过一次性将所有必要的输入传递给compute()方法来计算得分</p>
+<pre><code class="lang-python">accuracy.compute(references=[<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>], predictions=[<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>])
+
+{<span class="hljs-string">'accuracy'</span>: <span class="hljs-number">0.5</span>}
+</code></pre>
+</li>
+<li><p><strong>逐步计算(Incremental)</strong>：通过使用EvaluationModule.add()或EvaluationModule.add_batch()将必要的输入逐步添加到模块中，然后在最后使用 EvaluationModule.compute()计算得分</p>
+<pre><code class="lang-python"><span class="hljs-comment"># add的方式</span>
+<span class="hljs-keyword">for</span> ref, pred <span class="hljs-keyword">in</span> zip([<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>], [<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>]):
+    accuracy.add(references=ref, predictions=pred)
+accuracy.compute()
+{<span class="hljs-string">'accuracy'</span>: <span class="hljs-number">0.5</span>}
+
+<span class="hljs-comment"># add_batch的方式</span>
+<span class="hljs-keyword">for</span> refs, preds <span class="hljs-keyword">in</span> zip([[<span class="hljs-number">0</span>,<span class="hljs-number">1</span>],[<span class="hljs-number">0</span>,<span class="hljs-number">1</span>]], [[<span class="hljs-number">1</span>,<span class="hljs-number">0</span>],[<span class="hljs-number">0</span>,<span class="hljs-number">1</span>]]):
+    accuracy.add_batch(references=refs, predictions=preds)
+accuracy.compute()
+{<span class="hljs-string">'accuracy'</span>: <span class="hljs-number">0.5</span>}
+</code></pre>
+</li>
+</ul>
+<p>在你需要以批量方式从模型中获取预测结果时特别有用：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">for</span> model_inputs, gold_standards <span class="hljs-keyword">in</span> evaluation_dataset:
+    predictions = model(model_inputs)
+    metric.add_batch(references=gold_standards, predictions=predictions)
+metric.compute()
+</code></pre>
+<blockquote>
+<p>分布式指标</p>
+</blockquote>
+<p>在分布式环境中计算指标可能会有些棘手。指标评估是在不同的数据子集上的单独Python进程或节点中执行的</p>
+<p>通常情况下，当一个指标得分是可加的($ f(A \cup B) = f(A) + f(B)$)时，你可以使用分布式的reduce操作来收集每个数据子集的得分。但是当指标是非可加的($ f(A \cup B) \neq f(A) + f(B)$)时，情况就不那么简单了。例如，你不能将每个数据子集的F1分数相加作为最终的指标</p>
+<p><strong>克服这个问题的常见方法是回退到单进程评估，但指标在单个GPU上进行评估，这会导致效率降低</strong></p>
+<ol>
+<li>🤗Evaluate通过仅在第一个节点上计算最终的指标来解决了这个问题</li>
+<li><strong>预测结果和参考结果被分别计算并提供给每个节点的指标</strong>，这些结果暂时存储在Apache Arrow表中，避免了GPU或CPU内存的混乱</li>
+<li>当你准备使用compute()计算最终指标时，第一个节点能够访问所有其他节点上存储的预测结果和参考结果。一旦它收集到所有的预测结果和参考结果，compute()将进行最终的指标评估</li>
+</ol>
+<p>这个解决方案使得🤗Evaluate能够在分布式设置中执行分布式预测，这对于提高评估速度非常重要。同时，你还可以使用复杂的非可加指标，而不浪费宝贵的GPU或CPU内存</p>
+<blockquote>
+<p>组合评估</p>
+</blockquote>
+<p>通常情况下，我们不仅想评估单个指标，而是想评估一系列不同的指标，以捕捉模型性能的不同方面</p>
+<p>例如，对于分类问题，除了准确度外，通常还会计算F1分数、召回率和精确度，以便更好地了解模型的性能。当然，你可以加载一系列指标并依次调用它们。然而，一种更方便的方法是使用combine()函数将它们捆绑在一起：</p>
+<pre><code class="lang-python">clf_metrics = evaluate.combine([<span class="hljs-string">"accuracy"</span>, <span class="hljs-string">"f1"</span>, <span class="hljs-string">"precision"</span>, <span class="hljs-string">"recall"</span>])
+clf_metrics.compute(predictions=[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>], references=[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>])
+
+{
+  <span class="hljs-string">'accuracy'</span>: <span class="hljs-number">0.667</span>,
+  <span class="hljs-string">'f1'</span>: <span class="hljs-number">0.667</span>,
+  <span class="hljs-string">'precision'</span>: <span class="hljs-number">1.0</span>,
+  <span class="hljs-string">'recall'</span>: <span class="hljs-number">0.5</span>
+}
+</code></pre>
+<blockquote>
+<p>自动化评估</p>
+</blockquote>
+<p><strong>使用evaluate.evaluator()提供了自动化的评估功能</strong>，只需要一个模型、数据集和度量指标，与EvaluationModules中的度量指标相比，它不需要模型的预测结果。因此，使用给定的度量指标在数据集上评估模型更容易，因为推理过程是在内部处理的</p>
+<p>为了实现这一点，它使用了transformers库中的pipeline抽象。然而，只要符合pipeline接口，你也可以使用自己的框架</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> pipeline
+<span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> load_dataset
+<span class="hljs-keyword">from</span> evaluate <span class="hljs-keyword">import</span> evaluator
+<span class="hljs-keyword">import</span> evaluate
+</code></pre>
+<p>为了使用evaluator进行评估，让我们加载一个基于IMDb训练的transformers pipeline（但你也可以传递自己的自定义推理类来适应任何遵循pipeline调用API的框架），并使用IMDb的测试集和准确度度量指标进行评估</p>
+<pre><code class="lang-python">pipe = pipeline(<span class="hljs-string">"text-classification"</span>, model=<span class="hljs-string">"lvwerra/distilbert-imdb"</span>, device=<span class="hljs-number">0</span>)
+data = load_dataset(<span class="hljs-string">"imdb"</span>, split=<span class="hljs-string">"test"</span>).shuffle().select(range(<span class="hljs-number">1000</span>))
+metric = evaluate.load(<span class="hljs-string">"accuracy"</span>)
+
+task_evaluator = evaluator(<span class="hljs-string">"text-classification"</span>)
+results = task_evaluator.compute(model_or_pipeline=pipe, data=data, metric=metric,
+                       label_mapping={<span class="hljs-string">"NEGATIVE"</span>: <span class="hljs-number">0</span>, <span class="hljs-string">"POSITIVE"</span>: <span class="hljs-number">1</span>},)
+
+{<span class="hljs-string">'accuracy'</span>: <span class="hljs-number">0.934</span>}
+</code></pre>
+<p>仅仅计算度量指标的值通常还不足以知道一个模型是否显著优于另一个模型。通过使用<code>自助法(bootstrapping)</code>，evaluate计算置信区间和标准误差，这有助于估计分数的稳定性</p>
+<pre><code class="lang-python">results = eval.compute(model_or_pipeline=pipe, data=data, metric=metric,
+                       label_mapping={<span class="hljs-string">"NEGATIVE"</span>: <span class="hljs-number">0</span>, <span class="hljs-string">"POSITIVE"</span>: <span class="hljs-number">1</span>},
+                       strategy=<span class="hljs-string">"bootstrap"</span>, n_resamples=<span class="hljs-number">200</span>)
+
+{<span class="hljs-string">'accuracy'</span>:
+    {
+      <span class="hljs-string">'confidence_interval'</span>: (<span class="hljs-number">0.906</span>, <span class="hljs-number">0.9406749892841922</span>),
+      <span class="hljs-string">'standard_error'</span>: <span class="hljs-number">0.00865213251082787</span>,
+      <span class="hljs-string">'score'</span>: <span class="hljs-number">0.923</span>
+    }
+}
+</code></pre>
+<p>评估器期望数据输入具有"text"和"label"列。如果您的数据集不同，可以使用关键字参数input_column="text"和label_column="label"来提供列名</p>
+<p>目前只支持"text-classification"任务，将来可能会添加更多的任务类型</p>
+<h3 id="结果存储">3.2.4 结果存储</h3>
+<blockquote>
+<p>评估结果save和push</p>
+</blockquote>
+<p>保存和分享评估结果是一个重要的步骤。我们提供evaluate.save()函数来方便地保存指标结果。你可以传递一个特定的文件名或目录。在后一种情况下，结果将保存在一个带有自动创建的文件名的文件中</p>
+<p>除了目录或文件名，该函数还接受任意的键值对作为输入，并将它们存储在一个JSON文件中</p>
+<pre><code class="lang-python">result = accuracy.compute(references=[<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>], predictions=[<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>])
+
+hyperparams = {<span class="hljs-string">"model"</span>: <span class="hljs-string">"bert-base-uncased"</span>}
+evaluate.save(<span class="hljs-string">"./results/"</span>, experiment=<span class="hljs-string">"run 42"</span>, **result, **hyperparams)
+
+PosixPath(<span class="hljs-string">'results/result-2022_05_30-22_09_11.json'</span>)
+
+<span class="hljs-comment"># result-2022_05_30-22_09_11.json</span>
+{
+    <span class="hljs-string">"experiment"</span>: <span class="hljs-string">"run 42"</span>,
+    <span class="hljs-string">"accuracy"</span>: <span class="hljs-number">0.5</span>,
+    <span class="hljs-string">"model"</span>: <span class="hljs-string">"bert-base-uncased"</span>,
+    <span class="hljs-string">"_timestamp"</span>: <span class="hljs-string">"2022-05-30T22:09:11.959469"</span>,
+    <span class="hljs-string">"_git_commit_hash"</span>: <span class="hljs-string">"123456789abcdefghijkl"</span>,
+    <span class="hljs-string">"_evaluate_version"</span>: <span class="hljs-string">"0.1.0"</span>,
+    <span class="hljs-string">"_python_version"</span>: <span class="hljs-string">"3.9.12 (main, Mar 26 2022, 15:51:15) \n[Clang 13.1.6 (clang-1316.0.21.2)]"</span>,
+    <span class="hljs-string">"_interpreter_path"</span>: <span class="hljs-string">"/Users/leandro/git/evaluate/env/bin/python"</span>
+}
+</code></pre>
+<p>除了指定的字段，它还包含有用的系统信息，用于重现结果，你还应该将它们报告到模型在Hub上的存储库中</p>
+<pre><code class="lang-python">evaluate.push_to_hub(
+  model_id=<span class="hljs-string">"huggingface/gpt2-wikitext2"</span>,  <span class="hljs-comment"># model repository on hub</span>
+  metric_value=<span class="hljs-number">0.5</span>,                       <span class="hljs-comment"># metric value</span>
+  metric_type=<span class="hljs-string">"bleu"</span>,                     <span class="hljs-comment"># metric name, e.g. accuracy.name</span>
+  metric_name=<span class="hljs-string">"BLEU"</span>,                     <span class="hljs-comment"># pretty name which is displayed</span>
+  dataset_type=<span class="hljs-string">"wikitext"</span>,                <span class="hljs-comment"># dataset name on the hub</span>
+  dataset_name=<span class="hljs-string">"WikiText"</span>,                <span class="hljs-comment"># pretty name</span>
+  dataset_split=<span class="hljs-string">"test"</span>,                   <span class="hljs-comment"># dataset split used</span>
+  task_type=<span class="hljs-string">"text-generation"</span>,            <span class="hljs-comment"># task id, see https://github.com/huggingface/datasets/blob/master/src/datasets/utils/resources/tasks.json</span>
+  task_name=<span class="hljs-string">"Text Generation"</span>             <span class="hljs-comment"># pretty name for task</span>
+)
+</code></pre>
+<blockquote>
+<p>上传自己的指标<a href="https://huggingface.co/docs/evaluate/main/en/creating_and_sharing" target="_blank">Creating and sharing a new evaluation</a></p>
+</blockquote>
+<h3 id="可视化">3.2.5 可视化</h3>
+<p>当比较多个模型时，仅通过查看它们的得分往往很难发现它们之间的差异。而且通常情况下，并没有一个单一的最佳模型，而是在准确性和延迟等方面存在着权衡，因为较大的模型可能具有更好的性能但也更慢。我们正在逐步添加不同的可视化方法，例如绘图，以便更轻松地选择适合特定用例的最佳模型。</p>
+<p>例如，如果您有多个模型的结果列表（以字典形式），您可以将它们传递给radar_plot()函数进行可视化：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> evaluate
+<span class="hljs-keyword">from</span> evaluate.visualization <span class="hljs-keyword">import</span> radar_plot
+
+data = [
+   {<span class="hljs-string">"accuracy"</span>: <span class="hljs-number">0.99</span>, <span class="hljs-string">"precision"</span>: <span class="hljs-number">0.8</span>, <span class="hljs-string">"f1"</span>: <span class="hljs-number">0.95</span>, <span class="hljs-string">"latency_in_seconds"</span>: <span class="hljs-number">33.6</span>},
+   {<span class="hljs-string">"accuracy"</span>: <span class="hljs-number">0.98</span>, <span class="hljs-string">"precision"</span>: <span class="hljs-number">0.87</span>, <span class="hljs-string">"f1"</span>: <span class="hljs-number">0.91</span>, <span class="hljs-string">"latency_in_seconds"</span>: <span class="hljs-number">11.2</span>},
+   {<span class="hljs-string">"accuracy"</span>: <span class="hljs-number">0.98</span>, <span class="hljs-string">"precision"</span>: <span class="hljs-number">0.78</span>, <span class="hljs-string">"f1"</span>: <span class="hljs-number">0.88</span>, <span class="hljs-string">"latency_in_seconds"</span>: <span class="hljs-number">87.6</span>}, 
+   {<span class="hljs-string">"accuracy"</span>: <span class="hljs-number">0.88</span>, <span class="hljs-string">"precision"</span>: <span class="hljs-number">0.78</span>, <span class="hljs-string">"f1"</span>: <span class="hljs-number">0.81</span>, <span class="hljs-string">"latency_in_seconds"</span>: <span class="hljs-number">101.6</span>}
+   ]
+model_names = [<span class="hljs-string">"Model 1"</span>, <span class="hljs-string">"Model 2"</span>, <span class="hljs-string">"Model 3"</span>, <span class="hljs-string">"Model 4"</span>]
+plot = radar_plot(data=data, model_names=model_names)
+plot.show()
+</code></pre>
+<p><a data-lightbox="e2534a75-3a63-41b2-9a03-990ef0bfb4c8" data-title="模型比较指标图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/huggingface基本使用教程/模型比较指标图.webp" target="_blank"><img alt="模型比较指标图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/huggingface基本使用教程/模型比较指标图.webp"/></a></p>
+<h3 id="选择合适指标">3.2.6 选择合适指标</h3>
+<p>评估指标可以分为三个高级类别：</p>
+<ul>
+<li><p><strong>通用指标</strong>：适用于各种情况和数据集的指标，例如精确度和准确度</p>
+<pre><code class="lang-python">precision_metric = evaluate.load(<span class="hljs-string">"precision"</span>)
+results = precision_metric.compute(references=[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>], predictions=[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>])
+print(results)
+
+{<span class="hljs-string">'precision'</span>: <span class="hljs-number">1.0</span>}
+</code></pre>
+</li>
+<li><p><strong>任务特定指标</strong>：仅适用于特定任务的指标，例如机器翻译(通常使用BLEU或ROUGE指标进行评估)或命名实体识别(通常使用seqeval进行评估)</p>
+</li>
+<li><p><strong>数据集特定指标</strong>：旨在衡量模型在特定基准数据集上的性能，例如GLUE基准测试具有专门的评估指标</p>
+</li>
+</ul>
+<h1 id="transformers">4 transformers</h1>
+<h2 id="概述_1">4.1 概述</h2>
+<blockquote>
+<p><a href="https://huggingface.co/docs/transformers/v4.30.0/en/task_summary" target="_blank">What 🤗 Transformers can do</a></p>
+</blockquote>
+<p>🤗 Transformers提供了API和工具，可轻松下载和训练最先进的预训练模型。使用预训练模型可以减少计算成本、碳足迹，并节省从头开始训练模型所需的时间和资源。这些模型支持不同领域的常见任务，包括：</p>
+<ul>
+<li>📝 自然语言处理：文本分类、命名实体识别、问答系统、语言建模、摘要生成、翻译、多项选择和文本生成</li>
+<li>🖼️ 计算机视觉：图像分类、目标检测和分割</li>
+<li>🗣️ 音频：自动语音识别和音频分类</li>
+<li>🐙 多模态：表格问答、光学字符识别、从扫描文档中提取信息、视频分类和视觉问答</li>
+</ul>
+<p>🤗 Transformers支持在PyTorch、TensorFlow和JAX之间进行框架互操作。这提供了在模型的不同阶段使用不同框架的灵活性；可以在一个框架中用三行代码训练模型，然后在另一个框架中加载模型进行推理。模型还可以导出为ONNX和TorchScript等格式，以便在生产环境中进行部署</p>
+<h2 id="安装_3">4.2 安装</h2>
+<pre><code class="lang-cmd">pip install transformers datasets
+</code></pre>
+<h2 id="快速开始_2">4.3 快速开始</h2>
+<h3 id="pipeline">4.3.1 Pipeline</h3>
+<p>pipeline()是使用预训练模型进行推理的最简单和最快捷的方法。您可以直接使用pipeline()进行许多任务的推理，涵盖了不同的模态，下表列出了其中一些任务</p>
+<table>
+<thead>
+<tr>
+<th><strong>Task</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Modality</strong></th>
+<th><strong>Pipeline identifier</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Text classification</td>
+<td>assign a label to a given sequence of text</td>
+<td>NLP</td>
+<td>pipeline(task=“sentiment-analysis”)</td>
+</tr>
+<tr>
+<td>Text generation</td>
+<td>generate text given a prompt</td>
+<td>NLP</td>
+<td>pipeline(task=“text-generation”)</td>
+</tr>
+<tr>
+<td>Summarization</td>
+<td>generate a summary of a sequence of text or document</td>
+<td>NLP</td>
+<td>pipeline(task=“summarization”)</td>
+</tr>
+<tr>
+<td>Image classification</td>
+<td>assign a label to an image</td>
+<td>CV</td>
+<td>pipeline(task=“image-classification”)</td>
+</tr>
+<tr>
+<td>Image segmentation</td>
+<td>assign a label to each individual pixel of an image (supports semantic, panoptic, and instance segmentation)</td>
+<td>CV</td>
+<td>pipeline(task=“image-segmentation”)</td>
+</tr>
+<tr>
+<td>Object detection</td>
+<td>predict the bounding boxes and classes of objects in an image</td>
+<td>CV</td>
+<td>pipeline(task=“object-detection”)</td>
+</tr>
+<tr>
+<td>Audio classification</td>
+<td>assign a label to some audio data</td>
+<td>Audio</td>
+<td>pipeline(task=“audio-classification”)</td>
+</tr>
+<tr>
+<td>Automatic speech recognition</td>
+<td>transcribe speech into text</td>
+<td>Audio</td>
+<td>pipeline(task=“automatic-speech-recognition”)</td>
+</tr>
+<tr>
+<td>Visual question answering</td>
+<td>answer a question about the image, given an image and a question</td>
+<td>Multimodal</td>
+<td>pipeline(task=“vqa”)</td>
+</tr>
+<tr>
+<td>Document question answering</td>
+<td>answer a question about a document, given an image and a question</td>
+<td>Multimodal</td>
+<td>pipeline(task=“document-question-answering”)</td>
+</tr>
+<tr>
+<td>Image captioning</td>
+<td>generate a caption for a given image</td>
+<td>Multimodal</td>
+<td>pipeline(task=“image-to-text”)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>基本使用</p>
+</blockquote>
+<p>首先，通过创建pipeline()的实例并指定要使用的任务，开始使用它。在本指南中，我们以情感分析的pipeline()为例：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> pipeline
+
+classifier = pipeline(<span class="hljs-string">"sentiment-analysis"</span>)
+</code></pre>
+<p>pipeline()会下载并缓存用于情感分析的默认预训练模型和分词器。现在，您可以在目标文本上使用分类器了：</p>
+<pre><code class="lang-python">classifier(<span class="hljs-string">"We are very happy to show you the 🤗 Transformers library."</span>)
+
+[{<span class="hljs-string">'label'</span>: <span class="hljs-string">'POSITIVE'</span>, <span class="hljs-string">'score'</span>: <span class="hljs-number">0.9998</span>}]
+</code></pre>
+<p>如果您有多个输入，请将输入作为列表传递给pipeline()，以返回一个字典列表</p>
+<pre><code class="lang-python">results = classifier([<span class="hljs-string">"We are very happy to show you the 🤗 Transformers library."</span>, <span class="hljs-string">"We hope you don't hate it."</span>])
+<span class="hljs-keyword">for</span> result <span class="hljs-keyword">in</span> results:
+    print(f<span class="hljs-string">"label: {result['label']}, with score: {round(result['score'], 4)}"</span>)
+
+label: POSITIVE, <span class="hljs-keyword">with</span> score: <span class="hljs-number">0.9998</span>
+label: NEGATIVE, <span class="hljs-keyword">with</span> score: <span class="hljs-number">0.5309</span>
+</code></pre>
+<p>pipeline()还可以对任何您喜欢的任务迭代整个数据集。在这个例子中，让我们选择自动语音识别作为我们的任务</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> torch
+<span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> pipeline
+
+speech_recognizer = pipeline(<span class="hljs-string">"automatic-speech-recognition"</span>, model=<span class="hljs-string">"facebook/wav2vec2-base-960h"</span>)
+</code></pre>
+<p>加载您想要迭代的音频数据集(有关更多详细信息，请参阅🤗 Datasets快速入门)。例如，加载MInDS-14数据集：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> load_dataset, Audio
+
+dataset = load_dataset(<span class="hljs-string">"PolyAI/minds14"</span>, name=<span class="hljs-string">"en-US"</span>, split=<span class="hljs-string">"train"</span>)
+</code></pre>
+<p>您需要确保数据集的采样率与facebook/wav2vec2-base-960h 训练时使用的采样率相匹配</p>
+<pre><code class="lang-python">dataset = dataset.cast_column(<span class="hljs-string">"audio"</span>, Audio(sampling_rate=speech_recognizer.feature_extractor.sampling_rate))
+</code></pre>
+<p>调用"audio"列时，音频文件会自动加载和重新采样。从前四个样本中提取原始波形数组，并将其作为列表传递给pipeline：</p>
+<pre><code class="lang-python">result = speech_recognizer(dataset[:<span class="hljs-number">4</span>][<span class="hljs-string">"audio"</span>])
+print([d[<span class="hljs-string">"text"</span>] <span class="hljs-keyword">for</span> d <span class="hljs-keyword">in</span> result])
+
+[<span class="hljs-string">'I WOULD LIKE TO SET UP A JOINT ACCOUNT WITH MY PARTNER HOW DO I PROCEED WITH DOING THAT'</span>, <span class="hljs-string">"FONDERING HOW I'D SET UP A JOIN TO HELL T WITH MY WIFE AND WHERE THE AP MIGHT BE"</span>, <span class="hljs-string">"I I'D LIKE TOY SET UP A JOINT ACCOUNT WITH MY PARTNER I'M NOT SEEING THE OPTION TO DO IT ON THE APSO I CALLED IN TO GET SOME HELP CAN I JUST DO IT OVER THE PHONE WITH YOU AND GIVE YOU THE INFORMATION OR SHOULD I DO IT IN THE AP AN I'M MISSING SOMETHING UQUETTE HAD PREFERRED TO JUST DO IT OVER THE PHONE OF POSSIBLE THINGS"</span>, <span class="hljs-string">'HOW DO I FURN A JOINA COUT'</span>]
+</code></pre>
+<p>对于输入较大的更大数据集(如语音或视觉数据)，您可以将生成器传递给pipeline，而不是将其作为列表加载到内存中</p>
+<p>在pipeline中使用其他模型和分词器pipeline()可以适应Hub中的任何模型，这使得对pipeline()进行其他用途的调整变得容易</p>
+<p>例如，如果您想要一个能够处理法语文本的模型，请使用Hub上的标签来过滤合适的模型。通过对过滤结果进行排序，您可以获得一个针对法语文本进行情感分析的多语言BERT模型</p>
+<blockquote>
+<p>在pipeline中使用另一个模型和分词器</p>
+</blockquote>
+<p>pipeline()可以适应Hub中的任何模型，这使得将pipeline()适应其他用例变得容易</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> AutoTokenizer, AutoModelForSequenceClassification
+
+model_name = <span class="hljs-string">"nlptown/bert-base-multilingual-uncased-sentiment"</span>
+model = AutoModelForSequenceClassification.from_pretrained(model_name)
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+
+classifier = pipeline(<span class="hljs-string">"sentiment-analysis"</span>, model=model, tokenizer=tokenizer)
+classifier(<span class="hljs-string">"Nous sommes très heureux de vous présenter la bibliothèque 🤗 Transformers."</span>)
+</code></pre>
+<h3 id="autoclass">4.3.2 AutoClass</h3>
+<p>AutoClass是一种快捷方式，它可以根据模型的名称或路径自动获取预训练模型的架构。您只需要选择与您的任务相匹配的AutoClass和相应的预处理类</p>
+<h4 id="autotokenizer"><a class="anchor-navigation-ex-anchor" href="#autotokenizer" name="autotokenizer"><i aria-hidden="true" class="fa fa-link"></i></a><a class="plugin-anchor" href="#autotokenizer" name="autotokenizer"><i aria-hidden="true" class="fa fa-link"></i></a>AutoTokenizer</h4>
+<p>AutoTokenizer分词器负责将文本预处理为模型输入的数字数组。有多个规则来规定分词的过程，包括如何拆分一个单词以及以何种级别拆分单词</p>
+<p>最重要的是，您<strong>需要使用相同的模型名称来实例化一个分词器，以确保您使用了与预训练模型相同的分词规则</strong></p>
+<blockquote>
+<p>使用AutoTokenizer加载一个分词器</p>
+</blockquote>
+<p>将<code>return_tensors</code>参数设置为<code>pt</code>以返回适用于PyTorch的张量，或者设置为<code>tf</code>以返回适用于TensorFlow的张量</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> AutoTokenizer
+
+model_name = <span class="hljs-string">"nlptown/bert-base-multilingual-uncased-sentiment"</span>
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+encoding = tokenizer(<span class="hljs-string">"We are very happy to show you the 🤗 Transformers library."</span>, return_tensors=<span class="hljs-string">"pt"</span>)
+
+{<span class="hljs-string">'input_ids'</span>: [<span class="hljs-number">101</span>, <span class="hljs-number">11312</span>, <span class="hljs-number">10320</span>, <span class="hljs-number">12495</span>, <span class="hljs-number">19308</span>, <span class="hljs-number">10114</span>, <span class="hljs-number">11391</span>, <span class="hljs-number">10855</span>, <span class="hljs-number">10103</span>, <span class="hljs-number">100</span>, <span class="hljs-number">58263</span>, <span class="hljs-number">13299</span>, <span class="hljs-number">119</span>, <span class="hljs-number">102</span>],
+ <span class="hljs-string">'token_type_ids'</span>: [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>],
+ <span class="hljs-string">'attention_mask'</span>: [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>]}
+
+tokenizer.decode(encoding[<span class="hljs-string">"input_ids"</span>])
+<span class="hljs-string">"We are very happy to show you the 🤗 Transformers library."</span>
+</code></pre>
+<p>分词器返回一个包含三个项目的字典：</p>
+<ul>
+<li><strong>input_ids</strong>：表示文本中各个标记的数字</li>
+<li><strong>token_type_ids</strong>：如果有多个序列，指示一个标记属于哪个序列</li>
+<li><strong>attention_mask</strong>：指示一个标记是否应该被掩盖(masked)</li>
+</ul>
+<p>分词器还可以接受一个输入列表，并对文本进行填充和截断，以返回具有统一长度的批处理数据</p>
+<pre><code class="lang-python">pt_batch = tokenizer(
+    [<span class="hljs-string">"We are very happy to show you the 🤗 Transformers library."</span>, <span class="hljs-string">"We hope you don't hate it."</span>],
+    padding=<span class="hljs-keyword">True</span>,
+    truncation=<span class="hljs-keyword">True</span>,
+    max_length=<span class="hljs-number">512</span>,
+    return_tensors=<span class="hljs-string">"pt"</span>)
+</code></pre>
+<blockquote>
+<p>pad + truncation</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-comment"># padding</span>
+batch_sentences = [
+    <span class="hljs-string">"But what about second breakfast?"</span>,
+    <span class="hljs-string">"Don't think he knows about second breakfast, Pip."</span>,
+    <span class="hljs-string">"What about elevensies?"</span>,
+]
+encoded_input = tokenizer(batch_sentences, padding=<span class="hljs-keyword">True</span>)
+
+{<span class="hljs-string">'input_ids'</span>: [[<span class="hljs-number">101</span>, <span class="hljs-number">1252</span>, <span class="hljs-number">1184</span>, <span class="hljs-number">1164</span>, <span class="hljs-number">1248</span>, <span class="hljs-number">6462</span>, <span class="hljs-number">136</span>, <span class="hljs-number">102</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>], 
+               [<span class="hljs-number">101</span>, <span class="hljs-number">1790</span>, <span class="hljs-number">112</span>, <span class="hljs-number">189</span>, <span class="hljs-number">1341</span>, <span class="hljs-number">1119</span>, <span class="hljs-number">3520</span>, <span class="hljs-number">1164</span>, <span class="hljs-number">1248</span>, <span class="hljs-number">6462</span>, <span class="hljs-number">117</span>, <span class="hljs-number">21902</span>, <span class="hljs-number">1643</span>, <span class="hljs-number">119</span>, <span class="hljs-number">102</span>], 
+               [<span class="hljs-number">101</span>, <span class="hljs-number">1327</span>, <span class="hljs-number">1164</span>, <span class="hljs-number">5450</span>, <span class="hljs-number">23434</span>, <span class="hljs-number">136</span>, <span class="hljs-number">102</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>]], 
+ <span class="hljs-string">'token_type_ids'</span>: [[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>], 
+                    [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>], 
+                    [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>]], 
+ <span class="hljs-string">'attention_mask'</span>: [[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>], 
+                    [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>], 
+                    [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>]]}
+
+<span class="hljs-comment"># truncation  将truncation参数设置为True，可以将序列截断为模型所能接受的最大长度</span>
+batch_sentences = [
+    <span class="hljs-string">"But what about second breakfast?"</span>,
+    <span class="hljs-string">"Don't think he knows about second breakfast, Pip."</span>,
+    <span class="hljs-string">"What about elevensies?"</span>,
+]
+encoded_input = tokenizer(batch_sentences, padding=<span class="hljs-keyword">True</span>, truncation=<span class="hljs-keyword">True</span>)
+
+{<span class="hljs-string">'input_ids'</span>: [[<span class="hljs-number">101</span>, <span class="hljs-number">1252</span>, <span class="hljs-number">1184</span>, <span class="hljs-number">1164</span>, <span class="hljs-number">1248</span>, <span class="hljs-number">6462</span>, <span class="hljs-number">136</span>, <span class="hljs-number">102</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>], 
+               [<span class="hljs-number">101</span>, <span class="hljs-number">1790</span>, <span class="hljs-number">112</span>, <span class="hljs-number">189</span>, <span class="hljs-number">1341</span>, <span class="hljs-number">1119</span>, <span class="hljs-number">3520</span>, <span class="hljs-number">1164</span>, <span class="hljs-number">1248</span>, <span class="hljs-number">6462</span>, <span class="hljs-number">117</span>, <span class="hljs-number">21902</span>, <span class="hljs-number">1643</span>, <span class="hljs-number">119</span>, <span class="hljs-number">102</span>], 
+               [<span class="hljs-number">101</span>, <span class="hljs-number">1327</span>, <span class="hljs-number">1164</span>, <span class="hljs-number">5450</span>, <span class="hljs-number">23434</span>, <span class="hljs-number">136</span>, <span class="hljs-number">102</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>]], 
+ <span class="hljs-string">'token_type_ids'</span>: [[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>], 
+                    [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>], 
+                    [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>]], 
+ <span class="hljs-string">'attention_mask'</span>: [[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>], 
+                    [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>], 
+                    [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>]]}
+</code></pre>
+<h4 id="automodel"><a class="anchor-navigation-ex-anchor" href="#automodel" name="automodel"><i aria-hidden="true" class="fa fa-link"></i></a><a class="plugin-anchor" href="#automodel" name="automodel"><i aria-hidden="true" class="fa fa-link"></i></a>AutoModel</h4>
+<p>🤗Transformers提供了一种简单而统一的方法来加载预训练模型实例。这意味着您可以像加载AutoTokenizer一样加载AutoModel</p>
+<p>唯一的区别是<strong>选择正确的AutoModel来适应任务</strong>。对于文本(或序列)分类，您应该加载AutoModelForSequenceClassification</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> AutoModelForSequenceClassification
+
+model_name = <span class="hljs-string">"nlptown/bert-base-multilingual-uncased-sentiment"</span>
+pt_model = AutoModelForSequenceClassification.from_pretrained(model_name)
+
+pt_outputs = pt_model(**pt_batch)
+</code></pre>
+<p>模型将最终的激活值存储在logits属性中。应用softmax函数到logits上以获取概率值</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> torch <span class="hljs-keyword">import</span> nn
+
+pt_predictions = nn.functional.softmax(pt_outputs.logits, dim=<span class="hljs-number">-1</span>)
+
+
+tensor([[<span class="hljs-number">0.0021</span>, <span class="hljs-number">0.0018</span>, <span class="hljs-number">0.0115</span>, <span class="hljs-number">0.2121</span>, <span class="hljs-number">0.7725</span>],
+        [<span class="hljs-number">0.2084</span>, <span class="hljs-number">0.1826</span>, <span class="hljs-number">0.1969</span>, <span class="hljs-number">0.1755</span>, <span class="hljs-number">0.2365</span>]], grad_fn=&lt;SoftmaxBackward0&gt;)
+</code></pre>
+<blockquote>
+<p>在huggingface库中，AutoModel类可以根据给定的checkpoint自动选择并加载适合的模型。它支持各种不同的模型架构，包括：</p>
+</blockquote>
+<ul>
+<li>AutoModel: 用于通用的模型加载，根据checkpoint自动选择适合的模型架构</li>
+<li>AutoModelForSequenceClassification: 用于序列分类任务的模型，如文本分类</li>
+<li>AutoModelForQuestionAnswering: 用于问答任务的模型，如阅读理解</li>
+<li>AutoModelForTokenClassification: 用于标记分类任务的模型，如命名实体识别</li>
+<li>AutoModelForMaskedLM: 用于遮蔽语言建模任务的模型，如BERT</li>
+<li>AutoModelForCausalLM: 用于有因果关系的语言建模任务的模型，如GPT</li>
+<li>AutoModelForImageClassification: 用于图像分类任务的模型，如ResNet</li>
+<li>AutoModelForImageSegmentation: 用于图像分割任务的模型，如Mask R-CNN</li>
+</ul>
+<p>这些仅是AutoModel类的一些示例，实际上还有更多可用的模型架构。您可以根据具体的任务需求选择适合的AutoModel类进行加载和使用</p>
+<h4 id="其他的auto类"><a class="anchor-navigation-ex-anchor" href="#其他的auto类" name="其他的auto类"><i aria-hidden="true" class="fa fa-link"></i></a><a class="plugin-anchor" href="#其他的auto类" name="其他的auto类"><i aria-hidden="true" class="fa fa-link"></i></a>其他的Auto类</h4>
+<blockquote>
+<p>AutoImageProcessor</p>
+</blockquote>
+<p>对于视觉任务，图像处理器将图像处理为正确的输入格式</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> AutoImageProcessor
+
+image_processor = AutoImageProcessor.from_pretrained(<span class="hljs-string">"google/vit-base-patch16-224"</span>)
+</code></pre>
+<blockquote>
+<p>AutoFeatureExtractor</p>
+</blockquote>
+<p>对于音频任务，特征提取器将音频信号处理为正确的输入格式</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> AutoFeatureExtractor
+
+feature_extractor = AutoFeatureExtractor.from_pretrained(
+    <span class="hljs-string">"ehcalabres/wav2vec2-lg-xlsr-en-speech-emotion-recognition"</span>
+)
+</code></pre>
+<blockquote>
+<p>AutoProcessor</p>
+</blockquote>
+<p>多模态任务需要一个处理器来结合两种类型的预处理工具。例如，LayoutLMV2模型需要一个图像处理器来处理图像，还需要一个分词器来处理文本；处理器将两者结合起来</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> AutoProcessor
+
+processor = AutoProcessor.from_pretrained(<span class="hljs-string">"microsoft/layoutlmv2-base-uncased"</span>)
+</code></pre>
+<h4 id="模型保存"><a class="anchor-navigation-ex-anchor" href="#模型保存" name="模型保存"><i aria-hidden="true" class="fa fa-link"></i></a><a class="plugin-anchor" href="#模型保存" name="模型保存"><i aria-hidden="true" class="fa fa-link"></i></a>模型保存</h4>
+<p>一旦您的模型经过微调，您可以使用PreTrainedModel.save_pretrained()将其与其标记器一起保存起来：</p>
+<pre><code class="lang-python"><span class="hljs-comment"># 模型+分词器 保存</span>
+pt_save_directory = <span class="hljs-string">"./pt_save_pretrained"</span>
+tokenizer.save_pretrained(pt_save_directory)
+pt_model.save_pretrained(pt_save_directory)
+
+<span class="hljs-comment"># 加载</span>
+pt_model = AutoModelForSequenceClassification.from_pretrained(pt_save_directory)
+</code></pre>
+<h3 id="autoconfig">4.3.3 AutoConfig</h3>
+<p>您可以修改模型的<strong>配置类</strong>来更改模型的构建方式。配置类指定了模型的属性，例如隐藏层的数量或注意力头数</p>
+<p>当您从自定义配置类初始化模型时，您将从头开始。模型的属性将被随机初始化，您需要在使用模型之前对其进行训练以获得有意义的结果</p>
+<p>首先导入AutoConfig，然后加载要修改的预训练模型。在AutoConfig.from_pretrained()中，您可以指定要更改的属性，例如注意力头的数量：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> AutoConfig
+<span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> AutoModel
+
+my_config = AutoConfig.from_pretrained(<span class="hljs-string">"distilbert-base-uncased"</span>, n_heads=<span class="hljs-number">12</span>)
+my_model = AutoModel.from_config(my_config)
+</code></pre>
+<h3 id="trainer">4.3.4 Trainer</h3>
+<p>对于PyTorch，所有模型都是标准的torch.nn.Module，因此您可以在任何典型的训练循环中使用它们。虽然您可以编写自己的训练循环，但🤗Transformers提供了<code>Trainer</code>类，其中包含基本的训练循环，并添加了其他功能，如分布式训练、混合精度等</p>
+<p>根据您的任务，通常会向Trainer传递以下参数：</p>
+<ol>
+<li><p><a href="https://huggingface.co/docs/transformers/v4.30.0/en/main_classes/model#transformers.PreTrainedModel" target="_blank">PreTrainedModel</a>或<a href="https://pytorch.org/docs/stable/nn.html#torch.nn.Module" target="_blank"><code>torch.nn.Module</code></a>对象</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> AutoModelForSequenceClassification
+
+model = AutoModelForSequenceClassification.from_pretrained(<span class="hljs-string">"distilbert-base-uncased"</span>)
+</code></pre>
+</li>
+<li><p><strong>TrainingArguments</strong>包含了可以修改的模型超参数，比如学习率、批大小和训练的轮数。如果你不指定任何训练参数，将使用默认值</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> TrainingArguments
+
+training_args = TrainingArguments(
+    output_dir=<span class="hljs-string">"path/to/save/folder/"</span>,
+    learning_rate=<span class="hljs-number">2e-5</span>,
+    per_device_train_batch_size=<span class="hljs-number">8</span>,
+    per_device_eval_batch_size=<span class="hljs-number">8</span>,
+    num_train_epochs=<span class="hljs-number">2</span>,
+)
+</code></pre>
+</li>
+<li><p><strong>Preprocessing</strong>类，例如tokenizer(标记器)、image processor(图像处理器)、feature extractor(特征提取器)或processor(处理器)</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> AutoTokenizer
+
+tokenizer = AutoTokenizer.from_pretrained(<span class="hljs-string">"distilbert-base-uncased"</span>)
+</code></pre>
+</li>
+<li><p>加载数据集</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> load_dataset
+
+dataset = load_dataset(<span class="hljs-string">"rotten_tomatoes"</span>)  <span class="hljs-comment"># doctest: +IGNORE_RESULT</span>
+</code></pre>
+</li>
+<li><p>创建一个函数来对数据集进行<strong>标记化</strong>处理，然后使用<code>map</code>函数将其应用于整个数据集</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">tokenize_dataset</span><span class="hljs-params">(dataset)</span>:</span>
+    <span class="hljs-keyword">return</span> tokenizer(dataset[<span class="hljs-string">"text"</span>])
+
+dataset = dataset.map(tokenize_dataset, batched=<span class="hljs-keyword">True</span>)
+</code></pre>
+</li>
+<li><p>使用<code>DataCollatorWithPadding</code>来从数据集中创建一个批次的示例</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> DataCollatorWithPadding
+
+data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
+</code></pre>
+<p><code>DataCollatorWithPadding</code>是Hugging Face的<code>transformers</code>库中的一个类，用于在训练过程中创建批次数据。它的作用是将不同长度的样本填充到相同长度，以便能够同时进行批处理</p>
+<p>具体来说，<code>DataCollatorWithPadding</code>会根据给定的数据集，找到其中最长的样本，并将其他样本填充到相同的长度。填充通常使用特定的填充令牌(token)来完成，这样模型在处理时可以识别出填充部分，并进行相应的处理</p>
+<p>使用<code>DataCollatorWithPadding</code>可以确保批次数据的长度一致，从而提高训练效率，并避免由于不同长度样本导致的错误</p>
+</li>
+</ol>
+<p>现在将所有这些类组合在Trainer中</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> Trainer
+
+trainer = Trainer(
+    model=model,
+    args=training_args,
+    train_dataset=dataset[<span class="hljs-string">"train"</span>],
+    eval_dataset=dataset[<span class="hljs-string">"test"</span>],
+    tokenizer=tokenizer,
+    data_collator=data_collator,
+)  <span class="hljs-comment"># doctest: +SKIP</span>
+
+trainer.train()
+</code></pre>
+<p>Trainer类提供了自定义训练循环行为的方法，你可以通过继承Trainer类并重写其中的方法来实现自定义行为。这样你就可以定制诸如损失函数、优化器和学习率调度器等功能。你可以参考Trainer类的文档了解可以重写的方法</p>
+<p>另一种定制训练循环的方式是使用回调函数(Callbacks)。你可以使用回调函数与其他库进行集成，监视训练过程并报告进展，或在必要时提前停止训练。回调函数不会修改训练循环本身的行为。如果你需要定制损失函数等内容，你需要继承Trainer类来实现</p>
+<h1 id="教程">5 教程</h1>
+<h2 id="模型训练">5.1 模型训练</h2>
+<p>使用预训练模型有很多好处。它可以减少计算成本和碳足迹，并且可以让您使用最先进的模型，而无需从头开始训练</p>
+<p>🤗Transformers提供了对各种任务的数千个预训练模型的访问。当您使用预训练模型时，您可以在特定于您任务的数据集上进行微调训练。这被称为<code>微调</code>，是一种非常强大的训练技术</p>
+<blockquote>
+<p>数据准备</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> load_dataset
+<span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> AutoTokenizer
+
+<span class="hljs-comment"># 1. 加载数据集</span>
+dataset = load_dataset(<span class="hljs-string">"yelp_review_full"</span>)
+dataset[<span class="hljs-string">"train"</span>][<span class="hljs-number">100</span>]
+{<span class="hljs-string">'label'</span>: <span class="hljs-number">0</span>,
+ <span class="hljs-string">'text'</span>: <span class="hljs-string">'My expectations for McDonalds are t rarely high. But for one to still fail so spectacularly...that takes something special!\\nThe cashier took my friends\'s order, then promptly ignored me. I had to force myself in front of a cashier who opened his register to wait on the person BEHIND me. I waited over five minutes for a gigantic order that included precisely one kid\'s meal. After watching two people who ordered after me be handed their food, I asked where mine was. The manager started yelling at the cashiers for \\"serving off their orders\\" when they didn\'t have their food. But neither cashier was anywhere near those controls, and the manager was the one serving food to customers and clearing the boards.\\nThe manager was rude when giving me my order. She didn\'t make sure that I had everything ON MY RECEIPT, and never even had the decency to apologize that I felt I was getting poor service.\\nI\'ve eaten at various McDonalds restaurants for over 30 years. I\'ve worked at more than one location. I expect bad days, bad moods, and the occasional mistake. But I have yet to have a decent experience at this store. It will remain a place I avoid unless someone in my party needs to avoid illness from low blood sugar. Perhaps I should go back to the racially biased service of Steak n Shake instead!'</span>}
+<span class="hljs-comment"># 可以创建一个较小的数据集子集，用于微调，以减少所需的时间</span>
+small_train_dataset = tokenized_datasets[<span class="hljs-string">"train"</span>].shuffle(seed=<span class="hljs-number">42</span>).select(range(<span class="hljs-number">1000</span>))
+small_eval_dataset = tokenized_datasets[<span class="hljs-string">"test"</span>].shuffle(seed=<span class="hljs-number">42</span>).select(range(<span class="hljs-number">1000</span>))
+
+<span class="hljs-comment"># 2. 分词器</span>
+tokenizer = AutoTokenizer.from_pretrained(<span class="hljs-string">"bert-base-cased"</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">tokenize_function</span><span class="hljs-params">(examples)</span>:</span>
+    <span class="hljs-keyword">return</span> tokenizer(examples[<span class="hljs-string">"text"</span>], padding=<span class="hljs-string">"max_length"</span>, truncation=<span class="hljs-keyword">True</span>)
+tokenized_datasets = dataset.map(tokenize_function, batched=<span class="hljs-keyword">True</span>)
+</code></pre>
+<blockquote>
+<p>Train with PyTorch Trainer</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> AutoModelForSequenceClassification
+<span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> TrainingArguments
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> evaluate
+
+<span class="hljs-comment"># 1. 加载模型</span>
+model = AutoModelForSequenceClassification.from_pretrained(<span class="hljs-string">"bert-base-cased"</span>, num_labels=<span class="hljs-number">5</span>)
+
+<span class="hljs-comment"># 2. 定义训练参数  在训练参数中指定evaluation_strategy参数，以在每个epoch结束时报告评估指标</span>
+training_args = TrainingArguments(output_dir=<span class="hljs-string">"test_trainer"</span>, evaluation_strategy=<span class="hljs-string">"epoch"</span>)
+
+<span class="hljs-comment"># 3. 加载评估器</span>
+metric = evaluate.load(<span class="hljs-string">"accuracy"</span>)
+<span class="hljs-comment"># 在计算度量标准的时候调用compute，以计算您的预测的准确率。在将预测结果传递给compute之前，您需要将预测结果转换为logits</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">compute_metrics</span><span class="hljs-params">(eval_pred)</span>:</span>
+    logits, labels = eval_pred
+    predictions = np.argmax(logits, axis=<span class="hljs-number">-1</span>)
+    <span class="hljs-keyword">return</span> metric.compute(predictions=predictions, references=labels)
+
+<span class="hljs-comment"># 4. 定义Trainer</span>
+trainer = Trainer(
+    model=model,
+    args=training_args,
+    train_dataset=small_train_dataset,
+    eval_dataset=small_eval_dataset,
+    compute_metrics=compute_metrics,
+)
+
+<span class="hljs-comment"># 5. 开始训练</span>
+trainer.train()
+</code></pre>
+<blockquote>
+<p>Train in native PyTorch</p>
+</blockquote>
+<p>Trainer负责训练循环，并允许您通过一行代码对模型进行微调。对于喜欢编写自己的训练循环的用户，您也可以在原生PyTorch中对🤗Transformers模型进行微调</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> torch.utils.data <span class="hljs-keyword">import</span> DataLoader
+<span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> AutoModelForSequenceClassification
+<span class="hljs-keyword">from</span> torch.optim <span class="hljs-keyword">import</span> AdamW
+<span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> get_scheduler
+<span class="hljs-keyword">import</span> torch
+<span class="hljs-keyword">from</span> tqdm.auto <span class="hljs-keyword">import</span> tqdm
+<span class="hljs-keyword">import</span> evaluate
+
+
+<span class="hljs-comment"># 1. 数据集预处理</span>
+tokenized_datasets = tokenized_datasets.remove_columns([<span class="hljs-string">"text"</span>])
+tokenized_datasets = tokenized_datasets.rename_column(<span class="hljs-string">"label"</span>, <span class="hljs-string">"labels"</span>)
+tokenized_datasets.set_format(<span class="hljs-string">"torch"</span>)
+
+<span class="hljs-comment"># 2. 定义DataLoader</span>
+train_dataloader = DataLoader(small_train_dataset, shuffle=<span class="hljs-keyword">True</span>, batch_size=<span class="hljs-number">8</span>)
+eval_dataloader = DataLoader(small_eval_dataset, batch_size=<span class="hljs-number">8</span>)
+
+<span class="hljs-comment"># 3. 加载模型</span>
+model = AutoModelForSequenceClassification.from_pretrained(<span class="hljs-string">"bert-base-cased"</span>, num_labels=<span class="hljs-number">5</span>)
+
+<span class="hljs-comment"># 4. 定义优化器</span>
+optimizer = AdamW(model.parameters(), lr=<span class="hljs-number">5e-5</span>)
+
+<span class="hljs-comment"># 5. 定义scheduler</span>
+num_epochs = <span class="hljs-number">3</span>
+num_training_steps = num_epochs * len(train_dataloader)
+lr_scheduler = get_scheduler(
+    name=<span class="hljs-string">"linear"</span>, optimizer=optimizer, num_warmup_steps=<span class="hljs-number">0</span>, num_training_steps=num_training_steps
+)
+
+<span class="hljs-comment"># 6. 移动模型到指定设备 </span>
+device = torch.device(<span class="hljs-string">"cuda"</span>) <span class="hljs-keyword">if</span> torch.cuda.is_available() <span class="hljs-keyword">else</span> torch.device(<span class="hljs-string">"cpu"</span>)
+model.to(device)
+
+<span class="hljs-comment"># 7. 开始训练</span>
+progress_bar = tqdm(range(num_training_steps))
+model.train()
+<span class="hljs-keyword">for</span> epoch <span class="hljs-keyword">in</span> range(num_epochs):
+    <span class="hljs-keyword">for</span> batch <span class="hljs-keyword">in</span> train_dataloader:
+        batch = {k: v.to(device) <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> batch.items()}
+        outputs = model(**batch)
+        loss = outputs.loss
+        loss.backward()
+
+        optimizer.step()
+        lr_scheduler.step()
+        optimizer.zero_grad()
+        progress_bar.update(<span class="hljs-number">1</span>)
+
+<span class="hljs-comment"># 8. 验证集评估</span>
+metric = evaluate.load(<span class="hljs-string">"accuracy"</span>)
+model.eval()
+<span class="hljs-keyword">for</span> batch <span class="hljs-keyword">in</span> eval_dataloader:
+    batch = {k: v.to(device) <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> batch.items()}
+    <span class="hljs-keyword">with</span> torch.no_grad():
+        outputs = model(**batch)
+
+    logits = outputs.logits
+    predictions = torch.argmax(logits, dim=<span class="hljs-number">-1</span>)
+    metric.add_batch(predictions=predictions, references=batch[<span class="hljs-string">"labels"</span>])
+
+metric.compute()
+</code></pre>
+<h2 id="分布式加速">5.2 分布式加速</h2>
+<blockquote>
+<p><a href="https://huggingface.co/docs/accelerate/quicktour" target="_blank">huggingface的accelerate模块</a></p>
+</blockquote>
+<p>🤗Accelerate是Hugging Face提供的用于简化分布式训练的库。它旨在使分布式训练更加容易和高效，支持多种深度学习框架，包括PyTorch和TensorFlow</p>
+<p>Accelerate提供了以下功能：</p>
+<ol>
+<li><strong>数据并行</strong>：Accelerate使用<code>accelerator.DataParallel</code>类来实现数据并行，可以在多个GPU上同时训练模型</li>
+<li><strong>混合精度训练</strong>：Accelerate支持自动混合精度训练，通过将模型参数和梯度转换为半精度浮点数来减少内存占用和计算量</li>
+<li><strong>分布式训练</strong>：Accelerate使用<code>accelerator.DistributedDataParallel</code>类来实现分布式训练，可以在多个机器上并行训练模型</li>
+<li>训练循环的自动管理：Accelerate提供了一个<code>accelerator.Trainer</code>类，它封装了训练循环，自动处理数据加载、前向传播、反向传播、优化器更新等过程</li>
+</ol>
+<p>使用Accelerate可以简化分布式训练的配置和管理，使用户能够更轻松地利用多个GPU或多台机器进行训练，并获得更高的训练效率</p>
+<blockquote>
+<p>安装</p>
+</blockquote>
+<pre><code class="lang-cmd">pip install accelerate
+</code></pre>
+<blockquote>
+<p>示例代码，以下代码只列出改变的部分代码</p>
+</blockquote>
+<p>只需要在训练循环中添加四行额外的代码即可启用分布式训练</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> accelerate <span class="hljs-keyword">import</span> Accelerator
+
+<span class="hljs-comment"># 1. 定义加速器</span>
+accelerator = Accelerator()
+
+<span class="hljs-comment"># 2. dataloader包装</span>
+train_dataloader, eval_dataloader, model, optimizer = accelerator.prepare(
+    train_dataloader, eval_dataloader, model, optimizer
+)
+
+<span class="hljs-comment"># 3. 反向传播</span>
+<span class="hljs-keyword">for</span> epoch <span class="hljs-keyword">in</span> range(num_epochs):
+    <span class="hljs-keyword">for</span> batch <span class="hljs-keyword">in</span> train_dataloader:
+        outputs = model(**batch)
+        loss = outputs.loss
+        accelerator.backward(loss)
+
+        optimizer.step()
+        lr_scheduler.step()
+        optimizer.zero_grad()
+        progress_bar.update(<span class="hljs-number">1</span>)
+</code></pre>
+<p>完整代码如下</p>
+<pre><code class="lang-python">+ <span class="hljs-keyword">from</span> accelerate <span class="hljs-keyword">import</span> Accelerator
+  <span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> AdamW, AutoModelForSequenceClassification, get_scheduler
+
++ accelerator = Accelerator()
+
+  model = AutoModelForSequenceClassification.from_pretrained(checkpoint, num_labels=<span class="hljs-number">2</span>)
+  optimizer = AdamW(model.parameters(), lr=<span class="hljs-number">3e-5</span>)
+
+- device = torch.device(<span class="hljs-string">"cuda"</span>) <span class="hljs-keyword">if</span> torch.cuda.is_available() <span class="hljs-keyword">else</span> torch.device(<span class="hljs-string">"cpu"</span>)
+- model.to(device)
+
++ train_dataloader, eval_dataloader, model, optimizer = accelerator.prepare(
++     train_dataloader, eval_dataloader, model, optimizer
++ )
+
+  num_epochs = <span class="hljs-number">3</span>
+  num_training_steps = num_epochs * len(train_dataloader)
+  lr_scheduler = get_scheduler(
+      <span class="hljs-string">"linear"</span>,
+      optimizer=optimizer,
+      num_warmup_steps=<span class="hljs-number">0</span>,
+      num_training_steps=num_training_steps
+  )
+
+  progress_bar = tqdm(range(num_training_steps))
+
+  model.train()
+  <span class="hljs-keyword">for</span> epoch <span class="hljs-keyword">in</span> range(num_epochs):
+      <span class="hljs-keyword">for</span> batch <span class="hljs-keyword">in</span> train_dataloader:
+-         batch = {k: v.to(device) <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> batch.items()}
+          outputs = model(**batch)
+          loss = outputs.loss
+-         loss.backward()
++         accelerator.backward(loss)
+
+          optimizer.step()
+          lr_scheduler.step()
+          optimizer.zero_grad()
+          progress_bar.update(<span class="hljs-number">1</span>)
+</code></pre>
+<h2 id="示例代码">5.3 示例代码</h2>
+<p>包括<a href="https://huggingface.co/docs/transformers/v4.30.0/en/tasks/sequence_classification" target="_blank">自然语言处理</a>、<a href="https://huggingface.co/docs/transformers/v4.30.0/en/tasks/audio_classification" target="_blank">语音</a>、<a href="https://huggingface.co/docs/transformers/v4.30.0/en/tasks/image_classification" target="_blank">计算机视觉</a>和<a href="https://huggingface.co/docs/transformers/v4.30.0/en/tasks/image_captioning" target="_blank">多模态</a></p>
+<h1 id="peft模块">6 PEFT模块</h1>
+<blockquote>
+<p><a href="https://huggingface.co/docs/peft/index#supported-models" target="_blank">huggingface PEFT模块</a></p>
+</blockquote>
+<p>🤗<code>PEFT</code>，即<strong>Parameter-Efficient Fine-Tuning(参数高效微调)</strong>，是一个用于高效地将预训练语言模型(PLM)适应于各种下游应用的库，而无需对所有模型参数进行微调</p>
+<p>PEFT方法只微调少量的(额外的)模型参数，显著降低了计算和存储成本，因为对大规模PLM进行完整微调代价过高。最近的最先进的PEFT技术达到了与完整微调相当的性能</p>
+<p>PEFT与🤗Accelerate库无缝集成，用于利用DeepSpeed和Big Model Inference进行大规模模型微调</p>
+<blockquote>
+<p>Supported methods (截至23-06-15)</p>
+</blockquote>
+<ol>
+<li>LoRA: <a href="https://arxiv.org/pdf/2106.09685.pdf" target="_blank">LORA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS</a></li>
+<li>Prefix Tuning: <a href="https://aclanthology.org/2021.acl-long.353/" target="_blank">Prefix-Tuning: Optimizing Continuous Prompts for Generation</a>, <a href="https://arxiv.org/pdf/2110.07602.pdf" target="_blank">P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks</a></li>
+<li>P-Tuning: <a href="https://arxiv.org/pdf/2103.10385.pdf" target="_blank">GPT Understands, Too</a></li>
+<li>Prompt Tuning: <a href="https://arxiv.org/pdf/2104.08691.pdf" target="_blank">The Power of Scale for Parameter-Efficient Prompt Tuning</a></li>
+<li>AdaLoRA: <a href="https://arxiv.org/abs/2303.10512" target="_blank">Adaptive Budget Allocation for Parameter-Efficient Fine-Tuning</a></li>
+<li><a href="https://github.com/ZrrSkywalker/LLaMA-Adapter" target="_blank">LLaMA-Adapter: Efficient Fine-tuning of Language Models with Zero-init Attention</a></li>
+</ol>
+<h1 id="其他模块">7 其他模块</h1>
+<h2 id="autotrain">7.1 AutoTrain</h2>
+<p><code>AutoTrain</code>是一个用于自动化训练的库，旨在简化模型训练的过程。它提供了一种简单的方法来定义和训练深度学习模型，自动处理数据加载、批处理、优化器、损失函数等训练过程中的细节。通过使用AutoTrain，你可以更快速地搭建和训练模型，减少样板代码的编写，并且能够轻松地进行超参数搜索和模型选择</p>
+<h2 id="gradio">7.2 Gradio</h2>
+<p><code>Gradio</code>是一个用于构建交互式界面的库，使你能够轻松地为你的深度学习模型创建Web应用程序。Gradio提供了一个简单而强大的API，可以将模型与用户界面组件(如文本框、滑块、图像上传器等)相连接，从而实现模型的实时推理和可视化。通过Gradio，你可以快速构建一个交互式的演示或部署你的模型到Web上，无需编写复杂的前端代码</p>
+<h2 id="diffusers">7.3 Diffusers</h2>
+<p><code>Diffusers</code>是一个用于生成图像、音频甚至分子的三维结构的最新预训练扩散模型的库。无论您是寻找一个简单的推理解决方案，还是想要训练自己的扩散模型，🤗Diffusers都是一个支持两者的模块化工具箱。我们的库着重于易用性而非性能，简洁而非复杂，可定制性而非抽象性，该库主要包含以下三个组件：</p>
+<ol>
+<li>最新的扩散推理流程，只需几行代码即可实现</li>
+<li>可互换的噪声调度器，用于在生成速度和质量之间平衡权衡</li>
+<li>可用作构建块的预训练模型，可以与调度器结合使用，创建您自己的端到端扩散系统</li>
+</ol>
+<h2 id="accelerate">7.4 Accelerate</h2>
+<p>Hugging Face的<code>Accelerate</code>是一个旨在简化和加速深度学习模型训练和推理过程的库</p>
+<p>它提供了一个高级API，抽象了分布式训练、混合精度和梯度累积等复杂性，使用户能够轻松地充分利用硬件资源的潜力</p>
+<p>Accelerate兼容PyTorch和TensorFlow，并提供了一套工具和实用程序，以实现跨多个GPU或多台机器的高效分布式训练。它包括以下功能：</p>
+<ol>
+<li><strong>分布式训练</strong>：Accelerate提供了简单易用的接口，使用户能够将训练过程分布到多个GPU或多台机器上。它支持常见的分布式训练策略，如数据并行和模型并行，并自动处理数据的分发和梯度的聚合，使用户无需手动编写复杂的分布式训练代码</li>
+<li><strong>混合精度训练</strong>：Accelerate支持混合精度训练，通过同时使用浮点16位和浮点32位精度来加快模型的训练速度。它自动处理数据类型转换和梯度缩放，用户只需简单地指定使用混合精度训练即可</li>
+<li><strong>梯度累积</strong>：Accelerate支持梯度累积，这在GPU显存有限的情况下特别有用。梯度累积允许在多个小批次上累积梯度，然后进行一次大批次的参数更新，从而减少显存占用并提高训练效率</li>
+<li><strong>自动调节批次大小</strong>：Accelerate可以自动调整批次大小以适应可用的GPU内存。它会动态调整批次大小，以达到最佳的GPU利用率和训练性能</li>
+</ol>
+<p>总之，Hugging Face的Accelerate是一个功能强大的库，旨在简化和加速深度学习模型的训练和推理过程。它提供了高级API和一系列工具，使用户能够轻松地实现分布式训练、混合精度训练和梯度累积等高效训练策略</p>
+<p></p><footer class="page-footer"><span class="copyright">Copyright © narutohyc.com 2021 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
+2023-08-14 07:08:49
+</span></footer><hr/><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz',appKey: 'utUrzoiqNaDEGlgr09JL1pXB',placeholder: '欢迎留下评论交流~',avatar: 'wavatar',meta: undefined,pageSize: 15,lang: 'zh-CN',recordIP: false})</script><p></p>
+</section>
+</div>
+<div class="search-results">
+<div class="has-results">
+<h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+<ul class="search-results-list"></ul>
+</div>
+<div class="no-results">
+<h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<a aria-label="Previous page: dl_in_vision_field.md" class="navigation navigation-prev" href="dl_in_vision_field.html">
+<i class="fa fa-angle-left"></i>
+</a>
+<a aria-label="Next page: nlp关键词和摘要提取技术整理.md" class="navigation navigation-next" href="nlp关键词和摘要提取技术整理.html">
+<i class="fa fa-angle-right"></i>
+</a>
+<script src="https://cdn.jsdelivr.net/gh/zztongtong/CDN/js/live2d.min.js"></script><div style="position:absolute; bottom:0; left:0; width:200;"><canvas height="350" id="model_1" width="200"></canvas></div></div>
+<script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"abbrlink":57912,"date":"2023/06/10 18:36:10","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆0.webp","title":"huggingface基本使用教程.md","tags":["huggingface","transformers"],"top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆0.webp","mathjax":true,"categories":["deep_learning"],"description":"huggingface基本使用教程","level":"1.5","depth":1,"next":{"title":"nlp关键词和摘要提取技术整理.md","level":"1.6","depth":1,"path":"chapters/nlp关键词和摘要提取技术整理.md","ref":"chapters/nlp关键词和摘要提取技术整理.md","articles":[]},"previous":{"title":"dl_in_vision_field.md","level":"1.4","depth":1,"path":"chapters/dl_in_vision_field.md","ref":"chapters/dl_in_vision_field.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":true,"enableFooter":false,"site":"https://hycbook.github.io/bk_python/","author":"narutohyc","website":"python元知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Python相关学习记录","language":"zh-hans","links":{"sidebar":{"书籍主页":"https://hycbook.github.io/bk_index/"}},"gitbook":"*","description":"记录 Python 的学习和一些技巧的使用"},"file":{"path":"chapters/huggingface基本使用教程.md","mtime":"2023-08-14T07:08:49.366Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-14T07:15:00.707Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+<canvas class="fireworks"></canvas><script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script></div>
+<script src="../gitbook/gitbook.js"></script>
+<script src="../gitbook/theme.js"></script>
+<script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+<script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+<script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+<script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+<script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+<script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-copyright-v/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+<script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+</body>
+</html>

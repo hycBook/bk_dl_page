@@ -1,0 +1,681 @@
+<!DOCTYPE HTML>
+<html lang="zh-hans">
+<head>
+<meta charset="utf-8"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>LLM模型部署调试推理.md · Python相关学习记录</title>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="LLM模型部署调试推理" name="description"/>
+<meta content="GitBook 3.2.3" name="generator"/>
+<meta content="narutohyc" name="author"/>
+<link href="../gitbook/style.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-splitter/splitter.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-anchors/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-donate/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-code/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-search-plus/search.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-pageview-count/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-highlight/website.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-fontsettings/website.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-theme-comscore/test.css" rel="stylesheet"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<link href="../gitbook/images/apple-touch-icon-precomposed-152.png" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+<link href="../gitbook/images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="dl_in_vision_field.html" rel="next"/>
+<link href="LLM模型微调系列.html" rel="prev"/>
+<link href="./chapters/res/other/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="./chapters/res/other/favicon.ico" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+<style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+<script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]};
+    </script>
+</head>
+<body>
+          <div class="mountain_a"></div>
+          <div class="mountain_b"></div>
+          <div class="house right">
+            <div class="fence"></div>
+            <div class="wall"></div>
+            <div class="roof left"></div>
+            <div class="roof right"></div>
+            <div class="door"></div>
+          </div>
+          <div class="house left">
+            <div class="fence"></div>
+            <div class="wall"></div>
+            <div class="roof left"></div>
+            <div class="roof right"></div>
+            <div class="door"></div>
+          </div>
+          <div class="tree_back"></div>
+          <div class="tree"></div>
+          <div class="postbox_a">
+            <div class="hole"></div>
+          </div>
+          <div class="postbox_b">
+            <div class="hole"></div>
+          </div>
+          <div class="windmill">
+            <div class="tower"></div>
+            <div class="t1"></div>
+            <div class="t2"></div>
+            <div class="blade">
+              <div class="windblade"></div>
+              <div class="windblade windblade2"></div>
+              <div class="windblade windblade3"></div>
+              <div class="windblade windblade4"></div>
+            </div>
+          </div>
+          <div class="allsnows">
+            <div class="snow1"></div>
+            <div class="snow2"></div>
+            <div class="snow3"></div>
+            <div class="snow4"></div>
+            <div class="snow5"></div>
+            <div class="snow6"></div>
+            <div class="snow7"></div>
+            <div class="snow8"></div>
+            <div class="snow9"></div>
+            <div class="snow10"></div>
+            <div class="snow11"></div>
+            <div class="snow12"></div>
+            <div class="snow13"></div>
+            <div class="snow14"></div>
+            <div class="snow15"></div>
+            <div class="snow16"></div>
+            <div class="snow17"></div>
+            <div class="snow18"></div>
+            <div class="snow19"></div>
+            <div class="snow20"></div>
+          </div>
+          <div class="ground">
+            <div class="g1"></div>
+            <div class="g2"></div>
+            <div class="g3"></div>
+            <div class="ice">
+              <div class="glare"></div>
+              <div class="ice_shadow"></div>
+            </div>
+
+          </div>
+    
+<div class="book">
+<div class="book-summary">
+<div id="book-search-input" role="search">
+<input placeholder="输入并搜索" type="text"/>
+</div>
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a class="custom-link" href="https://hycbook.github.io/bk_index/" target="_blank">书籍主页</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-level="1.1" data-path="../" id="chapter_id_0">
+<a href="../">
+<b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.2" data-path="LLM模型微调系列.html" id="chapter_id_1">
+<a href="LLM模型微调系列.html">
+<b>1.2.</b>
+                    
+                    LLM模型微调系列.md
+            
+                </a>
+</li>
+<li class="chapter active" data-level="1.3" data-path="LLM模型部署调试推理.html" id="chapter_id_2">
+<a href="LLM模型部署调试推理.html">
+<b>1.3.</b>
+                    
+                    LLM模型部署调试推理.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.4" data-path="dl_in_vision_field.html" id="chapter_id_3">
+<a href="dl_in_vision_field.html">
+<b>1.4.</b>
+                    
+                    dl_in_vision_field.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.5" data-path="huggingface基本使用教程.html" id="chapter_id_4">
+<a href="huggingface基本使用教程.html">
+<b>1.5.</b>
+                    
+                    huggingface基本使用教程.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.6" data-path="nlp关键词和摘要提取技术整理.html" id="chapter_id_5">
+<a href="nlp关键词和摘要提取技术整理.html">
+<b>1.6.</b>
+                    
+                    nlp关键词和摘要提取技术整理.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.7" data-path="pytorch学习.html" id="chapter_id_6">
+<a href="pytorch学习.html">
+<b>1.7.</b>
+                    
+                    pytorch学习.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.8" data-path="transformer.html" id="chapter_id_7">
+<a href="transformer.html">
+<b>1.8.</b>
+                    
+                    transformer.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.9" data-path="图像分割算法.html" id="chapter_id_8">
+<a href="图像分割算法.html">
+<b>1.9.</b>
+                    
+                    图像分割算法.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.10" data-path="图像分类算法.html" id="chapter_id_9">
+<a href="图像分类算法.html">
+<b>1.10.</b>
+                    
+                    图像分类算法.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.11" data-path="数据标注工具.html" id="chapter_id_10">
+<a href="数据标注工具.html">
+<b>1.11.</b>
+                    
+                    数据标注工具.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.12" data-path="深度学习核心之优化器.html" id="chapter_id_11">
+<a href="深度学习核心之优化器.html">
+<b>1.12.</b>
+                    
+                    深度学习核心之优化器.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.13" data-path="深度学习核心之损失函数.html" id="chapter_id_12">
+<a href="深度学习核心之损失函数.html">
+<b>1.13.</b>
+                    
+                    深度学习核心之损失函数.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.14" data-path="深度学习核心之激活函数.html" id="chapter_id_13">
+<a href="深度学习核心之激活函数.html">
+<b>1.14.</b>
+                    
+                    深度学习核心之激活函数.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.15" data-path="深度学习核心基础知识点.html" id="chapter_id_14">
+<a href="深度学习核心基础知识点.html">
+<b>1.15.</b>
+                    
+                    深度学习核心基础知识点.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.16" data-path="深度学习模型压缩技术.html" id="chapter_id_15">
+<a href="深度学习模型压缩技术.html">
+<b>1.16.</b>
+                    
+                    深度学习模型压缩技术.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.17" data-path="目标检测与跟踪算法.html" id="chapter_id_16">
+<a href="目标检测与跟踪算法.html">
+<b>1.17.</b>
+                    
+                    目标检测与跟踪算法.md
+            
+                </a>
+</li>
+<li class="divider"></li>
+<li>
+<a class="gitbook-link" href="https://www.gitbook.com" target="blank">
+            本书使用 GitBook 发布
+        </a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="..">LLM模型部署调试推理.md</a>
+</h1>
+</div>
+<div class="page-wrapper" role="main" tabindex="-1">
+<div class="page-inner">
+<div class="search-plus" id="book-search-results">
+<div class="search-noresults">
+<section class="normal markdown-section">
+<div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon"></span><a href="#llm模型">1 LLM模型</a></li><ul><li><span class="title-icon"></span><a href="#概述">1.1 概述</a></li><li><span class="title-icon"></span><a href="#主要应用">1.2 主要应用</a></li></ul><li><span class="title-icon"></span><a href="#gpu环境">2 GPU环境</a></li><ul><li><span class="title-icon"></span><a href="#阿里云">2.1 阿里云</a></li><li><span class="title-icon"></span><a href="#autodl">2.2 AutoDL</a></li><li><span class="title-icon"></span><a href="#本地">2.3 本地</a></li></ul><li><span class="title-icon"></span><a href="#langchain-chatglm">3 Langchain-ChatGLM</a></li><ul><li><span class="title-icon"></span><a href="#准备工作">3.1 准备工作</a></li><li><span class="title-icon"></span><a href="#推理">3.2 推理</a></li><ul><li><span class="title-icon"></span><a href="#修改配置">3.2.1 修改配置</a></li><li><span class="title-icon"></span><a href="#启动web服务">3.2.2 启动web服务</a></li><li><span class="title-icon"></span><a href="#pycharm远程配置">3.2.3 pycharm远程配置</a></li></ul><li><span class="title-icon"></span><a href="#相关技术">3.3 相关技术</a></li></ul><li><span class="title-icon"></span><a href="#localgpt">4 localGPT</a></li></ul></div><a href="#llm模型" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><hr/>
+<h1 id="llm模型">1 LLM模型</h1>
+<blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/626377667" target="_blank">什么是LLM（大语音模型）</a></p>
+</blockquote>
+<h2 id="概述">1.1 概述</h2>
+<p><code>Large Language Model(LLM)</code>，也称为<code>大型语言模型</code>，是一种基于机器学习和自然语言处理技术的模型，它通过对大量的文本数据进行训练，来学习服务人类语言理解和生成的能力</p>
+<p>LLM的核心思想是通过大规模的无监督训练来学习自然语言的模式和语言结构，这在一定程度上能够模拟人类的语言认知和生成过程</p>
+<p>与传统的NLP模型相比，LLM能够更好地理解和生成自然文本，同时还能够表现出一定的逻辑思维和推理能力</p>
+<p>近年来，LLM得到了广泛的应用，其中最具代表性的是谷歌的BERT和OpenAI的GPT系列。这些模型在多个自然语言处理领域已经取得了显著的成果，包括文本分类、命名实体识别、情感分析、机器翻译、自动问答等</p>
+<p>然而，在实际应用中，LLM面临着更多的挑战</p>
+<ol>
+<li>首先，LLM需要大量的计算资源和大规模的数据集来训练，这对于一般的企业和个人来说十分困难</li>
+<li>其次，由于LLM模型的复杂性和计算量较大，对于实时的语言处理应用来说，LLM在应用效率和响应速度上还存在一定的局限性</li>
+</ol>
+<p>因此，如何解决模型训练和应用过程中的计算性能和效率问题，是LLM面临的主要挑战之一</p>
+<h2 id="主要应用">1.2 主要应用</h2>
+<p>LLM在实际应用中有多种形式，以下是一些具体的示例：</p>
+<ol>
+<li><strong>自然语言理解</strong>：通过语法词汇、句法语义、语境等相互作用，使计算机能够理解人类语言。如通过语音合成功能，实现文字转语音的技术。另外，基于LLM技术的英语学习App可以针对不同的用户让机器进行自适应教学，帮助用户更加高效地学习英语</li>
+<li><strong>机器翻译</strong>：LLM可以利用大量的文本数据进行翻译学习，提高翻译准确度和语音翻译度，同时加速翻译速度，例如谷歌翻译等体验都有明显提升</li>
+<li><strong>情感分析</strong>：LLM技术可以通过对大量数据进行分析，实现对人们在社交媒体上对商品、服务和品牌等的评价，从而帮助企业了解消费者的心态，并根据情感信息来优化其营销策略</li>
+<li><strong>机器学习语音识别</strong>：在语音识别领域，LLM技术可以通过深度学习算法等技术改进，从而在分辨率、声音重叠、噪音和复杂语音语言中实现更好的语音识别效果。同时，在语音交互上，也可以进行一些基于LLM的定制，例如智能音箱、语音接待员和客户服务机器人等</li>
+<li><strong>文本生成</strong>：LLM技术在文本生成方面的应用可以在文本摘要、翻译和自动化写作等方面进行适用。例如，LLM模型可以从短篇小说的背景信息中自动生成描述、对话等内容，同时还可以通过对不同风格的文本进行学习，并从中学习创造性的文本生成</li>
+</ol>
+<h1 id="gpu环境">2 GPU环境</h1>
+<h2 id="阿里云">2.1 阿里云</h2>
+<blockquote>
+<p>购买一台自己的GPU服服务器</p>
+</blockquote>
+<p>购买阿里云服务器可以通过以下步骤进行：</p>
+<ol>
+<li><p>访问<a href="https://www.aliyun.com/" target="_blank">阿里云官网</a>并注册一个账户</p>
+</li>
+<li><p>登录您的阿里云账户，选择"产品与服务"，然后选择"云服务器 ECS"</p>
+<p>在云服务器ECS页面上，您可以选择不同的实例类型和配置，根据您的需求选择适合的服务器规格。这些规格包括CPU、内存、存储空间等</p>
+<p><a data-lightbox="5fed20d7-32d8-4c2b-a342-4a2f164327db" data-title="阿里云购买gpu" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型部署调试推理/阿里云购买gpu.webp" target="_blank"><img alt="阿里云购买gpu" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型部署调试推理/阿里云购买gpu.webp"/></a></p>
+<p>配置网络和安全组，您可以设置网络类型、公网带宽、IP地址等</p>
+<p><a data-lightbox="408b1f9f-12f8-4169-b4ea-d6d58c58d1a1" data-title="阿里云ip分配" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型部署调试推理/阿里云ip分配.webp" target="_blank"><img alt="阿里云ip分配" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型部署调试推理/阿里云ip分配.webp"/></a></p>
+<p>根据您的需求选择购买时长，可以选择包年包月或按小时计费，这里如果只是为了测试或玩一玩，可以选择最便宜的方式</p>
+</li>
+<li><p>配置系统和软件，您可以选择操作系统和其他软件预装选项</p>
+<p><a data-lightbox="fbb80b58-fe83-4375-af3c-7c88914f6283" data-title="阿里云系统配置" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型部署调试推理/阿里云系统配置.webp" target="_blank"><img alt="阿里云系统配置" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型部署调试推理/阿里云系统配置.webp"/></a></p>
+</li>
+<li><p>查看订单和价格，确认无误后，点击"立即购买"</p>
+</li>
+<li><p>在支付页面选择合适的支付方式完成购买</p>
+</li>
+<li><p>完成支付后，您将收到购买服务器的确认信息和服务器登录凭证</p>
+</li>
+</ol>
+<blockquote>
+<p><a href="https://blog.csdn.net/crazestone0614/article/details/126923555" target="_blank">端口开放</a></p>
+</blockquote>
+<p><a data-lightbox="ffa3fa19-cd46-47ca-9d9c-e07ff80bd1bb" data-title="阿里云开放端口" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型部署调试推理/阿里云开放端口.webp" target="_blank"><img alt="阿里云开放端口" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型部署调试推理/阿里云开放端口.webp"/></a></p>
+<blockquote>
+<p>安装基础的python环境</p>
+</blockquote>
+<ol>
+<li><p>首先复制公网ip，使用ssh工具连接自己的服务器，用户名默认是root，密码为自定义密码，登陆进来首先会系统初始化GPU环境，等待完成后会自动重启</p>
+<p><a data-lightbox="180dcae8-bea3-4181-a085-4821b6dff3e3" data-title="阿里云gpu初始化" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型部署调试推理/阿里云gpu初始化.webp" target="_blank"><img alt="阿里云gpu初始化" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型部署调试推理/阿里云gpu初始化.webp"/></a></p>
+<p>自动重启后，可以用<code>nvidia-smi</code>查看nvidia驱动配置</p>
+</li>
+<li><p>安装git，后面很多项目或者模型下载会用到，包括git lfs</p>
+<pre><code class="lang-sh"><span class="hljs-comment"># 安装git</span>
+yum install git -y
+
+<span class="hljs-comment"># 安装git lfs（大文件下载）</span>
+curl <span class="hljs-_">-s</span> https://packagecloud.io/install/repositories/github/git-lfs/script.rpm.sh | sudo bash
+yum install git-lfs
+git lfs install
+</code></pre>
+</li>
+<li><p>安装anaconda，并创建自己的python环境</p>
+<pre><code class="lang-sh"><span class="hljs-comment"># 安装anaconda环境</span>
+wget https://repo.anaconda.com/archive/Anaconda3-2023.03-1-Linux-x86_64.sh
+chmod +x Anaconda3-2023.03-1-Linux-x86_64.sh
+./Anaconda3-2023.03-1-Linux-x86_64.sh
+
+<span class="hljs-comment"># 创建自己的python环境</span>
+conda create -n gpt310 python=3.10 anaconda
+</code></pre>
+</li>
+<li><p>安装pytorch，这里的cuda选cu117，因为上面的服务器的cuda是11.4的，这里的cu117是可以向下兼容的</p>
+<pre><code class="lang-sh"><span class="hljs-comment"># 切换到gpt310</span>
+<span class="hljs-built_in">source</span> activate gpt310
+
+<span class="hljs-comment"># 安装gpu版的pytorch, 需要在GPU环境下安装，否则安装是cpu版本</span>
+pip install torch==2.0.0+cu117 torchvision==0.15.1+cu117 torchaudio==2.0.1 --index-url https://download.pytorch.org/whl/cu117
+</code></pre>
+</li>
+<li><p>在Python中导入PyTorch并检查CUDA是否可用</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> torch
+
+<span class="hljs-comment"># 检查PyTorch是否使用了CUDA</span>
+<span class="hljs-keyword">if</span> torch.cuda.is_available():
+    print(<span class="hljs-string">"CUDA可用"</span>)
+<span class="hljs-keyword">else</span>:
+    print(<span class="hljs-string">"CUDA不可用"</span>)
+</code></pre>
+<p>还可以使用<code>torch.cuda.get_device_capability()</code>函数来获取计算机上支持的CUDA设备的计算能力。这可以帮助您确定所安装的CUDA版本是否与您的显卡兼容</p>
+</li>
+</ol>
+<blockquote>
+<p>用完机器记得关机，不然会一直扣费</p>
+</blockquote>
+<p><a data-lightbox="5da16b08-f8ab-4e42-bf68-2ce34bba0e8b" data-title="阿里云关机" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型部署调试推理/阿里云关机.webp" target="_blank"><img alt="阿里云关机" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型部署调试推理/阿里云关机.webp"/></a></p>
+<h2 id="autodl">2.2 AutoDL</h2>
+<blockquote>
+<p><a href="https://www.autodl.com/" target="_blank">AutoDL平台</a>简介</p>
+</blockquote>
+<p><code>AutoDL算力平台</code>是指为自动化深度学习(AutoDL)任务提供计算资源和基础设施的平台。由于深度学习任务通常需要大量的计算资源和存储空间，为了有效地执行AutoDL任务，需要具备相应的算力平台</p>
+<p>一个优秀的AutoDL算力平台通常具备以下特点：</p>
+<ol>
+<li><strong>高性能计算</strong>：提供强大的计算能力，包括高性能的CPU、GPU或专用的AI芯片等。这些计算资源可以支持AutoDL任务的模型训练、超参数搜索和架构搜索等计算密集型任务</li>
+<li><strong>分布式计算</strong>：支持分布式计算和训练，使得AutoDL任务可以在多个计算节点上并行执行，从而加快任务的完成时间。这对于大规模数据和复杂模型的AutoDL任务尤为重要</li>
+<li><strong>数据存储和管理</strong>：提供高效的数据存储和管理系统，以支持大规模数据集的存储和访问。这可以确保AutoDL任务能够快速、可靠地访问所需的训练数据和验证数据</li>
+<li><strong>任务调度和资源管理</strong>：具备任务调度和资源管理功能，可以有效地管理多个AutoDL任务的执行，包括资源分配、优先级管理和任务调度等，以保证任务的顺利进行</li>
+<li><strong>易用性和灵活性</strong>：提供友好的用户界面和工具，使得用户可以方便地配置和管理AutoDL任务。同时，提供灵活的配置选项，以满足不同任务和需求的定制化要求</li>
+</ol>
+<p>AutoDL算力平台的设计和功能旨在提供高效、可扩展和易用的计算资源，以支持AutoDL任务的快速迭代和大规模应用。它们可以帮助研究人员和开发者更加便捷地进行AutoDL实验和模型优化，从而推动自动化深度学习领域的发展</p>
+<blockquote>
+<p>购买算力</p>
+</blockquote>
+<ol>
+<li><p>选择计费方式和显卡</p>
+<p><a data-lightbox="d4b0a68a-c515-4a8d-a479-eabdd72cef0c" data-title="AutoDl算力购买步骤1" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型部署调试推理/AutoDl算力购买步骤1.webp" target="_blank"><img alt="AutoDl算力购买步骤1" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型部署调试推理/AutoDl算力购买步骤1.webp"/></a></p>
+</li>
+<li><p>选择是否需要扩展数据盘，以及基础镜像，这里选Miniconda环境</p>
+<p><a data-lightbox="1b8ce699-c851-4d72-b1e0-85762a2fce23" data-title="AutoDl算力购买步骤2" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型部署调试推理/AutoDl算力购买步骤2.webp" target="_blank"><img alt="AutoDl算力购买步骤2" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型部署调试推理/AutoDl算力购买步骤2.webp"/></a></p>
+</li>
+<li><p>启动机器，进入终端可以看到</p>
+<pre><code class="lang-bash">+--------------------------------------------------AutoDL--------------------------------------------------------+
+目录说明:
+╔═════════════════╦════════╦════╦═════════════════════════════════════════════════════════════════════════╗
+║目录             ║名称    ║速度║说明                                                                     ║
+╠═════════════════╬════════╬════╬═════════════════════════════════════════════════════════════════════════╣
+║/                ║系 统 盘║一般║实例关机数据不会丢失，可存放代码等。会随保存镜像一起保存。               ║
+║/root/autodl-tmp ║数 据 盘║ 快 ║实例关机数据不会丢失，可存放读写IO要求高的数据。但不会随保存镜像一起保存 ║
+╚═════════════════╩════════╩════╩═════════════════════════════════════════════════════════════════════════╝
+CPU ：0.5 核心
+内存：2 GB
+GPU ：No devices were found
+存储：
+  系 统 盘/               ：46% 12G/25G
+  数 据 盘/root/autodl-tmp：65% 33G/50G
++----------------------------------------------------------------------------------------------------------------+
+
+*注意: 
+1.系统盘较小请将大的数据存放于数据盘或网盘中，重置系统时数据盘和网盘中的数据不受影响
+2.清理系统盘请参考：https://www.autodl.com/docs/qa/
+</code></pre>
+</li>
+<li><p>安装git-lfs以及ssl等依赖</p>
+<pre><code class="lang-bash">curl <span class="hljs-_">-s</span> https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+sudo apt-get install git-lfs
+git lfs install
+
+sudo apt-get install openssl
+sudo apt-get install libssl-dev
+</code></pre>
+</li>
+<li><p>安装pytorch环境</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># 创建自己的python环境</span>
+conda create -n gpt310 python=3.10 anaconda
+
+<span class="hljs-comment"># 切换到gpt310</span>
+<span class="hljs-built_in">source</span> activate gpt310
+
+<span class="hljs-comment"># 安装gpu版的pytorch, 需要在GPU环境下安装，否则安装是cpu版本</span>
+pip install torch==2.0.0+cu117 torchvision==0.15.1+cu117 torchaudio==2.0.1 --index-url https://download.pytorch.org/whl/cu117
+</code></pre>
+</li>
+<li><p>在Python中导入PyTorch并检查CUDA是否可用</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> torch
+
+<span class="hljs-comment"># 检查PyTorch是否使用了CUDA</span>
+<span class="hljs-keyword">if</span> torch.cuda.is_available():
+    print(<span class="hljs-string">"CUDA可用"</span>)
+<span class="hljs-keyword">else</span>:
+    print(<span class="hljs-string">"CUDA不可用"</span>)
+</code></pre>
+</li>
+</ol>
+<blockquote>
+<p>其它事项</p>
+</blockquote>
+<ul>
+<li>控制台下容器实例就是租用的机器，自定义服务是将容器内的6006端口映射到公网</li>
+<li><strong>/root/autodl-tmp</strong>可以放一些数据或模型，开关机不会丢失，但不随镜像一起保存</li>
+<li><strong>无卡开机模型</strong>不带GPU，很便宜，一小时0.01元</li>
+</ul>
+<h2 id="本地">2.3 本地</h2>
+<p>👻没有显卡，🤕伤不起🤕</p>
+<h1 id="langchain-chatglm">3 Langchain-ChatGLM</h1>
+<blockquote>
+<p><a href="https://github.com/imClumsyPanda/langchain-ChatGLM" target="_blank">github imClumsyPanda/langchain-ChatGLM</a></p>
+</blockquote>
+<p>🤖️ 一种利用 <a href="https://github.com/hwchase17/langchain" target="_blank">langchain</a> 思想实现的基于本地知识库的问答应用，目标期望建立一套对中文场景与开源模型支持友好、可离线运行的知识库问答解决方案</p>
+<p>💡 受 <a href="https://github.com/GanymedeNil" target="_blank">GanymedeNil</a> 的项目 <a href="https://github.com/GanymedeNil/document.ai" target="_blank">document.ai</a> 和 <a href="https://github.com/AlexZhangji" target="_blank">AlexZhangji</a> 创建的 <a href="https://github.com/THUDM/ChatGLM-6B/pull/216" target="_blank">ChatGLM-6B Pull Request</a> 启发，建立了全流程可使用开源模型实现的本地知识库问答应用。现已支持使用 <a href="https://github.com/THUDM/ChatGLM-6B" target="_blank">ChatGLM-6B</a> 等大语言模型直接接入，或通过 <a href="https://github.com/lm-sys/FastChat" target="_blank">fastchat</a> api 形式接入 Vicuna, Alpaca, LLaMA, Koala, RWKV 等模型</p>
+<p>✅ 本项目中 Embedding 默认选用的是 <a href="https://huggingface.co/GanymedeNil/text2vec-large-chinese/tree/main" target="_blank">GanymedeNil/text2vec-large-chinese</a>，LLM 默认选用的是 <a href="https://github.com/THUDM/ChatGLM-6B" target="_blank">ChatGLM-6B</a>。依托上述模型，本项目可实现全部使用<strong>开源</strong>模型<strong>离线私有部署</strong></p>
+<p>⛓️ 本项目实现原理如下图所示，过程包括加载文件 -&gt; 读取文本 -&gt; 文本分割 -&gt; 文本向量化 -&gt; 问句向量化 -&gt; 在文本向量中匹配出与问句向量最相似的<code>top k</code>个 -&gt; 匹配出的文本作为上下文和问题一起添加到<code>prompt</code>中 -&gt; 提交给<code>LLM</code>生成回答</p>
+<p><a data-lightbox="19c6d4e4-73db-4140-a23f-eef592a4c177" data-title="langchain+chatglm" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型部署调试推理/langchain+chatglm.webp" target="_blank"><img alt="langchain+chatglm" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型部署调试推理/langchain+chatglm.webp"/></a></p>
+<p>从文档处理角度来看，实现流程如下：</p>
+<p><a data-lightbox="9144c776-5d30-48ea-8178-3605ea094299" data-title="langchain+chatglm 文档" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型部署调试推理/langchain+chatglm 文档.webp" target="_blank"><img alt="langchain+chatglm 文档" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型部署调试推理/langchain+chatglm 文档.webp"/></a></p>
+<p>ChatGLM-6B模型硬件需求</p>
+<p>注：如未将模型下载至本地，请执行前检查<code>$HOME/.cache/huggingface/</code>文件夹剩余空间，模型文件下载至本地需要15GB存储空间。注：一些其它的可选启动项见<a href="https://github.com/imClumsyPanda/langchain-ChatGLM/blob/master/docs/StartOption.md" target="_blank">项目启动选项</a>模型下载方法可参考<a href="https://github.com/imClumsyPanda/langchain-ChatGLM/blob/master/docs/FAQ.md" target="_blank">常见问题</a>中Q8</p>
+<table>
+<thead>
+<tr>
+<th><strong>量化等级</strong></th>
+<th><strong>最低 GPU 显存</strong>（推理）</th>
+<th><strong>最低 GPU 显存</strong>（高效参数微调）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FP16（无量化）</td>
+<td>13 GB</td>
+<td>14 GB</td>
+</tr>
+<tr>
+<td>INT8</td>
+<td>8 GB</td>
+<td>9 GB</td>
+</tr>
+<tr>
+<td>INT4</td>
+<td>6 GB</td>
+<td>7 GB</td>
+</tr>
+</tbody>
+</table>
+<h2 id="准备工作">3.1 准备工作</h2>
+<blockquote>
+<p>项目环境准备</p>
+</blockquote>
+<p>先在<code>/home</code>目录下创建<code>huangyc</code>文件夹，进入<code>huangyc</code>目录下后，拉取项目代码</p>
+<pre><code class="lang-sh">git <span class="hljs-built_in">clone</span> https://github.com/imClumsyPanda/langchain-ChatGLM.git
+</code></pre>
+<p>安装必要库</p>
+<pre><code class="lang-sh"><span class="hljs-comment"># centos系统下</span>
+yum install libX11 -y
+yum install libXext -y
+pip uninstall detectron2
+
+<span class="hljs-comment"># ubuntu系统不需要</span>
+</code></pre>
+<p>进入<code>langchain-ChatGLM</code>文件夹，安装依赖库，AutoDl平台下好像需要加<strong>-i</strong>参数</p>
+<pre><code class="lang-sh">pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+</code></pre>
+<blockquote>
+<p>模型准备</p>
+</blockquote>
+<p>从<a href="https://huggingface.co/models" target="_blank">huggingface开放模型</a>下找到自己的需要的模型，用git lfs下载，如果在AutoDl平台，可以把模型下载到<strong>/root/autodl-tmp</strong></p>
+<pre><code class="lang-sh">git <span class="hljs-built_in">clone</span> https://huggingface.co/THUDM/chatglm-6b-int4.git
+</code></pre>
+<p>可以用<code>ls -lh .</code>命令查看下载的文件大小是否正常</p>
+<p>下载完的<code>chatglm-6b-int4</code>模型文件夹，放到<code>langchain-ChatGLM</code>项目的<code>model</code>文件夹下，没有<code>model</code>文件夹的话，自己创建下</p>
+<p>如果下载失败的话，可以试下用wget下载，例如</p>
+<pre><code class="lang-sh">wget --no-check-certificate https://huggingface.co/THUDM/chatglm-6b-int4/resolve/main/pytorch_model.bin
+</code></pre>
+<h2 id="推理">3.2 推理</h2>
+<h3 id="修改配置">3.2.1 修改配置</h3>
+<p>打开<code>langchain-ChatGLM/config/model_config.py</code>，修改如下配置</p>
+<pre><code class="lang-python"><span class="hljs-comment"># supported LLM models</span>
+<span class="hljs-comment"># llm_model_dict 处理了loader的一些预设行为，如加载位置，模型名称，模型处理器实例</span>
+llm_model_dict = {
+    ......
+    <span class="hljs-string">"chatglm-6b-int4"</span>: {
+        <span class="hljs-string">"name"</span>: <span class="hljs-string">"chatglm-6b-int4"</span>,
+-        <span class="hljs-string">"pretrained_model_name"</span>: <span class="hljs-string">"THUDM/chatglm-6b-int4"</span>,
++        <span class="hljs-string">"pretrained_model_name"</span>: <span class="hljs-string">"model/chatglm-6b-int4"</span>,       
+        <span class="hljs-string">"local_model_path"</span>: <span class="hljs-keyword">None</span>,
+        <span class="hljs-string">"provides"</span>: <span class="hljs-string">"ChatGLM"</span>
+    }
+    ......
+}
+
+<span class="hljs-comment"># LLM 名称</span>
+LLM_MODEL = <span class="hljs-string">"chatglm-6b-int4"</span>
+<span class="hljs-comment"># 如果你需要加载本地的model，指定这个参数  ` --no-remote-model`，或者下方参数修改为 `True`</span>
+NO_REMOTE_MODEL = <span class="hljs-keyword">False</span>
+</code></pre>
+<p>这样模型会从本地加载</p>
+<p>修改<code>webui.py</code>，用于启动<strong>Web 交互</strong></p>
+<pre><code class="lang-python">(demo
+ .queue(concurrency_count=<span class="hljs-number">3</span>)
+- .launch(server_name=<span class="hljs-string">'0.0.0.0'</span>,
++ .launch(server_name=<span class="hljs-string">'localhost'</span>,          
+         server_port=<span class="hljs-number">7860</span>,  <span class="hljs-comment"># AutoDl平台用的是6006</span>
+         show_api=<span class="hljs-keyword">False</span>,
+-        share=<span class="hljs-keyword">False</span>,
++        share=<span class="hljs-keyword">True</span>,          
+         inbrowser=<span class="hljs-keyword">False</span>))
+</code></pre>
+<p>阿里云服务器那边需要开放7860端口</p>
+<h3 id="启动web服务">3.2.2 启动web服务</h3>
+<p>进入到<code>langchain-ChatGLM</code>项目下，执行<code>webui.py</code></p>
+<pre><code class="lang-python">python webui.py
+</code></pre>
+<p>如果发现端口被占用了，可以用<code>netstat -atunlp | grep 7860</code>命令查看并杀死占用该端口的进程(自己判断)</p>
+<p>打开网页，你的ip:7860，就可以看到如下界面，默认是对话界面</p>
+<p><a data-lightbox="5ac7b8b2-fbf0-4487-aed8-55ad0d133cb7" data-title="Langchain-ChatGLM-普通对话" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型部署调试推理/Langchain-ChatGLM-普通对话.webp" target="_blank"><img alt="Langchain-ChatGLM-普通对话" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型部署调试推理/Langchain-ChatGLM-普通对话.webp"/></a></p>
+<p>可以切换到知识库测试，在这里可以上传自己的文档到知识库</p>
+<p><a data-lightbox="5e05c44b-b15a-42e5-9362-e82e6726b1a3" data-title="Langchain-ChatGLM-知识库测试" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型部署调试推理/Langchain-ChatGLM-知识库测试.webp" target="_blank"><img alt="Langchain-ChatGLM-知识库测试" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型部署调试推理/Langchain-ChatGLM-知识库测试.webp"/></a></p>
+<p>后台看下当前显存占用，模型用的是<code>chatglm-6b-int4</code>模型</p>
+<p><a data-lightbox="1ecbb7df-4372-463a-aef1-99e5361b174d" data-title="Langchain-ChatGLM-显存占用" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型部署调试推理/Langchain-ChatGLM-显存占用.webp" target="_blank"><img alt="Langchain-ChatGLM-显存占用" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型部署调试推理/Langchain-ChatGLM-显存占用.webp"/></a></p>
+<p>之后测试上传了<code>《流畅的Python》高清官方中文版.pdf</code>，后台一直在更新知识库，等了十几分钟，还没结束，我就切换到普通对话了，又测了十几轮对话，突然爆了显存不够，不知道是不是上传知识库引起的，还是随着对话增加，显存一直没释放</p>
+<p><a data-lightbox="36ece3ce-dba5-45dd-a0be-1e9ba9f3c00d" data-title="Langchain-ChatGLM-显存爆了" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型部署调试推理/Langchain-ChatGLM-显存爆了.webp" target="_blank"><img alt="Langchain-ChatGLM-显存爆了" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型部署调试推理/Langchain-ChatGLM-显存爆了.webp"/></a></p>
+<h3 id="pycharm远程配置">3.2.3 pycharm远程配置</h3>
+<p>PyCharm远程配置解释器和项目提供了以下几个重要的用途和优势：</p>
+<ol>
+<li><strong>远程开发</strong>：您可以在本地使用PyCharm编写代码，并将代码部署和运行在远程服务器上。这意味着您不需要在本地配置和安装与远程服务器环境相同的软件和依赖项。您可以利用服务器上的计算资源和环境来进行开发和测试，减轻了本地机器的负担</li>
+<li><strong>统一开发环境</strong>：通过远程配置解释器和项目，您可以在本地使用PyCharm的功能和工具来开发和调试代码。您可以享受PyCharm提供的智能代码补全、调试器、版本控制集成等功能，无需切换到其他编辑器或远程终端</li>
+<li><strong>协作与团队开发</strong>：远程配置解释器和项目使团队成员可以共享相同的开发环境。无论是在本地还是远程服务器上，团队成员可以使用相同的配置和依赖项来开发和测试代码。这有助于确保代码在不同环境下的一致性，并促进团队协作和开发效率</li>
+<li><strong>远程调试和错误排查</strong>：通过配置远程解释器，您可以在本地使用PyCharm的调试器来调试远程服务器上的代码。这样，您可以逐步执行代码、观察变量和监控程序状态，以便更轻松地进行错误排查和修复</li>
+<li><strong>远程部署和管理</strong>：通过远程配置项目，您可以将本地的代码同步到远程服务器上，并在服务器上运行和管理项目。这简化了部署过程，并使您能够直接在远程服务器上操作项目文件和资源</li>
+</ol>
+<p>PyCharm远程配置解释器和项目提供了一种方便而高效的方式，让您可以在本地使用PyCharm进行开发和调试，同时利用远程服务器的优势来运行和部署代码。这对于需要在远程环境下进行开发和协作的场景非常有用，如远程服务器上的Web开发、数据处理和云计算等任务</p>
+<p>pycharm远程配置参考本站的<a href="https://hycbook.com/article/d192a1af.html" target="_blank">Spark集群搭建章节下的配置远程解释器</a></p>
+<h2 id="相关技术">3.3 相关技术</h2>
+<ol>
+<li><p>langchain: <a href="https://python.langchain.com/en/latest/getting_started/getting_started.html" target="_blank">langchain</a>、<a href="https://baijiahao.baidu.com/s?id=1763672432171265694&amp;wfr=spider&amp;for=pc" target="_blank">LangChain：为你定制一个专属的GPT</a></p>
+<p>LangChain是一个用于开发基于语言模型的应用程序开发框架，用户可以利用LangChain的模块来改善大语言模型的使用，通过输入自己的知识库来<strong>定制化</strong>自己的大语言模型</p>
+</li>
+<li><p>faiss: <a href="https://faiss.ai/" target="_blank">Faiss Documentation</a>、<a href="https://blog.csdn.net/LuohenYJ/article/details/125897842" target="_blank">[python] 向量检索库Faiss使用指北</a></p>
+<p>所谓相似性搜索是指通过比较多维空间中数据之间的相似性来搜索与输入数据最相似的目标数据。例如人脸识别中，通过比较人脸向量之前的距离来识别当前人脸与哪张人脸相似。因此，该技术被广泛应用于信息检索、计算机视觉、数据分析等领域。如果要检索的数据很多时，那么就需要一个向量检索库来加速检索</p>
+<p>Faiss包含多种相似性搜索方法，并提供cpu和gpu版本支持。Faiss的优势在于通过<strong>较小的精度损失</strong>提高向量相似度的<strong>检索速度</strong>和<strong>减少内存使用量</strong></p>
+</li>
+<li><p>ChatGLM-6B: <a href="https://chatglm.cn/" target="_blank">chatglm</a>、<a href="https://github.com/THUDM/ChatGLM-6B" target="_blank">github THUDM/ChatGLM-6B</a></p>
+<p><code>ChatGLM-6B</code>是一个开源的、支持中英双语的对话语言模型，基于<a href="https://github.com/THUDM/GLM" target="_blank">General Language Model (GLM)</a>架构，具有62亿参数。结合模型量化技术，用户可以在消费级的显卡上进行本地部署(INT4量化级别下最低只需6GB显存)。 ChatGLM-6B使用了和<code>ChatGPT</code>相似的技术，针对中文问答和对话进行了优化。<strong>经过约1T标识符的中英双语训练，辅以监督微调、反馈自助、人类反馈强化学习等技术的加持</strong>，62亿参数的ChatGLM-6B已经能生成相当符合人类偏好的回答</p>
+</li>
+<li><p>Hugging Face: <a href="https://huggingface.co/docs" target="_blank">Hugging Face</a></p>
+<p><code>Hugging Face</code>是一个知名的开源社区和公司，专注于自然语言处理(NLP)和机器学习(ML)领域。他们开发了许多流行的开源工具和库，使得构建和应用NLP模型更加便捷</p>
+</li>
+</ol>
+<h1 id="localgpt">4 localGPT</h1>
+<blockquote>
+<p><a href="https://github.com/PromtEngineer/localGPT" target="_blank">github PromtEngineer/localGPT</a></p>
+</blockquote>
+<p>等待</p>
+<p></p><footer class="page-footer"><span class="copyright">Copyright © narutohyc.com 2021 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
+2023-08-14 07:08:49
+</span></footer><hr/><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz',appKey: 'utUrzoiqNaDEGlgr09JL1pXB',placeholder: '欢迎留下评论交流~',avatar: 'wavatar',meta: undefined,pageSize: 15,lang: 'zh-CN',recordIP: false})</script><p></p>
+</section>
+</div>
+<div class="search-results">
+<div class="has-results">
+<h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+<ul class="search-results-list"></ul>
+</div>
+<div class="no-results">
+<h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<a aria-label="Previous page: LLM模型微调系列.md" class="navigation navigation-prev" href="LLM模型微调系列.html">
+<i class="fa fa-angle-left"></i>
+</a>
+<a aria-label="Next page: dl_in_vision_field.md" class="navigation navigation-next" href="dl_in_vision_field.html">
+<i class="fa fa-angle-right"></i>
+</a>
+<script src="https://cdn.jsdelivr.net/gh/zztongtong/CDN/js/live2d.min.js"></script><div style="position:absolute; bottom:0; left:0; width:200;"><canvas height="350" id="model_1" width="200"></canvas></div></div>
+<script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"abbrlink":24897,"date":"2023/06/12 21:22:34","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆12.webp","title":"LLM模型部署调试推理.md","tags":["深度学习","LLM模型"],"top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆12.webp","mathjax":true,"categories":["deep_learning"],"description":"LLM模型部署调试推理","level":"1.3","depth":1,"next":{"title":"dl_in_vision_field.md","level":"1.4","depth":1,"path":"chapters/dl_in_vision_field.md","ref":"chapters/dl_in_vision_field.md","articles":[]},"previous":{"title":"LLM模型微调系列.md","level":"1.2","depth":1,"path":"chapters/LLM模型微调系列.md","ref":"chapters/LLM模型微调系列.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":true,"enableFooter":false,"site":"https://hycbook.github.io/bk_python/","author":"narutohyc","website":"python元知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Python相关学习记录","language":"zh-hans","links":{"sidebar":{"书籍主页":"https://hycbook.github.io/bk_index/"}},"gitbook":"*","description":"记录 Python 的学习和一些技巧的使用"},"file":{"path":"chapters/LLM模型部署调试推理.md","mtime":"2023-08-14T07:08:49.366Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-14T07:15:00.707Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+<canvas class="fireworks"></canvas><script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script></div>
+<script src="../gitbook/gitbook.js"></script>
+<script src="../gitbook/theme.js"></script>
+<script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+<script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+<script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+<script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+<script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+<script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-copyright-v/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+<script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+</body>
+</html>

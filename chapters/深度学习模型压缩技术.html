@@ -1,0 +1,441 @@
+<!DOCTYPE HTML>
+<html lang="zh-hans">
+<head>
+<meta charset="utf-8"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>深度学习模型压缩技术.md · Python相关学习记录</title>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="深度学习模型压缩技术" name="description"/>
+<meta content="GitBook 3.2.3" name="generator"/>
+<meta content="narutohyc" name="author"/>
+<link href="../gitbook/style.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-splitter/splitter.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-anchors/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-donate/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-code/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-search-plus/search.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-pageview-count/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-highlight/website.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-fontsettings/website.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-theme-comscore/test.css" rel="stylesheet"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<link href="../gitbook/images/apple-touch-icon-precomposed-152.png" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+<link href="../gitbook/images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="目标检测与跟踪算法.html" rel="next"/>
+<link href="深度学习核心基础知识点.html" rel="prev"/>
+<link href="./chapters/res/other/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="./chapters/res/other/favicon.ico" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+<style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+<script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]};
+    </script>
+</head>
+<body>
+          <div class="mountain_a"></div>
+          <div class="mountain_b"></div>
+          <div class="house right">
+            <div class="fence"></div>
+            <div class="wall"></div>
+            <div class="roof left"></div>
+            <div class="roof right"></div>
+            <div class="door"></div>
+          </div>
+          <div class="house left">
+            <div class="fence"></div>
+            <div class="wall"></div>
+            <div class="roof left"></div>
+            <div class="roof right"></div>
+            <div class="door"></div>
+          </div>
+          <div class="tree_back"></div>
+          <div class="tree"></div>
+          <div class="postbox_a">
+            <div class="hole"></div>
+          </div>
+          <div class="postbox_b">
+            <div class="hole"></div>
+          </div>
+          <div class="windmill">
+            <div class="tower"></div>
+            <div class="t1"></div>
+            <div class="t2"></div>
+            <div class="blade">
+              <div class="windblade"></div>
+              <div class="windblade windblade2"></div>
+              <div class="windblade windblade3"></div>
+              <div class="windblade windblade4"></div>
+            </div>
+          </div>
+          <div class="allsnows">
+            <div class="snow1"></div>
+            <div class="snow2"></div>
+            <div class="snow3"></div>
+            <div class="snow4"></div>
+            <div class="snow5"></div>
+            <div class="snow6"></div>
+            <div class="snow7"></div>
+            <div class="snow8"></div>
+            <div class="snow9"></div>
+            <div class="snow10"></div>
+            <div class="snow11"></div>
+            <div class="snow12"></div>
+            <div class="snow13"></div>
+            <div class="snow14"></div>
+            <div class="snow15"></div>
+            <div class="snow16"></div>
+            <div class="snow17"></div>
+            <div class="snow18"></div>
+            <div class="snow19"></div>
+            <div class="snow20"></div>
+          </div>
+          <div class="ground">
+            <div class="g1"></div>
+            <div class="g2"></div>
+            <div class="g3"></div>
+            <div class="ice">
+              <div class="glare"></div>
+              <div class="ice_shadow"></div>
+            </div>
+
+          </div>
+    
+<div class="book">
+<div class="book-summary">
+<div id="book-search-input" role="search">
+<input placeholder="输入并搜索" type="text"/>
+</div>
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a class="custom-link" href="https://hycbook.github.io/bk_index/" target="_blank">书籍主页</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-level="1.1" data-path="../" id="chapter_id_0">
+<a href="../">
+<b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.2" data-path="LLM模型微调系列.html" id="chapter_id_1">
+<a href="LLM模型微调系列.html">
+<b>1.2.</b>
+                    
+                    LLM模型微调系列.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.3" data-path="LLM模型部署调试推理.html" id="chapter_id_2">
+<a href="LLM模型部署调试推理.html">
+<b>1.3.</b>
+                    
+                    LLM模型部署调试推理.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.4" data-path="dl_in_vision_field.html" id="chapter_id_3">
+<a href="dl_in_vision_field.html">
+<b>1.4.</b>
+                    
+                    dl_in_vision_field.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.5" data-path="huggingface基本使用教程.html" id="chapter_id_4">
+<a href="huggingface基本使用教程.html">
+<b>1.5.</b>
+                    
+                    huggingface基本使用教程.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.6" data-path="nlp关键词和摘要提取技术整理.html" id="chapter_id_5">
+<a href="nlp关键词和摘要提取技术整理.html">
+<b>1.6.</b>
+                    
+                    nlp关键词和摘要提取技术整理.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.7" data-path="pytorch学习.html" id="chapter_id_6">
+<a href="pytorch学习.html">
+<b>1.7.</b>
+                    
+                    pytorch学习.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.8" data-path="transformer.html" id="chapter_id_7">
+<a href="transformer.html">
+<b>1.8.</b>
+                    
+                    transformer.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.9" data-path="图像分割算法.html" id="chapter_id_8">
+<a href="图像分割算法.html">
+<b>1.9.</b>
+                    
+                    图像分割算法.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.10" data-path="图像分类算法.html" id="chapter_id_9">
+<a href="图像分类算法.html">
+<b>1.10.</b>
+                    
+                    图像分类算法.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.11" data-path="数据标注工具.html" id="chapter_id_10">
+<a href="数据标注工具.html">
+<b>1.11.</b>
+                    
+                    数据标注工具.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.12" data-path="深度学习核心之优化器.html" id="chapter_id_11">
+<a href="深度学习核心之优化器.html">
+<b>1.12.</b>
+                    
+                    深度学习核心之优化器.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.13" data-path="深度学习核心之损失函数.html" id="chapter_id_12">
+<a href="深度学习核心之损失函数.html">
+<b>1.13.</b>
+                    
+                    深度学习核心之损失函数.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.14" data-path="深度学习核心之激活函数.html" id="chapter_id_13">
+<a href="深度学习核心之激活函数.html">
+<b>1.14.</b>
+                    
+                    深度学习核心之激活函数.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.15" data-path="深度学习核心基础知识点.html" id="chapter_id_14">
+<a href="深度学习核心基础知识点.html">
+<b>1.15.</b>
+                    
+                    深度学习核心基础知识点.md
+            
+                </a>
+</li>
+<li class="chapter active" data-level="1.16" data-path="深度学习模型压缩技术.html" id="chapter_id_15">
+<a href="深度学习模型压缩技术.html">
+<b>1.16.</b>
+                    
+                    深度学习模型压缩技术.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.17" data-path="目标检测与跟踪算法.html" id="chapter_id_16">
+<a href="目标检测与跟踪算法.html">
+<b>1.17.</b>
+                    
+                    目标检测与跟踪算法.md
+            
+                </a>
+</li>
+<li class="divider"></li>
+<li>
+<a class="gitbook-link" href="https://www.gitbook.com" target="blank">
+            本书使用 GitBook 发布
+        </a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="..">深度学习模型压缩技术.md</a>
+</h1>
+</div>
+<div class="page-wrapper" role="main" tabindex="-1">
+<div class="page-inner">
+<div class="search-plus" id="book-search-results">
+<div class="search-noresults">
+<section class="normal markdown-section">
+<div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon"></span><a href="#模型压缩">1 模型压缩</a></li><ul><li><span class="title-icon"></span><a href="#概述">1.1 概述</a></li></ul><li><span class="title-icon"></span><a href="#参数剪枝">2 参数剪枝</a></li><li><span class="title-icon"></span><a href="#权重共享">3 权重共享</a></li><li><span class="title-icon"></span><a href="#低秩近似">4 低秩近似</a></li><li><span class="title-icon"></span><a href="#知识蒸馏">5 知识蒸馏</a></li><ul><li><span class="title-icon"></span><a href="#概述_1">5.1 概述</a></li><li><span class="title-icon"></span><a href="#蒸馏的目的">5.2 蒸馏的目的</a></li><li><span class="title-icon"></span><a href="#蒸馏机制">5.3 蒸馏机制</a></li><ul><li><span class="title-icon"></span><a href="#离线蒸馏">5.3.1 离线蒸馏</a></li><li><span class="title-icon"></span><a href="#在线蒸馏">5.3.2 在线蒸馏</a></li><li><span class="title-icon"></span><a href="#自蒸馏">5.3.3 自蒸馏</a></li></ul><li><span class="title-icon"></span><a href="#温度参数">5.4 温度参数</a></li></ul><li><span class="title-icon"></span><a href="#网络量化">6 网络量化</a></li><li><span class="title-icon"></span><a href="#网络剪枝">7 网络剪枝</a></li><li><span class="title-icon"></span><a href="#网络蒸馏">8 网络蒸馏</a></li></ul></div><a href="#模型压缩" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><hr/>
+<h1 id="模型压缩">1 模型压缩</h1>
+<h2 id="概述">1.1 概述</h2>
+<blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/358159347" target="_blank">深度学习模型压缩与加速七大方法总结！</a></p>
+</blockquote>
+<p>随着深度学习的发展与高性能GPU处理能力的增强，神经网络结构变得越来越复杂，模型参数量也越来越庞大，这使得深度学习在移动嵌入式设备上的部署遇到巨大的困难和挑战</p>
+<p>因此，如何在不影响深度学习模型性能的情况下进行<strong>模型压缩与加速成为了研究热点</strong></p>
+<p>在深度学习中，模型压缩是一种通过减小模型的大小、参数数量或计算量来降低模型复杂度的技术。以下是一些常见的模型压缩技术：</p>
+<ol>
+<li><strong>参数剪枝(Pruning)</strong>：通过剪除模型中不重要的连接或参数，减少模型的参数数量和计算量。剪枝可以基于权重的重要性进行，剪除较小的权重或通过稀疏化技术将权重设置为零</li>
+<li><strong>权重共享(Weight Sharing)</strong>：将模型中的一些权重共享，减少模型中需要存储的参数数量。这可以通过对权重进行聚类或使用哈希函数将相似的权重映射到同一个值来实现</li>
+<li><strong>低秩近似(Low-Rank Approximation)</strong>：通过将模型的权重矩阵分解为较低秩的矩阵乘积形式，减少模型的参数数量。常见的方法包括奇异值分解(SVD)和矩阵分解技术</li>
+<li><strong>知识蒸馏(Knowledge Distillation)</strong>：将一个复杂的模型的知识传递给一个较简单的模型，通过让学生模型学习教师模型的输出概率分布或中间表示来提高学生模型的性能</li>
+<li><strong>网络量化(Network Quantization)</strong>：减少模型中参数的位数表示，例如将浮点数参数转换为较低位数的整数表示，从而减小模型的存储需求和计算复杂度</li>
+<li><strong>网络剪枝(Network Pruning)</strong>：除了剪枝权重和连接之外，还剪枝模型的网络结构。这包括剪枝层、剪枝通道或剪枝模块等</li>
+<li><strong>网络蒸馏(Network Distillation)</strong>：类似于知识蒸馏，但是不仅传递教师模型的输出概率分布或中间表示，还传递教师模型的激活值或其他辅助信息</li>
+</ol>
+<p>这些技术可以单独应用或结合使用，以减小深度学习模型的大小、复杂度和计算需求，从而实现模型压缩和加速的效果</p>
+<h1 id="参数剪枝">2 参数剪枝</h1>
+<p>对模型的网络进行修剪，比如减掉多余的头(因为Transformer使用多头注意力机制)，或者直接粗暴的使用更少的Transformer层数</p>
+<h1 id="权重共享">3 权重共享</h1>
+<p>等待...</p>
+<h1 id="低秩近似">4 低秩近似</h1>
+<p>等待...</p>
+<h1 id="知识蒸馏">5 知识蒸馏</h1>
+<blockquote>
+<p><a href="https://blog.csdn.net/weixin_42140625/article/details/113038348" target="_blank">手写数字识别中多元分类原理_广告行业中那些趣事系列21：从理论到实战BERT知识蒸馏...</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzU0MDQ1NjAzNg==&amp;mid=2247527921&amp;idx=2&amp;sn=1894bde4de9ecdbb2b31fa2a64cc6551&amp;chksm=fb3ac8facc4d41ec0ab8e9d0d865163524ad741ae9dc8b0e57c269e54894abbce0e0bcd37a3d&amp;scene=27" target="_blank">深度学习中的知识蒸馏技术</a>`</p>
+<p><a href="https://zhuanlan.zhihu.com/p/258390817" target="_blank">一分钟带你认识深度学习中的知识蒸馏</a></p>
+</blockquote>
+<h2 id="概述_1">5.1 概述</h2>
+<p>知识蒸馏的概念最早是2015年Geoffrey Hinton在《Distilling the Knowledge in a Neural Network》这篇论文中提出来的</p>
+<p>在深度学习中，<code>知识蒸馏(Knowledge Distillation)</code>指的是将一个复杂的模型(称为<code>教师模型</code>)的知识传递给一个较简单的模型(称为<code>学生模型</code>)的过程</p>
+<p>这种方法旨在通过训练学生模型使其能够学习教师模型的<strong>推理能力和泛化能力</strong></p>
+<p><a data-lightbox="4996bbd9-2048-4c3c-ad21-fa4276806bae" data-title="化学蒸馏装置图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习模型压缩技术/化学蒸馏装置图.webp" target="_blank"><img alt="化学蒸馏装置图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习模型压缩技术/化学蒸馏装置图.webp"/></a></p>
+<p>通常情况下，教师模型是一个较大、复杂、准确度较高的模型，而学生模型则是一个较小、简化的模型</p>
+<p>知识蒸馏通过让学生模型学习教师模型的<strong>输出概率分布或中间表示，从而提高学生模型的性能</strong>。这种知识传递可以帮助学生模型更好地捕捉数据集的特征，提高泛化能力，并且在具有较少训练数据的情况下取得较好的性能</p>
+<blockquote>
+<p>例子: TextCNN知识蒸馏</p>
+</blockquote>
+<p>BERT这类大模型精度高但是线上推理速度慢，传统的文本分类模型比如TextCNN等线上推理速度快(因为模型比较小)但是精度有待提升。针对上面的问题，我们的需求是获得媲美BERT等大模型的精度，还能满足线上推理速度的时延要求</p>
+<p>业务中可以把BERT作为老师模型去教作为学生模型的TextCNN来学习知识，从而使TextCNN不仅达到了媲美BERT的分类效果，而且还能很好的满足线上推理速度的要求</p>
+<blockquote>
+<p>暗知识</p>
+</blockquote>
+<p>对于老师或者没有使用知识蒸馏的小模型来说，主要是通过训练数据来学习知识。我们的训练数据集是一张一张手写数字的图片，还有对应0到9十个数字的标签。在这种学习中我们可以用的只有十个类别值，比如一张手写数字1的图片样本的标签是1，告诉模型的知识就是这个样本标签是1，不是其他类别</p>
+<p>而使用知识蒸馏的时候模型可以学到更多的知识，比如手写数字1的图片样本有0.7的可能是数字1，0.2的可能是数字7，还有0.1的可能是数字9</p>
+<p>这非常有意思，模型<strong>不仅学到了标签本身的知识，还学习到了标签之间的关联知识</strong>，就是1和7、9可能存在某些关联，这些知识称为<code>暗知识</code></p>
+<blockquote>
+<p>其他的蒸馏</p>
+</blockquote>
+<p>对抗蒸馏、多教师蒸馏、跨模态蒸馏、无数据蒸馏</p>
+<h2 id="蒸馏的目的">5.2 蒸馏的目的</h2>
+<ol>
+<li><strong>模型压缩(Model Compression)</strong>：通过知识蒸馏，可以将一个较大、复杂的模型压缩成一个更小、轻量级的模型，减少模型的存储空间和计算资源的消耗。这使得模型可以在资源受限的设备上运行，同时仍保持较高的性能</li>
+<li><strong>模型加速(Model Acceleration)</strong>：知识蒸馏可以加速模型的推理过程，使得模型在实时性要求较高的场景中能够更快地进行预测。通过将较复杂的模型的知识转移给简化的模型，可以加快推理速度</li>
+<li><strong>提升泛化能力(Improving Generalization)</strong>：知识蒸馏可以通过将一个复杂模型的知识传递给一个简化模型，帮助简化模型学习到更好的特征表示和泛化能力。较复杂的模型通常具有更强大的表示能力和表达能力，通过知识蒸馏，这些能力可以传递给简化模型，提升其泛化性能</li>
+<li><strong>迁移学习(Transfer Learning)</strong>：知识蒸馏可以通过将一个在大规模数据集上训练过的复杂模型的知识迁移到一个相似任务的简化模型上，从而加快简化模型在新任务上的学习速度和性能</li>
+</ol>
+<p>总之，知识蒸馏的主要目的是通过将一个复杂模型的知识转移到一个简化模型上，从而实现模型压缩、加速、提升泛化能力和迁移学习等目标</p>
+<h2 id="蒸馏机制">5.3 蒸馏机制</h2>
+<blockquote>
+<p><a href="https://blog.csdn.net/u013066730/article/details/126391124" target="_blank">【深度学习】（一）知识蒸馏</a></p>
+</blockquote>
+<p>根据教师网络是否和学生网络一起更新，可以分为<code>离线蒸馏</code>，<code>在线蒸馏</code>和<code>自蒸馏</code></p>
+<p><strong>感性</strong>上理解三种蒸馏方式：</p>
+<ul>
+<li><strong>离线蒸馏(Offline Distillation)</strong>: 可以理解为知识渊博的老师给学生<strong>传授知识</strong></li>
+<li><strong>在线蒸馏(Online Distillation)</strong>: 可以理解为教师和学生<strong>一起学习</strong></li>
+<li><strong>自蒸馏(Self-Distillation)</strong>: 意味着学生<strong>自己学习</strong>知识</li>
+</ul>
+<h3 id="离线蒸馏">5.3.1 离线蒸馏</h3>
+<p>早期的知识蒸馏方法都属于<code>离线蒸馏</code>，将一个预训练好的教师模型的知识迁移到学生网络，所以通常包括两个阶段：</p>
+<ul>
+<li>在蒸馏前，教师网络在训练集上进行训练</li>
+<li>教师网络通过logits层信息或者中间层信息提取知识，引导学生网络的训练</li>
+</ul>
+<p>第一个阶段通常不被认为属于知识蒸馏的一部分，因为默认教师网络本身就是已经预训练好的</p>
+<p>一般<strong>离线蒸馏算法关注与提升知识迁移的不同部分</strong>，包括：知识的形式，损失函数的设计，分布的匹配</p>
+<blockquote>
+<p>优点</p>
+</blockquote>
+<p>实现起来比较简单，形式上通常是单向的知识迁移(即从教师网络到学生网络)，同时需要两个阶段的训练(训练教师网络和知识蒸馏)</p>
+<blockquote>
+<p>缺点</p>
+</blockquote>
+<p>教师网络通常容量大，模型复杂，需要大量训练时间，还需要注意教师网络和学生网络之间的<strong>容量差异</strong>，当容量差异过大的时候，学生网络可能很难学习好这些知识</p>
+<h3 id="在线蒸馏">5.3.2 在线蒸馏</h3>
+<p>教师模型和学生模型都是to be trained的状态，即<strong>教师模型并没有预训练</strong></p>
+<p>在大容量教师网络没有现成模型的时候，可以考虑使用online distillation。使用在线蒸馏的时候，教师网络和学生网络的参数会同时更新，整个知识蒸馏框架是端到端训练的</p>
+<p>可以参考<a href="https://hycbook.com/article/451.html" target="_blank">本站图像分类算法章节下的DeiTModel</a>，DeiTModel模型是对Vit模型的改进和优化，使用了在线蒸馏策略(还是离线?)</p>
+<h3 id="自蒸馏">5.3.3 自蒸馏</h3>
+<p>自蒸馏中，教师和学生模型使用相同的网络。自蒸馏可以看作是在线蒸馏的一种特殊情况，因为教师网络和学生网络使用的是相同的模型</p>
+<h2 id="温度参数">5.4 温度参数</h2>
+<p>等待...</p>
+<h1 id="网络量化">6 网络量化</h1>
+<p>等待...</p>
+<h1 id="网络剪枝">7 网络剪枝</h1>
+<p>等待...</p>
+<h1 id="网络蒸馏">8 网络蒸馏</h1>
+<p>等待...</p>
+<p></p><footer class="page-footer"><span class="copyright">Copyright © narutohyc.com 2021 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
+2023-08-14 07:08:49
+</span></footer><hr/><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz',appKey: 'utUrzoiqNaDEGlgr09JL1pXB',placeholder: '欢迎留下评论交流~',avatar: 'wavatar',meta: undefined,pageSize: 15,lang: 'zh-CN',recordIP: false})</script><p></p>
+</section>
+</div>
+<div class="search-results">
+<div class="has-results">
+<h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+<ul class="search-results-list"></ul>
+</div>
+<div class="no-results">
+<h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<a aria-label="Previous page: 深度学习核心基础知识点.md" class="navigation navigation-prev" href="深度学习核心基础知识点.html">
+<i class="fa fa-angle-left"></i>
+</a>
+<a aria-label="Next page: 目标检测与跟踪算法.md" class="navigation navigation-next" href="目标检测与跟踪算法.html">
+<i class="fa fa-angle-right"></i>
+</a>
+<script src="https://cdn.jsdelivr.net/gh/zztongtong/CDN/js/live2d.min.js"></script><div style="position:absolute; bottom:0; left:0; width:200;"><canvas height="350" id="model_1" width="200"></canvas></div></div>
+<script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"abbrlink":53377,"date":"2023/06/04 18:46:57","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆11.webp","title":"深度学习模型压缩技术.md","tags":["深度学习","模型压缩"],"top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆11.webp","mathjax":true,"categories":["deep_learning"],"description":"深度学习模型压缩技术","level":"1.16","depth":1,"next":{"title":"目标检测与跟踪算法.md","level":"1.17","depth":1,"path":"chapters/目标检测与跟踪算法.md","ref":"chapters/目标检测与跟踪算法.md","articles":[]},"previous":{"title":"深度学习核心基础知识点.md","level":"1.15","depth":1,"path":"chapters/深度学习核心基础知识点.md","ref":"chapters/深度学习核心基础知识点.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":true,"enableFooter":false,"site":"https://hycbook.github.io/bk_python/","author":"narutohyc","website":"python元知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Python相关学习记录","language":"zh-hans","links":{"sidebar":{"书籍主页":"https://hycbook.github.io/bk_index/"}},"gitbook":"*","description":"记录 Python 的学习和一些技巧的使用"},"file":{"path":"chapters/深度学习模型压缩技术.md","mtime":"2023-08-14T07:08:49.386Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-14T07:15:00.707Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+<canvas class="fireworks"></canvas><script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script></div>
+<script src="../gitbook/gitbook.js"></script>
+<script src="../gitbook/theme.js"></script>
+<script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+<script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+<script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+<script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+<script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+<script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-copyright-v/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+<script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+</body>
+</html>

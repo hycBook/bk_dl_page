@@ -1,0 +1,861 @@
+<!DOCTYPE HTML>
+<html lang="zh-hans">
+<head>
+<meta charset="utf-8"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>nlp关键词和摘要提取技术整理.md · Python相关学习记录</title>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="nlp关键词和摘要提取技术整理" name="description"/>
+<meta content="GitBook 3.2.3" name="generator"/>
+<meta content="narutohyc" name="author"/>
+<link href="../gitbook/style.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-splitter/splitter.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-anchors/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-donate/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-code/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-search-plus/search.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-pageview-count/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-highlight/website.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-fontsettings/website.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-theme-comscore/test.css" rel="stylesheet"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<link href="../gitbook/images/apple-touch-icon-precomposed-152.png" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+<link href="../gitbook/images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="pytorch学习.html" rel="next"/>
+<link href="huggingface基本使用教程.html" rel="prev"/>
+<link href="./chapters/res/other/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="./chapters/res/other/favicon.ico" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+<style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+<script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]};
+    </script>
+</head>
+<body>
+          <div class="mountain_a"></div>
+          <div class="mountain_b"></div>
+          <div class="house right">
+            <div class="fence"></div>
+            <div class="wall"></div>
+            <div class="roof left"></div>
+            <div class="roof right"></div>
+            <div class="door"></div>
+          </div>
+          <div class="house left">
+            <div class="fence"></div>
+            <div class="wall"></div>
+            <div class="roof left"></div>
+            <div class="roof right"></div>
+            <div class="door"></div>
+          </div>
+          <div class="tree_back"></div>
+          <div class="tree"></div>
+          <div class="postbox_a">
+            <div class="hole"></div>
+          </div>
+          <div class="postbox_b">
+            <div class="hole"></div>
+          </div>
+          <div class="windmill">
+            <div class="tower"></div>
+            <div class="t1"></div>
+            <div class="t2"></div>
+            <div class="blade">
+              <div class="windblade"></div>
+              <div class="windblade windblade2"></div>
+              <div class="windblade windblade3"></div>
+              <div class="windblade windblade4"></div>
+            </div>
+          </div>
+          <div class="allsnows">
+            <div class="snow1"></div>
+            <div class="snow2"></div>
+            <div class="snow3"></div>
+            <div class="snow4"></div>
+            <div class="snow5"></div>
+            <div class="snow6"></div>
+            <div class="snow7"></div>
+            <div class="snow8"></div>
+            <div class="snow9"></div>
+            <div class="snow10"></div>
+            <div class="snow11"></div>
+            <div class="snow12"></div>
+            <div class="snow13"></div>
+            <div class="snow14"></div>
+            <div class="snow15"></div>
+            <div class="snow16"></div>
+            <div class="snow17"></div>
+            <div class="snow18"></div>
+            <div class="snow19"></div>
+            <div class="snow20"></div>
+          </div>
+          <div class="ground">
+            <div class="g1"></div>
+            <div class="g2"></div>
+            <div class="g3"></div>
+            <div class="ice">
+              <div class="glare"></div>
+              <div class="ice_shadow"></div>
+            </div>
+
+          </div>
+    
+<div class="book">
+<div class="book-summary">
+<div id="book-search-input" role="search">
+<input placeholder="输入并搜索" type="text"/>
+</div>
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a class="custom-link" href="https://hycbook.github.io/bk_index/" target="_blank">书籍主页</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-level="1.1" data-path="../" id="chapter_id_0">
+<a href="../">
+<b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.2" data-path="LLM模型微调系列.html" id="chapter_id_1">
+<a href="LLM模型微调系列.html">
+<b>1.2.</b>
+                    
+                    LLM模型微调系列.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.3" data-path="LLM模型部署调试推理.html" id="chapter_id_2">
+<a href="LLM模型部署调试推理.html">
+<b>1.3.</b>
+                    
+                    LLM模型部署调试推理.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.4" data-path="dl_in_vision_field.html" id="chapter_id_3">
+<a href="dl_in_vision_field.html">
+<b>1.4.</b>
+                    
+                    dl_in_vision_field.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.5" data-path="huggingface基本使用教程.html" id="chapter_id_4">
+<a href="huggingface基本使用教程.html">
+<b>1.5.</b>
+                    
+                    huggingface基本使用教程.md
+            
+                </a>
+</li>
+<li class="chapter active" data-level="1.6" data-path="nlp关键词和摘要提取技术整理.html" id="chapter_id_5">
+<a href="nlp关键词和摘要提取技术整理.html">
+<b>1.6.</b>
+                    
+                    nlp关键词和摘要提取技术整理.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.7" data-path="pytorch学习.html" id="chapter_id_6">
+<a href="pytorch学习.html">
+<b>1.7.</b>
+                    
+                    pytorch学习.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.8" data-path="transformer.html" id="chapter_id_7">
+<a href="transformer.html">
+<b>1.8.</b>
+                    
+                    transformer.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.9" data-path="图像分割算法.html" id="chapter_id_8">
+<a href="图像分割算法.html">
+<b>1.9.</b>
+                    
+                    图像分割算法.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.10" data-path="图像分类算法.html" id="chapter_id_9">
+<a href="图像分类算法.html">
+<b>1.10.</b>
+                    
+                    图像分类算法.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.11" data-path="数据标注工具.html" id="chapter_id_10">
+<a href="数据标注工具.html">
+<b>1.11.</b>
+                    
+                    数据标注工具.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.12" data-path="深度学习核心之优化器.html" id="chapter_id_11">
+<a href="深度学习核心之优化器.html">
+<b>1.12.</b>
+                    
+                    深度学习核心之优化器.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.13" data-path="深度学习核心之损失函数.html" id="chapter_id_12">
+<a href="深度学习核心之损失函数.html">
+<b>1.13.</b>
+                    
+                    深度学习核心之损失函数.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.14" data-path="深度学习核心之激活函数.html" id="chapter_id_13">
+<a href="深度学习核心之激活函数.html">
+<b>1.14.</b>
+                    
+                    深度学习核心之激活函数.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.15" data-path="深度学习核心基础知识点.html" id="chapter_id_14">
+<a href="深度学习核心基础知识点.html">
+<b>1.15.</b>
+                    
+                    深度学习核心基础知识点.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.16" data-path="深度学习模型压缩技术.html" id="chapter_id_15">
+<a href="深度学习模型压缩技术.html">
+<b>1.16.</b>
+                    
+                    深度学习模型压缩技术.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.17" data-path="目标检测与跟踪算法.html" id="chapter_id_16">
+<a href="目标检测与跟踪算法.html">
+<b>1.17.</b>
+                    
+                    目标检测与跟踪算法.md
+            
+                </a>
+</li>
+<li class="divider"></li>
+<li>
+<a class="gitbook-link" href="https://www.gitbook.com" target="blank">
+            本书使用 GitBook 发布
+        </a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="..">nlp关键词和摘要提取技术整理.md</a>
+</h1>
+</div>
+<div class="page-wrapper" role="main" tabindex="-1">
+<div class="page-inner">
+<div class="search-plus" id="book-search-results">
+<div class="search-noresults">
+<section class="normal markdown-section">
+<div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon"></span><a href="#切词">1 切词</a></li><li><span class="title-icon"></span><a href="#关键词提取">2 关键词提取</a></li><ul><li><span class="title-icon"></span><a href="#概述">2.1 概述</a></li><li><span class="title-icon"></span><a href="#分类">2.2 分类</a></li></ul><li><span class="title-icon"></span><a href="#基于统计">3 基于统计</a></li><ul><li><span class="title-icon"></span><a href="#tf-idf">3.1 tf-idf</a></li><li><span class="title-icon"></span><a href="#yake">3.2 YAKE</a></li><ul><li><span class="title-icon"></span><a href="#概述_1">3.2.1 概述</a></li></ul></ul><li><span class="title-icon"></span><a href="#基于图技术">4 基于图技术</a></li><ul><li><span class="title-icon"></span><a href="#textrank">4.1 TextRank</a></li><ul><li><span class="title-icon"></span><a href="#pagerank">4.1.1 PageRank</a></li><li><span class="title-icon"></span><a href="#实现">4.1.2 实现</a></li></ul><li><span class="title-icon"></span><a href="#rake">4.2 RAKE</a></li></ul><li><span class="title-icon"></span><a href="#基于深度学习">5 基于深度学习</a></li><ul><li><span class="title-icon"></span><a href="#sifrank">5.1 SIFRank</a></li><ul><li><span class="title-icon"></span><a href="#sif模型">5.1.1 SIF模型</a></li></ul><li><span class="title-icon"></span><a href="#bert-kpe">5.2 Bert-KPE</a></li><li><span class="title-icon"></span><a href="#keybert">5.3 KeyBert</a></li><ul><li><span class="title-icon"></span><a href="#概述_2">5.3.1 概述</a></li><li><span class="title-icon"></span><a href="#多样性">5.3.2 多样性</a></li><li><span class="title-icon"></span><a href="#示例">5.3.3 示例</a></li></ul></ul><li><span class="title-icon"></span><a href="#摘要提取">6 摘要提取</a></li></ul></div><a href="#切词" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><hr/>
+<h1 id="切词">1 切词</h1>
+<p>等待...</p>
+<h1 id="关键词提取">2 关键词提取</h1>
+<blockquote>
+<p><a href="https://www.jos.org.cn/html/2017/9/5301.htm#outline_anchor_17" target="_blank">自动关键词抽取研究综述2017</a></p>
+<p><a href="http://html.rhhz.net/rjxb/html/5538.htm" target="_blank">特征驱动的关键词提取算法综述2018</a></p>
+<p><a href="https://manu44.magtech.com.cn/Jwk_infotech_wk3/CN/10.11925/infotech.2096-3467.2020.1103" target="_blank">关键词提取研究综述2021</a></p>
+</blockquote>
+<h2 id="概述">2.1 概述</h2>
+<blockquote>
+<p>概念</p>
+</blockquote>
+<p>关键词提取技术是一种自然语言处理技术，旨在从给定的文本中自动识别出最具代表性和重要性的关键词或短语</p>
+<p>关键词通常是文本中具有特殊含义、能够概括文本主题或内容的词语或短语</p>
+<blockquote>
+<p>使用场景</p>
+</blockquote>
+<p>关键词提取技术的目标是对文本进行语义分析和内容抽取，从而提取出最能代表文本主题和内容的关键词</p>
+<p>这些关键词可以用于文本分类、信息检索、文本摘要、主题建模、信息过滤等自然语言处理任务</p>
+<blockquote>
+<p>经典方法</p>
+</blockquote>
+<p>关键词提取技术通常结合了文本的语言统计特征、词频分布、词性、上下文关系、语义相似度等多种信息源，以识别并提取出最相关和具有区分度的关键词</p>
+<p>常见的关键词提取方法包括基于词频、TF-IDF、文本图结构、语言模型、图模型、深度学习等多种技术手段</p>
+<p>关键词提取技术在信息处理、文本挖掘、自动化文档处理等领域具有重要应用价值，能够帮助人们更快速、准确地理解和处理大量文本信息</p>
+<h2 id="分类">2.2 分类</h2>
+<blockquote>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzI1MjQ2OTQ3Ng==&amp;mid=2247545032&amp;idx=2&amp;sn=fca791422e59e91b174ce7ed5bc0e7b6&amp;chksm=e9e13943de96b0553d1644ce9e2e1173bb379ec6dbd87350eb62d0509c407b7bd3867e2e3e6c&amp;scene=27" target="_blank">NLP中关键字提取方法总结和概述</a></p>
+</blockquote>
+<h1 id="基于统计">3 基于统计</h1>
+<p>统计方法是最简单的。他们计算关键字的统计数据并使用这些统计数据对它们进行评分。一些最简单的统计方法是词频、词搭配和共现</p>
+<p>也有一些更复杂的，例如TF-IDF和YAKE!</p>
+<h2 id="tf-idf">3.1 tf-idf</h2>
+<blockquote>
+<p>概述</p>
+</blockquote>
+<p><code>TF-IDF</code>或<code>term frequency–inverse document frequency</code>，会计算文档中单词相对于整个语料库(更多文档集)的重要性</p>
+<p>它计算文档中每个词的频率，并通过词在整个语料库中的频率的倒数对其进行加权。最后，选择得分最高的词作为关键词，TF-IDF有两层意思</p>
+<ul>
+<li><strong>词频</strong>: Term Frequency，缩写为TF，通常来说，一个分词出现的次数越多，代表越重要</li>
+<li><strong>逆文档频率</strong>: Inverse Document Frequency，缩写为IDF，在现实生活中，出现次数最多的词是一些无意义的词，比如停用词，对搜索结果毫无帮助，必须通过分词器提前过滤掉的词</li>
+</ul>
+<blockquote>
+<p>公式 - <a href="https://towardsdatascience.com/tf-idf-for-document-ranking-from-scratch-in-python-on-real-world-dataset-796d339a4089" target="_blank">TF-IDF from scratch in python on a real-world dataset.</a></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>t</th>
+<th>d</th>
+<th>N</th>
+<th>corpus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>释义</td>
+<td>term(word)</td>
+<td>document(set of words)<br/>一篇文档中的词集合</td>
+<td>count of corpus<br/>语料数量</td>
+<td>the total document set<br/>总体文档集合</td>
+</tr>
+</tbody>
+</table>
+<p><script type="math/tex; mode=display">
+\begin{array}{c}
+
+tf(t,d) = \frac{count\ of\ t\ in\ d}{number\ of\ words\ in\ d} = \frac {单词t在文档d中出现的频次}{文档d的词频总数}
+
+\\\\
+
+df(t) = occurrence\ of\ t\ in\ N\ documents = 单词t在N篇文档中多少篇中出现
+
+\\\\
+
+idf(t) = \frac {N}{df} = log(\frac {N}{df+1})
+
+\\\\
+
+tf\_idf(t, d) = tf(t, d) * idf(t)
+
+\end{array}
+</script></p>
+<p>一个分词Term的相关性由tf*idf公式简化表达。tf-idf模型包含了二个简单事实：</p>
+<ul>
+<li>某个term分词在一个文档中出现次数(tf)越多，这个词与文档越相关</li>
+<li>某个索引中包含某个term分词的文档数量越少(idf)，这个term分词越重要</li>
+</ul>
+<blockquote>
+<p>例子</p>
+</blockquote>
+<p>考虑一个包含100个单词的文档，其中<strong>Leon</strong>这个分词出现了10次。这个时候TF=(10/100)=0.1</p>
+<p>并且假设Lucene索引中有1000W份文档数量，其中有1000份文档中出现了<strong>Leon</strong>这个分词，此时逆文档频率(IDF)计算为IDF=log(10,000,000/1,000)=4</p>
+<p>因此，TD-IDF计算为TF*IDF=0.1 * 4=0.4</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> jieba
+<span class="hljs-keyword">import</span> jieba.analyse
+
+sentence = <span class="hljs-string">'中华蜜蜂原产于中国，是中国的土著蜂，适应中国各地的气候和蜜源条件，适于定地饲养且稳产，尤其是在南方山区，有着其他蜂种不可替代的地位'</span>
+
+seg_list = jieba.cut(sentence, cut_all=<span class="hljs-keyword">True</span>)
+print(<span class="hljs-string">", "</span>.join(seg_list))
+keywords = jieba.analyse.extract_tags(sentence, topK=<span class="hljs-number">20</span>, withWeight=<span class="hljs-keyword">True</span>, allowPOS=(<span class="hljs-string">'n'</span>, <span class="hljs-string">'nr'</span>, <span class="hljs-string">'ns'</span>))
+print(keywords)
+
+&gt;&gt;&gt;
+中华, 蜜蜂, 原产, 产于, 中国, ，, 是, 中国, 的, 土著, 蜂, ，, 适应, 中国, 各地, 的, 气候, 和, 蜜源, 条件, ，, 适于, 定, 地, 饲养, 且, 稳产, ，, 尤其, 是, 在, 南方, 方山, 山区, ，, 有着, 其他, 蜂, 种, 不可, 替代, 的, 地位
+[(<span class="hljs-string">'定地'</span>, <span class="hljs-number">0.7969</span>), (<span class="hljs-string">'蜂种'</span>, <span class="hljs-number">0.7969</span>), (<span class="hljs-string">'稳产'</span>, <span class="hljs-number">0.7340</span>), (<span class="hljs-string">'蜜源'</span>, <span class="hljs-number">0.66725</span>), (<span class="hljs-string">'中国'</span>, <span class="hljs-number">0.60546</span>), (<span class="hljs-string">'蜜蜂'</span>, <span class="hljs-number">0.5859</span>), (<span class="hljs-string">'土著'</span>, <span class="hljs-number">0.55968</span>), (<span class="hljs-string">'原产'</span>, <span class="hljs-number">0.544705</span>), (<span class="hljs-string">'替代'</span>, <span class="hljs-number">0.484315</span>), (<span class="hljs-string">'山区'</span>, <span class="hljs-number">0.44390</span>), (<span class="hljs-string">'气候'</span>, <span class="hljs-number">0.38804</span>), (<span class="hljs-string">'地位'</span>, <span class="hljs-number">0.34710</span>), (<span class="hljs-string">'条件'</span>, <span class="hljs-number">0.32636</span>)]
+</code></pre>
+<blockquote>
+<p>优缺点</p>
+</blockquote>
+<ul>
+<li><strong>速度快</strong>: TF-IDF的优点是速度快</li>
+<li><strong>语言无关</strong>: TF-IDF与语言无关</li>
+<li><strong>需要语料</strong>: 需要至少几十个文档的语料库</li>
+<li><strong>不够全面</strong>: 缺点是单纯于词频来判断一个分词的重要性，不够全面</li>
+<li><strong>无法捕获语义</strong>: 缺点是不能捕捉分词Term在文档中的位置</li>
+</ul>
+<blockquote>
+<p>变种</p>
+</blockquote>
+<p>TF-IDF 的4大常见变种
+变种1: 对数函数变换 TF，解决TF现行增长问题
+变种2: 对 TF 进行标准化，解决长短文档问题
+变种3: 对数函数变换 IDF，解决IDF 现行增长问题
+变种4: 查询词及文档向量标准化，解决长短文档问题</p>
+<h2 id="yake">3.2 YAKE</h2>
+<blockquote>
+<p><a href="https://repositorio.inesctec.pt/server/api/core/bitstreams/90459f60-012f-4aa2-88cf-6af2a3a12559/content" target="_blank">2018ECIR的最佳短论文奖 A Text Feature Based Automatic Keyword Extraction Method for Single Documents</a></p>
+<p><a href="https://github.com/LIAAD/yake" target="_blank">github Yet Another Keyword Extractor (Yake)</a></p>
+</blockquote>
+<h3 id="概述_1">3.2.1 概述</h3>
+<p><code>YAKE(Yet Another Keyword Extractor)</code>是一种关键字提取方法，它利用单个文档的统计特征来提取关键字</p>
+<p>它通过五个步骤提取关键字，旨在从文本中自动提取最相关的关键词和关键短语</p>
+<p>YAKE算法的工作原理如下：</p>
+<ol>
+<li>文本预处理：将输入文本进行预处理，包括分词、去除停用词等</li>
+<li>特征提取：使用词频、位置权重、长度等特征来衡量单词和短语的重要性</li>
+<li>关键词候选生成：根据特征权重，生成候选关键词和关键短语</li>
+<li>关键词权重计算：根据候选关键词的特征权重，计算它们的最终权重</li>
+<li>关键词筛选：根据设定的阈值或排序方法，筛选出具有高权重的关键词和关键短语作为最终结果</li>
+</ol>
+<p>YAKE算法与传统的基于统计和语言模型的关键词提取方法不同，它采用了基于特征权重的方法，使得算法更加灵活和可定制</p>
+<p>此外，YAKE还支持多语言关键词提取，并能够处理领域特定的文本</p>
+<p>总体而言，YAKE算法通过综合考虑单词和短语的特征权重，以及它们在文本中的频率和位置等信息，来提取与文本内容相关的关键词和关键短语</p>
+<p><strong>官方实现仅支持英文</strong></p>
+<h1 id="基于图技术">4 基于图技术</h1>
+<h2 id="textrank">4.1 TextRank</h2>
+<blockquote>
+<p><a href="https://blog.csdn.net/asialee_bird/article/details/96894533" target="_blank">TextRank算法介绍及实现</a></p>
+</blockquote>
+<p><code>TextRank</code>是一种基于图的算法，用于关键词提取和文本摘要。它基于PageRank算法的思想，将文本表示为一个图，其中节点表示文本中的单词或短语，边表示它们之间的关系</p>
+<p>通过计算节点之间的权重和连接关系，TextRank可以确定文本中最重要的单词或短语。</p>
+<p><strong>TextRank的步骤如下</strong>：</p>
+<ol>
+<li><strong>分割文本</strong>：将文本分割成句子或单词</li>
+<li><strong>构建图</strong>：根据文本中的句子或单词构建一个图，其中每个句子或单词作为一个节点，边表示它们之间的关系。常见的关系可以是共现关系或语义关系</li>
+<li><strong>计算权重</strong>：为图中的每个节点计算权重。通常使用词频或TF-IDF作为初始权重</li>
+<li><strong>迭代计算</strong>：通过迭代计算节点之间的权重，更新每个节点的权重值。迭代过程中，节点的权重将考虑其相邻节点的权重值</li>
+<li><strong>排序节点</strong>：根据节点的权重值对节点进行排序，得到关键词或摘要</li>
+</ol>
+<p>TextRank算法在关键词提取和文本摘要等任务中表现良好，它不需要依赖预训练模型，可以直接应用于各种领域的文本处理任务</p>
+<h3 id="pagerank">4.1.1 PageRank</h3>
+<blockquote>
+<p><a href="http://ilpubs.stanford.edu:8090/422/1/1999-66.pdf" target="_blank">The PageRank Citation Ranking: Bringing Order to the Web 1999</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/126733456" target="_blank">关键词提取和摘要算法TextRank详解与实战</a></p>
+</blockquote>
+<p>PageRank算法通过计算网页链接的数量和质量来粗略估计网页的重要性，算法创立之初即应用在谷歌的搜索引擎中，对网页进行排名。</p>
+<p>PageRank算法的核心思想如下：</p>
+<ul>
+<li><p><strong>链接数量</strong>：如果一个网页被越多的其他网页链接，说明这个网页越重要，即该网页的PR值(PageRank值)会相对较高</p>
+</li>
+<li><p><strong>链接质量</strong>：如果一个网页被一个越高权值的网页链接，也能表明这个网页越重要，即一个PR值很高的网页链接到一个其他网页，那么被链接到的网页的PR值会相应地因此而提高</p>
+</li>
+</ul>
+<p>PageRank算法计算公式
+<script type="math/tex; mode=display">
+S\left(V_{i}\right)=(1-\mathrm{d})+\mathrm{d} * \sum_{j \in \operatorname{In}\left(V_{i}\right)} \frac{1}{\left|O u t\left(V_{j}\right)\right|} S\left(V_{j}\right)
+</script>
+其中，<script type="math/tex; ">S\left(V_{i}\right)</script>是网页<script type="math/tex; ">i</script>的重要性(PR值)，<script type="math/tex; ">\mathrm{d}</script>是阻尼系数，一般为0.85，<script type="math/tex; ">\operatorname{In}\left(V_{i}\right)</script>是整个互联网中所存在的有指同网页<script type="math/tex; ">i</script>的链接的网页集合，<script type="math/tex; ">Out\left(V_{j}\right)</script>是网页<script type="math/tex; ">j</script>中存在的指向所有外部网页的链辖的集合，<script type="math/tex; ">|Out \left(V_{j}\right) \mid</script>是该集合中元素的个数</p>
+<blockquote>
+<p>例子</p>
+</blockquote>
+<p>等待...</p>
+<blockquote>
+<p>PageRank算法与TextRank算法的区别</p>
+</blockquote>
+<ul>
+<li>PageRank算法根据网页之间的链接关系构造网络，TextRank算法根据词之间的共现关系构造网络</li>
+<li>PageRank算法构造的网络中的边是有向无权边，TextRank算法构造的网络中的边是无向有权边</li>
+</ul>
+<h3 id="实现">4.1.2 实现</h3>
+<blockquote>
+<p>基于Textrank4zh的TextRank算法实现</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> textrank4zh <span class="hljs-keyword">import</span> TextRank4Keyword, TextRank4Sentence
+<span class="hljs-keyword">import</span> jieba.analyse
+<span class="hljs-keyword">from</span> snownlp <span class="hljs-keyword">import</span> SnowNLP
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+<span class="hljs-comment">#关键词抽取</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">keywords_extraction</span><span class="hljs-params">(text)</span>:</span>
+    tr4w = TextRank4Keyword(allow_speech_tags=[<span class="hljs-string">'n'</span>, <span class="hljs-string">'nr'</span>, <span class="hljs-string">'nrfg'</span>, <span class="hljs-string">'ns'</span>, <span class="hljs-string">'nt'</span>, <span class="hljs-string">'nz'</span>])
+    <span class="hljs-comment"># allow_speech_tags   --词性列表，用于过滤某些词性的词</span>
+    tr4w.analyze(text=text, window=<span class="hljs-number">2</span>, lower=<span class="hljs-keyword">True</span>, vertex_source=<span class="hljs-string">'all_filters'</span>, edge_source=<span class="hljs-string">'no_stop_words'</span>,
+                 pagerank_config={<span class="hljs-string">'alpha'</span>: <span class="hljs-number">0.85</span>, })
+    <span class="hljs-comment"># text    --  文本内容，字符串</span>
+    <span class="hljs-comment"># window  --  窗口大小，int，用来构造单词之间的边。默认值为2</span>
+    <span class="hljs-comment"># lower   --  是否将英文文本转换为小写，默认值为False</span>
+    <span class="hljs-comment"># vertex_source  -- 选择使用words_no_filter, words_no_stop_words, words_all_filters中的哪一个来构造pagerank对应的图中的节点</span>
+    <span class="hljs-comment">#                -- 默认值为`'all_filters'`，可选值为`'no_filter', 'no_stop_words', 'all_filters'</span>
+    <span class="hljs-comment"># edge_source  -- 选择使用words_no_filter, words_no_stop_words, words_all_filters中的哪一个来构造pagerank对应的图中的节点之间的边</span>
+    <span class="hljs-comment">#              -- 默认值为`'no_stop_words'`，可选值为`'no_filter', 'no_stop_words', 'all_filters'`。边的构造要结合`window`参数</span>
+
+    <span class="hljs-comment"># pagerank_config  -- pagerank算法参数配置，阻尼系数为0.85</span>
+    keywords = tr4w.get_keywords(num=<span class="hljs-number">6</span>, word_min_len=<span class="hljs-number">2</span>)
+    <span class="hljs-comment"># num           --  返回关键词数量</span>
+    <span class="hljs-comment"># word_min_len  --  词的最小长度，默认值为1</span>
+    <span class="hljs-keyword">return</span> keywords
+
+<span class="hljs-comment">#关键短语抽取</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">keyphrases_extraction</span><span class="hljs-params">(text)</span>:</span>
+    tr4w = TextRank4Keyword()
+    tr4w.analyze(text=text, window=<span class="hljs-number">2</span>, lower=<span class="hljs-keyword">True</span>, vertex_source=<span class="hljs-string">'all_filters'</span>, edge_source=<span class="hljs-string">'no_stop_words'</span>,
+                 pagerank_config={<span class="hljs-string">'alpha'</span>: <span class="hljs-number">0.85</span>, })
+    keyphrases = tr4w.get_keyphrases(keywords_num=<span class="hljs-number">6</span>, min_occur_num=<span class="hljs-number">1</span>)
+    <span class="hljs-comment"># keywords_num    --  抽取的关键词数量</span>
+    <span class="hljs-comment"># min_occur_num   --  关键短语在文中的最少出现次数</span>
+    <span class="hljs-keyword">return</span> keyphrases
+
+<span class="hljs-comment">#关键句抽取</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">keysentences_extraction</span><span class="hljs-params">(text)</span>:</span>
+    tr4s = TextRank4Sentence()
+    tr4s.analyze(text, lower=<span class="hljs-keyword">True</span>, source=<span class="hljs-string">'all_filters'</span>)
+    <span class="hljs-comment"># text    -- 文本内容，字符串</span>
+    <span class="hljs-comment"># lower   -- 是否将英文文本转换为小写，默认值为False</span>
+    <span class="hljs-comment"># source  -- 选择使用words_no_filter, words_no_stop_words, words_all_filters中的哪一个来生成句子之间的相似度。</span>
+    <span class="hljs-comment">#           -- 默认值为`'all_filters'`，可选值为`'no_filter', 'no_stop_words', 'all_filters'</span>
+    <span class="hljs-comment"># sim_func -- 指定计算句子相似度的函数</span>
+
+    <span class="hljs-comment"># 获取最重要的num个长度大于等于sentence_min_len的句子用来生成摘要</span>
+    keysentences = tr4s.get_key_sentences(num=<span class="hljs-number">3</span>, sentence_min_len=<span class="hljs-number">6</span>)
+    <span class="hljs-keyword">return</span> keysentences
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">keywords_textrank</span><span class="hljs-params">(text)</span>:</span>
+    keywords = jieba.analyse.textrank(text, topK=<span class="hljs-number">6</span>)
+    <span class="hljs-keyword">return</span> keywords
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:
+    text = <span class="hljs-string">"来源：中国科学报本报讯（记者肖洁）又有一位中国科学家喜获小行星命名殊荣！4月19日下午，中国科学院国家天文台在京举行“周又元星”颁授仪式，"</span> \
+           <span class="hljs-string">"我国天文学家、中国科学院院士周又元的弟子与后辈在欢声笑语中济济一堂。国家天文台党委书记、"</span> \
+           <span class="hljs-string">"副台长赵刚在致辞一开始更是送上白居易的诗句：“令公桃李满天下，何须堂前更种花。”"</span> \
+           <span class="hljs-string">"据介绍，这颗小行星由国家天文台施密特CCD小行星项目组于1997年9月26日发现于兴隆观测站，"</span> \
+           <span class="hljs-string">"获得国际永久编号第120730号。2018年9月25日，经国家天文台申报，"</span> \
+           <span class="hljs-string">"国际天文学联合会小天体联合会小天体命名委员会批准，国际天文学联合会《小行星通报》通知国际社会，"</span> \
+           <span class="hljs-string">"正式将该小行星命名为“周又元星”。"</span>
+    <span class="hljs-comment">#关键词抽取</span>
+    keywords=keywords_extraction(text)
+    print(keywords)
+
+    <span class="hljs-comment">#关键短语抽取</span>
+    keyphrases=keyphrases_extraction(text)
+    print(keyphrases)
+
+    <span class="hljs-comment">#关键句抽取</span>
+    keysentences=keysentences_extraction(text)
+    print(keysentences)
+
+
+&gt;&gt;&gt;
+[{<span class="hljs-string">'word'</span>: <span class="hljs-string">'小行星'</span>, <span class="hljs-string">'weight'</span>: <span class="hljs-number">0.05808</span>}, {<span class="hljs-string">'word'</span>: <span class="hljs-string">'天文台'</span>, <span class="hljs-string">'weight'</span>: <span class="hljs-number">0.05721</span>}, {<span class="hljs-string">'word'</span>: <span class="hljs-string">'命名'</span>, <span class="hljs-string">'weight'</span>: <span class="hljs-number">0.048517</span>}, {<span class="hljs-string">'word'</span>: <span class="hljs-string">'中国'</span>, <span class="hljs-string">'weight'</span>: <span class="hljs-number">0.045716</span>}, {<span class="hljs-string">'word'</span>: <span class="hljs-string">'中国科学院'</span>, <span class="hljs-string">'weight'</span>: <span class="hljs-number">0.037818</span>}, {<span class="hljs-string">'word'</span>: <span class="hljs-string">'国家'</span>, <span class="hljs-string">'weight'</span>: <span class="hljs-number">0.03438</span>}]
+[<span class="hljs-string">'小行星命名'</span>]
+[{<span class="hljs-string">'index'</span>: <span class="hljs-number">4</span>, <span class="hljs-string">'sentence'</span>: <span class="hljs-string">'2018年9月25日，经国家天文台申报，国际天文学联合会小天体联合会小天体命名委员会批准，国际天文学联合会《小行星通报》通知国际社会，正式将该小行星命名为“周又元星”'</span>, <span class="hljs-string">'weight'</span>: <span class="hljs-number">0.2281</span>}, {<span class="hljs-string">'index'</span>: <span class="hljs-number">3</span>, <span class="hljs-string">'sentence'</span>: <span class="hljs-string">'”据介绍，这颗小行星由国家天文台施密特CCD小行星项目组于1997年9月26日发现于兴隆观测站，获得国际永久编号第120730号'</span>, <span class="hljs-string">'weight'</span>: <span class="hljs-number">0.2106</span>}, {<span class="hljs-string">'index'</span>: <span class="hljs-number">1</span>, <span class="hljs-string">'sentence'</span>: <span class="hljs-string">'4月19日下午，中国科学院国家天文台在京举行“周又元星”颁授仪式，我国天文学家、中国科学院院士周又元的弟子与后辈在欢声笑语中济济一堂'</span>, <span class="hljs-string">'weight'</span>: <span class="hljs-number">0.20209</span>}]
+</code></pre>
+<blockquote>
+<p>基于jieba的TextRank算法实现</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:
+    text = <span class="hljs-string">"来源：中国科学报本报讯（记者肖洁）又有一位中国科学家喜获小行星命名殊荣！4月19日下午，中国科学院国家天文台在京举行“周又元星”颁授仪式，"</span> \
+           <span class="hljs-string">"我国天文学家、中国科学院院士周又元的弟子与后辈在欢声笑语中济济一堂。国家天文台党委书记、"</span> \
+           <span class="hljs-string">"副台长赵刚在致辞一开始更是送上白居易的诗句：“令公桃李满天下，何须堂前更种花。”"</span> \
+           <span class="hljs-string">"据介绍，这颗小行星由国家天文台施密特CCD小行星项目组于1997年9月26日发现于兴隆观测站，"</span> \
+           <span class="hljs-string">"获得国际永久编号第120730号。2018年9月25日，经国家天文台申报，"</span> \
+           <span class="hljs-string">"国际天文学联合会小天体联合会小天体命名委员会批准，国际天文学联合会《小行星通报》通知国际社会，"</span> \
+           <span class="hljs-string">"正式将该小行星命名为“周又元星”。"</span>
+
+    <span class="hljs-comment"># 基于jieba的textrank算法实现</span>
+    keywords=keywords_textrank(text)
+    print(keywords)
+
+
+&gt;&gt;&gt;
+[<span class="hljs-string">'小行星'</span>, <span class="hljs-string">'命名'</span>, <span class="hljs-string">'国际'</span>, <span class="hljs-string">'中国'</span>, <span class="hljs-string">'国家'</span>, <span class="hljs-string">'天文学家'</span>]
+</code></pre>
+<h2 id="rake">4.2 RAKE</h2>
+<p>RAKE和TextRank的主要区别在于RAKE考虑候选关键字内的共现而不是固定窗口。它使用更简单、更具统计性的评分程序。该算法对每个文档分别进行，因此不需要文档语料库来进行关键词提取</p>
+<h1 id="基于深度学习">5 基于深度学习</h1>
+<p>深度学习的出现使基于嵌入的方法成为可能。研究人员开发了几种使用文档嵌入的关键字提取方法(例如Bennani等人)</p>
+<p>这些方法主要查找候选关键字列表(例如，Bennani等人只考虑由名词和形容词组成的关键字)</p>
+<p>他们将文档和候选关键字嵌入到相同的嵌入空间中，并测量文档和关键字嵌入之间的相似度(例如余弦相似度)。他们根据相似度度量选择与文档文本最相似的关键字</p>
+<h2 id="sifrank">5.1 SIFRank</h2>
+<blockquote>
+<p><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=8954611" target="_blank">SIFRank: A New Baseline for Unsupervised Keyphrase Extraction Based on Pre-Trained Language Model 2019</a></p>
+<p><a href="https://blog.csdn.net/init__/article/details/121011012" target="_blank">论文阅读笔记： SIFRank and BERT-KPE</a></p>
+<p><a href="https://github.com/sunyilgdx/SIFRank_zh" target="_blank">github sunyilgdx/SIFRank_zh</a></p>
+</blockquote>
+<p><code>SIFRank</code>比较适合短文本的关键词抽取，而<code>SIFRank+</code>大幅增加了长文本的关键词抽取效果</p>
+<blockquote>
+<p>步骤</p>
+</blockquote>
+<ol>
+<li>人工标注：分词+标词性</li>
+<li>获取候选关键词列表：利用正则表达式确定名词短语(例如：形容词+名词)，将名词短语作为候选关键短语</li>
+<li>通过预训练语言模型，得到关键词的embedding</li>
+<li>同样地，得到句子或文档的embedding</li>
+<li>计算3与4结果的余弦相似度，选取topN作为其最终提取的关键词</li>
+</ol>
+<p><a data-lightbox="ca9ed884-e7d9-4d04-8047-45aadcef81bd" data-title="SIFRank模型架构图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/nlp关键词和摘要提取技术整理/SIFRank模型架构图.webp" target="_blank"><img alt="SIFRank模型架构图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/nlp关键词和摘要提取技术整理/SIFRank模型架构图.webp"/></a></p>
+<blockquote>
+<p>NP chunker</p>
+</blockquote>
+<p>在SIFRank方法中，NP chunker是一种用于识别和提取名词短语(Noun Phrase)的工具或组件。NP chunker的目标是从给定的文本中定位和提取出包含一个或多个名词的短语。名词短语通常由一个名词作为核心词，并可能包含其他修饰词或限定词</p>
+<p>NP chunker使用一系列语法规则或机器学习模型来识别名词短语的边界，并将它们标记为一个单独的短语单元</p>
+<p>这个过程有助于更好地理解文本的结构和语义，特别是在文本中涉及到名词短语的关键短语提取任务中。在SIFRank方法中，NP chunker用于提取候选关键短语，并为后续的关键短语排序和评分提供基础</p>
+<h3 id="sif模型">5.1.1 SIF模型</h3>
+<p>句子嵌入模型SIF(Smooth Inverse Frequency)是一种用于将句子转换为连续向量表示的方法</p>
+<p>它旨在捕捉句子的语义信息，并将句子表示为稠密的低维向量。SIF模型的<strong>关键思想</strong>是<strong>结合词频信息来调整词向量的权重，以降低高频词的重要性，同时提高低频词的重要性</strong>。这样可以减轻一些常见词对句子表示的影响，使得句子表示更加注重那些在语义上更具区分度的词语。SIF模型通过简单的数学运算，如减法和加权平均，来计算句子的嵌入表示</p>
+<p>它在自然语言处理任务中被广泛应用，如文本分类、情感分析和句子相似度计算等</p>
+<p><strong>sentence embedding</strong>的假设是：文章是由一个topic生成的，文章中的每个句子亦是如此，因此，句子的embedding应该与文章embedding的期望值(topic embedding)相近</p>
+<h2 id="bert-kpe">5.2 Bert-KPE</h2>
+<blockquote>
+<p><a href="https://arxiv.org/pdf/2004.13639.pdf" target="_blank">Capturing Global Informativeness in Open Domain Keyphrase Extraction 2021</a></p>
+</blockquote>
+<p><code>BERT-KPE</code>是最近由thunlp提出的方法，在OpenKP和KP20K上都达到了state-of-the-art和良好的鲁棒性</p>
+<p><strong>有监督的方式</strong></p>
+<h2 id="keybert">5.3 KeyBert</h2>
+<blockquote>
+<p><a href="https://maartengr.github.io/KeyBERT/" target="_blank">KeyBERT</a></p>
+<p><a href="https://grootendorst.netlify.app/blog/keybert/" target="_blank">Keyword Extraction with BERT</a></p>
+<p><a href="https://www.zhihu.com/question/21104071/answer/2848388587" target="_blank">「关键词」提取都有哪些方案？</a></p>
+</blockquote>
+<p>当我们想要从特定文档中了解关键信息时，通常会使用关键词提取。关键词提取是一种自动化的过程，用于提取与输入文本最相关的单词和短语</p>
+<p>通过使用Rake和YAKE!等方法，我们已经可以使用易于使用的软件包来提取关键词和关键短语。然而，这些模型通常基于文本的统计特性而不是语义相似性进行工作</p>
+<p>于是BERT登场。BERT是一个双向变换器模型，可以将短语和文档转化为能够捕捉其意义的向量</p>
+<p><a data-lightbox="dbb6efb6-5a8c-40e1-9c3d-dff511ff27fe" data-title="无监督文本关键词抽取流程图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/nlp关键词和摘要提取技术整理/无监督文本关键词抽取流程图.svg" target="_blank"><img alt="无监督文本关键词抽取流程图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/nlp关键词和摘要提取技术整理/无监督文本关键词抽取流程图.svg"/></a></p>
+<p>使用BERT提取文档向量(嵌入)以获取文档级表示。然后，针对N元语法词/短语提取词向量。最后，我们使用余弦相似度来查找与文档最相似的词/短语。然后，可以将最相似的词识定义为最能描述整个文档的词</p>
+<h3 id="概述_2">5.3.1 概述</h3>
+<blockquote>
+<p>什么是Keybert</p>
+</blockquote>
+<p>Keybert是一种<strong>基于无监督学习</strong>的关键词抽取技术，不仅效果好，而且易于使用</p>
+<p>Keybert主要通过Bert获取文档和候选词的embedding，然后使用余弦相似度计算得到文档中最相似的候选词作为关键词</p>
+<h3 id="多样性">5.3.2 多样性</h3>
+<p>在关键词提取中，多样性问题指的是关键词列表中存在大量相似或重复的关键词，缺乏多样性和代表性。这可能导致关键信息的丢失或重复，并降低关键词提取的效果</p>
+<h4 id="mss"><a class="anchor-navigation-ex-anchor" href="#mss" name="mss"><i aria-hidden="true" class="fa fa-link"></i></a><a class="plugin-anchor" href="#mss" name="mss"><i aria-hidden="true" class="fa fa-link"></i></a>MSS</h4>
+<p><code>最大总距离</code>(Max Sum Distance)：通过将文档中最相似的关键词/短语与候选关键词/短语进行组合，找到<strong>彼此之间相似性最低的组合</strong>，这样可以确保关键词之间的差异性</p>
+<h4 id="mmr"><a class="anchor-navigation-ex-anchor" href="#mmr" name="mmr"><i aria-hidden="true" class="fa fa-link"></i></a><a class="plugin-anchor" href="#mmr" name="mmr"><i aria-hidden="true" class="fa fa-link"></i></a>MMR</h4>
+<p><code>最大边际相关性</code>（Maximal Marginal Relevance，MMR)：通过使用余弦相似度来创建关键词/短语，基于相似性的排序</p>
+<p>然后，从排序后的结果中选择与文档最相关的关键词/短语，并选择与已选择关键词/短语<strong>最不相似的候选</strong>关键词/短语，这样可以确保结果具有高度的多样性</p>
+<h3 id="示例">5.3.3 示例</h3>
+<p><a href="https://maartengr.github.io/KeyBERT/guides/quickstart.html" target="_blank">KeyBert Quickstart</a></p>
+<blockquote>
+<p>安装</p>
+</blockquote>
+<pre><code class="lang-cmd"># 默认hugging face
+pip install keybert
+
+# 其他后端
+pip install keybert[flair]
+pip install keybert[gensim]
+pip install keybert[spacy]
+pip install keybert[use]
+</code></pre>
+<h4 id="基础keybert"><a class="anchor-navigation-ex-anchor" href="#基础keybert" name="基础keybert"><i aria-hidden="true" class="fa fa-link"></i></a><a class="plugin-anchor" href="#基础keybert" name="基础keybert"><i aria-hidden="true" class="fa fa-link"></i></a>基础KeyBERT</h4>
+<p><a data-lightbox="44af0c34-1e36-444c-b16e-d24c349bb481" data-title="keyBert示例图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/nlp关键词和摘要提取技术整理/keyBert示例图.svg" target="_blank"><img alt="keyBert示例图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/nlp关键词和摘要提取技术整理/keyBert示例图.svg"/></a></p>
+<blockquote>
+<p>基础用法</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> keybert <span class="hljs-keyword">import</span> KeyBERT
+
+doc = <span class="hljs-string">"""
+         Supervised learning is the machine learning task of learning a function that
+         maps an input to an output based on example input-output pairs.[1] It infers a
+         function from labeled training data consisting of a set of training examples.[2]
+         In supervised learning, each example is a pair consisting of an input object
+         (typically a vector) and a desired output value (also called the supervisory signal).
+         A supervised learning algorithm analyzes the training data and produces an inferred function,
+         which can be used for mapping new examples. An optimal scenario will allow for the
+         algorithm to correctly determine the class labels for unseen instances. This requires
+         the learning algorithm to generalize from the training data to unseen situations in a
+         'reasonable' way (see inductive bias).
+      """</span>
+kw_model = KeyBERT()
+keywords = kw_model.extract_keywords(doc)
+
+<span class="hljs-comment"># 设置keyphrase_ngram_range来确定生成的关键词/关键短语的长度范围</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>kw_model.extract_keywords(doc, keyphrase_ngram_range=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), stop_words=<span class="hljs-keyword">None</span>)
+[(<span class="hljs-string">'learning'</span>, <span class="hljs-number">0.4604</span>),
+ (<span class="hljs-string">'algorithm'</span>, <span class="hljs-number">0.4556</span>),
+ (<span class="hljs-string">'training'</span>, <span class="hljs-number">0.4487</span>),
+ (<span class="hljs-string">'class'</span>, <span class="hljs-number">0.4086</span>),
+ (<span class="hljs-string">'mapping'</span>, <span class="hljs-number">0.3700</span>)]
+
+<span class="hljs-comment"># 要提取关键短语，只需将keyphrase_ngram_range设置为(1, 2)或更高，具体取决于您希望在生成的关键短语中包含的单词数量</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>kw_model.extract_keywords(doc, keyphrase_ngram_range=(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>), stop_words=<span class="hljs-keyword">None</span>)
+[(<span class="hljs-string">'learning algorithm'</span>, <span class="hljs-number">0.6978</span>),
+ (<span class="hljs-string">'machine learning'</span>, <span class="hljs-number">0.6305</span>),
+ (<span class="hljs-string">'supervised learning'</span>, <span class="hljs-number">0.5985</span>),
+ (<span class="hljs-string">'algorithm analyzes'</span>, <span class="hljs-number">0.5860</span>),
+ (<span class="hljs-string">'learning function'</span>, <span class="hljs-number">0.5850</span>)]
+
+<span class="hljs-comment"># 设置highlight来在文档中突出显示关键词</span>
+keywords = kw_model.extract_keywords(doc, highlight=<span class="hljs-keyword">True</span>)
+</code></pre>
+<blockquote>
+<p>关键词多样化</p>
+</blockquote>
+<p>默认情况下，KeyBERT仅基于余弦相似度比较文档和候选关键词/关键短语。然而，这可能导致非常相似的单词出现在最准确的关键词/关键短语列表中</p>
+<p>为了确保它们<strong>更加多样化</strong>，我们可以采取两种方法来微调输出结果，即<code>最大总距离</code>(Max Sum Distance)和<code>最大边际相关性</code>(Maximal Marginal Relevance)</p>
+<ol>
+<li><p><strong>最大总距离</strong>: 为了使结果多样化，我们选取文档中与前top_n个最相似的单词/短语。然后，我们从这2 x top_n个单词中选取所有top_n个组合，并提取彼此之间最不相似的组合，通过余弦相似度进行比较</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>kw_model.extract_keywords(doc, keyphrase_ngram_range=(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>), stop_words=<span class="hljs-string">'english'</span>,
+                              use_maxsum=<span class="hljs-keyword">True</span>, nr_candidates=<span class="hljs-number">20</span>, top_n=<span class="hljs-number">5</span>)
+[(<span class="hljs-string">'set training examples'</span>, <span class="hljs-number">0.7504</span>),
+ (<span class="hljs-string">'generalize training data'</span>, <span class="hljs-number">0.7727</span>),
+ (<span class="hljs-string">'requires learning algorithm'</span>, <span class="hljs-number">0.5050</span>),
+ (<span class="hljs-string">'supervised learning algorithm'</span>, <span class="hljs-number">0.3779</span>),
+ (<span class="hljs-string">'learning machine learning'</span>, <span class="hljs-number">0.2891</span>)]
+</code></pre>
+</li>
+<li><p><strong>最大边际相关性</strong>: 为了使结果多样化，我们可以使用最大边际相关性（Maximal Marginal Relevance，MMR）来创建关键词/关键短语，它也基于余弦相似度</p>
+<pre><code class="lang-python"><span class="hljs-comment"># 具有高多样性的结果</span>
+kw_model.extract_keywords(doc, keyphrase_ngram_range=(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>), stop_words=<span class="hljs-string">'english'</span>,
+                          use_mmr=<span class="hljs-keyword">True</span>, diversity=<span class="hljs-number">0.7</span>)
+[(<span class="hljs-string">'algorithm generalize training'</span>, <span class="hljs-number">0.7727</span>),
+ (<span class="hljs-string">'labels unseen instances'</span>, <span class="hljs-number">0.1649</span>),
+ (<span class="hljs-string">'new examples optimal'</span>, <span class="hljs-number">0.4185</span>),
+ (<span class="hljs-string">'determine class labels'</span>, <span class="hljs-number">0.4774</span>),
+ (<span class="hljs-string">'supervised learning algorithm'</span>, <span class="hljs-number">0.7502</span>)]
+
+<span class="hljs-comment"># 具有低多样性的结果</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>kw_model.extract_keywords(doc, keyphrase_ngram_range=(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>), stop_words=<span class="hljs-string">'english'</span>,
+                              use_mmr=<span class="hljs-keyword">True</span>, diversity=<span class="hljs-number">0.2</span>)
+[(<span class="hljs-string">'algorithm generalize training'</span>, <span class="hljs-number">0.7727</span>),
+ (<span class="hljs-string">'supervised learning algorithm'</span>, <span class="hljs-number">0.7502</span>),
+ (<span class="hljs-string">'learning machine learning'</span>, <span class="hljs-number">0.7577</span>),
+ (<span class="hljs-string">'learning algorithm analyzes'</span>, <span class="hljs-number">0.7587</span>),
+ (<span class="hljs-string">'learning algorithm generalize'</span>, <span class="hljs-number">0.7514</span>)]
+</code></pre>
+</li>
+</ol>
+<blockquote>
+<p>其他关键词算法生成的候选关键词</p>
+</blockquote>
+<p>在某些情况下，您可能希望使用其他关键词算法生成的候选关键词或从可能的关键词/关键短语列表中检索的候选关键词</p>
+<p>在KeyBERT中，您可以轻松使用这些候选关键词进行关键词提取</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> yake
+<span class="hljs-keyword">from</span> keybert <span class="hljs-keyword">import</span> KeyBERT
+
+<span class="hljs-comment"># Create candidates</span>
+kw_extractor = yake.KeywordExtractor(top=<span class="hljs-number">50</span>)
+candidates = kw_extractor.extract_keywords(doc)
+candidates = [candidate[<span class="hljs-number">0</span>] <span class="hljs-keyword">for</span> candidate <span class="hljs-keyword">in</span> candidates]
+
+<span class="hljs-comment"># Pass candidates to KeyBERT</span>
+kw_model = KeyBERT()
+keywords = kw_model.extract_keywords(doc, candidates=candidates)
+</code></pre>
+<h4 id="guided-keybert"><a class="anchor-navigation-ex-anchor" href="#guided-keybert" name="guided-keybert"><i aria-hidden="true" class="fa fa-link"></i></a><a class="plugin-anchor" href="#guided-keybert" name="guided-keybert"><i aria-hidden="true" class="fa fa-link"></i></a>Guided KeyBERT</h4>
+<p><code>Guided KeyBERT</code>(引导式KeyBERT)与引导式主题建模类似，它试图将训练引导到一组种子术语上。当应用KeyBERT时，它会自动提取与特定文档最相关的关键词。然而，有时利益相关者和用户正在寻找特定类型的关键词。例如，当通过contentful在您的网站上发布一篇文章时，您通常已经了解与该文章相关的全局关键词。但是，文章中可能存在您希望通过关键词提取出来的特定主题。为了实现这一点，我们只需给KeyBERT提供一组相关的<strong>种子关键词</strong>(可以是单个关键词)，并搜索与文档和种子关键词都相似的关键词</p>
+<p><a data-lightbox="32c2093a-3045-45f0-9c63-ade4a06c44bd" data-title="Guided KeyBERT示例图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/nlp关键词和摘要提取技术整理/Guided KeyBERT示例图.svg" target="_blank"><img alt="Guided KeyBERT示例图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/nlp关键词和摘要提取技术整理/Guided KeyBERT示例图.svg"/></a></p>
+<p>使用这个功能非常简单，只需定义一个种子关键词列表并将其传递给KeyBERT即可</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> keybert <span class="hljs-keyword">import</span> KeyBERT
+kw_model = KeyBERT()
+
+<span class="hljs-comment"># Define our seeded term</span>
+seed_keywords = [<span class="hljs-string">"information"</span>]
+keywords = kw_model.extract_keywords(doc, seed_keywords=seed_keywords)
+</code></pre>
+<p>当你有一个大型数据集，并且想要微调诸如多样性之类的参数时，每次更改参数时重新计算文档和单词嵌入可能需要很长时间。相反，我们可以预先计算这些嵌入，并将它们传递给.extract_keywords，这样我们只需计算一次即可</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> keybert <span class="hljs-keyword">import</span> KeyBERT
+
+kw_model = KeyBERT()
+doc_embeddings, word_embeddings = kw_model.extract_embeddings(docs)
+</code></pre>
+<p>然后，你可以使用这些嵌入并将它们传递给.extract_keywords来加快模型的调整</p>
+<pre><code class="lang-python">keywords = kw_model.extract_keywords(docs, doc_embeddings=doc_embeddings, word_embeddings=word_embeddings)
+</code></pre>
+<p>.extract_embeddings中有几个参数定义了如何生成候选关键词/关键短语的列表：</p>
+<ul>
+<li><code>candidates</code></li>
+<li><code>keyphrase_ngram_range</code></li>
+<li><code>stop_words</code></li>
+<li><code>min_df</code></li>
+<li><code>vectorizer</code></li>
+</ul>
+<p>这些参数的值在.extract_embeddings和.extract_keywords中需要完全相同，换句话说，以下内容将起作用，因为它们使用相同的参数子集</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> keybert <span class="hljs-keyword">import</span> KeyBERT
+
+kw_model = KeyBERT()
+doc_embeddings, word_embeddings = kw_model.extract_embeddings(docs, min_df=<span class="hljs-number">1</span>, stop_words=<span class="hljs-string">"english"</span>)
+keywords = kw_model.extract_keywords(docs, min_df=<span class="hljs-number">1</span>, stop_words=<span class="hljs-string">"english"</span>, 
+                                     doc_embeddings=doc_embeddings, 
+                                     word_embeddings=word_embeddings)
+</code></pre>
+<p>然而，以下内容将抛出错误，因为我们没有为min_df和stop_words使用相同的值</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> keybert <span class="hljs-keyword">import</span> KeyBERT
+
+kw_model = KeyBERT()
+doc_embeddings, word_embeddings = kw_model.extract_embeddings(docs, min_df=<span class="hljs-number">3</span>, stop_words=<span class="hljs-string">"dutch"</span>)
+keywords = kw_model.extract_keywords(docs, min_df=<span class="hljs-number">1</span>, stop_words=<span class="hljs-string">"english"</span>, 
+                                     doc_embeddings=doc_embeddings, 
+                                     word_embeddings=word_embeddings)
+</code></pre>
+<h1 id="摘要提取">6 摘要提取</h1>
+<p>等待...</p>
+<p>生成式 + 抽取式</p>
+<p></p><footer class="page-footer"><span class="copyright">Copyright © narutohyc.com 2021 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
+2023-08-14 07:08:49
+</span></footer><hr/><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz',appKey: 'utUrzoiqNaDEGlgr09JL1pXB',placeholder: '欢迎留下评论交流~',avatar: 'wavatar',meta: undefined,pageSize: 15,lang: 'zh-CN',recordIP: false})</script><p></p>
+</section>
+</div>
+<div class="search-results">
+<div class="has-results">
+<h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+<ul class="search-results-list"></ul>
+</div>
+<div class="no-results">
+<h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<a aria-label="Previous page: huggingface基本使用教程.md" class="navigation navigation-prev" href="huggingface基本使用教程.html">
+<i class="fa fa-angle-left"></i>
+</a>
+<a aria-label="Next page: pytorch学习.md" class="navigation navigation-next" href="pytorch学习.html">
+<i class="fa fa-angle-right"></i>
+</a>
+<script src="https://cdn.jsdelivr.net/gh/zztongtong/CDN/js/live2d.min.js"></script><div style="position:absolute; bottom:0; left:0; width:200;"><canvas height="350" id="model_1" width="200"></canvas></div></div>
+<script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"abbrlink":42898,"date":"2023/06/22 14:08:17","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆1.webp","title":"nlp关键词和摘要提取技术整理.md","tags":["深度学习","关键词提取","摘要生成|提取"],"top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆1.webp","mathjax":true,"categories":["deep_learning"],"description":"nlp关键词和摘要提取技术整理","level":"1.6","depth":1,"next":{"title":"pytorch学习.md","level":"1.7","depth":1,"path":"chapters/pytorch学习.md","ref":"chapters/pytorch学习.md","articles":[]},"previous":{"title":"huggingface基本使用教程.md","level":"1.5","depth":1,"path":"chapters/huggingface基本使用教程.md","ref":"chapters/huggingface基本使用教程.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":true,"enableFooter":false,"site":"https://hycbook.github.io/bk_python/","author":"narutohyc","website":"python元知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Python相关学习记录","language":"zh-hans","links":{"sidebar":{"书籍主页":"https://hycbook.github.io/bk_index/"}},"gitbook":"*","description":"记录 Python 的学习和一些技巧的使用"},"file":{"path":"chapters/nlp关键词和摘要提取技术整理.md","mtime":"2023-08-14T07:08:49.366Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-14T07:15:00.707Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+<canvas class="fireworks"></canvas><script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script></div>
+<script src="../gitbook/gitbook.js"></script>
+<script src="../gitbook/theme.js"></script>
+<script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+<script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+<script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+<script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+<script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+<script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-copyright-v/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+<script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+</body>
+</html>

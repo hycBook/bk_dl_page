@@ -1,0 +1,553 @@
+<!DOCTYPE HTML>
+<html lang="zh-hans">
+<head>
+<meta charset="utf-8"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>dl_in_vision_field.md · Python相关学习记录</title>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="" name="description"/>
+<meta content="GitBook 3.2.3" name="generator"/>
+<meta content="narutohyc" name="author"/>
+<link href="../gitbook/style.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-splitter/splitter.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-anchors/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-donate/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-code/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-search-plus/search.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-pageview-count/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-highlight/website.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-fontsettings/website.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-theme-comscore/test.css" rel="stylesheet"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<link href="../gitbook/images/apple-touch-icon-precomposed-152.png" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+<link href="../gitbook/images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="huggingface基本使用教程.html" rel="next"/>
+<link href="LLM模型部署调试推理.html" rel="prev"/>
+<link href="./chapters/res/other/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="./chapters/res/other/favicon.ico" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+<style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+<script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]};
+    </script>
+</head>
+<body>
+          <div class="mountain_a"></div>
+          <div class="mountain_b"></div>
+          <div class="house right">
+            <div class="fence"></div>
+            <div class="wall"></div>
+            <div class="roof left"></div>
+            <div class="roof right"></div>
+            <div class="door"></div>
+          </div>
+          <div class="house left">
+            <div class="fence"></div>
+            <div class="wall"></div>
+            <div class="roof left"></div>
+            <div class="roof right"></div>
+            <div class="door"></div>
+          </div>
+          <div class="tree_back"></div>
+          <div class="tree"></div>
+          <div class="postbox_a">
+            <div class="hole"></div>
+          </div>
+          <div class="postbox_b">
+            <div class="hole"></div>
+          </div>
+          <div class="windmill">
+            <div class="tower"></div>
+            <div class="t1"></div>
+            <div class="t2"></div>
+            <div class="blade">
+              <div class="windblade"></div>
+              <div class="windblade windblade2"></div>
+              <div class="windblade windblade3"></div>
+              <div class="windblade windblade4"></div>
+            </div>
+          </div>
+          <div class="allsnows">
+            <div class="snow1"></div>
+            <div class="snow2"></div>
+            <div class="snow3"></div>
+            <div class="snow4"></div>
+            <div class="snow5"></div>
+            <div class="snow6"></div>
+            <div class="snow7"></div>
+            <div class="snow8"></div>
+            <div class="snow9"></div>
+            <div class="snow10"></div>
+            <div class="snow11"></div>
+            <div class="snow12"></div>
+            <div class="snow13"></div>
+            <div class="snow14"></div>
+            <div class="snow15"></div>
+            <div class="snow16"></div>
+            <div class="snow17"></div>
+            <div class="snow18"></div>
+            <div class="snow19"></div>
+            <div class="snow20"></div>
+          </div>
+          <div class="ground">
+            <div class="g1"></div>
+            <div class="g2"></div>
+            <div class="g3"></div>
+            <div class="ice">
+              <div class="glare"></div>
+              <div class="ice_shadow"></div>
+            </div>
+
+          </div>
+    
+<div class="book">
+<div class="book-summary">
+<div id="book-search-input" role="search">
+<input placeholder="输入并搜索" type="text"/>
+</div>
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a class="custom-link" href="https://hycbook.github.io/bk_index/" target="_blank">书籍主页</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-level="1.1" data-path="../" id="chapter_id_0">
+<a href="../">
+<b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.2" data-path="LLM模型微调系列.html" id="chapter_id_1">
+<a href="LLM模型微调系列.html">
+<b>1.2.</b>
+                    
+                    LLM模型微调系列.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.3" data-path="LLM模型部署调试推理.html" id="chapter_id_2">
+<a href="LLM模型部署调试推理.html">
+<b>1.3.</b>
+                    
+                    LLM模型部署调试推理.md
+            
+                </a>
+</li>
+<li class="chapter active" data-level="1.4" data-path="dl_in_vision_field.html" id="chapter_id_3">
+<a href="dl_in_vision_field.html">
+<b>1.4.</b>
+                    
+                    dl_in_vision_field.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.5" data-path="huggingface基本使用教程.html" id="chapter_id_4">
+<a href="huggingface基本使用教程.html">
+<b>1.5.</b>
+                    
+                    huggingface基本使用教程.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.6" data-path="nlp关键词和摘要提取技术整理.html" id="chapter_id_5">
+<a href="nlp关键词和摘要提取技术整理.html">
+<b>1.6.</b>
+                    
+                    nlp关键词和摘要提取技术整理.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.7" data-path="pytorch学习.html" id="chapter_id_6">
+<a href="pytorch学习.html">
+<b>1.7.</b>
+                    
+                    pytorch学习.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.8" data-path="transformer.html" id="chapter_id_7">
+<a href="transformer.html">
+<b>1.8.</b>
+                    
+                    transformer.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.9" data-path="图像分割算法.html" id="chapter_id_8">
+<a href="图像分割算法.html">
+<b>1.9.</b>
+                    
+                    图像分割算法.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.10" data-path="图像分类算法.html" id="chapter_id_9">
+<a href="图像分类算法.html">
+<b>1.10.</b>
+                    
+                    图像分类算法.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.11" data-path="数据标注工具.html" id="chapter_id_10">
+<a href="数据标注工具.html">
+<b>1.11.</b>
+                    
+                    数据标注工具.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.12" data-path="深度学习核心之优化器.html" id="chapter_id_11">
+<a href="深度学习核心之优化器.html">
+<b>1.12.</b>
+                    
+                    深度学习核心之优化器.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.13" data-path="深度学习核心之损失函数.html" id="chapter_id_12">
+<a href="深度学习核心之损失函数.html">
+<b>1.13.</b>
+                    
+                    深度学习核心之损失函数.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.14" data-path="深度学习核心之激活函数.html" id="chapter_id_13">
+<a href="深度学习核心之激活函数.html">
+<b>1.14.</b>
+                    
+                    深度学习核心之激活函数.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.15" data-path="深度学习核心基础知识点.html" id="chapter_id_14">
+<a href="深度学习核心基础知识点.html">
+<b>1.15.</b>
+                    
+                    深度学习核心基础知识点.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.16" data-path="深度学习模型压缩技术.html" id="chapter_id_15">
+<a href="深度学习模型压缩技术.html">
+<b>1.16.</b>
+                    
+                    深度学习模型压缩技术.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.17" data-path="目标检测与跟踪算法.html" id="chapter_id_16">
+<a href="目标检测与跟踪算法.html">
+<b>1.17.</b>
+                    
+                    目标检测与跟踪算法.md
+            
+                </a>
+</li>
+<li class="divider"></li>
+<li>
+<a class="gitbook-link" href="https://www.gitbook.com" target="blank">
+            本书使用 GitBook 发布
+        </a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="..">dl_in_vision_field.md</a>
+</h1>
+</div>
+<div class="page-wrapper" role="main" tabindex="-1">
+<div class="page-inner">
+<div class="search-plus" id="book-search-results">
+<div class="search-noresults">
+<section class="normal markdown-section">
+<div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon"></span><a href="#模型介绍">1 模型介绍</a></li><ul><li><span class="title-icon"></span><a href="#图像分类">1.1 图像分类</a></li><li><span class="title-icon"></span><a href="#目标检测和跟踪">1.2 目标检测和跟踪</a></li><li><span class="title-icon"></span><a href="#图像分割">1.3 图像分割</a></li><li><span class="title-icon"></span><a href="#图像处理">1.4 图像处理</a></li><li><span class="title-icon"></span><a href="#图像生成">1.5 图像生成</a></li><li><span class="title-icon"></span><a href="#动作识别">1.6 动作识别</a></li><li><span class="title-icon"></span><a href="#风格转换">1.7 风格转换</a></li><li><span class="title-icon"></span><a href="#人脸识别">1.8 人脸识别</a></li><li><span class="title-icon"></span><a href="#图像描述">1.9 图像描述</a></li><li><span class="title-icon"></span><a href="#ocr">1.10 OCR</a></li></ul></ul></div><a href="#模型介绍" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><hr/>
+<blockquote>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzU2NjU3OTc5NA==&amp;mid=2247553356&amp;idx=1&amp;sn=62d14b0f722f98c949d12b68a8472be7&amp;chksm=fca81671cbdf9f678b9c21eb321afd95b40236e87f41d54ca973868167b8841487edf818540d&amp;scene=27" target="_blank">必读！计算机视觉四大基本任务(分类、定位、检测、分割)</a></p>
+</blockquote>
+<h1 id="模型介绍">1 模型介绍</h1>
+<blockquote>
+<p><a href="https://netron.app/" target="_blank">模型可视化netron工具库</a></p>
+<p><a href="https://www.jb51.net/article/261136.htm" target="_blank">pytorch模型转onnx模型的方法详解</a></p>
+</blockquote>
+<h2 id="图像分类">1.1 图像分类</h2>
+<blockquote>
+<p>Stable Diffusion总共包含三个主要的组件</p>
+<p><a href="https://zhuanlan.zhihu.com/p/610094594?utm_id=0" target="_blank">人工智能Ai画画——stable diffusion 原理和使用方法详解！</a></p>
+</blockquote>
+<p>1）Clip Text用于文本编码。输入：文本输出：77个token嵌入向量，其中每个向量包含768个维度</p>
+<p>2）UNet + Scheduler在信息（潜）空间中逐步处理/扩散信息。输入：文本嵌入和一个由噪声组成的初始多维数组（结构化的数字列表，也叫张量tensor）。输出：一个经过处理的信息阵列</p>
+<p>3）自编码解码器（Autoencoder Decoder），使用处理过的信息矩阵绘制最终图像的解码器。</p>
+<hr/>
+<p>Clip Text 是一种自然语言处理模型，由 OpenAI 开发。它基于 CLIP（Contrastive Language-Image Pretraining）模型，旨在将文本和图像联系起来。Clip Text 模型可以理解和处理文本数据，以便进行各种任务，例如文本分类、情感分析、命名实体识别等。通过训练 Clip Text 模型，可以使其具备对文本的理解能力，从而支持在自然语言处理领域进行各种应用和研究。</p>
+<p>UNet 是一种用于图像分割的卷积神经网络模型。它最初由 Olaf Ronneberger 等人在 2015 年提出，旨在解决医学图像分割任务中的问题。UNet 的设计灵感来自于生物学中的神经元结构，它具有一个特殊的 U 形结构，因此得名 UNet。</p>
+<p>UNet 的特点是具有对称的编码器-解码器结构，其中编码器部分由多个卷积和池化层组成，用于逐步提取图像的特征。解码器部分则通过上采样和卷积操作逐步将特征映射恢复到原始图像的尺寸，用于生成分割结果。此外，UNet 还通过跳跃连接（skip connections）在编码器和解码器之间建立了直接连接，以便保留和利用不同层级的特征信息。</p>
+<p>UNet 在医学图像分割任务中取得了很好的效果，并且在其他领域的图像分割任务中也得到了广泛应用。它的网络结构简单、易于实现和训练，并且能够处理不同尺度和形状的目标物体，因此成为图像分割领域的重要模型之一。</p>
+<h2 id="目标检测和跟踪">1.2 目标检测和跟踪</h2>
+<h2 id="图像分割">1.3 图像分割</h2>
+<ul>
+<li>语义分割</li>
+<li>实例分割</li>
+<li></li>
+</ul>
+<h2 id="图像处理">1.4 图像处理</h2>
+<ul>
+<li>超分辨率</li>
+<li>除雾</li>
+</ul>
+<h2 id="图像生成">1.5 图像生成</h2>
+<h2 id="动作识别">1.6 动作识别</h2>
+<h2 id="风格转换">1.7 风格转换</h2>
+<h2 id="人脸识别">1.8 人脸识别</h2>
+<h2 id="图像描述">1.9 图像描述</h2>
+<h2 id="ocr">1.10 OCR</h2>
+<blockquote>
+<p><a href="https://www.bilibili.com/read/cv22100576" target="_blank">深入了解视觉语言模型</a></p>
+<p><a href="https://arxiv.org/pdf/2106.08254.pdf" target="_blank">BEiT: BERT Pre-Training of Image Transformers 2022</a></p>
+<p><a href="https://blog.csdn.net/qq_39478403/article/details/128125376" target="_blank">【深度学习】详解 BEiT</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/438726362" target="_blank">《BEIT》-基于图像重建进行预训练！微软提出BEIT，Top-1准确率达86.3%！代码已开源！</a></p>
+</blockquote>
+<p>与其他模型不同，<code>VisionEncoderDecoderModel</code> 是一个标准化的模型，可用于初始化任意图像转文本模型，这类模型可以使用任何预训练的基于Transformer的视觉模型作为编码器(例如ViT(子监督训练)、BEiT、DeiT、Swin)以及任何预训练的语言模型作为解码器(例如RoBERTa、GPT2、BERT、DistilBERT)。事实上，TrOCR是这个标准类的一个实例</p>
+<p><a data-lightbox="74cebca7-7034-43ed-beac-57a7e63c9e7a" data-title="VisionEncoderDecoderModel模型结构图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/dl_in_vision_field/VisionEncoderDecoderModel模型结构图.svg" target="_blank"><img alt="VisionEncoderDecoderModel模型结构图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/dl_in_vision_field/VisionEncoderDecoderModel模型结构图.svg"/></a></p>
+<blockquote>
+<p><a href="https://arxiv.org/pdf/2109.10282v4.pdf" target="_blank">TrOCR: Transformer-based Optical Character Recognition with Pre-trained Models 2022</a></p>
+</blockquote>
+<p>微软亚洲研究院的研究员们展开了深入研究，提出了<strong>首个利用预训练模型的端到端基于Transformer的文本识别OCR模型</strong>：TrOCR。该模型简单有效，可以使用大规模合成数据进行预训练，并且能够在人工标注的数据上进行微调。实验证明，TrOCR在打印数据和手写数据上均超过了当前最先进的模型</p>
+<p>一般的光学字符识别包含两个部分：<strong>文本检测和文本识别</strong></p>
+<ul>
+<li><p><strong>文本检测</strong>: 用于在文本图像中定位文本块，粒度可以是单词级别或是文本行级别</p>
+<p>目前的解决方案大多是将该任务视为物体检测问题，并采用了如YoLOv5和DBNet的传统物体检测模型</p>
+</li>
+<li><p><strong>文本识别</strong>: 致力于理解文本图像并将视觉信号转换为自然语言符号，该任务通常使用编码器-解码器架构</p>
+<p>现有方法采用了基于CNN网络的编码器进行图像理解，以及基于RNN网络的解码器进行文本生成</p>
+</li>
+</ul>
+<p>为了更有效的训练TrOCR模型，研究员们使用了ViT模式的预训练模型和BERT模式的预训练模型，来分别初始化编码器和解码器</p>
+<blockquote>
+<p>TrOCRForCausalLM</p>
+</blockquote>
+<p><a href="https://huggingface.co/docs/transformers/v4.14.1/en/model_doc/trocr#transformers.TrOCRForCausalLM" target="_blank">huggingface TrOCRForCausalLM</a></p>
+<p>翻译：The ViTFeatureExtractor class is responsible for preprocessing the input image and RobertaTokenizer decodes the generated target tokens to the target string. <strong>The TrOCRProcessor wraps ViTFeatureExtractor and RobertaTokenizer into a single instance to both extract the input features and decode the predicted token ids</strong>.</p>
+<p>ViTFeatureExtractor类负责预处理输入图像，而RobertaTokenizer则将生成的目标标记解码为目标字符串。TrOCRProcessor将ViTFeatureExtractor和RobertaTokenizer封装为单个实例，既可以提取输入特征，又可以解码预测的标记ID</p>
+<p>翻译：The VisionEncoderDecoderModel can be used to initialize an image-to-text-sequence model with any pretrained vision autoencoding model as the encoder (e.g. ViT, BEiT, DeiT) and any pretrained language model as the decoder (e.g. RoBERTa, GPT2, BERT). The effectiveness of initializing image-to-text-sequence models with pretrained checkpoints has been shown in (for example) TrOCR: Transformer-based Optical Character Recognition with Pre-trained Models by Minghao Li, Tengchao Lv, Lei Cui, Yijuan Lu, Dinei Florencio, Cha Zhang, Zhoujun Li, Furu Wei. An example of how to use a VisionEncoderDecoderModel for inference can be seen in TrOCR.</p>
+<p>VisionEncoderDecoderModel可以用于初始化一个图像到文本序列模型，其中编码器可以是任何预训练的图像自编码模型（例如ViT、BEiT、DeiT），解码器可以是任何预训练的语言模型（例如RoBERTa、GPT2、BERT）</p>
+<p>初始化图像到文本序列模型时使用预训练的检查点已经被证明是有效的，例如在《TrOCR：基于预训练模型的基于Transformer的光学字符识别》一文中，作者Minghao Li、Tengchao Lv、Lei Cui、Yijuan Lu、Dinei Florencio、Cha Zhang、Zhoujun Li、Furu Wei展示了这一点</p>
+<p>关于如何使用VisionEncoderDecoderModel进行推断的示例可以在TrOCR中找到</p>
+<blockquote>
+<p>图像特定的归纳偏差</p>
+</blockquote>
+<p>图像特定的归纳偏差是指在处理图像数据时，机器学习算法或人类大脑对图像的处理和理解中存在的偏好或倾向性。这种偏差可能导致算法或人类在处理图像时出现系统性的错误或误解。</p>
+<p>图像特定的归纳偏差可能源自以下几个方面：</p>
+<ol>
+<li>形状偏差：人类和机器学习算法在处理图像时，可能更容易关注物体的形状和轮廓。这可能导致对于形状特征较强的物体更敏感，而对于纹理、颜色等其他特征的重要性较低。</li>
+<li>颜色偏差：颜色是图像中的重要特征之一，但人类和机器学习算法可能对不同颜色的感知和辨别能力存在差异。某些颜色的辨别可能更容易，而对于其他颜色的辨别可能相对较差。</li>
+<li>尺度偏差：图像中的物体尺度可能对于算法或人类的视觉处理产生影响。例如，较大尺度的物体可能更容易被注意到和理解，而较小尺度的物体可能容易被忽略或误解。</li>
+<li>视角偏差：视角对于理解图像中的物体和场景也具有重要作用。不同的视角可能导致物体的外观发生变化，从而影响算法或人类对物体的认知和解释。</li>
+</ol>
+<p>这些图像特定的归纳偏差可能会对计算机视觉任务（如物体检测、图像分类等）的性能产生影响，并导致一些常见的误分类或误解。为了减少这些偏差的影响，研究人员和开发者通常会采取一系列的方法，例如使用更丰富的特征表示、进行数据增强、多角度训练等，以提高算法在处理图像数据时的准确性和鲁棒性。</p>
+<hr/>
+<p>基于TrOCR 提一些面试题</p>
+<p>当涉及到TrOCR（Transformer-based Optical Character Recognition）的面试问题时，可以考虑以下几个方面的问题：</p>
+<ol>
+<li>什么是TrOCR？它与传统的OCR方法有何不同？</li>
+<li>TrOCR中使用的是哪种Transformer模型？请描述其结构和主要组成部分。</li>
+<li>在TrOCR中，图像是如何被处理和输入到Transformer模型中的？</li>
+<li>TrOCR如何实现对文本的自回归生成？它采用了哪些技术和策略？</li>
+<li>TrOCR中的预训练和微调是如何进行的？使用了哪些数据集和训练方法？</li>
+<li>TrOCR在哪些任务和数据集上取得了优秀的性能？可以谈谈其在印刷体和手写体识别任务上的表现。</li>
+<li>TrOCR的优势和局限性是什么？相对于传统的OCR方法，它有哪些潜在的应用前景和挑战？</li>
+<li>在TrOCR中，是否存在一些常见的问题或挑战？可以谈谈对应的解决方法或改进思路。</li>
+<li>TrOCR在实际应用中可能面临的计算资源和效率方面的问题有哪些？如何解决或优化这些问题？</li>
+<li>除了TrOCR，还有哪些基于Transformer的图像处理任务和应用？可以举例说明。</li>
+</ol>
+<p>这些问题将涵盖TrOCR的基本概念、模型结构、训练和应用等方面，有助于评估面试者对TrOCR的理解和熟悉程度。根据具体情况，你还可以进一步展开讨论相关的深入问题。</p>
+<hr/>
+<p>回答下你提的十个问题</p>
+<p>当涉及到TrOCR（Transformer-based Optical Character Recognition）的面试问题时，以下是对你提出的十个问题的简要回答：</p>
+<ol>
+<li>TrOCR是一种基于Transformer的光学字符识别方法，与传统的OCR方法相比，它利用Transformer模型实现了端到端的文本生成和理解，具有更好的建模能力和上下文理解能力。</li>
+<li>TrOCR使用的是Transformer模型，它由编码器和解码器组成。编码器采用自注意力机制来处理输入图像的特征表示，解码器采用自回归生成的方式逐步生成输出文本。</li>
+<li>在TrOCR中，图像经过预处理步骤，如分割为固定大小的图像块，并进行线性嵌入，然后添加位置编码。处理后的图像表示被输入到Transformer编码器中进行处理。</li>
+<li>TrOCR采用自回归生成的方式对文本进行生成，即逐个生成每个字符或词汇。它使用了类似于语言建模的技术，通过上文的信息来预测下一个字符或词汇。</li>
+<li>TrOCR的预训练阶段通常使用大规模的合成数据进行训练，以学习图像和文本之间的对应关系。然后，可以通过微调阶段使用真实标注的数据来优化模型的性能。</li>
+<li>TrOCR在印刷体和手写体识别任务上取得了优秀的性能。它在大规模的OCR数据集上进行了评估，并在准确性和泛化能力方面超过了传统的OCR方法。</li>
+<li>TrOCR的优势包括能够对长文本进行建模、上下文理解能力强、适应不同语种和字体样式等。然而，TrOCR可能对计算资源要求较高，并且在处理一些特定的复杂场景（如低质量图像或特殊字体）时可能面临挑战。</li>
+<li>在TrOCR中，一些常见的问题包括文本重复生成、模糊图像的处理、长文本的生成和训练数据的标注质量。解决这些问题的方法可能涉及使用更复杂的解码策略、改进的图像预处理和增强技术以及更好的数据标注和清洗方法。</li>
+<li>TrOCR在实际应用中可能面临的计算资源和效率方面的问题包括模型大小和推理速度。为了解决这些问题，可以采用模型压缩和加速技术，如剪枝、量化和模型并行化等。</li>
+<li>除了TrOCR，还有许多基于Transformer的图像处理任务和应用。例如，图像分类、目标检测</li>
+</ol>
+<blockquote>
+<p>OCR识别手写文字(中文+英文)</p>
+</blockquote>
+<p>参考文献：</p>
+<ul>
+<li><p><a href="https://arxiv.org/pdf/2109.10282v4.pdf" target="_blank">TrOCR: Transformer-based Optical Character Recognition with Pre-trained Models 2022</a></p>
+<p>该论文提出了一种名为TrOCR的基于Transformer的光学字符识别(OCR)模型，通过利用预训练模型进行特征提取和文本生成，实现端到端的文本识别任务</p>
+<p>TrOCR模型的关键创新点包括以下几个方面：</p>
+<ol>
+<li>基于Transformer的架构：TrOCR采用了Transformer架构作为其基础模型，其中包括编码器和解码器。<strong>编码器用于提取图像特征</strong>，<strong>解码器用于生成识别的文本序列</strong></li>
+<li>预训练模型的应用：TrOCR利用预训练的图像和文本模型作为编码器和解码器，如ViT、RoBERTa等。这些预训练模型能够提供丰富的视觉和语言表示能力，有助于提高OCR的准确性</li>
+<li>大规模合成数据集：为了进行预训练和微调，TrOCR使用了大规模的合成数据集，包括数百万张打印文本图像和手写文本图像。这样可以增加模型在不同领域和样式的文本上的泛化能力</li>
+</ol>
+<p>实验证明，TrOCR模型在打印文本、手写文本和场景文本识别任务上取得了优异的性能表现，超过了当前的state-of-the-art模型。该论文的贡献在于将Transformer应用于OCR任务，并且通过预训练模型的利用提高了OCR的准确性和泛化能力</p>
+</li>
+<li></li>
+</ul>
+<p>架构：</p>
+<p>model(VisionEncoderDecoderModel) = encoder(DeiT)+decoder(TrOCRForCausalLM)</p>
+<pre><code class="lang-python">DeiTModel(
+  (embeddings): DeiTEmbeddings(
+    (patch_embeddings): DeiTPatchEmbeddings(
+      (projection): Conv2d(<span class="hljs-number">3</span>, <span class="hljs-number">384</span>, kernel_size=(<span class="hljs-number">16</span>, <span class="hljs-number">16</span>), stride=(<span class="hljs-number">16</span>, <span class="hljs-number">16</span>))
+    )
+    (dropout): Dropout(p=<span class="hljs-number">0.0</span>, inplace=<span class="hljs-keyword">False</span>)
+  )
+  (encoder): DeiTEncoder(
+    (layer): ModuleList(
+      (<span class="hljs-number">0</span>): DeiTLayer(
+        (attention): DeiTAttention(
+          (attention): DeiTSelfAttention(
+            (query): Linear(in_features=<span class="hljs-number">384</span>, out_features=<span class="hljs-number">384</span>, bias=<span class="hljs-keyword">True</span>)
+            (key): Linear(in_features=<span class="hljs-number">384</span>, out_features=<span class="hljs-number">384</span>, bias=<span class="hljs-keyword">True</span>)
+            (value): Linear(in_features=<span class="hljs-number">384</span>, out_features=<span class="hljs-number">384</span>, bias=<span class="hljs-keyword">True</span>)
+            (dropout): Dropout(p=<span class="hljs-number">0.0</span>, inplace=<span class="hljs-keyword">False</span>)
+          )
+          (output): DeiTSelfOutput(
+            (dense): Linear(in_features=<span class="hljs-number">384</span>, out_features=<span class="hljs-number">384</span>, bias=<span class="hljs-keyword">True</span>)
+            (dropout): Dropout(p=<span class="hljs-number">0.0</span>, inplace=<span class="hljs-keyword">False</span>)
+          )
+        )
+        (intermediate): DeiTIntermediate(
+          (dense): Linear(in_features=<span class="hljs-number">384</span>, out_features=<span class="hljs-number">1536</span>, bias=<span class="hljs-keyword">True</span>)
+          (intermediate_act_fn): GELUActivation()
+        )
+        (output): DeiTOutput(
+          (dense): Linear(in_features=<span class="hljs-number">1536</span>, out_features=<span class="hljs-number">384</span>, bias=<span class="hljs-keyword">True</span>)
+          (dropout): Dropout(p=<span class="hljs-number">0.0</span>, inplace=<span class="hljs-keyword">False</span>)
+        )
+        (layernorm_before): LayerNorm((<span class="hljs-number">384</span>,), eps=<span class="hljs-number">1e-12</span>, elementwise_affine=<span class="hljs-keyword">True</span>)
+        (layernorm_after): LayerNorm((<span class="hljs-number">384</span>,), eps=<span class="hljs-number">1e-12</span>, elementwise_affine=<span class="hljs-keyword">True</span>)
+      ) * <span class="hljs-number">12</span>
+    )
+  )
+  (layernorm): LayerNorm((<span class="hljs-number">384</span>,), eps=<span class="hljs-number">1e-12</span>, elementwise_affine=<span class="hljs-keyword">True</span>)
+  (pooler): DeiTPooler(
+    (dense): Linear(in_features=<span class="hljs-number">384</span>, out_features=<span class="hljs-number">384</span>, bias=<span class="hljs-keyword">True</span>)
+    (activation): Tanh()
+  )
+)
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment"># 通过线性层将编码器和解码器连接到了一起</span>
+enc_to_dec_proj = nn.Linear(self.encoder.config.hidden_size, self.decoder.config.hidden_size)
+</code></pre>
+<pre><code class="lang-python">TrOCRForCausalLM(
+  (model): TrOCRDecoderWrapper(
+    (decoder): TrOCRDecoder(
+      (embed_tokens): Embedding(<span class="hljs-number">11318</span>, <span class="hljs-number">256</span>, padding_idx=<span class="hljs-number">1</span>)
+      (embed_positions): TrOCRLearnedPositionalEmbedding(<span class="hljs-number">514</span>, <span class="hljs-number">256</span>)
+      (layernorm_embedding): LayerNorm((<span class="hljs-number">256</span>,), eps=<span class="hljs-number">1e-05</span>, elementwise_affine=<span class="hljs-keyword">True</span>)
+      (layers): ModuleList(
+        (<span class="hljs-number">0</span>): TrOCRDecoderLayer(
+          (self_attn): TrOCRAttention(
+            (k_proj): Linear(in_features=<span class="hljs-number">256</span>, out_features=<span class="hljs-number">256</span>, bias=<span class="hljs-keyword">True</span>)
+            (v_proj): Linear(in_features=<span class="hljs-number">256</span>, out_features=<span class="hljs-number">256</span>, bias=<span class="hljs-keyword">True</span>)
+            (q_proj): Linear(in_features=<span class="hljs-number">256</span>, out_features=<span class="hljs-number">256</span>, bias=<span class="hljs-keyword">True</span>)
+            (out_proj): Linear(in_features=<span class="hljs-number">256</span>, out_features=<span class="hljs-number">256</span>, bias=<span class="hljs-keyword">True</span>)
+          )
+          (activation_fn): ReLU()
+          (self_attn_layer_norm): LayerNorm((<span class="hljs-number">256</span>,), eps=<span class="hljs-number">1e-05</span>, elementwise_affine=<span class="hljs-keyword">True</span>)
+          (encoder_attn): TrOCRAttention(
+            (k_proj): Linear(in_features=<span class="hljs-number">384</span>, out_features=<span class="hljs-number">256</span>, bias=<span class="hljs-keyword">True</span>)
+            (v_proj): Linear(in_features=<span class="hljs-number">384</span>, out_features=<span class="hljs-number">256</span>, bias=<span class="hljs-keyword">True</span>)
+            (q_proj): Linear(in_features=<span class="hljs-number">256</span>, out_features=<span class="hljs-number">256</span>, bias=<span class="hljs-keyword">True</span>)
+            (out_proj): Linear(in_features=<span class="hljs-number">256</span>, out_features=<span class="hljs-number">256</span>, bias=<span class="hljs-keyword">True</span>)
+          )
+          (encoder_attn_layer_norm): LayerNorm((<span class="hljs-number">256</span>,), eps=<span class="hljs-number">1e-05</span>, elementwise_affine=<span class="hljs-keyword">True</span>)
+          (fc1): Linear(in_features=<span class="hljs-number">256</span>, out_features=<span class="hljs-number">1024</span>, bias=<span class="hljs-keyword">True</span>)
+          (fc2): Linear(in_features=<span class="hljs-number">1024</span>, out_features=<span class="hljs-number">256</span>, bias=<span class="hljs-keyword">True</span>)
+          (final_layer_norm): LayerNorm((<span class="hljs-number">256</span>,), eps=<span class="hljs-number">1e-05</span>, elementwise_affine=<span class="hljs-keyword">True</span>)
+        ) * <span class="hljs-number">6</span>
+      )
+    )
+  )
+  (output_projection): Linear(in_features=<span class="hljs-number">256</span>, out_features=<span class="hljs-number">11318</span>, bias=<span class="hljs-keyword">False</span>)
+)
+</code></pre>
+<p>实现细节:</p>
+<p>数据集:</p>
+<p></p><footer class="page-footer"><span class="copyright">Copyright © narutohyc.com 2021 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
+2023-08-14 07:08:49
+</span></footer><hr/><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz',appKey: 'utUrzoiqNaDEGlgr09JL1pXB',placeholder: '欢迎留下评论交流~',avatar: 'wavatar',meta: undefined,pageSize: 15,lang: 'zh-CN',recordIP: false})</script><p></p>
+</section>
+</div>
+<div class="search-results">
+<div class="has-results">
+<h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+<ul class="search-results-list"></ul>
+</div>
+<div class="no-results">
+<h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<a aria-label="Previous page: LLM模型部署调试推理.md" class="navigation navigation-prev" href="LLM模型部署调试推理.html">
+<i class="fa fa-angle-left"></i>
+</a>
+<a aria-label="Next page: huggingface基本使用教程.md" class="navigation navigation-next" href="huggingface基本使用教程.html">
+<i class="fa fa-angle-right"></i>
+</a>
+<script src="https://cdn.jsdelivr.net/gh/zztongtong/CDN/js/live2d.min.js"></script><div style="position:absolute; bottom:0; left:0; width:200;"><canvas height="350" id="model_1" width="200"></canvas></div></div>
+<script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"abbrlink":35455,"date":"2023/02/23 11:12:40","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆1.webp","title":"dl_in_vision_field.md","tags":["深度学习"],"top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆1.webp","mathjax":true,"categories":["deep_learning"],"description":null,"level":"1.4","depth":1,"next":{"title":"huggingface基本使用教程.md","level":"1.5","depth":1,"path":"chapters/huggingface基本使用教程.md","ref":"chapters/huggingface基本使用教程.md","articles":[]},"previous":{"title":"LLM模型部署调试推理.md","level":"1.3","depth":1,"path":"chapters/LLM模型部署调试推理.md","ref":"chapters/LLM模型部署调试推理.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":true,"enableFooter":false,"site":"https://hycbook.github.io/bk_python/","author":"narutohyc","website":"python元知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Python相关学习记录","language":"zh-hans","links":{"sidebar":{"书籍主页":"https://hycbook.github.io/bk_index/"}},"gitbook":"*","description":"记录 Python 的学习和一些技巧的使用"},"file":{"path":"chapters/dl_in_vision_field.md","mtime":"2023-08-14T07:08:49.366Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-14T07:15:00.707Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+<canvas class="fireworks"></canvas><script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script></div>
+<script src="../gitbook/gitbook.js"></script>
+<script src="../gitbook/theme.js"></script>
+<script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+<script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+<script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+<script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+<script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+<script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-copyright-v/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+<script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+</body>
+</html>

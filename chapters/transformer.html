@@ -1,0 +1,896 @@
+<!DOCTYPE HTML>
+<html lang="zh-hans">
+<head>
+<meta charset="utf-8"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>transformer.md · Python相关学习记录</title>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="" name="description"/>
+<meta content="GitBook 3.2.3" name="generator"/>
+<meta content="narutohyc" name="author"/>
+<link href="../gitbook/style.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-splitter/splitter.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-anchors/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-donate/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-code/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-search-plus/search.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-pageview-count/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-highlight/website.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-fontsettings/website.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-theme-comscore/test.css" rel="stylesheet"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<link href="../gitbook/images/apple-touch-icon-precomposed-152.png" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+<link href="../gitbook/images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="图像分割算法.html" rel="next"/>
+<link href="pytorch学习.html" rel="prev"/>
+<link href="./chapters/res/other/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="./chapters/res/other/favicon.ico" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+<style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+<script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]};
+    </script>
+</head>
+<body>
+          <div class="mountain_a"></div>
+          <div class="mountain_b"></div>
+          <div class="house right">
+            <div class="fence"></div>
+            <div class="wall"></div>
+            <div class="roof left"></div>
+            <div class="roof right"></div>
+            <div class="door"></div>
+          </div>
+          <div class="house left">
+            <div class="fence"></div>
+            <div class="wall"></div>
+            <div class="roof left"></div>
+            <div class="roof right"></div>
+            <div class="door"></div>
+          </div>
+          <div class="tree_back"></div>
+          <div class="tree"></div>
+          <div class="postbox_a">
+            <div class="hole"></div>
+          </div>
+          <div class="postbox_b">
+            <div class="hole"></div>
+          </div>
+          <div class="windmill">
+            <div class="tower"></div>
+            <div class="t1"></div>
+            <div class="t2"></div>
+            <div class="blade">
+              <div class="windblade"></div>
+              <div class="windblade windblade2"></div>
+              <div class="windblade windblade3"></div>
+              <div class="windblade windblade4"></div>
+            </div>
+          </div>
+          <div class="allsnows">
+            <div class="snow1"></div>
+            <div class="snow2"></div>
+            <div class="snow3"></div>
+            <div class="snow4"></div>
+            <div class="snow5"></div>
+            <div class="snow6"></div>
+            <div class="snow7"></div>
+            <div class="snow8"></div>
+            <div class="snow9"></div>
+            <div class="snow10"></div>
+            <div class="snow11"></div>
+            <div class="snow12"></div>
+            <div class="snow13"></div>
+            <div class="snow14"></div>
+            <div class="snow15"></div>
+            <div class="snow16"></div>
+            <div class="snow17"></div>
+            <div class="snow18"></div>
+            <div class="snow19"></div>
+            <div class="snow20"></div>
+          </div>
+          <div class="ground">
+            <div class="g1"></div>
+            <div class="g2"></div>
+            <div class="g3"></div>
+            <div class="ice">
+              <div class="glare"></div>
+              <div class="ice_shadow"></div>
+            </div>
+
+          </div>
+    
+<div class="book">
+<div class="book-summary">
+<div id="book-search-input" role="search">
+<input placeholder="输入并搜索" type="text"/>
+</div>
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a class="custom-link" href="https://hycbook.github.io/bk_index/" target="_blank">书籍主页</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-level="1.1" data-path="../" id="chapter_id_0">
+<a href="../">
+<b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.2" data-path="LLM模型微调系列.html" id="chapter_id_1">
+<a href="LLM模型微调系列.html">
+<b>1.2.</b>
+                    
+                    LLM模型微调系列.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.3" data-path="LLM模型部署调试推理.html" id="chapter_id_2">
+<a href="LLM模型部署调试推理.html">
+<b>1.3.</b>
+                    
+                    LLM模型部署调试推理.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.4" data-path="dl_in_vision_field.html" id="chapter_id_3">
+<a href="dl_in_vision_field.html">
+<b>1.4.</b>
+                    
+                    dl_in_vision_field.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.5" data-path="huggingface基本使用教程.html" id="chapter_id_4">
+<a href="huggingface基本使用教程.html">
+<b>1.5.</b>
+                    
+                    huggingface基本使用教程.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.6" data-path="nlp关键词和摘要提取技术整理.html" id="chapter_id_5">
+<a href="nlp关键词和摘要提取技术整理.html">
+<b>1.6.</b>
+                    
+                    nlp关键词和摘要提取技术整理.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.7" data-path="pytorch学习.html" id="chapter_id_6">
+<a href="pytorch学习.html">
+<b>1.7.</b>
+                    
+                    pytorch学习.md
+            
+                </a>
+</li>
+<li class="chapter active" data-level="1.8" data-path="transformer.html" id="chapter_id_7">
+<a href="transformer.html">
+<b>1.8.</b>
+                    
+                    transformer.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.9" data-path="图像分割算法.html" id="chapter_id_8">
+<a href="图像分割算法.html">
+<b>1.9.</b>
+                    
+                    图像分割算法.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.10" data-path="图像分类算法.html" id="chapter_id_9">
+<a href="图像分类算法.html">
+<b>1.10.</b>
+                    
+                    图像分类算法.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.11" data-path="数据标注工具.html" id="chapter_id_10">
+<a href="数据标注工具.html">
+<b>1.11.</b>
+                    
+                    数据标注工具.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.12" data-path="深度学习核心之优化器.html" id="chapter_id_11">
+<a href="深度学习核心之优化器.html">
+<b>1.12.</b>
+                    
+                    深度学习核心之优化器.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.13" data-path="深度学习核心之损失函数.html" id="chapter_id_12">
+<a href="深度学习核心之损失函数.html">
+<b>1.13.</b>
+                    
+                    深度学习核心之损失函数.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.14" data-path="深度学习核心之激活函数.html" id="chapter_id_13">
+<a href="深度学习核心之激活函数.html">
+<b>1.14.</b>
+                    
+                    深度学习核心之激活函数.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.15" data-path="深度学习核心基础知识点.html" id="chapter_id_14">
+<a href="深度学习核心基础知识点.html">
+<b>1.15.</b>
+                    
+                    深度学习核心基础知识点.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.16" data-path="深度学习模型压缩技术.html" id="chapter_id_15">
+<a href="深度学习模型压缩技术.html">
+<b>1.16.</b>
+                    
+                    深度学习模型压缩技术.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.17" data-path="目标检测与跟踪算法.html" id="chapter_id_16">
+<a href="目标检测与跟踪算法.html">
+<b>1.17.</b>
+                    
+                    目标检测与跟踪算法.md
+            
+                </a>
+</li>
+<li class="divider"></li>
+<li>
+<a class="gitbook-link" href="https://www.gitbook.com" target="blank">
+            本书使用 GitBook 发布
+        </a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="..">transformer.md</a>
+</h1>
+</div>
+<div class="page-wrapper" role="main" tabindex="-1">
+<div class="page-inner">
+<div class="search-plus" id="book-search-results">
+<div class="search-noresults">
+<section class="normal markdown-section">
+<div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon"></span><a href="#transformer">1 Transformer</a></li><ul><li><span class="title-icon"></span><a href="#词向量">1.1 词向量</a></li><li><span class="title-icon"></span><a href="#模型介绍">1.2 模型介绍</a></li><li><span class="title-icon"></span><a href="#architecture">1.3 Architecture</a></li><li><span class="title-icon"></span><a href="#embedding">1.4 Embedding</a></li><li><span class="title-icon"></span><a href="#attention">1.5 Attention</a></li><li><span class="title-icon"></span><a href="#encoder">1.6 Encoder</a></li><li><span class="title-icon"></span><a href="#decoder">1.7 Decoder</a></li></ul><li><span class="title-icon"></span><a href="#bert">2 Bert</a></li><ul><li><span class="title-icon"></span><a href="#bert概况">2.1 bert概况</a></li><li><span class="title-icon"></span><a href="#architecture_1">2.2 Architecture</a></li></ul></ul></div><a href="#transformer" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><hr/>
+<h1 id="transformer">1 Transformer</h1>
+<blockquote>
+<p><a href="http://arxiv.org/abs/1706.03762v3" target="_blank">Attention Is All You Need</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/46990010" target="_blank">论文解读: Attention is All you need</a></p>
+<p><a href="https://github.com/huggingface/transformers/blob/main/README_zh-hans.md" target="_blank">Hugging Face的GitHub代码库</a></p>
+</blockquote>
+<p><a data-lightbox="45c52c47-f9c2-4118-80eb-7439b5e9114a" data-title="Transformer系列" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/transformer/Transformer系列.webp" target="_blank"><img alt="Transformer系列" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/transformer/Transformer系列.webp"/></a></p>
+<blockquote>
+<p>通常而言，绝大部分NLP问题可以归入上图所示的<a href="https://zhuanlan.zhihu.com/p/49271699" target="_blank">四类任务</a>中</p>
+</blockquote>
+<ol>
+<li><p><strong>序列标注</strong>: 这是最典型的NLP任务，比如中文分词，词性标注，命名实体识别，语义角色标注等都可以归入这一类问题</p>
+<p>它的特点是句子中每个单词要求模型根据上下文都要给出一个分类类别</p>
+</li>
+<li><p><strong>分类任务</strong>: 比如我们常见的文本分类，情感计算等都可以归入这一类。它的特点是不管文章有多长，总体给出一个分类类别即可</p>
+</li>
+<li><p><strong>句子关系判断</strong>: 比如Entailment，QA，语义改写，自然语言推理等任务都是这个模式，给定两个句子，模型判断出两个句子是否具备某种语义关系</p>
+</li>
+<li><p><strong>生成式任务</strong>: 比如机器翻译，文本摘要，写诗造句，看图说话等都属于这一类，输入文本内容后，需要自主生成另外一段文字</p>
+</li>
+</ol>
+<blockquote>
+<p>预训练语言模型</p>
+</blockquote>
+<p>目前有两种预训练语言模型用于下游任务的方法：feature-based(以<strong>ELMo</strong>为例)和fine-tuning(以<strong>BERT</strong>、<strong>GPT</strong>为例)</p>
+<p>有专门的<a href="https://arxiv.org/pdf/1903.05987v2.pdf" target="_blank">论文(To Tune or Not to Tune? Adapting Pretrained Representations to Diverse Tasks)</a>讨论了这个话题</p>
+<p><code>Feature-based Pre-Training</code>:</p>
+<ul>
+<li><p>在Feature-based Pre-Training中，首先使用大规模的未标记数据集对模型进行预训练</p>
+<p>预训练任务通常是通过自监督学习或其他无监督学习方法来完成，例如预测下一个词语、图像的旋转角度等</p>
+</li>
+<li><p>预训练的目标是学习到具有良好表示能力的特征，能够捕捉数据中的一般性信息</p>
+</li>
+<li><p>预训练模型通常是一个通用的模型，不针对特定的任务。它<strong>学习到的特征表示可以应用于各种不同的任务</strong></p>
+</li>
+<li><p>预训练模型可以作为迁移学习的基础，通过将其特征提取部分应用于具体的任务</p>
+</li>
+</ul>
+<p><code>Fine-tuning</code>:</p>
+<ul>
+<li>Fine-tuning是在预训练模型的基础上，在<strong>特定任务的有标签数据集上进行进一步训练和优化</strong></li>
+<li>Fine-tuning阶段会调整预训练模型的权重和参数，以使其适应目标任务的特定要求</li>
+<li>Fine-tuning过程中，<strong>通常会保持预训练模型的一部分权重固定，只更新部分权重</strong>，以保留预训练阶段学习到的通用特征表示</li>
+<li>Fine-tuning旨在在特定任务的有限标记数据集上优化模型，使其更好地适应该任务的数据和特征</li>
+</ul>
+<p>总结来说，Feature-based Pre-Training是通过在未标记数据上预训练模型来学习<strong>通用的特征表示</strong>，而Fine-tuning是在预训练模型的基础上，在<strong>特定任务的有标签数据</strong>上进行进一步<strong>优化和微调</strong></p>
+<p>Feature-based Pre-Training提供了一种学习通用特征表示的方式，而Fine-tuning则将这些通用特征应用于特定任务，以提升任务性能，<code>一句话概括</code>：</p>
+<ol>
+<li>Feature-based Pre-Training把输入转特征，特征丢给后面的模型(<strong>新模型</strong>)，其他就和它无关了</li>
+<li>Fine-tuning是<strong>同一个网络结构</strong>，换了数据，可以固定或不固定前几层，继续训练</li>
+</ol>
+<h2 id="词向量">1.1 词向量</h2>
+<blockquote>
+<p><a href="https://www.cnblogs.com/nickchen121/p/16470569.html" target="_blank">预训练语言模型的前世今生 - 从Word Embedding到BERT</a></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">年份</th>
+<th style="text-align:left">2013 年</th>
+<th style="text-align:left">2014 年</th>
+<th style="text-align:left">2015 年</th>
+<th style="text-align:left">2016 年</th>
+<th style="text-align:left">2017 年</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">技术</td>
+<td style="text-align:left">word2vec</td>
+<td style="text-align:left">GloVe</td>
+<td style="text-align:left">LSTM/Attention</td>
+<td style="text-align:left">Self-Attention</td>
+<td style="text-align:left">Transformer</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">年份</th>
+<th style="text-align:left">2018 年</th>
+<th style="text-align:left">2019 年</th>
+<th style="text-align:left">2020 年</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">技术</td>
+<td style="text-align:left">GPT/ELMo/BERT/GNN</td>
+<td style="text-align:left">XLNet/BoBERTa/GPT-2/ERNIE/T5</td>
+<td style="text-align:left">GPT-3/ELECTRA/ALBERT</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><p><strong>One-hot编码</strong>：早期的自然语言处理中，词语通常被表示为离散的one-hot向量。每个词语都被表示为一个维度等于词汇表大小的向量，其中只有一个维度为1，其余维度都为0</p>
+<p><strong>这种表示方法无法捕捉词语之间的语义关系和相似度</strong></p>
+</li>
+<li><p><strong>Word Embedding</strong>：为了克服one-hot编码的局限性，提出了基于分布假设的词向量表示方法，即Word Embedding。Word Embedding使用低维实数向量表示词语，通过训练模型将词语映射到一个连续的向量空间中。其中，每个维度代表一个语义特征。<strong>Word Embedding能够捕捉到词语之间的语义关系和相似度，提供更丰富的表示</strong></p>
+</li>
+<li><p><strong>Word2Vec(静态)</strong>：Word2Vec是一种经典的词向量模型，由Tomas Mikolov等人于2013年提出。它基于神经网络模型，通过训练预测词语周围的上下文或预测目标词语。Word2Vec模型包括两种算法：<code>CBOW(Continuous Bag-of-Words)和</code>Skip-gram`。这两种算法使用浅层的神经网络来学习词向量，具有高效、快速训练的优势。<strong>Word2Vec模型能够生成静态的词向量，但无法捕捉词语的上下文相关特征</strong></p>
+</li>
+<li><p><strong>ELMo(Embeddings from Language Models)(动态)</strong>：ELMo是在Word2Vec之后提出的一种上下文相关的词向量表示方法，由Peters等人于2018年提出。ELMo利用双向语言模型，通过训练正向和逆向的LSTM模型来学习词语的上下文表示。<strong>ELMo能够根据上下文动态地生成词向量，捕捉到词语在不同上下文中的语义特征</strong>。与静态词向量不同，ELMo提供了更丰富、更具语义的词语表示，适用于各种自然语言处理任务</p>
+<p>ELMo(Embeddings from Language Models)模型在训练过程中使用了双向长短期记忆网络（Bi-LSTM）</p>
+</li>
+</ol>
+<p>总的来说，历史发展中，从one-hot编码到Word Embedding，再到Word2Vec和ELMo，词向量表示方法逐渐从离散、静态的表示发展到了连续、上下文相关的表示。这些方法的提出和发展使得自然语言处理模型能够更好地理解和处理文本数据，提高了各种文本相关任务的性能</p>
+<p>Word Embedding、Word2Vec和ELMo关系如下：</p>
+<ul>
+<li><p>Word2Vec是Word Embedding的一种<code>具体实现方式</code>。Word Embedding指的是将词语映射到低维实数向量空间的表示方法，而<strong>Word2Vec则是一种用于训练Word Embedding的算法</strong></p>
+</li>
+<li><p>ELMo和Word2Vec是两种不同的词向量表示方法。ELMo是一种上下文相关的词向量表示方法，通过训练双向语言模型来学习词语在不同上下文中的<code>动态表示</code>。而Word2Vec是一种上下文无关的词向量表示方法，通过训练预测词语的上下文或目标词语来学习<code>静态的词向量</code></p>
+</li>
+</ul>
+<h2 id="模型介绍">1.2 模型介绍</h2>
+<blockquote>
+<p>介绍Transformer比较好的文章</p>
+</blockquote>
+<ol>
+<li>一个是Jay Alammar可视化地介绍Transformer的博客文章<a href="https://jalammar.github.io/illustrated-transformer/" target="_blank">The Illustrated Transformer</a>，非常容易理解整个机制</li>
+<li>哈佛大学NLP研究组写的<a href="http://nlp.seas.harvard.edu/2018/04/03/attention.html" target="_blank">The Annotated Transformer</a>，代码原理双管齐下</li>
+</ol>
+<blockquote>
+<p>Attention机制</p>
+</blockquote>
+<p>Attention机制最早在视觉领域提出，2014年Google Mind发表了《Recurrent Models of Visual Attention》，使Attention机制流行起来，这篇论文采用了RNN模型，并加入了Attention机制来进行图像的分类</p>
+<p>2005年，Bahdanau等人在论文《Neural Machine Translation by Jointly Learning to Align and Translate》中，将attention机制首次应用在nlp领域，其采用Seq2Seq+Attention模型来进行机器翻译，并且得到了效果的提升，<a href="https://zhuanlan.zhihu.com/p/36131103" target="_blank">Seq2Seq With Attention</a>中进行了介绍</p>
+<p>2017 年，Google 机器翻译团队发表的《Attention is All You Need》中，完全抛弃了RNN和CNN等网络结构，而仅仅采用<code>自注意力</code>(self-attention)机制来学习文本表示来进行<strong>机器翻译</strong>任务，并且取得了很好的效果，注意力机制也成为了大家近期的研究热点</p>
+<p>本文首先介绍常见的Attention机制，然后对论文《Attention is All You Need》进行介绍，该论文发表在NIPS 2017上</p>
+<h2 id="architecture">1.3 Architecture</h2>
+<blockquote>
+<p>模型结构如下</p>
+</blockquote>
+<ul>
+<li><p>输入层</p>
+<ul>
+<li>词嵌入编码层</li>
+<li>位置编码层</li>
+</ul>
+</li>
+<li><p>Encoder</p>
+<ul>
+<li>多头自注意力</li>
+<li>残差连接</li>
+<li>全连接网络</li>
+</ul>
+</li>
+<li><p>Dncoder</p>
+<ul>
+<li>多头自注意力</li>
+<li>多头注意力(不是自注意, 因为QK来自Encoder)</li>
+<li>残差连接</li>
+<li>全连接网络</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>模型整体结构如下所示</p>
+</blockquote>
+<p><a data-lightbox="449376ac-2d3f-4dd5-b591-37faae4db321" data-title="The_transformer_encoder_decoder_stack" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/transformer/The_transformer_encoder_decoder_stack.webp" target="_blank"><img alt="The_transformer_encoder_decoder_stack" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/transformer/The_transformer_encoder_decoder_stack.webp"/></a></p>
+<p>Transformer是一种基于<code>自注意力机制</code>的<code>序列到序列</code>模型，广泛应用于自然语言处理任务，如<strong>机器翻译</strong>、<strong>文本摘要</strong>和<strong>语言生成</strong>等</p>
+<p><strong>Transformer整体结构由以下几个主要组件组成</strong>：</p>
+<ol>
+<li><code>编码器（Encoder）</code>：编码器负责将输入序列（例如源语言句子）转换为一系列<code>高级特征表示</code>。它由多个相同的层堆叠而成，<strong>每个层都包含两个子层：多头自注意力机制和全连接前馈神经网络</strong>。自注意力机制允许模型对输入序列中的不同位置进行自适应地关注，从而捕捉序列中的上下文信息</li>
+<li><code>解码器（Decoder）</code>：解码器负责从编码器生成的特征表示中生成目标序列（例如目标语言句子）。解码器也由多个相同的层堆叠而成，<strong>每个层包含三个子层：多头自注意力机制、编码器-解码器注意力机制和全连接前馈神经网络</strong>。编码器-解码器注意力机制用于在生成目标序列时，引入对源语言句子的关注</li>
+<li><code>自注意力机制（Self-Attention）</code>：自注意力机制是Transformer的关键组件之一。它允许模型在进行编码或解码时，根据输入序列中不同位置之间的关系，动态地计算注意力权重。通过自适应地关注不同位置的信息，自注意力机制能够捕捉输入序列中的上下文信息，提供更全面的表示</li>
+<li><code>注意力机制（Attention）</code>：除了自注意力机制，Transformer还使用编码器-解码器注意力机制。这种注意力机制允许解码器在生成目标序列时，对编码器输出的特征表示进行关注。它能够帮助解码器对源语言句子中与当前生成位置相关的信息进行处理</li>
+<li><code>前馈神经网络（Feed-Forward Network）</code>：Transformer中的每个子层都包含一个前馈神经网络。该网络由两个全连接层组成，通过应用非线性激活函数（如ReLU）来对特征表示进行映射和变换。前馈神经网络有助于捕捉特征之间的非线性关系</li>
+</ol>
+<p>通过编码器和解码器的组合，Transformer模型能够将输入序列转换为输出序列，实现不同的序列到序列任务</p>
+<p>它的<strong>并行计算</strong>性质和<strong>自注意力机制</strong>的能力使得它在处理长序列和捕捉全局依赖关系方面具有优势，成为自然语言处理领域的重要模型，更详细的模型结构如下所示</p>
+<p><a data-lightbox="2cc4706b-de29-4eb0-bd20-9e3340071773" data-title="transformer模型框架" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/transformer/transformer模型框架.webp" target="_blank"><img alt="transformer模型框架" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/transformer/transformer模型框架.webp"/></a></p>
+<h2 id="embedding">1.4 Embedding</h2>
+<p><strong>Embedding层</strong>是Transformer模型中的一个重要组成部分，用于将离散的输入序列（如单词、字符等）映射到连续的低维向量表示</p>
+<p>它负责将输入的符号型数据转换为密集的实数向量，从而能够在模型中进行有效的学习和处理</p>
+<p>在Transformer中，Embedding层主要有两个作用：</p>
+<ol>
+<li><code>词嵌入（Word Embedding）</code>：对于自然语言处理任务，Embedding层将每个词汇或字符映射到一个低维的连续向量表示，称为词嵌入或字符嵌入。这些嵌入向量捕捉了词汇或字符之间的语义和语法关系，能够编码单词的上下文信息，使得模型能够更好地理解和表示输入数据</li>
+<li><code>位置编码（Positional Encoding）</code>：Transformer模型中没有使用循环神经网络或卷积神经网络，因此无法直接捕捉输入序列中顺序信息。为了引入位置信息，Embedding层会添加位置编码到词嵌入中。位置编码是一种用于表示输入序列位置的向量，它提供了关于词汇在序列中相对位置的信息，帮助模型理解序列中的顺序关系</li>
+</ol>
+<p>在实现上，Embedding层可以使用一个矩阵作为参数来进行词嵌入的查找。每个词汇对应矩阵中的一行，通过查找输入序列中的词汇对应的行向量，得到词嵌入表示</p>
+<p>位置编码通常使用正弦和余弦函数的组合来计算，以获取不同位置的编码向量</p>
+<p>需要注意的是，Embedding层的参数通常是在模型训练的过程中学习得到的，根据任务和数据来调整嵌入向量的表示能力。通过Embedding层，模型能够在低维连续向量空间中对输入序列进行表征和建模，从而更好地处理自然语言处理等任务</p>
+<blockquote>
+<p>导入库</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-comment">#!/usr/bin/env Python</span>
+<span class="hljs-comment"># -- coding: utf-8 --</span>
+
+<span class="hljs-string">"""
+@version: v1.0
+@author: huangyc
+@file: embedding.py
+@Description: 
+@time: 2023/2/19 15:00
+"""</span>
+<span class="hljs-keyword">import</span> torch
+<span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn
+<span class="hljs-keyword">import</span> torch.nn.functional <span class="hljs-keyword">as</span> F
+<span class="hljs-keyword">from</span> torch.autograd <span class="hljs-keyword">import</span> Variable
+<span class="hljs-keyword">import</span> math
+<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> copy
+</code></pre>
+<blockquote>
+<p>Embedding层定义</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Embeddings</span><span class="hljs-params">(nn.Module)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, d_model: int, vocab: int)</span>:</span>
+        <span class="hljs-string">"""
+        构建Embedding类来实现文本嵌入层
+        :param d_model: 词嵌入的维度
+        :param vocab: 词表的大小
+        """</span>
+        super(Embeddings, self).__init__()
+        <span class="hljs-comment"># 定义Embedding层</span>
+        self.lut = nn.Embedding(vocab, d_model)
+        self.d_model = d_model
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, x)</span>:</span>
+        <span class="hljs-keyword">return</span> self.lut(x) * math.sqrt(self.d_model)
+</code></pre>
+<blockquote>
+<p>PositionalEncoding层</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-comment"># 定义位置编码器类, 我们同样把它看做一个层,因此会继承nn.Module</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PositionalEncoding</span><span class="hljs-params">(nn.Module)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, d_model: int, dropout: float, max_len: int = <span class="hljs-number">5000</span>)</span>:</span>
+        <span class="hljs-string">"""
+        位置编码器类的初始化函数, 共有三个参数
+        :param d_model: 词嵌入维度
+        :param dropout: 置0比率
+        :param max_len: 每个句子的最大长度
+        :return:
+        """</span>
+        super(PositionalEncoding, self).__init__()
+        <span class="hljs-comment"># 实例化nn中预定义的Dropout层, 并将dropout传入其中,获得对象self.dropout</span>
+        self.dropout = nn.Dropout(p=dropout)
+        <span class="hljs-comment"># 初始化一个位置编码矩阵,它是一个0阵, 矩阵的大小是max_len * d_model</span>
+        pe = torch.zeros(max_len, d_model)
+
+        <span class="hljs-comment"># 初始化一个绝对位置矩阵, 在我们这里, 词汇的绝对位置就是用它的索引去表示</span>
+        <span class="hljs-comment"># 所以我们首先使用arange方法获得一个连续自然数向量, 然后再使用unsqueeze方法拓展向量维度</span>
+        <span class="hljs-comment"># #又因为参数传的是1, 代表矩阵拓展的位置, 会使向量变成一个max_len * 1的矩阵</span>
+        position = torch.arange(<span class="hljs-number">0</span>, max_len).unsqueeze(<span class="hljs-number">1</span>)
+
+        <span class="hljs-comment"># 绝对位置矩阵初始化之后, 接下来就是考虑如何将这些位置信息加入到位置编码矩阵中</span>
+        <span class="hljs-comment"># 最简单思路就是先将max_len * 1的绝对位置矩阵, 变换成max_len * d_model形状, 然后覆盖原来的初始位置编码矩阵即可</span>
+        <span class="hljs-comment"># 要做这种矩阵变换, 就需要一个1 * d_model形状的变换矩阵div_term, 我们对这个变换矩阵的要求除了形状外</span>
+        <span class="hljs-comment"># 还希望它能够将自然数的绝对位置编码缩放成足够小的数字, 有助于在之后的梯度下降过程中更快的收敛</span>
+        <span class="hljs-comment"># 首先使用arange获得一个自然数矩阵, 但是细心的同学们会发现, 我们这里并没有按照预计的一样初始化一个1 * d_model的矩阵</span>
+        <span class="hljs-comment"># 而是有了一个跳跃，只初始化了一半即1*d_mode1/2的矩阵. 为什么是一半呢, 其实这里并不是真正意义上的初始化</span>
+        <span class="hljs-comment"># 我们可以把它看作是初始化了两次, 而每次初始化的变换矩阵会做不同的处理, 第一次初始化的变换矩阵分布在正弦波上, 第二次初始化的变换矩阵分布在余弦波上</span>
+        <span class="hljs-comment"># 并把这两个矩阵分别填充在位置编码矩阵的偶数和奇数位置上, 组成最终的位置编码矩阵</span>
+        div_term = torch.exp(torch.arange(<span class="hljs-number">0</span>, d_model, <span class="hljs-number">2</span>) * -(math.log(<span class="hljs-number">10000.</span>) / d_model))
+        pe[:, <span class="hljs-number">0</span>::<span class="hljs-number">2</span>] = torch.sin(position * div_term)
+        pe[:, <span class="hljs-number">1</span>::<span class="hljs-number">2</span>] = torch.cos(position * div_term)
+
+        <span class="hljs-comment"># 这样我们就得到了位置编码矩阵pe, pe现在还是个二维矩阵，要想和embedding的输出(一个三维张量)相加, 需要扩展维度</span>
+        pe = pe.unsqueeze(<span class="hljs-number">0</span>)
+        <span class="hljs-comment"># 我们把它认为是对模型效果有帮助的, 但是却不是模型结构中超参数或者参数,不需要随着优化步骤优化</span>
+        <span class="hljs-comment"># 注册之后我们就可以在模型保存后重加载时和模型结构与参数一同被加载</span>
+        self.register_buffer(<span class="hljs-string">'pe'</span>, pe)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, x)</span>:</span>
+        <span class="hljs-string">"""
+        :param x: 文本序列的词嵌入表示
+        """</span>
+        <span class="hljs-comment"># 根据句子最大长度切割, pe不需要做梯度求解</span>
+        x = x + Variable(self.pe[:, :x.size(<span class="hljs-number">1</span>)], requires_grad=<span class="hljs-keyword">False</span>)
+        <span class="hljs-keyword">return</span> self.dropout(x)
+</code></pre>
+<blockquote>
+<p>实际测试 + 位置编码可视化</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:
+    p_d_model = <span class="hljs-number">512</span>
+    p_vocab = <span class="hljs-number">1000</span>
+    p_dropout: float = <span class="hljs-number">0.1</span>
+    p_max_len = <span class="hljs-number">60</span>
+
+    <span class="hljs-comment"># 词嵌入测试</span>
+    x = Variable(torch.LongTensor([[<span class="hljs-number">100</span>, <span class="hljs-number">2</span>, <span class="hljs-number">421</span>, <span class="hljs-number">508</span>], [<span class="hljs-number">491</span>, <span class="hljs-number">998</span>, <span class="hljs-number">1</span>, <span class="hljs-number">221</span>]]))
+    emb = Embeddings(d_model=p_d_model, vocab=p_vocab)
+    embr = emb(x)
+    print(<span class="hljs-string">"embr"</span>, embr)
+    print(<span class="hljs-string">"embr size"</span>, embr.shape)
+
+    <span class="hljs-comment"># 位置编码测试</span>
+    pe = PositionalEncoding(d_model=p_d_model, dropout=p_dropout, max_len=p_max_len)
+    pe_result = pe(embr)
+    print(<span class="hljs-string">"pe_result"</span>, pe_result)
+    print(<span class="hljs-string">"pe_result size"</span>, pe_result.shape)
+
+    <span class="hljs-comment"># 创建一张15x5大小的画布</span>
+    plt.figure(figsize=(<span class="hljs-number">15</span>, <span class="hljs-number">5</span>))
+    <span class="hljs-comment"># 实例化PositionalEncoding类得到pe对象, 输入参数是20和0</span>
+    pe = PositionalEncoding(<span class="hljs-number">20</span>, <span class="hljs-number">0</span>)
+    <span class="hljs-comment"># 然后向pe传入被Variable封装的tensor, 这样pe会直接执行forward函数,</span>
+    <span class="hljs-comment"># 且这个tensor里的数值都是0, 被处理后相当于位置编码张量</span>
+    y = pe(Variable(torch.zeros(<span class="hljs-number">1</span>, <span class="hljs-number">100</span>, <span class="hljs-number">20</span>)))
+    <span class="hljs-comment"># 然后定义画布的横纵坐标, 横坐标到100的长度, 纵坐标是某一个词汇中的某维特征在不同长度下对应的值</span>
+    <span class="hljs-comment"># 因为总共有20维之多, 我们这里只查看4,5,6,7维的值</span>
+    plt.plot(np.arange(<span class="hljs-number">100</span>), y[<span class="hljs-number">0</span>, :, <span class="hljs-number">4</span>:<span class="hljs-number">8</span>].data.numpy())
+    <span class="hljs-comment"># 在画布上填写维度提示信息</span>
+    plt.legend([<span class="hljs-string">"dim %d"</span> % p <span class="hljs-keyword">for</span> p <span class="hljs-keyword">in</span> [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>]])
+    plt.show()
+</code></pre>
+<pre><code class="lang-cmd">embr tensor([[[-<span class="hljs-number">17</span>.<span class="hljs-number">5113</span>,  -<span class="hljs-number">6</span>.<span class="hljs-number">0699</span>,  <span class="hljs-number">11</span>.<span class="hljs-number">6839</span>,  ...,  -<span class="hljs-number">8</span>.<span class="hljs-number">1281</span>,  -<span class="hljs-number">7</span>.<span class="hljs-number">7986</span>,  <span class="hljs-number">35</span>.<span class="hljs-number">1275</span>],
+         [ -<span class="hljs-number">6</span>.<span class="hljs-number">3789</span>,  -<span class="hljs-number">7</span>.<span class="hljs-number">7614</span>,  <span class="hljs-number">13</span>.<span class="hljs-number">2975</span>,  ...,  <span class="hljs-number">16</span>.<span class="hljs-number">8397</span>, -<span class="hljs-number">31</span>.<span class="hljs-number">3230</span>, -<span class="hljs-number">68</span>.<span class="hljs-number">4385</span>],
+         [ -<span class="hljs-number">4</span>.<span class="hljs-number">1841</span>,   <span class="hljs-number">8</span>.<span class="hljs-number">4322</span>,  <span class="hljs-number">34</span>.<span class="hljs-number">6418</span>,  ...,  <span class="hljs-number">38</span>.<span class="hljs-number">4747</span>,  -<span class="hljs-number">4</span>.<span class="hljs-number">9060</span>,  <span class="hljs-number">25</span>.<span class="hljs-number">4163</span>],
+         [-<span class="hljs-number">23</span>.<span class="hljs-number">4562</span>, -<span class="hljs-number">28</span>.<span class="hljs-number">9742</span>,  <span class="hljs-number">18</span>.<span class="hljs-number">1234</span>,  ...,  <span class="hljs-number">38</span>.<span class="hljs-number">6039</span>,  <span class="hljs-number">15</span>.<span class="hljs-number">0049</span>,  -<span class="hljs-number">2</span>.<span class="hljs-number">8916</span>]],
+
+        [[-<span class="hljs-number">21</span>.<span class="hljs-number">7485</span>,   <span class="hljs-number">0</span>.<span class="hljs-number">3263</span>,  <span class="hljs-number">54</span>.<span class="hljs-number">4449</span>,  ..., -<span class="hljs-number">18</span>.<span class="hljs-number">3120</span>, -<span class="hljs-number">15</span>.<span class="hljs-number">5987</span>, -<span class="hljs-number">11</span>.<span class="hljs-number">4275</span>],
+         [ -<span class="hljs-number">0</span>.<span class="hljs-number">6414</span>,   <span class="hljs-number">2</span>.<span class="hljs-number">9492</span>, -<span class="hljs-number">32</span>.<span class="hljs-number">3063</span>,  ..., -<span class="hljs-number">21</span>.<span class="hljs-number">9781</span>, -<span class="hljs-number">16</span>.<span class="hljs-number">3307</span>, -<span class="hljs-number">15</span>.<span class="hljs-number">4014</span>],
+         [-<span class="hljs-number">16</span>.<span class="hljs-number">1775</span>,  <span class="hljs-number">20</span>.<span class="hljs-number">8547</span>, -<span class="hljs-number">21</span>.<span class="hljs-number">0333</span>,  ..., -<span class="hljs-number">11</span>.<span class="hljs-number">7583</span>,  -<span class="hljs-number">7</span>.<span class="hljs-number">2429</span>,   <span class="hljs-number">5</span>.<span class="hljs-number">8607</span>],
+         [ -<span class="hljs-number">4</span>.<span class="hljs-number">7708</span>, -<span class="hljs-number">51</span>.<span class="hljs-number">9955</span>,  <span class="hljs-number">14</span>.<span class="hljs-number">8529</span>,  ...,  <span class="hljs-number">21</span>.<span class="hljs-number">0973</span>,  <span class="hljs-number">13</span>.<span class="hljs-number">4664</span>, -<span class="hljs-number">10</span>.<span class="hljs-number">8492</span>]]],
+       grad_fn=&lt;MulBackward0&gt;)
+embr size torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">512</span>])
+
+pe_result tensor([[[-<span class="hljs-number">19</span>.<span class="hljs-number">4569</span>,  -<span class="hljs-number">5</span>.<span class="hljs-number">6332</span>,  <span class="hljs-number">12</span>.<span class="hljs-number">9821</span>,  ...,  -<span class="hljs-number">7</span>.<span class="hljs-number">9201</span>,  -<span class="hljs-number">0</span>.<span class="hljs-number">0000</span>,   <span class="hljs-number">0</span>.<span class="hljs-number">0000</span>],
+         [ -<span class="hljs-number">6</span>.<span class="hljs-number">1526</span>,  -<span class="hljs-number">8</span>.<span class="hljs-number">0235</span>,  <span class="hljs-number">15</span>.<span class="hljs-number">6882</span>,  ...,  <span class="hljs-number">19</span>.<span class="hljs-number">8219</span>, -<span class="hljs-number">34</span>.<span class="hljs-number">8032</span>, -<span class="hljs-number">74</span>.<span class="hljs-number">9317</span>],
+         [ -<span class="hljs-number">3</span>.<span class="hljs-number">6387</span>,   <span class="hljs-number">8</span>.<span class="hljs-number">9068</span>,  <span class="hljs-number">39</span>.<span class="hljs-number">5314</span>,  ...,  <span class="hljs-number">43</span>.<span class="hljs-number">8608</span>,  -<span class="hljs-number">5</span>.<span class="hljs-number">4509</span>,  <span class="hljs-number">29</span>.<span class="hljs-number">3514</span>],
+         [-<span class="hljs-number">25</span>.<span class="hljs-number">9057</span>, -<span class="hljs-number">33</span>.<span class="hljs-number">2935</span>,  <span class="hljs-number">20</span>.<span class="hljs-number">4094</span>,  ...,  <span class="hljs-number">44</span>.<span class="hljs-number">0043</span>,  <span class="hljs-number">16</span>.<span class="hljs-number">6725</span>,  -<span class="hljs-number">2</span>.<span class="hljs-number">1017</span>]],
+
+        [[-<span class="hljs-number">24</span>.<span class="hljs-number">1650</span>,   <span class="hljs-number">1</span>.<span class="hljs-number">4736</span>,   <span class="hljs-number">0</span>.<span class="hljs-number">0000</span>,  ..., -<span class="hljs-number">19</span>.<span class="hljs-number">2356</span>, -<span class="hljs-number">17</span>.<span class="hljs-number">3319</span>, -<span class="hljs-number">11</span>.<span class="hljs-number">5861</span>],
+         [  <span class="hljs-number">0</span>.<span class="hljs-number">2223</span>,   <span class="hljs-number">3</span>.<span class="hljs-number">8772</span>, -<span class="hljs-number">34</span>.<span class="hljs-number">9827</span>,  ..., -<span class="hljs-number">23</span>.<span class="hljs-number">3090</span>, -<span class="hljs-number">18</span>.<span class="hljs-number">1452</span>, -<span class="hljs-number">16</span>.<span class="hljs-number">0015</span>],
+         [-<span class="hljs-number">16</span>.<span class="hljs-number">9647</span>,  <span class="hljs-number">22</span>.<span class="hljs-number">7095</span>, -<span class="hljs-number">22</span>.<span class="hljs-number">3299</span>,  ..., -<span class="hljs-number">11</span>.<span class="hljs-number">9537</span>,  -<span class="hljs-number">8</span>.<span class="hljs-number">0475</span>,   <span class="hljs-number">7</span>.<span class="hljs-number">6230</span>],
+         [ -<span class="hljs-number">0</span>.<span class="hljs-number">0000</span>, -<span class="hljs-number">58</span>.<span class="hljs-number">8727</span>,   <span class="hljs-number">0</span>.<span class="hljs-number">0000</span>,  ...,  <span class="hljs-number">24</span>.<span class="hljs-number">5526</span>,  <span class="hljs-number">14</span>.<span class="hljs-number">9630</span>,  -<span class="hljs-number">0</span>.<span class="hljs-number">0000</span>]]],
+       grad_fn=&lt;MulBackward0&gt;)
+pe_result size torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">512</span>])
+</code></pre>
+<p><a data-lightbox="077a8979-cff5-408c-b28d-ab8095a8f17c" data-title="位置编码可视化" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/transformer/位置编码可视化.webp" target="_blank"><img alt="位置编码可视化" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/transformer/位置编码可视化.webp"/></a></p>
+<h2 id="attention">1.5 Attention</h2>
+<blockquote>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzI5MDUyMDIxNA==&amp;mid=2247579430&amp;idx=1&amp;sn=3c63a42410e2107f1f91f861dc25c3cb&amp;scene=21#wechat_redirect" target="_blank">超详细图解Self-Attention的那些事儿</a></p>
+</blockquote>
+<p>除了Scaled Dot-Product Attention，Transformer模型中还有几种常见的注意力机制</p>
+<ol>
+<li><strong>点积注意力(Dot-Product Attention)</strong>：它是Scaled Dot-Product Attention的简化版本，直接计算查询（Q）和键（K）之间的点积，然后通过softmax函数将结果转化为注意力权重。点积注意力相比于Scaled Dot-Product Attention没有进行缩放操作</li>
+<li><strong>加性注意力(Additive Attention)</strong>：加性注意力使用了一个额外的前馈神经网络来计算注意力权重。它通过将查询（Q）和键（K）映射到相同的低维空间，然后计算它们的相似度得分，最后将相似度得分通过softmax函数进行归一化。加性注意力在一些场景中能够更好地捕捉输入序列之间的非线性关系</li>
+<li>缩放点积注意力(Scaled Dot-Product Attention)：它是Transformer中最常用的注意力机制。在计算注意力权重时，对点积注意力进行了缩放操作，通过除以特征维度的平方根，以减小注意力权重的大小变化。这有助于防止梯度消失或梯度爆炸，并使得模型更稳定</li>
+<li><strong>按位置加权注意力(Relative Positional Attention)</strong>：这种注意力机制考虑了位置信息对注意力计算的影响。它引入了位置编码，通过计算相对位置的差异，对注意力权重进行调整。这种注意力机制在处理序列任务时能够更好地建模长距离依赖关系</li>
+</ol>
+<p>在Transformer中使用的Attention是<code>Scaled Dot-Product Attention</code>，是归一化的点乘Attention，假设输入的query <script type="math/tex; ">q</script> 、key维度、value维度为<script type="math/tex; ">d_{k}</script>，那么就计算query和每个key 的点乘操作，并除以<script type="math/tex; ">\sqrt{d_{k}}</script>，然后应用Softmax函数计算权重
+<script type="math/tex; mode=display">
+\operatorname{Attention}\left(Q_{i}, K_{i}, V_{i}\right)=\operatorname{softmax}\left(\frac{Q_{i} K_{i}^{T}}{\sqrt{d_{k}}}\right) V_{i}
+</script>
+在实践中，将query和keys、values分别处理为矩阵$Q, K, V$，那么计算输出矩阵为:
+<script type="math/tex; mode=display">
+\operatorname{Attention}(Q, K, V)=\operatorname{softmax}\left(\frac{Q K^{T}}{\sqrt{d_{k}}}\right) V
+</script>
+其中<script type="math/tex; ">Q \in R^{m \times d_{k}}</script>, <script type="math/tex; ">K \in R^{m \times d_{k}}</script>, <script type="math/tex; ">V \in R^{m \times d_{k}}</script>，输出矩阵维度为<script type="math/tex; ">R^{m \times d_{k}}</script>，其中<script type="math/tex; ">m</script>为句子长度，<script type="math/tex; ">d_k</script>为Embedding后的特征长度</p>
+<p>其中$QK$的维度为$m \times m$，表示句子中每个字之间的关注度(<code>self-attention</code>)，</p>
+<p>而$(QK)V$的维度为$m \times d_k$，表示attention下的句子特征向量，$QKV$如下所示
+<script type="math/tex; mode=display">
+Q=K=V=\left[ \begin{matrix} 
+d_{11} & d_{12} & \cdots & d_{1 d_k} \\ 
+d_{21} & d_{22} & \cdots & d_{2 d_k} \\ 
+\cdots & \cdots & \cdots & \cdots \\
+d_{m1} & d_{m2} & \cdots & d_{m d_k} \\ 
+\end{matrix} \right] _{m \times d_k}
+</script></p>
+<blockquote>
+<p>attention代码如下: 其中qkv是x经过线性变换之后的结果</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">attention</span><span class="hljs-params">(query, key, value, mask=None, dropout=None)</span>:</span>
+    <span class="hljs-string">"Compute 'Scaled Dot Product Attention'"</span>
+    d_k = query.size(<span class="hljs-number">-1</span>)
+    scores = torch.matmul(query, key.transpose(<span class="hljs-number">-2</span>, <span class="hljs-number">-1</span>)) / math.sqrt(d_k)
+    <span class="hljs-keyword">if</span> mask <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">None</span>:
+        scores = scores.masked_fill(mask == <span class="hljs-number">0</span>, <span class="hljs-number">-1e9</span>)
+    p_attn = F.softmax(scores, dim = <span class="hljs-number">-1</span>)
+    <span class="hljs-keyword">if</span> dropout <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">None</span>:
+        p_attn = dropout(p_attn)
+    <span class="hljs-keyword">return</span> torch.matmul(p_attn, value), p_attn
+</code></pre>
+<blockquote>
+<p>矩阵与其转置的乘积</p>
+</blockquote>
+<p>向量数量积的几何意义：一个向量在另一个向量上的投影</p>
+<p>向量的相似性是用两者的角度余弦来度量，余弦值越大则两者越相似
+<script type="math/tex; mode=display">
+cos \theta = \frac {x^Ty}{||x|| \cdot ||y||}
+</script>
+而余弦值等于两者内积与两者模长积的比，当两个向量模长固定的情形下，内积大小则反映了两者相似性的大小</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+mat_a = np.array([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>], [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">8</span>])
+np.matmul(mat_a,mat_a.T)
+
+Out[<span class="hljs-number">5</span>]: 
+array([[  <span class="hljs-number">9</span>,  <span class="hljs-number">30</span>],
+       [ <span class="hljs-number">30</span>, <span class="hljs-number">105</span>]])
+</code></pre>
+<p>那么Scaled Dot-Product Attention的示意图如下所示，Mask是可选的，如果是能够获取到所有时刻的输入$(K, V)$，那么就不使用Mask；如果是不能获取到，那么就需要使用Mask</p>
+<p>使用了Mask的Transformer模型也被称为<code>Transformer Decoder</code>，不使用Mask的Transformer模型也被称为<code>Transformer Encoder</code></p>
+<p><a data-lightbox="1f422340-bcf5-404a-bef0-6c4bfe27227d" data-title="scaled-dot-product-and-multi-head-attention" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/transformer/scaled-dot-product-and-multi-head-attention.webp" target="_blank"><img alt="scaled-dot-product-and-multi-head-attention" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/transformer/scaled-dot-product-and-multi-head-attention.webp"/></a></p>
+<blockquote>
+<p>如果只对Q、K、V做一次这样的权重操作是不够的，这里提出了Multi-Head Attention操作，包括：</p>
+</blockquote>
+<ol>
+<li>首先对<script type="math/tex; ">Q, \mathrm{~K}, \mathrm{~V}</script>做一次线性映射，将输入维度均为<script type="math/tex; ">d_{\text {model }}</script>的<script type="math/tex; ">Q, K, V</script>矩阵映射到<script type="math/tex; ">Q \in R^{m \times d_{k}}, K \in R^{m \times d_{k}}, V \in R^{m \times d_{v}}</script></li>
+<li>然后再采用Scaled Dot-Product Attention算出结果</li>
+<li>多次进行上述两步操作，然后将得到的结果进行合并</li>
+<li>将合并的结果进行线性变换</li>
+</ol>
+<p><strong>多头注意力的引入有以下几个目的</strong>：</p>
+<ol>
+<li><strong>平行计算</strong>：通过使用多个注意力头，可以并行地计算注意力权重和加权求和，从而加快模型的计算速度。每个注意力头都专注于不同的表示子空间，因此可以独立地计算和处理信息，提高模型的效率。</li>
+<li><strong>多样性表达</strong>：每个注意力头学习到的表示子空间不同，通过多个注意力头的组合，可以获得更丰富、多样性的表示。这有助于模型更好地捕捉输入序列中的不同特征和关系，提高模型的表达能力。</li>
+<li><strong>组合注意力</strong>：多头注意力允许模型在不同的表示子空间上进行多次注意力计算，并将这些计算的结果进行组合。这种组合能够从不同的关注角度和视角来处理输入序列，帮助模型更全面地理解序列中的信息。</li>
+</ol>
+<p>通过这些方式，多头注意力可以提供更灵活、更强大的建模能力，增强模型对序列中的长距离依赖关系、全局上下文和特征之间复杂关系的建模能力</p>
+<p>它是Transformer模型在处理自然语言处理任务时取得成功的重要组成部分，总结来说公式如下所示
+<script type="math/tex; mode=display">
+\begin{array}{l}
+\operatorname{Attention}(Q, K, V)=\text { Concat }\left(\text {head}_{1}, \text {head}_{2}, \cdots, \text {head}_{h}\right) W^{O} 
+
+\\
+where \quad
+{head}_{i}=\operatorname{Attention}\left(Q W_{i}^{Q}, K W_{i}^{K}, V W_{i}^{V}\right) \\
+\end{array}
+</script>
+其中第1步的线性变换参数为<script type="math/tex; ">W_{i}^{Q} \in R^{d_{\text {model }} \times d_{k}}, W_{i}^{K} \in R^{d_{\text {model }} \times d_{k}}, W_{i}^{V} \in R^{d_{\text {model }} \times d_{v}}</script>，第4 步的线性变化参数为<script type="math/tex; ">W^{O} \in R^{h d_{v} \times d_{\text {model }}}</script>，而第三步计算的次数是<script type="math/tex; ">h</script></p>
+<p>在论文中取 <script type="math/tex; ">d_{\text {model }}=512</script>，表示每个时刻的输入维度和输出维度，<script type="math/tex; ">h=8</script> 表示8次Attention操作，<script type="math/tex; ">d_{k}=d_{v}=\frac{d_{\text {model }}}{h}=64</script> 表示经过线性变换之后、进行Attention操作之前的维度</p>
+<p>进行一次Attention之后输出的矩阵维度是<script type="math/tex; ">R^{m \times d_{v}}=R^{m \times 64}</script>，然后进行<script type="math/tex; ">\mathrm{h}=8</script>次操作合并之后输出的结果是<script type="math/tex; ">R^{m \times\left(h \times d_{v}\right)}=R^{m \times 512}</script>，因此输入和输出的矩阵维度相同</p>
+<p>这样输出的矩阵$R^{m \times 512}$，每行的向量都是对$V$向量中每一行$v_{i}$的加权，示意图如上所示</p>
+<blockquote>
+<p>多头注意力代码实现</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MultiHeadedAttention</span><span class="hljs-params">(nn.Module)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, h, d_model, dropout=<span class="hljs-number">0.1</span>)</span>:</span>
+        <span class="hljs-string">"Take in model size and number of heads."</span>
+        super(MultiHeadedAttention, self).__init__()
+        <span class="hljs-keyword">assert</span> d_model % h == <span class="hljs-number">0</span>
+        <span class="hljs-comment"># We assume d_v always equals d_k</span>
+        self.d_k = d_model // h
+        self.h = h
+        <span class="hljs-comment"># 多头在这里体现</span>
+        self.linears = clones(nn.Linear(d_model, d_model), <span class="hljs-number">4</span>)
+        self.attn = <span class="hljs-keyword">None</span>
+        self.dropout = nn.Dropout(p=dropout)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, query, key, value, mask=None)</span>:</span>
+        <span class="hljs-keyword">if</span> mask <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">None</span>:
+            <span class="hljs-comment"># Same mask applied to all h heads.</span>
+            mask = mask.unsqueeze(<span class="hljs-number">1</span>)
+        nbatches = query.size(<span class="hljs-number">0</span>)
+
+        <span class="hljs-comment"># 1) Do all the linear projections in batch from d_model =&gt; h x d_k </span>
+        query, key, value = \
+            [l(x).view(nbatches, <span class="hljs-number">-1</span>, self.h, self.d_k).transpose(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)
+             <span class="hljs-keyword">for</span> l, x <span class="hljs-keyword">in</span> zip(self.linears, (query, key, value))]
+
+        <span class="hljs-comment"># 2) Apply attention on all the projected vectors in batch. </span>
+        x, self.attn = attention(query, key, value, mask=mask, dropout=self.dropout)
+
+        <span class="hljs-comment"># 3) "Concat" using a view and apply a final linear. </span>
+        x = x.transpose(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>).contiguous().view(nbatches, <span class="hljs-number">-1</span>, self.h * self.d_k)
+
+        <span class="hljs-comment"># 4) 线性变换投影回原始表示维度</span>
+        <span class="hljs-keyword">return</span> self.linears[<span class="hljs-number">-1</span>](x)
+</code></pre>
+<p>如果不好理解可以看下这部分代码</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">multihead_attention</span><span class="hljs-params">(Q, K, V, num_heads)</span>:</span>
+    <span class="hljs-comment"># 线性变换得到查询、键和值的表示</span>
+    Q_transformed = linear_transform(Q)
+    K_transformed = linear_transform(K)
+    V_transformed = linear_transform(V)
+
+    <span class="hljs-comment"># 分割头</span>
+    Q_heads = split_heads(Q_transformed, num_heads)
+    K_heads = split_heads(K_transformed, num_heads)
+    V_heads = split_heads(V_transformed, num_heads)
+
+    <span class="hljs-comment"># 每个头的注意力计算</span>
+    attention_heads = []
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(num_heads):
+        attention_head = scaled_dot_product_attention(Q_heads[i], K_heads[i], V_heads[i])
+        attention_heads.append(attention_head)
+
+    <span class="hljs-comment"># 拼接注意力头</span>
+    concatenated_attention = concatenate_heads(attention_heads)
+
+    <span class="hljs-comment"># 线性变换投影回原始表示维度</span>
+    output = linear_transform(concatenated_attention)
+
+    <span class="hljs-keyword">return</span> output
+</code></pre>
+<h2 id="encoder">1.6 Encoder</h2>
+<p>编码器和解码器如下所示</p>
+<p><a data-lightbox="c596252d-6eac-4f45-9229-77561c620f0c" data-title="Transformer_encoder_decoder" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/transformer/Transformer_encoder_decoder.webp" target="_blank"><img alt="Transformer_encoder_decoder" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/transformer/Transformer_encoder_decoder.webp"/></a></p>
+<h2 id="decoder">1.7 Decoder</h2>
+<p>在encoder部分中的self-attention是不需要mask的，而decoder部分的self-attention是需要mask的，因为正是有了mask遮挡后面的信息，才能将transformer用来做推理</p>
+<p>编码器和解码器如下所示</p>
+<p><a data-lightbox="da09c4cf-c785-4b57-87cd-dcb49772d5c8" data-title="Transformer_encoder_decoder" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/transformer/Transformer_encoder_decoder.webp" target="_blank"><img alt="Transformer_encoder_decoder" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/transformer/Transformer_encoder_decoder.webp"/></a></p>
+<p>编码器把最后一层的KV喂给了编码器，此时<strong>Q来源解码器，K=V来源于编码器</strong>，是为了让解码器能够在生成输出时使用编码器的信息</p>
+<p><strong>通过给解码器提供编码器的键和值矩阵，可以实现以下两个目的</strong>：</p>
+<ol>
+<li><strong>上下文信息传递</strong>：编码器中的自注意力机制能够捕捉到输入序列中的局部和全局关系，生成对应的键和值。将这些键和值传递给解码器，可以将编码器的上下文信息传递给解码器，以帮助解码器在生成输出时了解输入序列的相关内容。</li>
+<li>对齐和信息提取：解码器可以通过注意力机制对编码器的键和值进行加权汇总，以获取与当前解码位置相关的信息。通过计算解码器当前位置与编码器中每个位置之间的注意力分数，可以实现对齐和信息提取，使解码器能够专注于与当前位置相关的输入信息。</li>
+</ol>
+<p>总结来说，通过将编码器的键和值矩阵提供给解码器，可以实现上下文信息传递和对齐机制，帮助解码器在生成输出时利用编码器的信息，从而改善模型的性能和输出质量</p>
+<p><a data-lightbox="905be102-aa8d-4490-a0f7-8b36eff64b0d" data-title="编码器到解码器" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/transformer/transformer_decoding.gif" target="_blank"><img alt="编码器到解码器" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/transformer/transformer_decoding.gif"/></a></p>
+<blockquote>
+<p>mask</p>
+</blockquote>
+<ul>
+<li><strong>Attention Mask</strong></li>
+</ul>
+<ul>
+<li><strong>Padding Mask</strong></li>
+</ul>
+<h1 id="bert">2 Bert</h1>
+<blockquote>
+<p><a href="https://jalammar.github.io/illustrated-bert/" target="_blank">The Illustrated BERT, ELMo, and co. (How NLP Cracked Transfer Learning)</a></p>
+<p>ELMo、GPT 和 BERT 三者的区别</p>
+</blockquote>
+<p><a data-lightbox="fb942885-ef03-4d3a-9cec-a47632c1cc9f" data-title="BERT-GPT-比较" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/transformer/BERT-GPT-比较.webp" target="_blank"><img alt="BERT-GPT-比较" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/transformer/BERT-GPT-比较.webp"/></a></p>
+<ul>
+<li><strong>GPT</strong>：GPT 使用Transformer <strong>Decoder</strong>作为特征提取器，<strong>实现了单向编码</strong>、具有良好的<strong>文本生成能力</strong>，然而当前词的语义只能由其前序词决定，并且在语义理解上不足</li>
+<li><strong>BERT</strong>：使用了Transformer <strong>Encoder</strong>作为特征提取器，为<strong>双向编码器</strong>，并使用了与其配套的掩码训练方法。虽然使用双向编码让BERT不再具有文本生成能力，但是BERT的语义信息<code>提取能力更强</code></li>
+<li><strong>ELMo</strong>: 使用自左向右编码和自右向左编码的两个LSTM网络，分别以$P\left(w<em>{i} \mid w</em>{1}, \cdots, w<em>{i-1}\right)$和$P\left(w</em>{i} \mid w<em>{i+1}, \cdots, w</em>{n}\right)$为目标函数独立训练，<strong>将训练得到的特征向量以拼接的形式实现双向编码，本质上还是单向编码，只不过是两个方向上的单向编码的拼接而成的双向编码</strong></li>
+</ul>
+<p><a data-lightbox="23b0f892-2b43-4762-a40b-47689bd1e58c" data-title="从GPT和EMLO及Word2Vec到Bert" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/transformer/从GPT和EMLO及Word2Vec到Bert.webp" target="_blank"><img alt="从GPT和EMLO及Word2Vec到Bert" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/transformer/从GPT和EMLO及Word2Vec到Bert.webp"/></a></p>
+<p>bert是自编码模型，而gpt是自回归模型</p>
+<h2 id="bert概况">2.1 bert概况</h2>
+<p><code>BERT(Bidirectional Encoder Representations from Transformers)</code>模型的编码器由多个Transformer编码器层组成，通常使用了多个重复的编码器来形成深层的表示</p>
+<p>每个BERT编码器层包含了以下组件：</p>
+<ol>
+<li>多头自注意力（Multi-Head Self-Attention）：该层使用多头自注意力机制来对输入序列进行建模。自注意力允许模型在处理序列时关注不同位置之间的相关性，有助于捕捉上下文信息</li>
+<li>前馈神经网络（Feed-Forward Neural Network）：在自注意力层后面是一个前馈神经网络。该网络通常由两个线性层和激活函数（如ReLU）组成，用于对自注意力输出进行非线性变换和特征提取</li>
+<li>残差连接（Residual Connections）和层归一化（Layer Normalization）：在每个子层（自注意力和前馈神经网络）之后都应用了残差连接和层归一化操作。这些操作有助于缓解梯度消失问题，并提供更稳定和高效的训练</li>
+</ol>
+<p>BERT模型中通常会堆叠多个编码器层来形成深层表示。每个编码器层的输出会作为下一层的输入，通过多次重复这个过程，可以逐渐丰富输入序列的表示能力</p>
+<p>值得注意的是，BERT模型还在编码器输入的开头添加了<strong>特殊的标记</strong>，如[CLS]（用于分类任务）和[SEP]（用于分隔输入）。这些特殊标记有助于模型在处理不同任务时进行序列级别的操作和分类</p>
+<p>总结起来，BERT的编码器由多个Transformer编码器层组成，每个编码器层由多头自注意力、前馈神经网络和残差连接/层归一化组成。通过堆叠多个编码器层，BERT模型可以获得深层、高质量的语言表示</p>
+<h2 id="architecture_1">2.2 Architecture</h2>
+<blockquote>
+<p>输入</p>
+<p>训练方式</p>
+</blockquote>
+<p>由于无法使用标准语言模型的训练模式，<strong>BERT借鉴完形填空任务和CBOW的思想</strong>，使用语言掩码模型(MLM)方法训练模型</p>
+<blockquote>
+<p>训练中的mask</p>
+</blockquote>
+<p>MLM方法也就是随机去掉句子中的部分token(单词)，然后模型来预测被去掉的token是什么。<strong>这样实际上已经不是传统的神经网络语言模型(类似于生成模型)了，而是单纯作为分类问题</strong>，根据这个时刻的hidden state来预测这个时刻的token应该是什么，而不是预测下一个时刻的词的概率分布了</p>
+<p>随机去掉的token被称作<code>掩码词</code>，在训练中，掩码词将以15%的概率被替换成[MASK]，也就是说随机mask语料中15%的token，这个操作则称为<code>掩码操作</code></p>
+<p>在选择15%的词作为掩码词后这些掩码词有三类替换选项：</p>
+<ol>
+<li>80% 练样本中：将选中的词用 [MASK] 来代替</li>
+<li>10% 的训练样本中：选中的词不发生变化，<strong>该做法是为了缓解训练文本和预测文本的偏差带来的性能损失</strong></li>
+<li>10% 的训练样本中：将选中的词用任意的词来进行代替，<strong>该做法是为了让 BERT 学会根据上下文信息自动纠错</strong></li>
+</ol>
+<p></p><footer class="page-footer"><span class="copyright">Copyright © narutohyc.com 2021 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
+2023-08-14 07:08:49
+</span></footer><hr/><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz',appKey: 'utUrzoiqNaDEGlgr09JL1pXB',placeholder: '欢迎留下评论交流~',avatar: 'wavatar',meta: undefined,pageSize: 15,lang: 'zh-CN',recordIP: false})</script><p></p>
+</section>
+</div>
+<div class="search-results">
+<div class="has-results">
+<h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+<ul class="search-results-list"></ul>
+</div>
+<div class="no-results">
+<h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<a aria-label="Previous page: pytorch学习.md" class="navigation navigation-prev" href="pytorch学习.html">
+<i class="fa fa-angle-left"></i>
+</a>
+<a aria-label="Next page: 图像分割算法.md" class="navigation navigation-next" href="图像分割算法.html">
+<i class="fa fa-angle-right"></i>
+</a>
+<script src="https://cdn.jsdelivr.net/gh/zztongtong/CDN/js/live2d.min.js"></script><div style="position:absolute; bottom:0; left:0; width:200;"><canvas height="350" id="model_1" width="200"></canvas></div></div>
+<script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"abbrlink":44700,"date":"2023/02/19 17:23:49","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆0.webp","title":"transformer.md","tags":["transformer","self attention","bert","nlp"],"top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆0.webp","mathjax":true,"categories":["deep_learning"],"description":null,"level":"1.8","depth":1,"next":{"title":"图像分割算法.md","level":"1.9","depth":1,"path":"chapters/图像分割算法.md","ref":"chapters/图像分割算法.md","articles":[]},"previous":{"title":"pytorch学习.md","level":"1.7","depth":1,"path":"chapters/pytorch学习.md","ref":"chapters/pytorch学习.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":true,"enableFooter":false,"site":"https://hycbook.github.io/bk_python/","author":"narutohyc","website":"python元知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Python相关学习记录","language":"zh-hans","links":{"sidebar":{"书籍主页":"https://hycbook.github.io/bk_index/"}},"gitbook":"*","description":"记录 Python 的学习和一些技巧的使用"},"file":{"path":"chapters/transformer.md","mtime":"2023-08-14T07:08:49.382Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-14T07:15:00.707Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+<canvas class="fireworks"></canvas><script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script></div>
+<script src="../gitbook/gitbook.js"></script>
+<script src="../gitbook/theme.js"></script>
+<script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+<script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+<script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+<script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+<script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+<script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-copyright-v/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+<script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+</body>
+</html>
