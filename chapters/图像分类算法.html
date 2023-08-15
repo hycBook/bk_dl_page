@@ -411,7 +411,7 @@
 </blockquote>
 <p>手写字体识别模型LeNet5诞生于1994年，是最早的卷积神经网络之一。LeNet5通过巧妙的设计，利用卷积、参数共享、池化等操作提取特征，避免了大量的计算成本，最后再使用全连接神经网络进行分类识别，这个网络也是最近大量神经网络架构的起点</p>
 <p><code>LeNet</code>是由<a href="http://yann.lecun.com/" target="_blank">Yann Lecun</a>(2018年图灵奖得主，CNN的缔造者)创造的CNN经典网络，是卷积神经网络史上的开篇之作</p>
-<p><a data-lightbox="60aed2ec-6dad-4532-ba63-7b6d80bf77be" data-title="Lenet架构" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Lenet架构.webp" target="_blank"><img alt="Lenet架构" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Lenet架构.webp"/></a></p>
+<p><a data-lightbox="ad1bcefb-92a0-40c5-8005-a48b0d315c2d" data-title="Lenet架构" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Lenet架构.webp" target="_blank"><img alt="Lenet架构" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Lenet架构.webp"/></a></p>
 <blockquote>
 <p>代码</p>
 </blockquote>
@@ -472,7 +472,7 @@
 <blockquote>
 <p>模型结构比较</p>
 </blockquote>
-<p><a data-lightbox="aef98b0a-a8f5-43c2-8e7d-51465e88563b" data-title="Lenet和AlexNet网络结构比较" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Lenet和AlexNet网络结构比较.webp" target="_blank"><img alt="Lenet和AlexNet网络结构比较" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Lenet和AlexNet网络结构比较.webp"/></a></p>
+<p><a data-lightbox="f9e2e42e-7578-4200-a041-f03bc2ba2aa3" data-title="Lenet和AlexNet网络结构比较" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Lenet和AlexNet网络结构比较.webp" target="_blank"><img alt="Lenet和AlexNet网络结构比较" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Lenet和AlexNet网络结构比较.webp"/></a></p>
 <h1 id="vgg">4 Vgg</h1>
 <blockquote>
 <p><a href="https://arxiv.org/pdf/1409.1556.pdf" target="_blank">Very Deep Convolutional Networks For Large-Scale Image Recognition</a></p>
@@ -499,7 +499,7 @@
 <p>很明显减少了参数，而且3x3卷积核有利于更好地保持图像性质</p>
 </li>
 </ol>
-<p><a data-lightbox="95af24d6-6fcd-41ba-9760-5b72244d6d89" data-title="3乘3卷积替代5乘5" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/3乘3卷积替代5乘5.webp" target="_blank"><img alt="3乘3卷积替代5乘5" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/3乘3卷积替代5乘5.webp"/></a></p>
+<p><a data-lightbox="87863f83-6286-4e96-9a3a-88a275895897" data-title="3乘3卷积替代5乘5" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/3乘3卷积替代5乘5.webp" target="_blank"><img alt="3乘3卷积替代5乘5" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/3乘3卷积替代5乘5.webp"/></a></p>
 <p>上图就是用两个<script type="math/tex; "> 3 \times 3</script>卷积级联(叠加)起来代替一个<script type="math/tex; "> 5 \times 5</script>卷积，同理可以用三个<script type="math/tex; "> 3 \times 3</script>卷积级联(叠加)起来代替一个<script type="math/tex; "> 7 \times 7 </script>卷积</p>
 <blockquote>
 <p>简洁一致</p>
@@ -512,7 +512,7 @@
 <p>整体结构</p>
 </blockquote>
 <p>VGGNet以下6种不同结构，我们以通常所说的VGG-16(即<strong>下图D列</strong>)为例，展示其结构示意图</p>
-<p><a data-lightbox="8eaef2f1-c71b-40aa-89db-2bc9303e3d60" data-title="vgg-net表格" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/vgg-net表格.webp" target="_blank"><img alt="vgg-net表格" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/vgg-net表格.webp"/></a></p>
+<p><a data-lightbox="6ce321a1-f60b-4a22-98b1-775bbb17d7e3" data-title="vgg-net表格" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/vgg-net表格.webp" target="_blank"><img alt="vgg-net表格" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/vgg-net表格.webp"/></a></p>
 <p>官方给出的VGG系列神经网络的参数量如下：</p>
 <table>
 <thead>
@@ -537,7 +537,7 @@
 </tbody>
 </table>
 <p>对于VGG16来讲，它的网络结结构图就如下所示</p>
-<p><a data-lightbox="f117c5ef-7b59-401e-a0b8-94e140b1667c" data-title="vgg-net16" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/vgg-net16.webp" target="_blank"><img alt="vgg-net16" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/vgg-net16.webp"/></a></p>
+<p><a data-lightbox="8f705f2b-aeb9-4a7f-b10a-851d1ba430e9" data-title="vgg-net16" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/vgg-net16.webp" target="_blank"><img alt="vgg-net16" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/vgg-net16.webp"/></a></p>
 <p>vgg-block块由n个<strong>相同结构</strong>的卷积层+1个的池化层构成，意味着<strong>输入和输出的尺寸一样</strong>，且<strong>卷积层可以堆叠复用</strong></p>
 <p>对于Vgg-16，整个网络有5个vgg-block块和5个maxpool层逐个相连，然后进入FC层，直到最后1000路softmax输出</p>
 <p>来计算一下VGG16的参数量</p>
@@ -752,7 +752,7 @@ d2l.train_ch6(net,train_iter,test_iter,epochs,lr=learning_rate,device=d2l.try_gp
 <p><a href="https://arxiv.org/pdf/1409.4842.pdf" target="_blank">Going Deeper with Convolutions 2014 Inception-v1</a></p>
 </blockquote>
 <p>Inception Module是GoogLeNet的核心组成单元，结构如下图</p>
-<p><a data-lightbox="e0e47ecb-426f-451d-a15a-b99f05a4ee58" data-title="Inception基础模块" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Inception基础模块.webp" target="_blank"><img alt="Inception基础模块" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Inception基础模块.webp"/></a></p>
+<p><a data-lightbox="11e48bf5-5c73-42c7-ab4a-4db62e7a87ed" data-title="Inception基础模块" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Inception基础模块.webp" target="_blank"><img alt="Inception基础模块" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Inception基础模块.webp"/></a></p>
 <p>Inception Module基本组成结构有四个成分。<script type="math/tex; "> 1 \times 1</script>卷积，<script type="math/tex; "> 3 \times 3</script>卷积，<script type="math/tex; "> 5 \times 5</script>卷积，<script type="math/tex; "> 3 \times 3</script>最大池化，最后对四个成分运算结果进行通道上组合</p>
 <p>这就是Inception Module的核心思想，<strong>通过多个卷积核提取图像不同尺度的信息，最后进行融合，可以得到图像更好的表征</strong></p>
 <blockquote>
@@ -809,18 +809,18 @@ d2l.train_ch6(net,train_iter,test_iter,epochs,lr=learning_rate,device=d2l.try_gp
 <blockquote>
 <p>Inception-v4网络结构</p>
 </blockquote>
-<p><a data-lightbox="df3936a6-92c4-4424-b262-a98cf6047b79" data-title="Inception-v4网络结构" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Inception-v4网络结构.webp" target="_blank"><img alt="Inception-v4网络结构" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Inception-v4网络结构.webp"/></a></p>
+<p><a data-lightbox="11e038d5-117b-4c12-977e-48cec6e8c30d" data-title="Inception-v4网络结构" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Inception-v4网络结构.webp" target="_blank"><img alt="Inception-v4网络结构" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Inception-v4网络结构.webp"/></a></p>
 <p>Inception-v4与Inception-ResNet集成的结构在ImageNet竞赛上达到了3.08%的top5错误率，也算当时的state-of-art performance了</p>
 <p>Inception-v4网络，对于Inception块的每个网格大小进行了统一</p>
 <p>Inception V4主要利用残差连接（Residual Connection）来改进V3结构，得到Inception-ResNet-v1，Inception-ResNet-v2，Inception-v4网络</p>
 <blockquote>
 <p>Inception-ResNet-v1结构</p>
 </blockquote>
-<p><a data-lightbox="9bc78dfb-29fc-40a3-970a-c9763ba97305" data-title="Inception-ResNet-v1结构" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Inception-ResNet-v1结构.webp" target="_blank"><img alt="Inception-ResNet-v1结构" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Inception-ResNet-v1结构.webp"/></a></p>
+<p><a data-lightbox="974ffde3-f35a-408e-9f03-55844dceccaf" data-title="Inception-ResNet-v1结构" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Inception-ResNet-v1结构.webp" target="_blank"><img alt="Inception-ResNet-v1结构" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Inception-ResNet-v1结构.webp"/></a></p>
 <blockquote>
 <p>Inception-ResNet-v2结构</p>
 </blockquote>
-<p><a data-lightbox="4098b015-5e2c-48cf-a1db-0f61757ca0ea" data-title="Inception-ResNet-v2结构" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Inception-ResNet-v2结构.webp" target="_blank"><img alt="Inception-ResNet-v2结构" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Inception-ResNet-v2结构.webp"/></a></p>
+<p><a data-lightbox="2d558714-5abe-45f6-a736-1ed3cb680445" data-title="Inception-ResNet-v2结构" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Inception-ResNet-v2结构.webp" target="_blank"><img alt="Inception-ResNet-v2结构" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Inception-ResNet-v2结构.webp"/></a></p>
 <h1 id="resnet">6 ResNet</h1>
 <blockquote>
 <p><a href="https://arxiv.org/pdf/1512.03385.pdf" target="_blank">Deep residual learning for image recognition 2015</a></p>
@@ -834,12 +834,12 @@ d2l.train_ch6(net,train_iter,test_iter,epochs,lr=learning_rate,device=d2l.try_gp
 <p>层数越多越好吗</p>
 </blockquote>
 <p>在ResNet之前的网络层数都不是很高，14年的VGG网络才只有19层，但是ResNet的网络层数达到了惊人的152层。许多人会有一个直观的印象，也就是网络层数越多，训练效果越好，但是这样的话VGG网络为什么不采取152层而是采用19层呢？其实是因为训练模型的准确度不一定和模型层数呈真相关的关系。因为随着网络层数的加深，网络准确需出现饱和，会出现下降的现象</p>
-<p><a data-lightbox="593f8759-5f12-46e2-b12c-f6da6c1ab4c4" data-title="Resnet 20层和56层比较" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Resnet 20层和56层比较.webp" target="_blank"><img alt="Resnet 20层和56层比较" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Resnet 20层和56层比较.webp"/></a></p>
+<p><a data-lightbox="b39d6914-8ec8-426a-8efd-c07c3205d4dd" data-title="Resnet 20层和56层比较" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Resnet 20层和56层比较.webp" target="_blank"><img alt="Resnet 20层和56层比较" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Resnet 20层和56层比较.webp"/></a></p>
 <p>56层的网络比20层网络的训练效果要差，许多人第一反应就是<strong>过拟合</strong>，但事实并不如此，因为过拟合现象的训练集准确度会很高，但是从图中可以看出56层网络的<strong>训练集准确度同样很低</strong>。很显然可知的是，随着层度加深，会出现<strong>梯度消失或梯度爆炸</strong>的问题，使得深度模型很难训练，但是已经存在BatchNorm等手段缓解这一问题，因此如何<strong>解决深度网络的退化问题</strong>是神经网络发展的下一个方向</p>
 <h2 id="模型_1">6.1 模型</h2>
-<p><a data-lightbox="71e020ce-206d-4270-af9b-bf55ccf44e10" data-title="残差模块" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/残差模块.webp" target="_blank"><img alt="残差模块" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/残差模块.webp"/></a></p>
+<p><a data-lightbox="314bb3d9-eadb-4827-a5ba-2396d0cab356" data-title="残差模块" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/残差模块.webp" target="_blank"><img alt="残差模块" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/残差模块.webp"/></a></p>
 <p>官方给了两个ResNet块的结构图，图一为BasicBlock也就是最常规的块，图二被成为BottleBlock</p>
-<p><a data-lightbox="75d83bc0-6867-40d4-9505-7c77036d8b1b" data-title="官方ResNet块的结构图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/官方ResNet块的结构图.webp" target="_blank"><img alt="官方ResNet块的结构图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/官方ResNet块的结构图.webp"/></a></p>
+<p><a data-lightbox="fb29f164-0742-46a7-828f-be3e1ae8ff62" data-title="官方ResNet块的结构图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/官方ResNet块的结构图.webp" target="_blank"><img alt="官方ResNet块的结构图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/官方ResNet块的结构图.webp"/></a></p>
 <ul>
 <li>BasicBlock(常规)(两层结构)<ul>
 <li>在ResNet34的时候是用的这个</li>
@@ -904,7 +904,7 @@ x_{L}=x_{l}+\sum_{i=l}^{L-1} F\left(x_{i}, W_{i}\right)
 <blockquote>
 <p>Dense Block</p>
 </blockquote>
-<p><a data-lightbox="6fc80feb-db56-48e7-9459-0c8590bf67e5" data-title="Dense Block示例" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Dense Block示例.webp" target="_blank"><img alt="Dense Block示例" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Dense Block示例.webp"/></a></p>
+<p><a data-lightbox="3c4cf1d0-8245-4a14-832a-82c484902397" data-title="Dense Block示例" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Dense Block示例.webp" target="_blank"><img alt="Dense Block示例" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Dense Block示例.webp"/></a></p>
 <p>DenseNet中的核心组件是"Dense Block"，它由多个密集连接的卷积层组成。Dense Block的设计旨在促进特征的传递和重用，增强网络的表示能力</p>
 <p>具体来说，Dense Block由一系列堆叠在一起的卷积层组成，每个卷积层都直接连接到前面所有层的输出。这意味着某一层的输入是其之前所有层的输出的串联。这种密集连接的方式使得信息可以在网络中自由地流动，从而有效地提高了特征传递和共享的能力</p>
 <ol>
@@ -920,7 +920,7 @@ x_{L}=x_{l}+\sum_{i=l}^{L-1} F\left(x_{i}, W_{i}\right)
 <p>3.密集块(Dense Block)：密集块是DenseNet的核心，它由多个密集连接层组成。每个密集块中，所有前面层的输出都会与当前层的输入进行连接，并通过一个非线性变换进行处理</p>
 <p>4.过渡层(Transition Block)：为了避免网络过深导致梯度消失和计算资源过度消耗，DenseNet中采用了过渡层来控制网络的大小。在每个密集块之间，都会接上一个过渡层，它包含一个<script type="math/tex; ">1\times 1</script>的卷积层、BN层和平均池化层，其中平均池化的步幅为2，用于减少特征图的大小</p>
 <p>5.全局池化层和全连接层：最后，DenseNet使用全局平均池化层将特征图降维为一个向量，然后通过一个全连接层进行分类</p>
-<p><a data-lightbox="248d6009-1462-47b0-a04b-241fc62480b9" data-title="DenseNet网络架构" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/DenseNet网络架构.webp" target="_blank"><img alt="DenseNet网络架构" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/DenseNet网络架构.webp"/></a></p>
+<p><a data-lightbox="04ab229d-84c7-4388-b64a-8439faa134ca" data-title="DenseNet网络架构" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/DenseNet网络架构.webp" target="_blank"><img alt="DenseNet网络架构" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/DenseNet网络架构.webp"/></a></p>
 <p>最后一个池化用的是<code>全局池化层</code></p>
 <p>具体来说，DenseNet的密集连接机制使得前面的层可以直接连接到后面的层，从而保留了更多的特征信息。然而，这种密集连接也导致了特征图的尺寸逐渐增大。为了控制模型的复杂性和计算量，并且能够更好地适应不同尺度的输入，DenseNet引入了全局池化层</p>
 <p>全局池化层可以将整个特征图转化为固定长度的特征向量，这样可以有效地降低特征的维度，并且保留了全局感受野的特征信息。通过将特征图的每个通道进行平均池化或最大池化操作，全局池化层可以捕捉到整个特征图的统计特征，从而对全局信息进行汇聚</p>
@@ -948,7 +948,7 @@ x_{L}=x_{l}+\sum_{i=l}^{L-1} F\left(x_{i}, W_{i}\right)
 <p>模型结构</p>
 </blockquote>
 <p>ViT模型通常包含多个Transformer编码器层，每个层由多头自注意力机制和前馈神经网络组成</p>
-<p><a data-lightbox="95fc5833-905e-4b7a-8783-9dc554752fc1" data-title="Vit模型结构" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Vit模型结构.webp" target="_blank"><img alt="Vit模型结构" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Vit模型结构.webp"/></a></p>
+<p><a data-lightbox="648f6d08-a3cd-42af-a09e-1b9630f588d7" data-title="Vit模型结构" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Vit模型结构.webp" target="_blank"><img alt="Vit模型结构" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/Vit模型结构.webp"/></a></p>
 <p>在ViT中，序列中的每个位置都可以进行自注意力计算，使模型能够在全局上对图像进行编码和理解</p>
 <p>最后，ViT模型将序列的表示通过一个池化操作得到整个图像的表示，然后可以通过一个线性分类器进行分类或进行其他任务</p>
 <blockquote>
@@ -1004,13 +1004,13 @@ x_{L}=x_{l}+\sum_{i=l}^{L-1} F\left(x_{i}, W_{i}\right)
 <li><strong>精简模型训练</strong>: 训练Student模型, 简称为Net-S，它是参数量较小、模型结构相对简单的单模型。同样的，对于输入X，其都能输出Y，Y经过softmax映射后同样能输出对应相应类别的概率值</li>
 </ol>
 <p>将问题限定在分类问题下，或者其他本质上属于分类问题的问题，该类问题的共同点是模型最后会有一个softmax层，其输出值对应了相应类别的概率值。知识蒸馏时，由于已经有了一个泛化能力较强的Net-T，我们在利用Net-T来蒸馏训练Net-S时，可以直接让Net-S去学习Net-T的泛化能力</p>
-<p><a data-lightbox="975fc8d8-07a6-477a-894f-88d42a7f00c4" data-title="教师学生模型 Loss计算" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/教师学生模型 Loss计算.webp" target="_blank"><img alt="教师学生模型 Loss计算" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/教师学生模型 Loss计算.webp"/></a></p>
+<p><a data-lightbox="1caaac2a-8ac9-42e5-8e08-f6b4f2caa167" data-title="教师学生模型 Loss计算" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/教师学生模型 Loss计算.webp" target="_blank"><img alt="教师学生模型 Loss计算" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/教师学生模型 Loss计算.webp"/></a></p>
 <p>上图是教师学生模型的一般形式，就是有两部分的loss，一个关注真实标签，另一个关注Net-T的输出，训练的模型可以兼顾自身和教师模型的约束，即
 <script type="math/tex; mode=display">
 L = \alpha L_{soft} + \beta L_{hard}
 </script>
 下面左图比较了改变训练策略和添加蒸馏学习的结果比较，右图是DeiT模型结构</p>
-<p><a data-lightbox="857f9da6-840b-4b92-8a99-1109f66017c2" data-title="DeiTModel模型结构和实验对比结果" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/DeiTModel模型结构和实验对比结果.webp" target="_blank"><img alt="DeiTModel模型结构和实验对比结果" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/DeiTModel模型结构和实验对比结果.webp"/></a></p>
+<p><a data-lightbox="60b8e0f5-3649-4a10-94ec-eb8c264c4cfb" data-title="DeiTModel模型结构和实验对比结果" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/DeiTModel模型结构和实验对比结果.webp" target="_blank"><img alt="DeiTModel模型结构和实验对比结果" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/DeiTModel模型结构和实验对比结果.webp"/></a></p>
 <blockquote>
 <p>左图</p>
 </blockquote>
@@ -1068,7 +1068,7 @@ Loss = Loss\{class\_token, label\} + Loss\{distillation\_token , Net_T's\_label\
 </blockquote>
 <p><code>CLIP</code>的英文全称是<strong>Contrastive Language-Image Pre-training</strong>，即一种<strong>基于对比文本-图像对</strong>的<strong>预训练方法或者模型</strong></p>
 <p>CLIP是一种基于对比学习的多模态模型，与CV中的一些对比学习方法如moco和simclr不同的是，CLIP的训练数据是文本-图像对：一张图像和它对应的文本描述，这里希望通过对比学习，模型能够学习到文本-图像对的匹配关系</p>
-<p><a data-lightbox="ff30b6bc-966b-48e4-a2c5-a2c39cfdfff5" data-title="CLIP模型结构图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/CLIP模型结构图.webp" target="_blank"><img alt="CLIP模型结构图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/CLIP模型结构图.webp"/></a></p>
+<p><a data-lightbox="54197f68-59d1-4ee0-ab86-1ce82eee2a3d" data-title="CLIP模型结构图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/CLIP模型结构图.webp" target="_blank"><img alt="CLIP模型结构图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/CLIP模型结构图.webp"/></a></p>
 <p>如上图(1)所示，CLIP包括两个模型：Text Encoder和Image Encoder，其中Text Encoder用来提取文本的特征，可以采用NLP中常用的text transformer模型；而Image Encoder用来提取图像的特征，可以采用常用CNN模型或者vision transformer</p>
 <blockquote>
 <p>对提取的文本特征和图像特征进行<strong>对比学习</strong></p>
@@ -1120,10 +1120,10 @@ probs = logits_per_image.softmax(dim=<span class="hljs-number">1</span>)
 <p>CLIP(Contrastive Language–Image Pre-training)，是一种基于对比的图片-文本学习的跨模态预训练模型，由OpenAI于2021年1月发布</p>
 <p>它存在一个缺点就是数据需求太大：4亿个图像文本对、256个GPU，这对许多公司和个人都很不友好</p>
 <p>对此，<strong>南加州大学</strong>的最新研究发现了一种<code>基于本体的课程学习(Curriculum Learning)</code>算法，只需不到1%的训练数据就能达到CLIP同款效果，甚至在图像检索方面表现更好</p>
-<p><a data-lightbox="220a2126-23b7-4837-82f6-b05e5997d3e7" data-title="TOnICS模型结构" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/TOnICS模型结构.webp" target="_blank"><img alt="TOnICS模型结构" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/TOnICS模型结构.webp"/></a></p>
-<p><a data-lightbox="3167cb3b-787c-4861-bd8b-ca0469c6922a" data-title="TOnICS模型细节" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/TOnICS模型细节.webp" target="_blank"><img alt="TOnICS模型细节" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/TOnICS模型细节.webp"/></a></p>
+<p><a data-lightbox="5491d2b9-9003-4ce6-ad4b-0bb8bf192661" data-title="TOnICS模型结构" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/TOnICS模型结构.webp" target="_blank"><img alt="TOnICS模型结构" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/TOnICS模型结构.webp"/></a></p>
+<p><a data-lightbox="d274c7d3-dedc-4cca-b2d5-18df42d80c9d" data-title="TOnICS模型细节" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/TOnICS模型细节.webp" target="_blank"><img alt="TOnICS模型细节" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/图像分类算法/TOnICS模型细节.webp"/></a></p>
 <p></p><footer class="page-footer"><span class="copyright">Copyright © narutohyc.com 2021 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
-2023-08-15 00:57:54
+2023-08-15 02:11:33
 </span></footer><hr/><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz',appKey: 'utUrzoiqNaDEGlgr09JL1pXB',placeholder: '欢迎留下评论交流~',avatar: 'wavatar',meta: undefined,pageSize: 15,lang: 'zh-CN',recordIP: false})</script><p></p>
 </section>
 </div>
@@ -1150,7 +1150,7 @@ probs = logits_per_image.softmax(dim=<span class="hljs-number">1</span>)
 <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"abbrlink":451,"date":"2023/05/18 09:23:14","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆5.webp","title":"图像分类算法.md","tags":["深度学习","神经网络","图像分类","Lenet","VGG Net","Google Net","Vit"],"top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆5.webp","mathjax":true,"categories":["deep_learning"],"description":"基于深度学习的图像分类算法","level":"1.10","depth":1,"next":{"title":"数据标注工具.md","level":"1.11","depth":1,"path":"chapters/数据标注工具.md","ref":"chapters/数据标注工具.md","articles":[]},"previous":{"title":"图像分割算法.md","level":"1.9","depth":1,"path":"chapters/图像分割算法.md","ref":"chapters/图像分割算法.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/hycBook"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":false,"enableFooter":false,"site":"https://dl.hycbook.com","author":"narutohyc","website":"深度学习知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_dl_page","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"深度学习相关学习记录","language":"zh-hans","mathjax":{"forceSVG":true},"links":{"sidebar":{"书籍主页":"https://study.hycbook.com"}},"gitbook":"*","description":"记录 深度学习 的学习和一些技巧的使用"},"file":{"path":"chapters/图像分类算法.md","mtime":"2023-08-15T00:57:54.074Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-15T00:58:52.764Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"abbrlink":451,"date":"2023/05/18 09:23:14","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆5.webp","title":"图像分类算法.md","tags":["深度学习","神经网络","图像分类","Lenet","VGG Net","Google Net","Vit"],"top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆5.webp","mathjax":true,"categories":["deep_learning"],"description":"基于深度学习的图像分类算法","level":"1.10","depth":1,"next":{"title":"数据标注工具.md","level":"1.11","depth":1,"path":"chapters/数据标注工具.md","ref":"chapters/数据标注工具.md","articles":[]},"previous":{"title":"图像分割算法.md","level":"1.9","depth":1,"path":"chapters/图像分割算法.md","ref":"chapters/图像分割算法.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/hycBook"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":false,"enableFooter":false,"site":"https://dl.hycbook.com","author":"narutohyc","website":"深度学习知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_dl_page","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"深度学习相关学习记录","language":"zh-hans","mathjax":{"forceSVG":true},"links":{"sidebar":{"书籍主页":"https://study.hycbook.com"}},"gitbook":"*","description":"记录 深度学习 的学习和一些技巧的使用"},"file":{"path":"chapters/图像分类算法.md","mtime":"2023-08-15T02:11:33.008Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-15T02:12:27.777Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 <canvas class="fireworks"></canvas><script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script></div>
