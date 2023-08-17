@@ -39,7 +39,7 @@ var id_map = new Map();
 // https://hycbook.github.io/bk_python/
 id_map.set("", "zvvnopa");
 // https://hycbook.github.io/bk_python/chapters/1.python多进程.html
-id_map.set("1.python多进程.html", "hxapopo");
+id_map.set("LLM模型微调系列.html", "hmxnqcdk");
 // https://hycbook.github.io/bk_python/chapters/2.python多线程.html
 id_map.set("2.python多线程.html", "heexapopp");
 // https://hycbook.github.io/bk_python/chapters/3.python协程.html
