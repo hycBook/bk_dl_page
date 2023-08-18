@@ -204,57 +204,65 @@
             
                 </a>
 </li>
-<li class="chapter" data-level="1.11" data-path="数据标注工具.html" id="chapter_id_10">
-<a href="数据标注工具.html">
+<li class="chapter" data-level="1.11" data-path="图神经网络.html" id="chapter_id_10">
+<a href="图神经网络.html">
 <b>1.11.</b>
+                    
+                    图神经网络.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.12" data-path="数据标注工具.html" id="chapter_id_11">
+<a href="数据标注工具.html">
+<b>1.12.</b>
                     
                     数据标注工具.md
             
                 </a>
 </li>
-<li class="chapter" data-level="1.12" data-path="深度学习核心之优化器.html" id="chapter_id_11">
+<li class="chapter" data-level="1.13" data-path="深度学习核心之优化器.html" id="chapter_id_12">
 <a href="深度学习核心之优化器.html">
-<b>1.12.</b>
+<b>1.13.</b>
                     
                     深度学习核心之优化器.md
             
                 </a>
 </li>
-<li class="chapter" data-level="1.13" data-path="深度学习核心之损失函数.html" id="chapter_id_12">
+<li class="chapter" data-level="1.14" data-path="深度学习核心之损失函数.html" id="chapter_id_13">
 <a href="深度学习核心之损失函数.html">
-<b>1.13.</b>
+<b>1.14.</b>
                     
                     深度学习核心之损失函数.md
             
                 </a>
 </li>
-<li class="chapter" data-level="1.14" data-path="深度学习核心之激活函数.html" id="chapter_id_13">
+<li class="chapter" data-level="1.15" data-path="深度学习核心之激活函数.html" id="chapter_id_14">
 <a href="深度学习核心之激活函数.html">
-<b>1.14.</b>
+<b>1.15.</b>
                     
                     深度学习核心之激活函数.md
             
                 </a>
 </li>
-<li class="chapter" data-level="1.15" data-path="深度学习核心基础知识点.html" id="chapter_id_14">
+<li class="chapter" data-level="1.16" data-path="深度学习核心基础知识点.html" id="chapter_id_15">
 <a href="深度学习核心基础知识点.html">
-<b>1.15.</b>
+<b>1.16.</b>
                     
                     深度学习核心基础知识点.md
             
                 </a>
 </li>
-<li class="chapter" data-level="1.16" data-path="深度学习模型压缩技术.html" id="chapter_id_15">
+<li class="chapter" data-level="1.17" data-path="深度学习模型压缩技术.html" id="chapter_id_16">
 <a href="深度学习模型压缩技术.html">
-<b>1.16.</b>
+<b>1.17.</b>
                     
                     深度学习模型压缩技术.md
             
                 </a>
 </li>
-<li class="chapter" data-level="1.17" data-path="目标检测与跟踪算法.html" id="chapter_id_16">
+<li class="chapter" data-level="1.18" data-path="目标检测与跟踪算法.html" id="chapter_id_17">
 <a href="目标检测与跟踪算法.html">
-<b>1.17.</b>
+<b>1.18.</b>
                     
                     目标检测与跟踪算法.md
             
@@ -321,7 +329,7 @@
 <li>共享基础大模型，在上面叠加自己的新模型</li>
 </ol>
 <h2 id="发展脉络">1.3 发展脉络</h2>
-<p><a data-lightbox="ea87c8c9-a888-4fa4-aab4-3370e861494b" data-title="LLM微调技术发展脉络" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/LLM微调技术发展脉络.svg" target="_blank"><img alt="LLM微调技术发展脉络" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/LLM微调技术发展脉络.svg"/></a></p>
+<p><a data-lightbox="f2931a17-fbe1-4a0c-be62-66cfc66af0d7" data-title="LLM微调技术发展脉络" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/LLM微调技术发展脉络.svg" target="_blank"><img alt="LLM微调技术发展脉络" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/LLM微调技术发展脉络.svg"/></a></p>
 <blockquote>
 <p>Adapter系列</p>
 </blockquote>
@@ -378,7 +386,7 @@
 <p><a href="https://github.com/THUDM/P-tuning" target="_blank">github THUDM/P-tuning</a></p>
 </blockquote>
 <p>手动尝试最优的提示无异于大海捞针，于是便有了自动离散提示搜索的方法(左图)，但提示是离散的，神经网络是连续的，所以寻找的最优提示可能是次优的。p-tuning依然是固定LLM参数，利用多层感知机和LSTM对prompt进行编码，编码之后与其他向量进行拼接之后正常输入LLM。注意，训练之后只保留prompt编码之后的向量即可，无需保留编码器</p>
-<p><a data-lightbox="90186008-3c29-4ef7-904e-c847f86035fb" data-title="p_tunning架构v1 vs 离散型promote" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/p_tunning架构v1 vs 离散型promote.webp" target="_blank"><img alt="p_tunning架构v1 vs 离散型promote" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/p_tunning架构v1 vs 离散型promote.webp"/></a></p>
+<p><a data-lightbox="ba802ab4-a37f-4bac-ae48-45b0b7dedd8f" data-title="p_tunning架构v1 vs 离散型promote" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/p_tunning架构v1 vs 离散型promote.webp" target="_blank"><img alt="p_tunning架构v1 vs 离散型promote" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/p_tunning架构v1 vs 离散型promote.webp"/></a></p>
 <blockquote>
 <p>动机</p>
 </blockquote>
@@ -394,7 +402,7 @@
 <p><a href="https://blog.csdn.net/as949179700/article/details/130900814" target="_blank">P-tuning V2论文和代码实现详解</a></p>
 </blockquote>
 <h4 id="概述_1"><a class="anchor-navigation-ex-anchor" href="#概述_1" name="概述_1"><i aria-hidden="true" class="fa fa-link"></i></a><a class="plugin-anchor" href="#概述" name="概述"><i aria-hidden="true" class="fa fa-link"></i></a>概述</h4>
-<p><a data-lightbox="efb4cfb6-cbf0-44b2-a3c5-3b80426eda0a" data-title="p_tunning架构v1 vs v2" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/p_tunning架构v1 vs v2.webp" target="_blank"><img alt="p_tunning架构v1 vs v2" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/p_tunning架构v1 vs v2.webp"/></a></p>
+<p><a data-lightbox="049ee040-3158-4654-be20-31186c2395e7" data-title="p_tunning架构v1 vs v2" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/p_tunning架构v1 vs v2.webp" target="_blank"><img alt="p_tunning架构v1 vs v2" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/p_tunning架构v1 vs v2.webp"/></a></p>
 <h4 id="代码示例"><a class="anchor-navigation-ex-anchor" href="#代码示例" name="代码示例"><i aria-hidden="true" class="fa fa-link"></i></a><a class="plugin-anchor" href="#代码示例" name="代码示例"><i aria-hidden="true" class="fa fa-link"></i></a>代码示例</h4>
 <blockquote>
 <p>PrefixEncoder类，为了获得连续prompt，设计的模块</p>
@@ -767,7 +775,7 @@ W_{0}+\Delta W=W_{0}+B A \\
 h=W_{0} x+\Delta W x=W_{0} x+B A x
 </script>
 因此，<script type="math/tex; ">\Delta W</script>可以进行低秩分解</p>
-<p><a data-lightbox="1444ab37-72b4-43ef-beba-e301438e00ae" data-title="Lora思路" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora思路.webp" target="_blank"><img alt="Lora思路" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora思路.webp"/></a></p>
+<p><a data-lightbox="6e81c70c-7092-4ed7-81bd-9efb9238d07a" data-title="Lora思路" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora思路.webp" target="_blank"><img alt="Lora思路" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora思路.webp"/></a></p>
 <p>训练时，<script type="math/tex; ">B</script>初始化为全零矩阵，这样子参数量就从<script type="math/tex; ">d*d</script>变成了<script type="math/tex; ">d*2*r</script>，这里的<script type="math/tex; ">r</script>一般是远小于<script type="math/tex; ">d</script>的</p>
 <blockquote>
 <p>优点</p>
@@ -813,19 +821,19 @@ h=W_{0} x+\Delta W x=W_{0} x+B A x
 <p>对于attention参数附加到哪个上更有效</p>
 </blockquote>
 <p>实验在GPT-3 175B模型上设置了一个参数预算为18M(如果以FP16存储，大约为35MB)。这对应于当我们适应一种注意力权重时r=8，或者当我们适应两种类型时r=4，适用于所有96层</p>
-<p><a data-lightbox="28d8a1ea-a52b-4290-92d0-1ed9a24cbf2f" data-title="Lora关于r参数选择的实验" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora关于r参数选择的实验.webp" target="_blank"><img alt="Lora关于r参数选择的实验" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora关于r参数选择的实验.webp"/></a></p>
+<p><a data-lightbox="2d51c8b6-997e-4fa8-b17f-a58aa74abffe" data-title="Lora关于r参数选择的实验" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora关于r参数选择的实验.webp" target="_blank"><img alt="Lora关于r参数选择的实验" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora关于r参数选择的实验.webp"/></a></p>
 <p>需要注意的是，将所有参数放在<script type="math/tex; ">\Delta 𝑊_𝑞</script>或<script type="math/tex; ">\Delta 𝑊_k</script>中会导致显著降低性能，而注入到<script type="math/tex; ">𝑊_𝑞</script>和<script type="math/tex; ">𝑊_v</script>则产生最佳结果。这表明，即使秩为4，<script type="math/tex; ">\Delta 𝑊</script>中包含了足够的信息，使得与使用具有较大秩的单一类型的权重相比，使用更多的权重矩阵更可取</p>
 <blockquote>
 <p>回答：将参数设置到q、v上时，r取多少合适</p>
 </blockquote>
-<p><a data-lightbox="9a111383-9f39-4941-8dcb-0fd042587f86" data-title="Lora关于r参数取多少的实验" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora关于r参数取多少的实验.webp" target="_blank"><img alt="Lora关于r参数取多少的实验" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora关于r参数取多少的实验.webp"/></a></p>
+<p><a data-lightbox="52d753f0-0b2f-4f2f-99fd-05144cc79e57" data-title="Lora关于r参数取多少的实验" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora关于r参数取多少的实验.webp" target="_blank"><img alt="Lora关于r参数取多少的实验" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora关于r参数取多少的实验.webp"/></a></p>
 <p>LoRA在非常小的秩(特别是对于<script type="math/tex; ">𝑊_𝑞</script>，<script type="math/tex; ">𝑊_𝑣</script>而言)下已经取得了相当的竞争力，这表明更新矩阵<script type="math/tex; ">\Delta W</script>可能具有<strong>非常小的内在秩</strong>，使用低秩矩阵对LLM进行fine tune的时候，可以用一个非常小的低秩矩阵，就可以捕捉到对下游任务的一些特征信息，这为我们提供了一个非常高效的LLM的fine tune的方式，同时提高了下游任务的性能</p>
 <blockquote>
 <p>回答：<script type="math/tex; ">\Delta W</script>和<script type="math/tex; ">W</script>之间的关系是什么</p>
 </blockquote>
 <p>首先对<script type="math/tex; ">\Delta W</script>进行奇异值分解，并且把它左奇异值向量和右奇异值向量乘到<script type="math/tex; ">W_q</script>上，把<script type="math/tex; ">W_q</script>映射到<script type="math/tex; ">\Delta W_q</script>的子空间，并计算<script type="math/tex; ">F</script>范数，同时还把<script type="math/tex; ">W_q</script>映射到映射到随机矩阵上</p>
 <p>以此来证明<script type="math/tex; ">\Delta W_q</script>与<script type="math/tex; ">W_q</script>有更强的相关性</p>
-<p><a data-lightbox="9b67f32b-0a17-460f-8439-1f245325f7fa" data-title="Lora下w和delta w的关系" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora下w和delta w的关系.webp" target="_blank"><img alt="Lora下w和delta w的关系" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora下w和delta w的关系.webp"/></a></p>
+<p><a data-lightbox="9e1da42d-433d-4893-aec1-58cd1ad67fc2" data-title="Lora下w和delta w的关系" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora下w和delta w的关系.webp" target="_blank"><img alt="Lora下w和delta w的关系" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora下w和delta w的关系.webp"/></a></p>
 <p>首先，与随机矩阵相比，<script type="math/tex; ">\Delta W_q</script>与<script type="math/tex; ">W_q</script>具有<strong>更强的相关性</strong>，表明<script type="math/tex; ">\Delta W</script>放大了预训练模型中的<script type="math/tex; ">W</script>中已经存在的某些特征</p>
 <p>其次，<script type="math/tex; ">\Delta W</script>不是重复<script type="math/tex; ">W</script>的奇异值方向，而是只放大在<script type="math/tex; ">W</script>中没有强调的方向</p>
 <p>第三，放大因子相当巨大：当r=4时，21.5≈6.91/0.32，表明<script type="math/tex; ">\Delta W</script>只是放大了<script type="math/tex; ">W</script>中的一些特征，且放大倍数是很大的，相当于是把下游任务需要的特征提取出来并进行放大</p>
@@ -849,7 +857,7 @@ h=W_{0} x+\Delta W x=W_{0} x+B A x
 <p>添加小型网络模块</p>
 </blockquote>
 <p>将小型网络模块添加到PLMs中，保持基础模型保持不变的情况下仅针对每个任务微调这些模块，可以用于所有任务。这样，只需引入和更新少量任务特定的参数，就可以适配下游的任务，大大提高了预训练模型的实用性，方法示例</p>
-<p><a data-lightbox="f0e1c7fd-272c-475d-a47e-a0d776743a88" data-title="添加小型网络模块" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/添加小型网络模块.webp" target="_blank"><img alt="添加小型网络模块" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/添加小型网络模块.webp"/></a></p>
+<p><a data-lightbox="50109ea9-cb59-4d58-b91b-4e39e0a89d39" data-title="添加小型网络模块" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/添加小型网络模块.webp" target="_blank"><img alt="添加小型网络模块" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/添加小型网络模块.webp"/></a></p>
 <ul>
 <li><p><strong>Adapter tuning</strong>：是在基础模型的各层之间插入小型神经模块</p>
 </li>
@@ -1024,7 +1032,7 @@ s^{(t)}\left(w_{i j}\right)=\bar{I}^{(t)}\left(w_{i j}\right) \cdot \bar{U}^{(t)
 <p>随着人工智能特别是以GPT为代表的生成式AI的迅猛发展，GPU已经成为了一种不可或缺的工具，甚至企业都以拥有多少高端GPU作为抓住风口能力的衡量标准。相比之下，CPU虽然在传统计算领域占据主导地位，但在处理AI任务时却不及GPU出色</p>
 <p>为什么AI计算通常选择GPU而不是CPU，分析GPU在AI计算中的优势，同时，从底层原理探讨从Volta到最新的Hopper四代NVIDIA GPU架构的演进，展示其不断提升的性能和功能</p>
 <p>GPU主要由计算单元ALU组成。CPU不仅被Cache占据了大量空间，而且还有有复杂的控制逻辑和诸多优化电路，相比之下，计算能力只是CPU很小的一部分</p>
-<p><a data-lightbox="5b1292dd-9c9c-4308-a6e7-014264183c1e" data-title="GPU和CPU比较" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/GPU和CPU比较.webp" target="_blank"><img alt="GPU和CPU比较" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/GPU和CPU比较.webp"/></a></p>
+<p><a data-lightbox="150606dd-3b5e-4a89-8884-fd5101dde38c" data-title="GPU和CPU比较" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/GPU和CPU比较.webp" target="_blank"><img alt="GPU和CPU比较" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/GPU和CPU比较.webp"/></a></p>
 <p>通过上面自顶向下的分析，我们知道，对于GPU中的存储部分访问速度由快到慢，计算部分从大到小排列为
 <script type="math/tex; mode=display">
 \begin{array}{c}
@@ -1033,11 +1041,11 @@ s^{(t)}\left(w_{i j}\right)=\bar{I}^{(t)}\left(w_{i j}\right) \cdot \bar{U}^{(t)
 \text{Compute Unit:GPC>TPC>SM>(TensorCore, SFU, INT32, FP32..)}
 \end{array}
 </script>
-<a data-lightbox="c03eaa17-30cd-4458-881e-452a6a73f2cf" data-title="GPU架构发展参数" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/GPU架构发展参数.webp" target="_blank"><img alt="GPU架构发展参数" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/GPU架构发展参数.webp"/></a></p>
+<a data-lightbox="abfa6b2b-1d2f-4c52-bd25-e8c31f1c7253" data-title="GPU架构发展参数" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/GPU架构发展参数.webp" target="_blank"><img alt="GPU架构发展参数" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/GPU架构发展参数.webp"/></a></p>
 <p>NVLink是什么？为什么需要他？</p>
 <p>大模型通常具有巨大的参数数量和复杂的结构，需要处理大量的数据。分布式训练将这些大型模型分割成多个部分，由多个GPU或计算节点并行处理，每个部分处理自己的数据子集。然后通过全局通信，参数同步等方式进行梯度传播，此时GPU之间的通信带宽就变的越来越重要</p>
 <p>在NVLink出现之前，GPU与GPU之间的数据交互通过PCIe（Peripheral Component Interconnect Express）总线进行。但PCIe存在两个问题，一是PCIe总线的带宽相对有限，其中PCIe 4.0x16的最大带宽也就64GB/s，二是PCIe总线的延迟相对较高，在GPU之间传输数据时，每次数据传输都需要通过CPU和主机内存来完成。这种传输路径会导致额外的延迟，并降低数据传输的效率。然而，深度学习应用中需要更高的带宽和更低的延迟，PCIe显然是无法满足当下的神经网络训练需求</p>
-<p><a data-lightbox="3720aced-97cc-4361-bb44-9712c5b39dab" data-title="引入NVLink" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/引入NVLink.webp" target="_blank"><img alt="引入NVLink" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/引入NVLink.webp"/></a></p>
+<p><a data-lightbox="a0ffae64-e413-4886-93ef-633c2345daa0" data-title="引入NVLink" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/引入NVLink.webp" target="_blank"><img alt="引入NVLink" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/引入NVLink.webp"/></a></p>
 <p>NVLink利用高带宽、低延迟的通信通道，直接将多个GPU连接在一起，实现快速、高效的数据传输和共享。通过NVLink，GPU之间的数据交互可以直接在GPU之间进行，而无需通过CPU和主机内存。这种直接内存访问（DMA）的方式大大减少了数据传输的复制和延迟，提高了数据共享的效率。此外，NVLink还提供了一致的内存空间，使得多个GPU能够共享同一份内存，简化了程序设计和数据管理的复杂性</p>
 <h2 id="概述_2">5.1 概述</h2>
 <blockquote>
@@ -1067,7 +1075,7 @@ height: 100%; left: 0; top: 0;"> </iframe></div>
 <h2 id="提出问题">5.3 提出问题</h2>
 <p>Transformer结构已成为自然语言处理和图像分类等应用中最常用的架构。尽管Transformer在规模上不断增大和加深，但处理更长上下文仍然是一个挑战，因为核心的自注意力模块在序列长度上具有二次方的时间和内存复杂度。这导致在处理长序列时速度变慢且内存需求巨大。因此，我们需要一些优化算法来提高注意力模块的计算速度和内存利用率</p>
 <h2 id="解决方案">5.4 解决方案</h2>
-<p><a data-lightbox="e882a6c3-a0da-442c-bca6-3a6dbc872b96" data-title="flash_Atten架构图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten架构图.webp" target="_blank"><img alt="flash_Atten架构图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten架构图.webp"/></a></p>
+<p><a data-lightbox="683c0dae-1f1f-4717-8dbc-fbdb6541b603" data-title="flash_Atten架构图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten架构图.webp" target="_blank"><img alt="flash_Atten架构图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten架构图.webp"/></a></p>
 <h2 id="forward">5.5 Forward</h2>
 <h3 id="standard-attention">5.5.1 Standard Attention</h3>
 <p>在注意力的一般实现中，对<script type="math/tex; ">\mathbf{Q}, \mathbf{K}, \mathbf{V} \in \mathbb{R}^{N \times d}</script> 三个输入执行以下算法得到输出<script type="math/tex; ">\mathbf{O}</script>，其中softmax行级别执行
@@ -1075,7 +1083,7 @@ height: 100%; left: 0; top: 0;"> </iframe></div>
 \mathbf{S}=\mathbf{Q} \mathbf{K}^{\top} \in \mathbb{R}^{N \times N}, \quad \mathbf{P}=\operatorname{softmax}(\mathbf{S}) \in \mathbb{R}^{N \times N}, \quad \mathbf{O}=\mathbf{P V} \in \mathbb{R}^{N \times d}
 </script>
 在这个算法中，<script type="math/tex; ">\mathbf{S}</script>，<script type="math/tex; ">\mathbf{P}</script>矩阵都是很大，需要在HBM中实例化来进行存储，这样就会带来很多HBM的访问次数， 最终体现到算法时间端到端较长的延迟</p>
-<p><a data-lightbox="6f722e56-2ea0-40f9-bdb4-5cbb58100496" data-title="flash_Atten流程" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten流程.webp" target="_blank"><img alt="flash_Atten流程" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten流程.webp"/></a></p>
+<p><a data-lightbox="aa74e6a0-b99f-4741-b890-209ac039d2c5" data-title="flash_Atten流程" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten流程.webp" target="_blank"><img alt="flash_Atten流程" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten流程.webp"/></a></p>
 <h3 id="flashattentiontiling">5.5.2 FlashAttention(Tiling)</h3>
 <blockquote>
 <p>理论基础</p>
@@ -1387,12 +1395,12 @@ d k_{j}=\sum_{i} d S_{i j} q_{i}=\sum_{i} P_{i j}\left(d P_{i j}-D_{i}\right) q_
 </script></p>
 <h2 id="实验验证">5.8 实验验证</h2>
 <p>通过实验验证发现，FlashAttention在速度和内存占用方面都表现出明显的优势，并取得了良好的效果</p>
-<p><a data-lightbox="1fdf0aec-f587-42de-bf44-0c58fb047e02" data-title="flash_Atten实验验证1" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten实验验证1.webp" target="_blank"><img alt="flash_Atten实验验证1" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten实验验证1.webp"/></a></p>
-<p><a data-lightbox="3c26c225-839d-424d-acc7-909fbb4e3a89" data-title="flash_Atten实验验证2" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten实验验证2.webp" target="_blank"><img alt="flash_Atten实验验证2" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten实验验证2.webp"/></a></p>
+<p><a data-lightbox="e844b53e-56ec-4a9a-9fa2-0158b0d6d9e7" data-title="flash_Atten实验验证1" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten实验验证1.webp" target="_blank"><img alt="flash_Atten实验验证1" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten实验验证1.webp"/></a></p>
+<p><a data-lightbox="02a31a6d-6870-4550-a58a-dec3a53df3e5" data-title="flash_Atten实验验证2" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten实验验证2.webp" target="_blank"><img alt="flash_Atten实验验证2" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten实验验证2.webp"/></a></p>
 <p>目前，FlashAttention已经经过广泛验证, torch2.0中已提供flashattention的实现</p>
 <p>正如标题《Fast and Memory-Efficient Exact Attention with IO-Awareness》所示，FlashAttention的优点在于充分考虑了在计算任务中IO的重要性，并通过分块计算的方式开发了一种快速、节省显存、精确无近似的注意力实现方法。这使得我们更便于训练具有更长上下文的Transformer模型，并且为后续注意力算法的优化提供了一个基准</p>
 <p></p><footer class="page-footer"><span class="copyright">Copyright © narutohyc.com 2021 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
-2023-08-17 09:23:36
+2023-08-18 00:25:02
 </span></footer><hr/><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz',appKey: 'utUrzoiqNaDEGlgr09JL1pXB',placeholder: '欢迎留下评论交流~',avatar: 'wavatar',meta: undefined,pageSize: 15,lang: 'zh-CN',recordIP: false})</script><p></p>
 </section>
 </div>
@@ -1419,7 +1427,7 @@ d k_{j}=\sum_{i} d S_{i j} q_{i}=\sum_{i} P_{i j}\left(d P_{i j}-D_{i}\right) q_
 <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"abbrlink":59381,"date":"2023/06/15 12:46:10","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆0.webp","title":"LLM模型微调系列.md","tags":["深度学习","LLM模型","微调","p tuning v2","lora"],"top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆0.webp","mathjax":true,"categories":["deep_learning"],"description":"LLM模型微调系列","level":"1.2","depth":1,"next":{"title":"LLM模型部署调试推理.md","level":"1.3","depth":1,"path":"chapters/LLM模型部署调试推理.md","ref":"chapters/LLM模型部署调试推理.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/hycBook"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":false,"enableFooter":false,"site":"https://dl.hycbook.com","author":"narutohyc","website":"深度学习知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"hycBook","repo":"bk_dl_page","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"深度学习相关学习记录","language":"zh-hans","mathjax":{"forceSVG":true},"links":{"sidebar":{"书籍主页":"https://study.hycbook.com"}},"gitbook":"*","description":"记录 深度学习 的学习和一些技巧的使用"},"file":{"path":"chapters/LLM模型微调系列.md","mtime":"2023-08-17T09:23:36.104Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-17T09:24:37.915Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"abbrlink":59381,"date":"2023/06/15 12:46:10","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆0.webp","title":"LLM模型微调系列.md","tags":["深度学习","LLM模型","微调","p tuning v2","lora"],"top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆0.webp","mathjax":true,"categories":["deep_learning"],"description":"LLM模型微调系列","level":"1.2","depth":1,"next":{"title":"LLM模型部署调试推理.md","level":"1.3","depth":1,"path":"chapters/LLM模型部署调试推理.md","ref":"chapters/LLM模型部署调试推理.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/hycBook"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":false,"enableFooter":false,"site":"https://dl.hycbook.com","author":"narutohyc","website":"深度学习知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"hycBook","repo":"bk_dl_page","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"深度学习相关学习记录","language":"zh-hans","mathjax":{"forceSVG":true},"links":{"sidebar":{"书籍主页":"https://study.hycbook.com"}},"gitbook":"*","description":"记录 深度学习 的学习和一些技巧的使用"},"file":{"path":"chapters/LLM模型微调系列.md","mtime":"2023-08-18T00:25:02.591Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-18T00:26:15.683Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 <canvas class="fireworks"></canvas><script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script></div>

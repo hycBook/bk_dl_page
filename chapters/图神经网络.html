@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-<title>图像分割算法.md · 深度学习相关学习记录</title>
+<title>图神经网络.md · 深度学习相关学习记录</title>
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-<meta content="图像分割算法" name="description"/>
+<meta content="图神经网络" name="description"/>
 <meta content="GitBook 3.2.3" name="generator"/>
 <meta content="narutohyc" name="author"/>
 <link href="../gitbook/style.css" rel="stylesheet"/>
@@ -29,8 +29,8 @@
 <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
 <link href="../gitbook/images/apple-touch-icon-precomposed-152.png" rel="apple-touch-icon-precomposed" sizes="152x152"/>
 <link href="../gitbook/images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
-<link href="图像分类算法.html" rel="next"/>
-<link href="transformer.html" rel="prev"/>
+<link href="数据标注工具.html" rel="next"/>
+<link href="图像分类算法.html" rel="prev"/>
 <link href="./chapters/res/other/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 <link href="./chapters/res/other/favicon.ico" rel="apple-touch-icon-precomposed" sizes="152x152"/>
 <style>
@@ -188,7 +188,7 @@
             
                 </a>
 </li>
-<li class="chapter active" data-level="1.9" data-path="图像分割算法.html" id="chapter_id_8">
+<li class="chapter" data-level="1.9" data-path="图像分割算法.html" id="chapter_id_8">
 <a href="图像分割算法.html">
 <b>1.9.</b>
                     
@@ -204,7 +204,7 @@
             
                 </a>
 </li>
-<li class="chapter" data-level="1.11" data-path="图神经网络.html" id="chapter_id_10">
+<li class="chapter active" data-level="1.11" data-path="图神经网络.html" id="chapter_id_10">
 <a href="图神经网络.html">
 <b>1.11.</b>
                     
@@ -283,7 +283,7 @@
 <!-- Title -->
 <h1>
 <i class="fa fa-circle-o-notch fa-spin"></i>
-<a href="..">图像分割算法.md</a>
+<a href="..">图神经网络.md</a>
 </h1>
 </div>
 <div class="page-wrapper" role="main" tabindex="-1">
@@ -291,24 +291,24 @@
 <div class="search-plus" id="book-search-results">
 <div class="search-noresults">
 <section class="normal markdown-section">
-<div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon"></span><a href="#图像分割">1 图像分割</a></li><ul><li><span class="title-icon"></span><a href="#unet">1.1 UNet</a></li></ul><li><span class="title-icon"></span><a href="#语义分割">2 语义分割</a></li><li><span class="title-icon"></span><a href="#实例分割">3 实例分割</a></li></ul></div><a href="#图像分割" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><hr/>
-<h1 id="图像分割">1 图像分割</h1>
-<h2 id="unet">1.1 UNet</h2>
+<div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon"></span><a href="#概述">1 概述</a></li></ul></div><a href="#概述" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="概述">1 概述</h1>
 <blockquote>
-<p><a href="https://arxiv.org/pdf/1505.04597.pdf%EF%BC%89" target="_blank">U-Net: Convolutional Networks for Biomedical Image Segmentation 2015</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/313283141?utm_id=0" target="_blank">图像分割必备知识点 | Unet详解 理论+ 代码</a></p>
+<p><a href="https://pytorch-geometric.readthedocs.io/en/latest/" target="_blank">PyG Documentation</a></p>
 </blockquote>
-<p><code>U-Net</code>是一种常用的卷积神经网络结构，特别适用于<strong>图像分割任务</strong>。它由Olaf Ronneberger等人在2015年提出，并因其在生物医学图像分割中的出色表现而受到广泛关注</p>
-<p>U-Net的整体结构呈U字形，因此得名。它包含两个主要部分：编码器(Encoder)和解码器(Decoder)</p>
-<ul>
-<li>编码器由一系列卷积层和池化层组成，用于提取图像中的特征并逐渐缩小感受野</li>
-<li>解码器由一系列反卷积层和跳跃连接(Skip Connection)组成，用于将编码器提取的特征映射重新放大，并与解码器中的特征进行融合</li>
-<li>跳跃连接的作用是将底层的细节信息传递给解码器，有助于更好地恢复分割结果的细节</li>
-</ul>
-<p>U-Net的设计思想是在特征提取的同时保留更多的上下文信息，以及保留高分辨率的细节。通过编码器和解码器之间的特征传递和融合，U-Net能够同时获得局部和全局的上下文信息，并生成细致准确的分割结果</p>
-<p>由于其简单而有效的结构，U-Net在医学图像分割、语义分割、遥感图像分析等领域得到了广泛应用，并成为图像分割任务中的经典模型之一</p>
-<h1 id="语义分割">2 语义分割</h1>
-<h1 id="实例分割">3 实例分割</h1>
+<p>PyG(PyTorch Geometric)是一个建立在 PyTorch 基础上的库，用于轻松编写和训练图神经网络(GNN)，用于与结构化数据相关的广泛应用</p>
+<blockquote>
+<p>任务形态</p>
+</blockquote>
+<p>GNN中常见任务：Graph级别任务、Node级别任务、Edge级别任务</p>
+<p>包括：节点分类，节点连接预测，图相似度检测，异常检测，图分类</p>
+<p>多层GNN不会改变图的拓扑结构，但是会改变点的特征，多层GNN处理可以扩大感受野</p>
+<blockquote>
+<p>GCN和CNN有什么不同和相同点</p>
+</blockquote>
+<p><strong>不同点</strong>：图卷积中每个点的邻居数量是不确定的，图卷积中的数据输入格式不确定</p>
+<p><strong>相同点</strong>：GCN和CNN本质都需要对输入数据做特征提取，且都是根据某个点周围点的情况提取特征</p>
+<p>GCN 可以处理 semi-supervised learning，即只有部分节点有标签的情况，计算损失时<strong>只用有标签的计算</strong></p>
+<p>GCN 的层数一般3~5层比较好，层数叠加可能导致反效果</p>
 <p></p><footer class="page-footer"><span class="copyright">Copyright © narutohyc.com 2021 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
 2023-08-18 00:25:02
 </span></footer><hr/><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz',appKey: 'utUrzoiqNaDEGlgr09JL1pXB',placeholder: '欢迎留下评论交流~',avatar: 'wavatar',meta: undefined,pageSize: 15,lang: 'zh-CN',recordIP: false})</script><p></p>
@@ -327,17 +327,17 @@
 </div>
 </div>
 </div>
-<a aria-label="Previous page: transformer.md" class="navigation navigation-prev" href="transformer.html">
+<a aria-label="Previous page: 图像分类算法.md" class="navigation navigation-prev" href="图像分类算法.html">
 <i class="fa fa-angle-left"></i>
 </a>
-<a aria-label="Next page: 图像分类算法.md" class="navigation navigation-next" href="图像分类算法.html">
+<a aria-label="Next page: 数据标注工具.md" class="navigation navigation-next" href="数据标注工具.html">
 <i class="fa fa-angle-right"></i>
 </a>
 <script src="https://cdn.jsdelivr.net/gh/zztongtong/CDN/js/live2d.min.js"></script><div style="position:absolute; bottom:0; left:0; width:200;"><canvas height="350" id="model_1" width="200"></canvas></div></div>
 <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"abbrlink":54081,"date":"2023/06/04 08:41:21","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆10.webp","title":"图像分割算法.md","tags":["图像分割算法","UNet"],"top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆10.webp","mathjax":true,"categories":["deep_learning"],"description":"图像分割算法","level":"1.9","depth":1,"next":{"title":"图像分类算法.md","level":"1.10","depth":1,"path":"chapters/图像分类算法.md","ref":"chapters/图像分类算法.md","articles":[]},"previous":{"title":"transformer.md","level":"1.8","depth":1,"path":"chapters/transformer.md","ref":"chapters/transformer.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/hycBook"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":false,"enableFooter":false,"site":"https://dl.hycbook.com","author":"narutohyc","website":"深度学习知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"hycBook","repo":"bk_dl_page","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"深度学习相关学习记录","language":"zh-hans","mathjax":{"forceSVG":true},"links":{"sidebar":{"书籍主页":"https://study.hycbook.com"}},"gitbook":"*","description":"记录 深度学习 的学习和一些技巧的使用"},"file":{"path":"chapters/图像分割算法.md","mtime":"2023-08-18T00:25:02.611Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-18T00:26:15.683Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"图神经网络.md","date":"2023/08/16 10:01:54","top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆2.webp","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆2.webp","categories":["deep_learning"],"tags":["深度学习","图神经网络"],"mathjax":true,"description":"图神经网络","level":"1.11","depth":1,"next":{"title":"数据标注工具.md","level":"1.12","depth":1,"path":"chapters/数据标注工具.md","ref":"chapters/数据标注工具.md","articles":[]},"previous":{"title":"图像分类算法.md","level":"1.10","depth":1,"path":"chapters/图像分类算法.md","ref":"chapters/图像分类算法.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/hycBook"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":false,"enableFooter":false,"site":"https://dl.hycbook.com","author":"narutohyc","website":"深度学习知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"hycBook","repo":"bk_dl_page","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"深度学习相关学习记录","language":"zh-hans","mathjax":{"forceSVG":true},"links":{"sidebar":{"书籍主页":"https://study.hycbook.com"}},"gitbook":"*","description":"记录 深度学习 的学习和一些技巧的使用"},"file":{"path":"chapters/图神经网络.md","mtime":"2023-08-18T00:25:02.611Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-18T00:26:15.683Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 <canvas class="fireworks"></canvas><script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script></div>
