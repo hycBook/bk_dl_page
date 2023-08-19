@@ -1,4 +1,3 @@
-var gitbook = window.gitbook;
 
 /*
 免費網站計數器 mfwzjsq.com - 為您的網站提供來訪人數統計服務。簡易的圖片顯示形式，純HTML程式碼有利於網頁快速加載。有123種豐富的圖形樣式可供選擇，以便搭配不同風格的網頁。
@@ -37,7 +36,6 @@ var counter_style = '109'
 // 配置各网页id
 var id_map = new Map();
 // https://hycbook.github.io/bk_python/
-id_map.set("", "zvvnopa");
 // https://hycbook.github.io/bk_python/chapters/1.python多进程.html
 id_map.set("LLM模型微调系列.html", "hmxnqcdk");
 // https://hycbook.github.io/bk_python/chapters/2.python多线程.html
@@ -94,6 +92,9 @@ id_map.set("33.Kafka基本安装和使用.html", "hvxappdx");
 id_map.set("40.机器学习_一元函数微积分.html", "hvxappdk");
 
 
+// ===========================================
+
+var gitbook = window.gitbook;
 
 require(["gitbook", "jQuery"], function (gitbook, $) {
 
