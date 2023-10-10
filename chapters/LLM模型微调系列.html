@@ -291,7 +291,7 @@
 <div class="search-plus" id="book-search-results">
 <div class="search-noresults">
 <section class="normal markdown-section">
-<div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon"></span><a href="#llm模型">1 LLM模型</a></li><ul><li><span class="title-icon"></span><a href="#概述">1.1 概述</a></li><li><span class="title-icon"></span><a href="#微调">1.2 微调</a></li><li><span class="title-icon"></span><a href="#发展脉络">1.3 发展脉络</a></li></ul><li><span class="title-icon"></span><a href="#prefixprompt-tuning">2 Prefix/Prompt-Tuning</a></li><ul><li><span class="title-icon"></span><a href="#prefix-tuning">2.1 Prefix-Tuning</a></li><li><span class="title-icon"></span><a href="#prompt-tuning">2.2 Prompt-Tuning</a></li><li><span class="title-icon"></span><a href="#p-tuning">2.3 P-Tuning</a></li><ul><li><span class="title-icon"></span><a href="#p-tuning-v1">2.3.1 P-Tuning V1</a></li><li><span class="title-icon"></span><a href="#p-tuning-v2">2.3.2 P-Tuning V2</a></li></ul></ul><li><span class="title-icon"></span><a href="#lora系列">3 LORA系列</a></li><ul><li><span class="title-icon"></span><a href="#lora转">3.1 LORA(转)</a></li><li><span class="title-icon"></span><a href="#adalora转">3.2 AdaLoRA(转)</a></li><li><span class="title-icon"></span><a href="#qlora">3.3 QLORA</a></li></ul><li><span class="title-icon"></span><a href="#rlhf">4 RLHF</a></li><li><span class="title-icon"></span><a href="#flashatten转">5 Flash_Atten(转)</a></li><ul><li><span class="title-icon"></span><a href="#概述_2">5.1 概述</a></li><li><span class="title-icon"></span><a href="#核心要点">5.2 核心要点</a></li><li><span class="title-icon"></span><a href="#提出问题">5.3 提出问题</a></li><li><span class="title-icon"></span><a href="#解决方案">5.4 解决方案</a></li><li><span class="title-icon"></span><a href="#forward">5.5 Forward</a></li><ul><li><span class="title-icon"></span><a href="#standard-attention">5.5.1 Standard Attention</a></li><li><span class="title-icon"></span><a href="#flashattentiontiling">5.5.2 FlashAttention(Tiling)</a></li></ul><li><span class="title-icon"></span><a href="#io复杂度分析">5.6 IO复杂度分析</a></li><ul><li><span class="title-icon"></span><a href="#standard-attention_1">5.6.1 Standard Attention</a></li><li><span class="title-icon"></span><a href="#flashattention">5.6.2 FlashAttention</a></li></ul><li><span class="title-icon"></span><a href="#backward">5.7 Backward</a></li><ul><li><span class="title-icon"></span><a href="#理论基础">5.7.1 理论基础</a></li></ul><li><span class="title-icon"></span><a href="#实验验证">5.8 实验验证</a></li></ul></ul></div><a href="#llm模型" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="llm模型">1 LLM模型</h1>
+<div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon"></span><a href="#llm模型">1 LLM模型</a></li><ul><li><span class="title-icon"></span><a href="#概述">1.1 概述</a></li><li><span class="title-icon"></span><a href="#微调">1.2 微调</a></li><li><span class="title-icon"></span><a href="#发展脉络">1.3 发展脉络</a></li></ul><li><span class="title-icon"></span><a href="#adapter-tuning">2 Adapter Tuning</a></li><li><span class="title-icon"></span><a href="#prefixprompt-tuning">3 Prefix/Prompt-Tuning</a></li><ul><li><span class="title-icon"></span><a href="#prefix-tuning">3.1 Prefix-Tuning</a></li><li><span class="title-icon"></span><a href="#prompt-tuning">3.2 Prompt-Tuning</a></li><li><span class="title-icon"></span><a href="#p-tuning">3.3 P-Tuning</a></li><ul><li><span class="title-icon"></span><a href="#p-tuning-v1">3.3.1 P-Tuning V1</a></li><li><span class="title-icon"></span><a href="#p-tuning-v2">3.3.2 P-Tuning V2</a></li></ul></ul><li><span class="title-icon"></span><a href="#lora系列">4 LORA系列</a></li><ul><li><span class="title-icon"></span><a href="#lora转">4.1 LORA(转)</a></li><li><span class="title-icon"></span><a href="#adalora转">4.2 AdaLoRA(转)</a></li><li><span class="title-icon"></span><a href="#qlora">4.3 QLORA</a></li></ul><li><span class="title-icon"></span><a href="#rlhf">5 RLHF</a></li><li><span class="title-icon"></span><a href="#flashatten转">6 Flash_Atten(转)</a></li><ul><li><span class="title-icon"></span><a href="#概述_2">6.1 概述</a></li><li><span class="title-icon"></span><a href="#核心要点">6.2 核心要点</a></li><li><span class="title-icon"></span><a href="#提出问题">6.3 提出问题</a></li><li><span class="title-icon"></span><a href="#解决方案">6.4 解决方案</a></li><li><span class="title-icon"></span><a href="#forward">6.5 Forward</a></li><ul><li><span class="title-icon"></span><a href="#standard-attention">6.5.1 Standard Attention</a></li><li><span class="title-icon"></span><a href="#flashattentiontiling">6.5.2 FlashAttention(Tiling)</a></li></ul><li><span class="title-icon"></span><a href="#io复杂度分析">6.6 IO复杂度分析</a></li><ul><li><span class="title-icon"></span><a href="#standard-attention_1">6.6.1 Standard Attention</a></li><li><span class="title-icon"></span><a href="#flashattention">6.6.2 FlashAttention</a></li></ul><li><span class="title-icon"></span><a href="#backward">6.7 Backward</a></li><ul><li><span class="title-icon"></span><a href="#理论基础">6.7.1 理论基础</a></li></ul><li><span class="title-icon"></span><a href="#实验验证">6.8 实验验证</a></li></ul></ul></div><a href="#llm模型" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="llm模型">1 LLM模型</h1>
 <blockquote>
 <p><a href="https://zhuanlan.zhihu.com/p/626377667" target="_blank">什么是LLM（大语音模型）</a></p>
 </blockquote>
@@ -311,6 +311,8 @@
 <p><a href="https://zhuanlan.zhihu.com/p/622810394" target="_blank">LLM大模型低资源微调p tuning v2和lora区别</a></p>
 <p><a href="https://zhuanlan.zhihu.com/p/627921175" target="_blank">prefix, p-tuningv2, lora finetune该怎么选择?</a></p>
 <p><a href="http://news.sohu.com/a/670981907_121119001" target="_blank">让天下没有难Tuning的大模型：PEFT技术简介 2023-04</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/638809556" target="_blank">大模型高效微调综述上：Adapter Tuning、AdaMix、PET、Prefix-Tuning、Prompt Tuning、P-tuning、P-tuning v2</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/639068809" target="_blank">大模型高效微调综述下： DiffPruning、BitFit、LoRa、AdaLoRA、MAM Adapters、UniPELT</a></p>
 </blockquote>
 <p><code>微调(Fine-tuning)</code>是一种常用的技术，用于将预训练的语言模型适应于特定的任务或领域。微调的目的是通过在特定任务上进行有监督的训练，调整模型参数以提高其性能和适应性</p>
 <p>以下是微调在适应语言模型中的有效性的几个原因：</p>
@@ -329,7 +331,7 @@
 <li>共享基础大模型，在上面叠加自己的新模型</li>
 </ol>
 <h2 id="发展脉络">1.3 发展脉络</h2>
-<p><a data-lightbox="5676743e-949e-45b2-b575-f41168959486" data-title="LLM微调技术发展脉络" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/LLM微调技术发展脉络.svg" target="_blank"><img alt="LLM微调技术发展脉络" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/LLM微调技术发展脉络.svg"/></a></p>
+<p><a data-lightbox="3928f1df-8b60-4f5b-8e44-d399af366dc0" data-title="LLM微调技术发展脉络" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/LLM微调技术发展脉络.svg" target="_blank"><img alt="LLM微调技术发展脉络" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/LLM微调技术发展脉络.svg"/></a></p>
 <blockquote>
 <p>Adapter系列</p>
 </blockquote>
@@ -367,12 +369,21 @@
 <li><strong>无人工参与</strong>: 无需人工设计prompt模板，依赖模型微调即可</li>
 <li><strong>多任务共享模型</strong>: 因为LM被冻结，只需训练针对不同任务的prompt即可。因此可以固定预训练模型，拔插式加入Prompt用于不同下游任务</li>
 </ul>
-<h1 id="prefixprompt-tuning">2 Prefix/Prompt-Tuning</h1>
-<h2 id="prefix-tuning">2.1 Prefix-Tuning</h2>
+<h1 id="adapter-tuning">2 Adapter Tuning</h1>
+<blockquote>
+<p><a href="https://cloud.tencent.com/developer/article/2186743" target="_blank">预训练模型微调 | 一文带你了解Adapter Tuning</a></p>
+</blockquote>
+<p><strong>Adapter Tuning</strong></p>
+<p>随着计算机硬件性能的提高，预训练模型参数量越来越多，在训练下游任务时进行全模型微调变得昂贵且耗时，Adapter 的出现缓解了这个问题。Adapter在预训练模型每层中插入用于下游任务的参数，在微调时将模型主体冻结，仅训练特定于任务的参数，减少训练时算力开销</p>
+<p><strong>Adapter模块设计方法</strong></p>
+<p>2019年，Houlsby N等人将Adapter引入NLP领域，作为全模型微调的一种替代方案。Adapter主体架构下图所示</p>
+<p><a data-lightbox="96a8eb54-51a4-4bee-8690-5cff38837ab4" data-title="img" href="https://ask.qcloudimg.com/http-save/yehe-5990800/f112c68b91090f20df55116a20f64903.png" target="_blank"><img alt="img" src="https://ask.qcloudimg.com/http-save/yehe-5990800/f112c68b91090f20df55116a20f64903.png"/></a></p>
+<h1 id="prefixprompt-tuning">3 Prefix/Prompt-Tuning</h1>
+<h2 id="prefix-tuning">3.1 Prefix-Tuning</h2>
 <p>等待...</p>
 <p>Prefix-Tuning可以理解是CTRL[1]模型的连续化升级版，为了生成不同领域和话题的文本，CTRL是在预训练阶段在输入文本前加入了control code，例如好评前面加'Reviews Rating:5.0',差评前面加'Reviews Rating:1.0', 政治评论前面加‘Politics Title:’，把语言模型的生成概率，优化成了基于文本主题的条件概率</p>
 <p>Prefix-Tuning进一步把control code优化成了虚拟Token，每个NLP任务对应多个虚拟Token的Embedding（prefix），对于Decoder-Only的GPT，prefix只加在句首，对于Encoder-Decoder的BART，不同的prefix同时加在编码器和解码器的开头。在下游微调时，LM的参数被冻结，只有prefix部分的参数进行更新。不过这里的prefix参数不只包括embedding层而是虚拟token位置对应的每一层的activation都进行更新</p>
-<h2 id="prompt-tuning">2.2 Prompt-Tuning</h2>
+<h2 id="prompt-tuning">3.2 Prompt-Tuning</h2>
 <blockquote>
 <p><a href="https://github.com/google-research/prompt-tuning" target="_blank">https://github.com/google-research/prompt-tuning</a></p>
 </blockquote>
@@ -380,13 +391,13 @@
 <p>Prompt-Tunning是以上prefix-Tunning的简化版本，面向NLU任务，进行了更全面的效果对比，并且在大模型上成功打平了LM微调的效果</p>
 <p>对比Prefix-Tunning，prompt-tuning的主要差异如下:</p>
 <p>论文使用100个prefix token作为默认参数，大于以上prefix-tuning默认的10个token，不过差异在于prompt-Tunning只对输入层(Embedding)进行微调，而Prefix是对虚拟Token对应的上游layer全部进行微调。因此Prompt-Tunning的微调参数量级要更小，且不需要修改原始模型结构，这是“简化”的来源。相同的prefix长度，Prompt-Tunning(&lt;0.01%)微调的参数量级要比Prefix-Tunning(0.1%~1%)小10倍以上</p>
-<h2 id="p-tuning">2.3 P-Tuning</h2>
-<h3 id="p-tuning-v1">2.3.1 P-Tuning V1</h3>
+<h2 id="p-tuning">3.3 P-Tuning</h2>
+<h3 id="p-tuning-v1">3.3.1 P-Tuning V1</h3>
 <blockquote>
 <p><a href="https://github.com/THUDM/P-tuning" target="_blank">github THUDM/P-tuning</a></p>
 </blockquote>
 <p>手动尝试最优的提示无异于大海捞针，于是便有了自动离散提示搜索的方法(左图)，但提示是离散的，神经网络是连续的，所以寻找的最优提示可能是次优的。p-tuning依然是固定LLM参数，利用多层感知机和LSTM对prompt进行编码，编码之后与其他向量进行拼接之后正常输入LLM。注意，训练之后只保留prompt编码之后的向量即可，无需保留编码器</p>
-<p><a data-lightbox="338693e0-20c5-4d8c-9868-2f243380103d" data-title="p_tunning架构v1 vs 离散型promote" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/p_tunning架构v1 vs 离散型promote.webp" target="_blank"><img alt="p_tunning架构v1 vs 离散型promote" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/p_tunning架构v1 vs 离散型promote.webp"/></a></p>
+<p><a data-lightbox="04a7ea44-27d3-4441-8fec-f6aa3dc6af2c" data-title="p_tunning架构v1 vs 离散型promote" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/p_tunning架构v1 vs 离散型promote.webp" target="_blank"><img alt="p_tunning架构v1 vs 离散型promote" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/p_tunning架构v1 vs 离散型promote.webp"/></a></p>
 <blockquote>
 <p>动机</p>
 </blockquote>
@@ -396,13 +407,13 @@
 </ul>
 <p>和prefix-tuning差不多，反正是基于这两点去设计了一种连续可微的模版</p>
 <p>相比prefix-tuning，这里加了可微的virtual token，但是仅限于输入，没有在每层加；另外virtual token的位置也不一定是前缀，插入的位置是可选的。这里的出发点实际是把传统人工设计模版中的真实token替换成可微的virtual token</p>
-<h3 id="p-tuning-v2">2.3.2 P-Tuning V2</h3>
+<h3 id="p-tuning-v2">3.3.2 P-Tuning V2</h3>
 <blockquote>
 <p><a href="https://github.com/THUDM/P-tuning-v2" target="_blank">github THUDM/P-tuning-v2</a></p>
 <p><a href="https://blog.csdn.net/as949179700/article/details/130900814" target="_blank">P-tuning V2论文和代码实现详解</a></p>
 </blockquote>
 <h4 id="概述_1"><a class="anchor-navigation-ex-anchor" href="#概述_1" name="概述_1"><i aria-hidden="true" class="fa fa-link"></i></a><a class="plugin-anchor" href="#概述" name="概述"><i aria-hidden="true" class="fa fa-link"></i></a>概述</h4>
-<p><a data-lightbox="8f77d3f0-cdf4-422d-8e87-2a77db4cffed" data-title="p_tunning架构v1 vs v2" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/p_tunning架构v1 vs v2.webp" target="_blank"><img alt="p_tunning架构v1 vs v2" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/p_tunning架构v1 vs v2.webp"/></a></p>
+<p><a data-lightbox="42aba424-88e3-4573-8f00-d1f2ba3e7ceb" data-title="p_tunning架构v1 vs v2" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/p_tunning架构v1 vs v2.webp" target="_blank"><img alt="p_tunning架构v1 vs v2" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/p_tunning架构v1 vs v2.webp"/></a></p>
 <h4 id="代码示例"><a class="anchor-navigation-ex-anchor" href="#代码示例" name="代码示例"><i aria-hidden="true" class="fa fa-link"></i></a><a class="plugin-anchor" href="#代码示例" name="代码示例"><i aria-hidden="true" class="fa fa-link"></i></a>代码示例</h4>
 <blockquote>
 <p>PrefixEncoder类，为了获得连续prompt，设计的模块</p>
@@ -705,11 +716,11 @@ attention_scores的形状：torch.Size([<span class="hljs-number">32</span>, <sp
 context_layer的形状恢复完成，其形状为：torch.Size([<span class="hljs-number">32</span>, <span class="hljs-number">128</span>, <span class="hljs-number">768</span>])
 一次P-tuningV2的BertLayer计算仿真结束
 </code></pre>
-<h1 id="lora系列">3 LORA系列</h1>
+<h1 id="lora系列">4 LORA系列</h1>
 <blockquote>
 <p>点赞👍<a href="https://space.bilibili.com/1564408396" target="_blank">B站博主 小杨不努力0v0</a> + <a href="https://bytedance.feishu.cn/docx/doxcn3zm448MK9sK6pHuPsqtH8f" target="_blank">博主相关的文章链接</a></p>
 </blockquote>
-<h2 id="lora转">3.1 LORA(转)</h2>
+<h2 id="lora转">4.1 LORA(转)</h2>
 <blockquote>
 <p><a href="https://www.bilibili.com/video/BV17g4y1g7S6/?spm_id_from=333.788&amp;vd_source=d741c08a55ba6a6a780b28e90920def0" target="_blank">LoRA：训练你的GPT【论文粗读·1】</a></p>
 </blockquote>
@@ -775,7 +786,7 @@ W_{0}+\Delta W=W_{0}+B A \\
 h=W_{0} x+\Delta W x=W_{0} x+B A x
 </script>
 因此，<script type="math/tex; ">\Delta W</script>可以进行低秩分解</p>
-<p><a data-lightbox="1df2f561-509e-4a5a-8a70-eef180049735" data-title="Lora思路" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora思路.webp" target="_blank"><img alt="Lora思路" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora思路.webp"/></a></p>
+<p><a data-lightbox="5e06ec9c-0b2c-4c03-8022-befdb9874781" data-title="Lora思路" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora思路.webp" target="_blank"><img alt="Lora思路" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora思路.webp"/></a></p>
 <p>训练时，<script type="math/tex; ">B</script>初始化为全零矩阵，这样子参数量就从<script type="math/tex; ">d*d</script>变成了<script type="math/tex; ">d*2*r</script>，这里的<script type="math/tex; ">r</script>一般是远小于<script type="math/tex; ">d</script>的</p>
 <blockquote>
 <p>优点</p>
@@ -821,23 +832,23 @@ h=W_{0} x+\Delta W x=W_{0} x+B A x
 <p>对于attention参数附加到哪个上更有效</p>
 </blockquote>
 <p>实验在GPT-3 175B模型上设置了一个参数预算为18M(如果以FP16存储，大约为35MB)。这对应于当我们适应一种注意力权重时r=8，或者当我们适应两种类型时r=4，适用于所有96层</p>
-<p><a data-lightbox="ccbf9edb-bc26-4597-931f-b38f488b4f69" data-title="Lora关于r参数选择的实验" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora关于r参数选择的实验.webp" target="_blank"><img alt="Lora关于r参数选择的实验" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora关于r参数选择的实验.webp"/></a></p>
+<p><a data-lightbox="da243e36-2bfd-46f2-9321-f2da7a4e79da" data-title="Lora关于r参数选择的实验" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora关于r参数选择的实验.webp" target="_blank"><img alt="Lora关于r参数选择的实验" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora关于r参数选择的实验.webp"/></a></p>
 <p>需要注意的是，将所有参数放在<script type="math/tex; ">\Delta 𝑊_𝑞</script>或<script type="math/tex; ">\Delta 𝑊_k</script>中会导致显著降低性能，而注入到<script type="math/tex; ">𝑊_𝑞</script>和<script type="math/tex; ">𝑊_v</script>则产生最佳结果。这表明，即使秩为4，<script type="math/tex; ">\Delta 𝑊</script>中包含了足够的信息，使得与使用具有较大秩的单一类型的权重相比，使用更多的权重矩阵更可取</p>
 <blockquote>
 <p>回答：将参数设置到q、v上时，r取多少合适</p>
 </blockquote>
-<p><a data-lightbox="8385de81-a7a0-4d88-9425-55dce638db1a" data-title="Lora关于r参数取多少的实验" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora关于r参数取多少的实验.webp" target="_blank"><img alt="Lora关于r参数取多少的实验" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora关于r参数取多少的实验.webp"/></a></p>
+<p><a data-lightbox="c0ffd5ed-c763-4b20-b31a-472664487b82" data-title="Lora关于r参数取多少的实验" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora关于r参数取多少的实验.webp" target="_blank"><img alt="Lora关于r参数取多少的实验" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora关于r参数取多少的实验.webp"/></a></p>
 <p>LoRA在非常小的秩(特别是对于<script type="math/tex; ">𝑊_𝑞</script>，<script type="math/tex; ">𝑊_𝑣</script>而言)下已经取得了相当的竞争力，这表明更新矩阵<script type="math/tex; ">\Delta W</script>可能具有<strong>非常小的内在秩</strong>，使用低秩矩阵对LLM进行fine tune的时候，可以用一个非常小的低秩矩阵，就可以捕捉到对下游任务的一些特征信息，这为我们提供了一个非常高效的LLM的fine tune的方式，同时提高了下游任务的性能</p>
 <blockquote>
 <p>回答：<script type="math/tex; ">\Delta W</script>和<script type="math/tex; ">W</script>之间的关系是什么</p>
 </blockquote>
 <p>首先对<script type="math/tex; ">\Delta W</script>进行奇异值分解，并且把它左奇异值向量和右奇异值向量乘到<script type="math/tex; ">W_q</script>上，把<script type="math/tex; ">W_q</script>映射到<script type="math/tex; ">\Delta W_q</script>的子空间，并计算<script type="math/tex; ">F</script>范数，同时还把<script type="math/tex; ">W_q</script>映射到映射到随机矩阵上</p>
 <p>以此来证明<script type="math/tex; ">\Delta W_q</script>与<script type="math/tex; ">W_q</script>有更强的相关性</p>
-<p><a data-lightbox="0058c6e4-e791-46dc-b216-3184da5e2be0" data-title="Lora下w和delta w的关系" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora下w和delta w的关系.webp" target="_blank"><img alt="Lora下w和delta w的关系" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora下w和delta w的关系.webp"/></a></p>
+<p><a data-lightbox="2e852e2f-4950-4979-ad28-7723b11ade3d" data-title="Lora下w和delta w的关系" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora下w和delta w的关系.webp" target="_blank"><img alt="Lora下w和delta w的关系" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/Lora下w和delta w的关系.webp"/></a></p>
 <p>首先，与随机矩阵相比，<script type="math/tex; ">\Delta W_q</script>与<script type="math/tex; ">W_q</script>具有<strong>更强的相关性</strong>，表明<script type="math/tex; ">\Delta W</script>放大了预训练模型中的<script type="math/tex; ">W</script>中已经存在的某些特征</p>
 <p>其次，<script type="math/tex; ">\Delta W</script>不是重复<script type="math/tex; ">W</script>的奇异值方向，而是只放大在<script type="math/tex; ">W</script>中没有强调的方向</p>
 <p>第三，放大因子相当巨大：当r=4时，21.5≈6.91/0.32，表明<script type="math/tex; ">\Delta W</script>只是放大了<script type="math/tex; ">W</script>中的一些特征，且放大倍数是很大的，相当于是把下游任务需要的特征提取出来并进行放大</p>
-<h2 id="adalora转">3.2 AdaLoRA(转)</h2>
+<h2 id="adalora转">4.2 AdaLoRA(转)</h2>
 <blockquote>
 <p><a href="https://readpaper.feishu.cn/docx/KWTkdA6EmonokyxdCmocdbXmnwc" target="_blank">AdaLoRA：更强大的LoRA</a></p>
 <p><a href="https://github.com/cauyxy/YourGPT" target="_blank">github cauyxy/YourGPT</a></p>
@@ -857,7 +868,7 @@ h=W_{0} x+\Delta W x=W_{0} x+B A x
 <p>添加小型网络模块</p>
 </blockquote>
 <p>将小型网络模块添加到PLMs中，保持基础模型保持不变的情况下仅针对每个任务微调这些模块，可以用于所有任务。这样，只需引入和更新少量任务特定的参数，就可以适配下游的任务，大大提高了预训练模型的实用性，方法示例</p>
-<p><a data-lightbox="bf4ceb8d-72ad-45e4-8dbd-19d4ad9ff0e6" data-title="添加小型网络模块" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/添加小型网络模块.webp" target="_blank"><img alt="添加小型网络模块" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/添加小型网络模块.webp"/></a></p>
+<p><a data-lightbox="db503ca2-4f78-4438-af86-b1b3e9b9b1f2" data-title="添加小型网络模块" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/添加小型网络模块.webp" target="_blank"><img alt="添加小型网络模块" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/添加小型网络模块.webp"/></a></p>
 <ul>
 <li><p><strong>Adapter tuning</strong>：是在基础模型的各层之间插入小型神经模块</p>
 </li>
@@ -1011,10 +1022,10 @@ s^{(t)}\left(w_{i j}\right)=\bar{I}^{(t)}\left(w_{i j}\right) \cdot \bar{U}^{(t)
 <blockquote>
 <p>实验验证</p>
 </blockquote>
-<h2 id="qlora">3.3 QLORA</h2>
+<h2 id="qlora">4.3 QLORA</h2>
 <p>FineTune -&gt; P_tuning -&gt; P_tuning V2 -&gt; LoRA -&gt; QLoRA</p>
 <p>BERT Adapter</p>
-<h1 id="rlhf">4 RLHF</h1>
+<h1 id="rlhf">5 RLHF</h1>
 <blockquote>
 <p><a href="https://www.bilibili.com/video/BV1Yc411g78a/?spm_id_from=333.1007.0.0&amp;vd_source=d741c08a55ba6a6a780b28e90920def0" target="_blank">入门】大语言模型常用微调框架介绍｜LoRA&amp;Prefix-Tuning&amp;Prompt-Tuning&amp;P-Tuning v2&amp;RLHF微调原理简介</a></p>
 </blockquote>
@@ -1025,14 +1036,14 @@ s^{(t)}\left(w_{i j}\right)=\bar{I}^{(t)}\left(w_{i j}\right) \cdot \bar{U}^{(t)
 <p>步骤1: 监督微调 (SFT)-一 使用精选的人类回答来微调预训练的语言模型以应对各种查询</p>
 <p>步骤2:奖励模型微调 -- 使用一个包含人类对同一查询的多个答案打分的数据集来训练一个独立的 (通常比 SFT 小的) 奖励模型 (RW) </p>
 <p>步骤3: RLHF 训练 --利用 Proximal Policy Optimization (PPO) 算法根据 RW 模型的奖励D九天Hector反馈进一步微调 SFT 模型。</p>
-<h1 id="flashatten转">5 Flash_Atten(转)</h1>
+<h1 id="flashatten转">6 Flash_Atten(转)</h1>
 <blockquote>
 <p><a href="https://readpaper.feishu.cn/docx/UwT2dQsiko6u0RxoiXRcBtwfnAf" target="_blank">前置知识 GPU Arch:自顶向下分析</a> + <a href="https://www.bilibili.com/video/BV1Az4y1B7Da/?vd_source=d741c08a55ba6a6a780b28e90920def0" target="_blank">B站 GPU Arch：自顶向下分析【浅谈底层·1】</a></p>
 </blockquote>
 <p>随着人工智能特别是以GPT为代表的生成式AI的迅猛发展，GPU已经成为了一种不可或缺的工具，甚至企业都以拥有多少高端GPU作为抓住风口能力的衡量标准。相比之下，CPU虽然在传统计算领域占据主导地位，但在处理AI任务时却不及GPU出色</p>
 <p>为什么AI计算通常选择GPU而不是CPU，分析GPU在AI计算中的优势，同时，从底层原理探讨从Volta到最新的Hopper四代NVIDIA GPU架构的演进，展示其不断提升的性能和功能</p>
 <p>GPU主要由计算单元ALU组成。CPU不仅被Cache占据了大量空间，而且还有有复杂的控制逻辑和诸多优化电路，相比之下，计算能力只是CPU很小的一部分</p>
-<p><a data-lightbox="d8e6b5c8-066d-4d25-8a6d-16256287b64c" data-title="GPU和CPU比较" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/GPU和CPU比较.webp" target="_blank"><img alt="GPU和CPU比较" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/GPU和CPU比较.webp"/></a></p>
+<p><a data-lightbox="cbd5c054-2abc-45bb-9801-0632896fc1a7" data-title="GPU和CPU比较" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/GPU和CPU比较.webp" target="_blank"><img alt="GPU和CPU比较" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/GPU和CPU比较.webp"/></a></p>
 <p>通过上面自顶向下的分析，我们知道，对于GPU中的存储部分访问速度由快到慢，计算部分从大到小排列为
 <script type="math/tex; mode=display">
 \begin{array}{c}
@@ -1041,13 +1052,13 @@ s^{(t)}\left(w_{i j}\right)=\bar{I}^{(t)}\left(w_{i j}\right) \cdot \bar{U}^{(t)
 \text{Compute Unit:GPC>TPC>SM>(TensorCore, SFU, INT32, FP32..)}
 \end{array}
 </script>
-<a data-lightbox="350fe697-7c9c-44f2-800e-8920b4f27c71" data-title="GPU架构发展参数" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/GPU架构发展参数.webp" target="_blank"><img alt="GPU架构发展参数" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/GPU架构发展参数.webp"/></a></p>
+<a data-lightbox="4adf13ba-4ab4-40ab-93ca-b21802d63a96" data-title="GPU架构发展参数" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/GPU架构发展参数.webp" target="_blank"><img alt="GPU架构发展参数" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/GPU架构发展参数.webp"/></a></p>
 <p>NVLink是什么？为什么需要他？</p>
 <p>大模型通常具有巨大的参数数量和复杂的结构，需要处理大量的数据。分布式训练将这些大型模型分割成多个部分，由多个GPU或计算节点并行处理，每个部分处理自己的数据子集。然后通过全局通信，参数同步等方式进行梯度传播，此时GPU之间的通信带宽就变的越来越重要</p>
 <p>在NVLink出现之前，GPU与GPU之间的数据交互通过PCIe（Peripheral Component Interconnect Express）总线进行。但PCIe存在两个问题，一是PCIe总线的带宽相对有限，其中PCIe 4.0x16的最大带宽也就64GB/s，二是PCIe总线的延迟相对较高，在GPU之间传输数据时，每次数据传输都需要通过CPU和主机内存来完成。这种传输路径会导致额外的延迟，并降低数据传输的效率。然而，深度学习应用中需要更高的带宽和更低的延迟，PCIe显然是无法满足当下的神经网络训练需求</p>
-<p><a data-lightbox="e35601fb-530c-41ef-ae59-db7e219ef400" data-title="引入NVLink" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/引入NVLink.webp" target="_blank"><img alt="引入NVLink" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/引入NVLink.webp"/></a></p>
+<p><a data-lightbox="01d104f4-85fb-4b30-b9e5-05f882c1320e" data-title="引入NVLink" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/引入NVLink.webp" target="_blank"><img alt="引入NVLink" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/引入NVLink.webp"/></a></p>
 <p>NVLink利用高带宽、低延迟的通信通道，直接将多个GPU连接在一起，实现快速、高效的数据传输和共享。通过NVLink，GPU之间的数据交互可以直接在GPU之间进行，而无需通过CPU和主机内存。这种直接内存访问（DMA）的方式大大减少了数据传输的复制和延迟，提高了数据共享的效率。此外，NVLink还提供了一致的内存空间，使得多个GPU能够共享同一份内存，简化了程序设计和数据管理的复杂性</p>
-<h2 id="概述_2">5.1 概述</h2>
+<h2 id="概述_2">6.1 概述</h2>
 <blockquote>
 <p><a href="https://arxiv.org/pdf/2205.14135.pdf" target="_blank">FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness Paper 2022</a></p>
 <p><a href="https://readpaper.feishu.cn/docx/AC7JdtLrhoKpgxxSRM8cfUounsh" target="_blank">FlashAttention: 更快训练更长上下文的GPT</a></p>
@@ -1059,7 +1070,7 @@ s^{(t)}\left(w_{i j}\right)=\bar{I}^{(t)}\left(w_{i j}\right) \cdot \bar{U}^{(t)
 </blockquote>
 <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe allowfullscreen="true" border="0" frameborder="no" framespacing="0" scrolling="no" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/78s看懂FlashAttention.mp4" style="position: absolute; width: 100%; 
 height: 100%; left: 0; top: 0;"> </iframe></div>
-<h2 id="核心要点">5.2 核心要点</h2>
+<h2 id="核心要点">6.2 核心要点</h2>
 <blockquote>
 <p>⚡️<strong>为什么加快了计算？Fast</strong></p>
 </blockquote>
@@ -1072,19 +1083,19 @@ height: 100%; left: 0; top: 0;"> </iframe></div>
 <p><strong>🎯为什么是精准注意力？Exact Attention</strong></p>
 </blockquote>
 <p>算法流程只是分块计算，<strong>无近似操作</strong></p>
-<h2 id="提出问题">5.3 提出问题</h2>
+<h2 id="提出问题">6.3 提出问题</h2>
 <p>Transformer结构已成为自然语言处理和图像分类等应用中最常用的架构。尽管Transformer在规模上不断增大和加深，但处理更长上下文仍然是一个挑战，因为核心的自注意力模块在序列长度上具有二次方的时间和内存复杂度。这导致在处理长序列时速度变慢且内存需求巨大。因此，我们需要一些优化算法来提高注意力模块的计算速度和内存利用率</p>
-<h2 id="解决方案">5.4 解决方案</h2>
-<p><a data-lightbox="50e257a6-594f-48ad-a2be-36e4147ce690" data-title="flash_Atten架构图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten架构图.webp" target="_blank"><img alt="flash_Atten架构图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten架构图.webp"/></a></p>
-<h2 id="forward">5.5 Forward</h2>
-<h3 id="standard-attention">5.5.1 Standard Attention</h3>
+<h2 id="解决方案">6.4 解决方案</h2>
+<p><a data-lightbox="1eed8774-5b84-427e-8bcc-323c9465199a" data-title="flash_Atten架构图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten架构图.webp" target="_blank"><img alt="flash_Atten架构图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten架构图.webp"/></a></p>
+<h2 id="forward">6.5 Forward</h2>
+<h3 id="standard-attention">6.5.1 Standard Attention</h3>
 <p>在注意力的一般实现中，对<script type="math/tex; ">\mathbf{Q}, \mathbf{K}, \mathbf{V} \in \mathbb{R}^{N \times d}</script> 三个输入执行以下算法得到输出<script type="math/tex; ">\mathbf{O}</script>，其中softmax行级别执行
 <script type="math/tex; mode=display">
 \mathbf{S}=\mathbf{Q} \mathbf{K}^{\top} \in \mathbb{R}^{N \times N}, \quad \mathbf{P}=\operatorname{softmax}(\mathbf{S}) \in \mathbb{R}^{N \times N}, \quad \mathbf{O}=\mathbf{P V} \in \mathbb{R}^{N \times d}
 </script>
 在这个算法中，<script type="math/tex; ">\mathbf{S}</script>，<script type="math/tex; ">\mathbf{P}</script>矩阵都是很大，需要在HBM中实例化来进行存储，这样就会带来很多HBM的访问次数， 最终体现到算法时间端到端较长的延迟</p>
-<p><a data-lightbox="f51df5d4-f545-4239-8714-2e51b1953181" data-title="flash_Atten流程" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten流程.webp" target="_blank"><img alt="flash_Atten流程" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten流程.webp"/></a></p>
-<h3 id="flashattentiontiling">5.5.2 FlashAttention(Tiling)</h3>
+<p><a data-lightbox="a5ec20a0-ad11-431f-9b59-b95d92e509d5" data-title="flash_Atten流程" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten流程.webp" target="_blank"><img alt="flash_Atten流程" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten流程.webp"/></a></p>
+<h3 id="flashattentiontiling">6.5.2 FlashAttention(Tiling)</h3>
 <blockquote>
 <p>理论基础</p>
 </blockquote>
@@ -1226,8 +1237,8 @@ print(cur_sum)   <span class="hljs-comment"># tensor(1.7311)</span>
     out_ptrs = Out + off_o
     tl.store(out_ptrs, acc)
 </code></pre>
-<h2 id="io复杂度分析">5.6 IO复杂度分析</h2>
-<h3 id="standard-attention_1">5.6.1 Standard Attention</h3>
+<h2 id="io复杂度分析">6.6 IO复杂度分析</h2>
+<h3 id="standard-attention_1">6.6.1 Standard Attention</h3>
 <p>对于标准注意力实现，初期我们需要把输入 <script type="math/tex; ">\mathbf{Q}, \mathbf{K}, \mathbf{V}</script>从HBM中读取，并计算完毕后把输出<script type="math/tex; ">\mathbf{O}</script>写入到HBM中</p>
 <ol>
 <li>第一步把<script type="math/tex; ">\mathbf{Q}, \mathbf{K}</script>读取出来计算出<script type="math/tex; ">\mathbf{S}=\mathbf{Q} \mathbf{K}^{\top}</script>，然后把<script type="math/tex; ">\mathbf{S}</script>存回去，内存访问复杂度<script type="math/tex; ">\Theta\left(N d+N^{2}\right)</script></li>
@@ -1235,7 +1246,7 @@ print(cur_sum)   <span class="hljs-comment"># tensor(1.7311)</span>
 <li>第三步把<script type="math/tex; ">\mathbf{V}, \mathbf{P}</script>读取出来计算出<script type="math/tex; ">\mathbf{O}=\mathbf{P V}</script>，然后计算出结果<script type="math/tex; ">\mathbf{O}</script>，内存访问复杂度<script type="math/tex; ">\Theta\left(N d+N^{2}\right)</script></li>
 </ol>
 <p>综上所述，整体的内存访问复杂度为<script type="math/tex; ">\Theta\left(N d+N^{2}\right)</script></p>
-<h3 id="flashattention">5.6.2 FlashAttention</h3>
+<h3 id="flashattention">6.6.2 FlashAttention</h3>
 <p>对于FlashAttention，我们设置一个分块大小<script type="math/tex; ">B_{c}</script>来把<script type="math/tex; ">\mathbf{K}, \mathbf{V}</script>分成<script type="math/tex; ">T_{c}</script>块，对于<script type="math/tex; ">\mathbf{Q}, \mathbf{O}</script>的每一块都要把<script type="math/tex; ">\mathbf{K}, \mathbf{V}</script>部分的全部元素Load一遍，这样则有FlashAttention的内存访问复杂度为<script type="math/tex; ">\Theta\left(N d+N d T_{c}\right)=\Theta\left(N d T_{c}\right)</script></p>
 <p>在这里，我们需要两个分块大小，<script type="math/tex; ">\mathbf{Q}, \mathbf{O}</script>的分块大小<script type="math/tex; ">B_{r}</script>，<script type="math/tex; ">\mathbf{K}, \mathbf{V}</script>的分块大小<script type="math/tex; ">B_{c}</script>，我们设定SRAM的大小为<script type="math/tex; ">M</script>，为了能把分块后的<script type="math/tex; ">\mathbf{K}, \mathbf{V} \in \mathbb{R}^{B_{c} \times d}</script>放进SRAM，那么则有一下限制:
 <script type="math/tex; mode=display">
@@ -1262,8 +1273,8 @@ T_{c}=\frac{N}{B_{c}}=\Theta\left(\frac{N d}{M}\right)
 \Theta\left(N d T_{c}\right)=\Theta\left(\frac{N^{2} d^{2}}{M}\right)=\Theta(N d)
 </script>
 在语言建模中，通常有<script type="math/tex; ">d \lll N</script>，则有<script type="math/tex; ">\Theta_{\text {stand }}\left(N d+N^{2}\right)>\Theta_{f l a s h}(N d)</script>。这样，在前向的过程中，我们采用分块计算的方式，避免了<script type="math/tex; ">\mathbf{S}, \mathbf{P}</script>矩阵的存储开销，整体的运算都在SRAM内进行，降低了HBM访问次数，大大提升了计算的速度，减少了对存储的消耗</p>
-<h2 id="backward">5.7 Backward</h2>
-<h3 id="理论基础">5.7.1 理论基础</h3>
+<h2 id="backward">6.7 Backward</h2>
+<h3 id="理论基础">6.7.1 理论基础</h3>
 <p>在上面前向的时候我们为了减少HBM访存次数，降低内存消耗量，我们并没有对<script type="math/tex; ">\mathbf{S}, \mathbf{P}</script>矩阵进行存储，而这个在反向传播计算梯度的时候确实需要的一个信息</p>
 <p>之前有通过Gradient checkpointing的方式来实现梯度实现在前向的时候更加节省内存</p>
 <p>我们这里则采用<strong>重新计算的方式来计算对应的梯度</strong>。在上面前向计算的时候我们不会存储<script type="math/tex; ">\mathbf{S}, \mathbf{P}</script>矩阵，但是我们会存储对应的指数项之和<script type="math/tex; ">L</script>来进行梯度的计算</p>
@@ -1406,14 +1417,14 @@ def _bwd_kernel(
 </script>
 \mathbf{S}=\mathbf{Q K} \mathbf{K}^{\top} \in \mathbb{R}^{N \times N}, \quad \mathbf{P}=\operatorname{softmax}\left(\mathbf{S} \odot 1</em>{\overline{\mathbf{M}}}\right) \in \mathbb{R}^{N \times N}, \quad \mathbf{O}=\mathbf{P V} \in \mathbb{R}^{N \times d}</p>
 <p>$$</p>
-<h2 id="实验验证">5.8 实验验证</h2>
+<h2 id="实验验证">6.8 实验验证</h2>
 <p>通过实验验证发现，FlashAttention在速度和内存占用方面都表现出明显的优势，并取得了良好的效果</p>
-<p><a data-lightbox="368ab391-5482-4403-a348-8ef673f240f2" data-title="flash_Atten实验验证1" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten实验验证1.webp" target="_blank"><img alt="flash_Atten实验验证1" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten实验验证1.webp"/></a></p>
-<p><a data-lightbox="8df42b38-8341-44d8-a8c6-897768064a22" data-title="flash_Atten实验验证2" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten实验验证2.webp" target="_blank"><img alt="flash_Atten实验验证2" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten实验验证2.webp"/></a></p>
+<p><a data-lightbox="2ba1f3f3-7bc1-4c52-8ca5-059fe5f75917" data-title="flash_Atten实验验证1" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten实验验证1.webp" target="_blank"><img alt="flash_Atten实验验证1" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten实验验证1.webp"/></a></p>
+<p><a data-lightbox="97e1c141-a444-4f03-8b5b-30b04f448d5c" data-title="flash_Atten实验验证2" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten实验验证2.webp" target="_blank"><img alt="flash_Atten实验验证2" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/LLM模型微调系列/flash_Atten实验验证2.webp"/></a></p>
 <p>目前，FlashAttention已经经过广泛验证, torch2.0中已提供flashattention的实现</p>
 <p>正如标题《Fast and Memory-Efficient Exact Attention with IO-Awareness》所示，FlashAttention的优点在于充分考虑了在计算任务中IO的重要性，并通过分块计算的方式开发了一种快速、节省显存、精确无近似的注意力实现方法。这使得我们更便于训练具有更长上下文的Transformer模型，并且为后续注意力算法的优化提供了一个基准</p>
 <p></p><footer class="page-footer"><span class="copyright">Copyright © narutohyc.com 2021 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
-2023-09-30 01:15:43
+2023-10-10 06:04:08
 </span></footer><hr/><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz',appKey: 'utUrzoiqNaDEGlgr09JL1pXB',placeholder: '欢迎留下评论交流~',avatar: 'wavatar',meta: undefined,pageSize: 15,lang: 'zh-CN',recordIP: false})</script><p></p>
 </section>
 </div>
@@ -1440,7 +1451,7 @@ def _bwd_kernel(
 <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"abbrlink":59381,"date":"2023/06/15 12:46:10","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆0.webp","title":"LLM模型微调系列.md","tags":["深度学习","LLM模型","微调","p tuning v2","lora"],"top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆0.webp","mathjax":true,"categories":["deep_learning"],"description":"LLM模型微调系列","level":"1.2","depth":1,"next":{"title":"LLM模型部署调试推理.md","level":"1.3","depth":1,"path":"chapters/LLM模型部署调试推理.md","ref":"chapters/LLM模型部署调试推理.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/hycBook"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":false,"enableFooter":false,"site":"https://dl.hycbook.com","author":"narutohyc","website":"深度学习知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"hycBook","repo":"bk_dl_page","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"深度学习相关学习记录","language":"zh-hans","mathjax":{"forceSVG":true},"links":{"sidebar":{"书籍主页":"https://study.hycbook.com"}},"gitbook":"*","description":"记录 深度学习 的学习和一些技巧的使用"},"file":{"path":"chapters/LLM模型微调系列.md","mtime":"2023-09-30T01:15:43.324Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-09-30T01:16:55.343Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"abbrlink":59381,"date":"2023/06/15 12:46:10","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆0.webp","title":"LLM模型微调系列.md","tags":["深度学习","LLM模型","微调","p tuning v2","lora"],"top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆0.webp","mathjax":true,"categories":["deep_learning"],"description":"LLM模型微调系列","level":"1.2","depth":1,"next":{"title":"LLM模型部署调试推理.md","level":"1.3","depth":1,"path":"chapters/LLM模型部署调试推理.md","ref":"chapters/LLM模型部署调试推理.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/hycBook"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":false,"enableFooter":false,"site":"https://dl.hycbook.com","author":"narutohyc","website":"深度学习知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"hycBook","repo":"bk_dl_page","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"深度学习相关学习记录","language":"zh-hans","mathjax":{"forceSVG":true},"links":{"sidebar":{"书籍主页":"https://study.hycbook.com"}},"gitbook":"*","description":"记录 深度学习 的学习和一些技巧的使用"},"file":{"path":"chapters/LLM模型微调系列.md","mtime":"2023-10-10T06:04:08.491Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-10-10T06:05:29.417Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 <canvas class="fireworks"></canvas><script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script></div>
