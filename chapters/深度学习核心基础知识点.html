@@ -393,7 +393,7 @@
 <p>需要根据具体情况综合考虑并适当调整这些方法以提高训练的稳定性和效果</p>
 <h2 id="泛化问题">1.2 泛化问题</h2>
 <p><code>过拟合(Over fitting)</code>和<code>欠拟合(Under fitting)</code>是指机器学习模型在训练过程中对训练数据的拟合程度不合适的问题</p>
-<p><a data-lightbox="a541f998-7bd3-4a47-9e6c-f9df8119671c" data-title="过拟合和欠拟合" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/过拟合和欠拟合.webp" target="_blank"><img alt="过拟合和欠拟合" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/过拟合和欠拟合.webp"/></a></p>
+<p><a data-lightbox="8c81f7e5-47d0-4eb3-86ae-e912c8e7e809" data-title="过拟合和欠拟合" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/过拟合和欠拟合.webp" target="_blank"><img alt="过拟合和欠拟合" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/过拟合和欠拟合.webp"/></a></p>
 <h3 id="过拟合">1.2.1 过拟合</h3>
 <blockquote>
 <p>现象</p>
@@ -472,10 +472,10 @@ L_{out} = \lfloor  \frac {L_{in} + 2 \times padding - dilation \times (kernel\_s
 <p><a href="https://ezyang.github.io/convolution-visualizer/index.html" target="_blank">一维卷积在线可视化</a></p>
 <p><a href="https://thomelane.github.io/convolutions/2DConvRGB.html" target="_blank">二维卷积在线可视化</a></p>
 </blockquote>
-<p><a data-lightbox="291ce717-bf20-4201-81d0-cb920d848ae9" data-title="卷积之间的关系脉络." href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/卷积之间的关系脉络.svg" target="_blank"><img alt="卷积之间的关系脉络." src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/卷积之间的关系脉络.svg"/></a></p>
+<p><a data-lightbox="b547e427-2cf9-4094-8ba9-cf5bf1e9b72e" data-title="卷积之间的关系脉络." href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/卷积之间的关系脉络.svg" target="_blank"><img alt="卷积之间的关系脉络." src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/卷积之间的关系脉络.svg"/></a></p>
 <h3 id="普通卷积">2.2.1 普通卷积</h3>
 <p>深度学习中卷积的概念与信号处理领域的卷积相似(只是深度学习的卷积在运算过程中的滤波器不经过翻转)，卷积核以一定的步长在输入图片上滑动，每一步都将对应元素相乘后求和的过程，如下图所示</p>
-<p><a data-lightbox="3e402ef3-10a7-4939-bf9c-7d2c04a0a91c" data-title="基本一维卷积示例" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/基本一维卷积示例.webp" target="_blank"><img alt="基本一维卷积示例" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/基本一维卷积示例.webp"/></a></p>
+<p><a data-lightbox="32c91087-bf96-4161-b11b-eec43741f9ff" data-title="基本一维卷积示例" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/基本一维卷积示例.webp" target="_blank"><img alt="基本一维卷积示例" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/基本一维卷积示例.webp"/></a></p>
 <blockquote>
 <p>卷积核大小(kernel_size)</p>
 </blockquote>
@@ -497,7 +497,7 @@ L_{out} = \lfloor  \frac {L_{in} + 2 \times padding - dilation \times (kernel\_s
 <p>而中间像素会被卷积计算多次，意味着丢失图像角落信息，所以为了避免这种情况，需要先对原始图片做边界填充处理</p>
 <h3 id="3d卷积">2.2.2 3D卷积</h3>
 <p>3D卷积的卷积核可以在输入图像的3个方向，即图像的高度，宽度，<code>深度</code>上移动。并与二维卷积类似，在每个位置各元素先相乘再相加，最后输出一个3D数据</p>
-<p><a data-lightbox="941fb98b-44f4-46ea-9054-55bf2a9c6ac8" data-title="基本3D卷积示例" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/基本3D卷积示例.webp" target="_blank"><img alt="基本3D卷积示例" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/基本3D卷积示例.webp"/></a></p>
+<p><a data-lightbox="59ce4d7a-8a55-49ec-b3c6-72d2a647fc86" data-title="基本3D卷积示例" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/基本3D卷积示例.webp" target="_blank"><img alt="基本3D卷积示例" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/基本3D卷积示例.webp"/></a></p>
 <p><strong>卷积特性：</strong>相比于普通的二维卷积，多了一个维度(深度)，可以把这个深度当作视频中的<strong>连续帧</strong>，或者是立体图像中的不同的切片。但是其参数量较大，会<strong>延缓网络的推理速度</strong></p>
 <p><strong>应用场景：</strong>3D卷积常应用在视频分类、医学影像、点云处理等领域。比如经典的<strong>VoxelNet</strong>网络就采用3D CNN提取点云的体素特征做目标检测任务</p>
 <h3 id="扩张卷积膨胀、空洞">2.2.3 扩张卷积(膨胀、空洞)</h3>
@@ -508,7 +508,7 @@ L_{out} = \lfloor  \frac {L_{in} + 2 \times padding - dilation \times (kernel\_s
 <p>扩张卷积最初用于图像语义分割任务，旨在提高分割结果的精度。语义分割需要将图像中的每个像素分类到不同的语义类别中，因此需要充分考虑像素周围的上下文信息</p>
 <p>通过使用扩张卷积，DeepLab团队可以更好地捕捉像素之间的长距离依赖关系，提高分割模型对细粒度边界和小尺寸物体的感知能力</p>
 <p>它在这些任务中的应用主要是为了增加感受野、提高分辨率和实现多尺度特征融合，以增强模型的感知能力和表达能力</p>
-<p><a data-lightbox="6c535955-36ad-4cc6-a2de-7d1ab2efdda1" data-title="基本空洞卷积示例" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/基本空洞卷积示例.gif" target="_blank"><img alt="基本空洞卷积示例" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/基本空洞卷积示例.gif"/></a></p>
+<p><a data-lightbox="ce529f3b-1271-4fff-b3d7-50bc6b6f5522" data-title="基本空洞卷积示例" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/基本空洞卷积示例.gif" target="_blank"><img alt="基本空洞卷积示例" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/基本空洞卷积示例.gif"/></a></p>
 <p><strong>扩张的好处：</strong>使得在相同的计算成本下，避免因池化损失信息而增大了感受野</p>
 <blockquote>
 <p>膨胀卷积使用的方法</p>
@@ -537,7 +537,7 @@ L_{out} = \lfloor  \frac {L_{in} + 2 \times padding - dilation \times (kernel\_s
 <li>在传统的卷积操作中，输入特征图的每个通道都与卷积核的每个通道进行卷积运算，<strong>输出的特征图是所有通道的叠加</strong></li>
 <li>在分组卷积中，将<strong>输入特征图和卷积核分成多个组</strong>，每个组中的通道进行独立的卷积运算，最后将<strong>各组的输出特征图进行连接</strong>，得到最终的输出结果</li>
 </ul>
-<p><a data-lightbox="e7e5633e-9fc3-4c40-961a-dfb6f5693a81" data-title="普通卷积和分组卷积比较" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/普通卷积和分组卷积比较.webp" target="_blank"><img alt="普通卷积和分组卷积比较" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/普通卷积和分组卷积比较.webp"/></a></p>
+<p><a data-lightbox="4cdc5ce9-73e0-4a81-94a6-de660bdb7a35" data-title="普通卷积和分组卷积比较" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/普通卷积和分组卷积比较.webp" target="_blank"><img alt="普通卷积和分组卷积比较" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/普通卷积和分组卷积比较.webp"/></a></p>
 <p>左图是普通的卷积，右图是分组卷积</p>
 <ul>
 <li><p>对于尺寸为<script type="math/tex; ">H_{1} \times W_{1} \times C_{1}</script>的输入矩阵，当标准卷积核的尺寸为<script type="math/tex; ">h_{1} \times w_{1} \times C_{1}</script>，共有<script type="math/tex; ">C_{2}</script>个标准卷积核时，标准卷积会对完整的输入数据进行运算，最终得到的输出矩阵尺寸为 <script type="math/tex; ">H_{2} \times W_{2} \times C_{2}</script>。这里我们假设卷积运算前后的特征图尺寸保持不变，则上述过程可以展示为左图</p>
@@ -568,16 +568,16 @@ L_{out} = \lfloor  \frac {L_{in} + 2 \times padding - dilation \times (kernel\_s
 </ol>
 <p>需要注意的是，转置卷积的名称可能会引起一些误解，因为它实际上并不是真正的卷积操作的逆运算。转置卷积的名称起源于其与卷积操作的相似性，但其计算过程与卷积并不完全相同</p>
 <p>在神经网络中，我们经常需要上采样来提高低分辨率图片的分辨率。而转置卷积就可以作为一种通过卷积学习参数，从而获得最优上采样的方法</p>
-<p><a data-lightbox="eaf3d99e-0581-40a0-b890-6aaa9dd38c74" data-title="trans_conv_stride2" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/trans_conv_stride2.svg" target="_blank"><img alt="trans_conv_stride2" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/trans_conv_stride2.svg"/></a></p>
+<p><a data-lightbox="65b5d65a-6d55-400c-8b61-d8828bb55449" data-title="trans_conv_stride2" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/trans_conv_stride2.svg" target="_blank"><img alt="trans_conv_stride2" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/trans_conv_stride2.svg"/></a></p>
 <blockquote>
 <p>可视化解释</p>
 </blockquote>
 <p>下图是一个<script type="math/tex; ">4 \times 4</script>的输入矩阵，用<script type="math/tex; ">3 \times 3</script>的卷积核进行没有填充，步长为1的卷积操作，结果是一个<script type="math/tex; ">2 \times 2</script>的矩阵</p>
-<p><a data-lightbox="39292532-277e-4537-abb4-045aaa8379a4" data-title="转置卷积示例步骤_1" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/转置卷积示例步骤_1.webp" target="_blank"><img alt="转置卷积示例步骤_1" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/转置卷积示例步骤_1.webp"/></a></p>
+<p><a data-lightbox="ad5f0674-d769-4ea2-878b-305b71913b05" data-title="转置卷积示例步骤_1" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/转置卷积示例步骤_1.webp" target="_blank"><img alt="转置卷积示例步骤_1" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/转置卷积示例步骤_1.webp"/></a></p>
 <p>我们将<script type="math/tex; ">3 \times 3</script>的卷积核重排为<script type="math/tex; ">4 \times 16</script>的形式(下图第一项)，同时将<script type="math/tex; ">4 \times 4</script>的输入矩阵展开为<script type="math/tex; ">16 \times 1</script>的列向量的形式(下图第二项)。通过矩阵乘法得到一个<script type="math/tex; ">4 \times 1</script>的列向量，可以看出这个列向量正是由上图的<script type="math/tex; ">2 \times 2</script>卷积输出矩阵展开得到的，也就是说，我们可以将卷积操作写成矩阵乘法运算</p>
-<p><a data-lightbox="b868426a-7a22-4bff-8632-46308d6f4577" data-title="转置卷积示例步骤_2" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/转置卷积示例步骤_2.webp" target="_blank"><img alt="转置卷积示例步骤_2" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/转置卷积示例步骤_2.webp"/></a></p>
+<p><a data-lightbox="22489e9e-1b25-4d7a-93e4-19a6fa8adac9" data-title="转置卷积示例步骤_2" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/转置卷积示例步骤_2.webp" target="_blank"><img alt="转置卷积示例步骤_2" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/转置卷积示例步骤_2.webp"/></a></p>
 <p>通过这样的操作，可以把16(<script type="math/tex; ">4 \times 4</script>的矩阵)个值映射为4(<script type="math/tex; ">2 \times 2</script>的矩阵)个值，那么将这个操作反过来，我们就可以把4(<script type="math/tex; ">2 \times 2</script>的矩阵)个值映射为16(<script type="math/tex; ">4 \times 4</script>的矩阵)</p>
-<p><a data-lightbox="4eb33a8a-14a3-467c-a026-eb9608569066" data-title="转置卷积示例步骤_3" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/转置卷积示例步骤_3.webp" target="_blank"><img alt="转置卷积示例步骤_3" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/转置卷积示例步骤_3.webp"/></a></p>
+<p><a data-lightbox="a441aa19-2387-489b-a20f-df93bb98b406" data-title="转置卷积示例步骤_3" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/转置卷积示例步骤_3.webp" target="_blank"><img alt="转置卷积示例步骤_3" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/转置卷积示例步骤_3.webp"/></a></p>
 <p>最后将输出矩阵可以reshape为<script type="math/tex; ">4 \times 4</script>的形式</p>
 <p><strong>卷积特征：</strong>虽然转置卷积能够通过学习参数进行最优的上采样，但是实际应用中，研究人员往往更加倾向于使用<strong>线性插值</strong>的方式做上采样，效率更高</p>
 <h3 id="可分离卷积">2.2.6 可分离卷积</h3>
@@ -596,10 +596,10 @@ L_{out} = \lfloor  \frac {L_{in} + 2 \times padding - dilation \times (kernel\_s
 <p>深度可分离卷积不仅涉及空间维度，还对深度维度进行处理。它主要分为两个过程，分别为<strong>逐通道卷积</strong>和<strong>逐点卷积</strong></p>
 <ol>
 <li><p><strong>逐通道卷积</strong>: 逐通道卷积的卷积核与通道是一一对应的，所以输出的特征图片的深度和输入的深度完全一样</p>
-<p><a data-lightbox="28b746f5-ed7d-40b0-8c57-976cd3f9e7a8" data-title="逐通道卷积" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/逐通道卷积.webp" target="_blank"><img alt="逐通道卷积" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/逐通道卷积.webp"/></a></p>
+<p><a data-lightbox="81c285ef-f56e-403a-901c-ef6e47ce6735" data-title="逐通道卷积" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/逐通道卷积.webp" target="_blank"><img alt="逐通道卷积" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/逐通道卷积.webp"/></a></p>
 </li>
 <li><p><strong>逐点卷积</strong>: 逐点卷积的运算与常规卷积运算相似，它的卷积核的尺寸为<script type="math/tex; ">1 \times 1 \times M</script>，<script type="math/tex; ">M</script>为上一层的深度。它是将上一步的特征图在深度方向上进行加权相加，生成新的特征图,有几个卷积核就有几层新的特征图输出</p>
-<p><a data-lightbox="bdec0ff8-e772-4158-a5b1-1e4352141e73" data-title="逐点卷积" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/逐点卷积.webp" target="_blank"><img alt="逐点卷积" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/逐点卷积.webp"/></a></p>
+<p><a data-lightbox="1aae81e2-d0f2-489a-9f7b-6e4a0a2d0829" data-title="逐点卷积" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/逐点卷积.webp" target="_blank"><img alt="逐点卷积" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/逐点卷积.webp"/></a></p>
 </li>
 </ol>
 <p><strong>卷积特性：</strong>深度可分离卷积的优势在于需要提取的属性越多，就能够节省越多的参数，减少计算量。最早出现在mobilenet中，也是用于轻量化网络的特征提取部分，使嵌入式部署的神经网络推理更快速</p>
@@ -616,12 +616,12 @@ L_{out} = \lfloor  \frac {L_{in} + 2 \times padding - dilation \times (kernel\_s
 <p>思路</p>
 </blockquote>
 <p>可变形卷积是一种卷积核内部点按不规则的方式组合，如下图所示</p>
-<p><a data-lightbox="0ac6aa83-a516-45fe-98b2-a73fc77c61e2" data-title="不规则卷积" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/不规则卷积.webp" target="_blank"><img alt="不规则卷积" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/不规则卷积.webp"/></a></p>
+<p><a data-lightbox="40ee096c-0fbc-4160-b1cf-dbd49b332925" data-title="不规则卷积" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/不规则卷积.webp" target="_blank"><img alt="不规则卷积" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/不规则卷积.webp"/></a></p>
 <p>(a)普通卷积采样的9个点(绿点)；(b)(c)(d)都为可变形卷积，在普通卷积采样坐标上加上一个位移量(蓝色箭头)，得到变形的采样位置(深蓝点)</p>
 <p>对于输入的一张特征图，把普通卷积的过程分成两路，先通过上面一路学习得到offset；下面的可变形卷积是基于上面生成的offset，我们的卷积窗口将由规整的绿色窗口变成蓝色部分，然后再执行普通的卷积，<strong>这种实现方式相当于于比正常的卷积操作多学习了卷积核的偏移offset</strong></p>
-<p><a data-lightbox="c8a33c74-4427-421a-8111-9a554b0476ab" data-title="可变性卷积" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/可变性卷积.webp" target="_blank"><img alt="可变性卷积" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/可变性卷积.webp"/></a></p>
+<p><a data-lightbox="dc6c31e2-6f72-40f8-b35b-24f0b7b5e8e0" data-title="可变性卷积" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/可变性卷积.webp" target="_blank"><img alt="可变性卷积" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/可变性卷积.webp"/></a></p>
 <p>如下图所示，左边普通卷积方法没有提取到完整绵羊的特征，而右边的可变形卷积方法提取到了完整的绵羊的特征</p>
-<p><a data-lightbox="073d614f-104a-4d58-8a0b-57ee0bfcbb99" data-title="可变性卷积和传统卷积比较" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/可变性卷积和传统卷积比较.webp" target="_blank"><img alt="可变性卷积和传统卷积比较" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/可变性卷积和传统卷积比较.webp"/></a></p>
+<p><a data-lightbox="ca6e1ec8-af6a-4ea8-9a32-9153d680ce1a" data-title="可变性卷积和传统卷积比较" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/可变性卷积和传统卷积比较.webp" target="_blank"><img alt="可变性卷积和传统卷积比较" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/可变性卷积和传统卷积比较.webp"/></a></p>
 <blockquote>
 <p>实现DCN中的两个问题QA</p>
 </blockquote>
@@ -664,7 +664,7 @@ L_{out} = \lfloor  \frac {L_{in} + 2 \times padding - dilation \times (kernel\_s
 <p><script type="math/tex; mode=display">
 L_{out} = \left\lfloor \frac{L_{in}-kernel\_size}{stride}\right\rfloor+1
 </script></p>
-<p><a data-lightbox="e81087b1-c876-4e50-8c1a-290809956f65" data-title="池化之间的关系脉络." href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/池化之间的关系脉络.svg" target="_blank"><img alt="池化之间的关系脉络." src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/池化之间的关系脉络.svg"/></a></p>
+<p><a data-lightbox="be092d9b-caa6-4240-91e5-db7a3001498e" data-title="池化之间的关系脉络." href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/池化之间的关系脉络.svg" target="_blank"><img alt="池化之间的关系脉络." src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/池化之间的关系脉络.svg"/></a></p>
 <h3 id="最大最小池化">2.3.1 最大最小池化</h3>
 <blockquote>
 <p>定义</p>
@@ -672,7 +672,7 @@ L_{out} = \left\lfloor \frac{L_{in}-kernel\_size}{stride}\right\rfloor+1
 <p><code>最大池化(Max Pooling)</code>: 选择输入区域中的<strong>最大值</strong>作为输出，忽略其他值</p>
 <p><code>最小池化(Min Pooling)</code>: 选择输入区域中的最小值作为输出，忽略其他值</p>
 <p>下图是最大池化的示例图</p>
-<p><a data-lightbox="e2bec92b-7172-4df2-ad7b-bdb68e7d4a22" data-title="最大池化" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/最大池化.webp" target="_blank"><img alt="最大池化" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/最大池化.webp"/></a></p>
+<p><a data-lightbox="f5ed0bb2-ac8c-4606-89f2-bdf659c599f2" data-title="最大池化" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/最大池化.webp" target="_blank"><img alt="最大池化" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/最大池化.webp"/></a></p>
 <blockquote>
 <p>重叠池化和非重叠池化</p>
 </blockquote>
@@ -685,20 +685,20 @@ L_{out} = \left\lfloor \frac{L_{in}-kernel\_size}{stride}\right\rfloor+1
 <h3 id="平均池化">2.3.2 平均池化</h3>
 <p><code>平均池化(Average Pooling)</code>: 计算输入区域内的平均值作为输出，将输入区域的值平均分配</p>
 <p>最大池化和均值池化的弊端如下所示</p>
-<p><a data-lightbox="bd8cca62-13d6-4b64-9502-e30aafcc8045" data-title="最大池化与均值池化的弊端" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/最大池化与均值池化的弊端.webp" target="_blank"><img alt="最大池化与均值池化的弊端" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/最大池化与均值池化的弊端.webp"/></a></p>
+<p><a data-lightbox="6b6ff856-c930-42a8-a2ac-db94475f4cc2" data-title="最大池化与均值池化的弊端" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/最大池化与均值池化的弊端.webp" target="_blank"><img alt="最大池化与均值池化的弊端" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/最大池化与均值池化的弊端.webp"/></a></p>
 <h3 id="随机池化">2.3.3 随机池化</h3>
 <blockquote>
 <p><a href="https://arxiv.org/pdf/1301.3557.pdf" target="_blank">Stochastic Pooling for Regularization of Deep Convolutional Neural Networks 2013</a></p>
 </blockquote>
 <p><code>Stochastic pooling</code>是论文《Stochastic Pooling for Regularization of Deep Convolutional Neural Networks》中提到的一种池化策略，大意是只需对特征区域元素按照其概率值大小随机选择，元素值大的被选中的概率也大</p>
-<p><a data-lightbox="35d40aa3-98c3-4151-87b1-6d4157921417" data-title="随机池化" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/随机池化.webp" target="_blank"><img alt="随机池化" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/随机池化.webp"/></a></p>
+<p><a data-lightbox="76d17ccd-0561-4c61-86b3-e97c62be995a" data-title="随机池化" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/随机池化.webp" target="_blank"><img alt="随机池化" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/随机池化.webp"/></a></p>
 <p>下表是随机池化在CIFAR-10上的表现，可以看出，<strong>使用随机池化效果和采用dropout的结果接近</strong>，证明了其有一定<strong>防止过拟合</strong>的作用</p>
-<p><a data-lightbox="ef542317-dcdc-4737-a343-aaa504afa588" data-title="随机池化_cifar数据集" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/随机池化_cifar数据集.webp" target="_blank"><img alt="随机池化_cifar数据集" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/随机池化_cifar数据集.webp"/></a></p>
+<p><a data-lightbox="241aff15-4c1d-4713-a12c-2b4f8cb0eabb" data-title="随机池化_cifar数据集" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/随机池化_cifar数据集.webp" target="_blank"><img alt="随机池化_cifar数据集" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/随机池化_cifar数据集.webp"/></a></p>
 <h3 id="lp池化">2.3.4 Lp池化</h3>
 <p><code>Lp池化(Lp Pooling)</code>是通过调整参数p的值来实现不同的池化方式，当p=1时，为平均池化，当p趋近于无穷大时，为最大池化</p>
 <p>Lp池化的好处是可以在<strong>一定程度上保留更多的信息</strong>。平均池化会平均化局部区域的特征，可能丢失一些细节信息；而最大池化只保留局部区域的最大值，可能丢失其他重要的信息</p>
 <p>Lp池化通过调整参数p的值，可以在特征汇聚时平衡信息的丰富性和抗噪性能</p>
-<p><a data-lightbox="fe819c62-82ac-4743-ad2d-ec4e0ac68c56" data-title="LP池化" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/LP池化.webp" target="_blank"><img alt="LP池化" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/LP池化.webp"/></a></p>
+<p><a data-lightbox="0ca9eda5-286f-41f2-9aad-8303203ba320" data-title="LP池化" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/LP池化.webp" target="_blank"><img alt="LP池化" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/LP池化.webp"/></a></p>
 <p>池化具体操作如下公式所描述
 <script type="math/tex; mode=display">
 f(X)=\sqrt[p]{\sum_{x \in X} x^{p}}
@@ -732,12 +732,12 @@ f(X)=\sqrt[p]{\sum_{x \in X} x^{p}}
 <p><code>SPP(空间金字塔池化)</code>是在SPPNet中提出的，SPPNet提出比较早，在RCNN之后提出的，用于解决<strong>重复卷积计算</strong>和<strong>固定输出</strong>的两个问题，具体方法如下图所示</p>
 <p>空间金字塔池化的基本思想是将输入特征图分割成多个不同大小的子区域，并对每个子区域进行池化操作。这些子区域的大小和数量构成了一个金字塔形状的层次结构</p>
 <p>然后，对每个子区域进行池化操作（通常是最大池化），生成固定大小的特征向量。最后，将所有尺度上得到的特征向量拼接在一起，形成最终的特征表示</p>
-<p><a data-lightbox="b6b5662c-6d08-41e4-a846-cb53f27f92f0" data-title="SPP池化" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/SPP池化.webp" target="_blank"><img alt="SPP池化" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/SPP池化.webp"/></a></p>
+<p><a data-lightbox="4b0ad70d-7f7e-465c-9fb3-d356a087ad0b" data-title="SPP池化" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/SPP池化.webp" target="_blank"><img alt="SPP池化" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/SPP池化.webp"/></a></p>
 <p>通过空间金字塔池化，模型能够在不同尺度上捕捉到更加丰富的局部特征，从而增强了模型对尺度变化和物体大小变化的鲁棒性</p>
 <p>这对于处理不同尺度的物体检测、图像分类和语义分割等任务非常有用</p>
 <h3 id="roi池化">2.3.7 ROI池化</h3>
 <p><code>ROI池化(Region of Interest Pooling)</code>是在目标检测任务中广泛使用的操作。它对于来自输入列表的每个感兴趣区域，它采用与其对应的输入特征图的一部分并将其<strong>缩放到某个预定义的大小</strong>。这可以显着加快训练和测试时间，它允许重新使用卷积网络中的特征映射，同时也允许以端到端的方式训练物体检测系统</p>
-<p><a data-lightbox="238e30d3-62cf-4a5e-bfe9-1586cf7c4f96" data-title="ROI池化" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/ROI池化.jfif" target="_blank"><img alt="ROI池化" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/ROI池化.jfif"/></a></p>
+<p><a data-lightbox="8fec8131-7b97-4884-abe9-23f470588ed1" data-title="ROI池化" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/ROI池化.jfif" target="_blank"><img alt="ROI池化" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/ROI池化.jfif"/></a></p>
 <blockquote>
 <p><a href="https://study.hycbook.com/article/34192.html" target="_blank">ROI Pooling与SPP池化的区别</a></p>
 </blockquote>
@@ -752,7 +752,7 @@ f(X)=\sqrt[p]{\sum_{x \in X} x^{p}}
 <p>为了补偿这种信息损失，反池化和Unpooling操作用于还原特征图的空间分辨率，使其与输入特征图具有相同的尺寸</p>
 <p><strong>反池化通常是通过转置卷积(Transpose Convolution)来实现的</strong>。转置卷积通过在特征图之间插入空白像素或零填充，并使用适当的卷积核对这些空白像素进行卷积运算，以恢复特征图的尺寸</p>
 <p>Unpooling则是在反池化操作中与转置卷积结合使用的一种方式。在池化操作中，通常会记录池化操作时的最大值或平均值的位置。在Unpooling中，根据这些位置信息，将反池化操作的输出值放置回原始特征图的对应位置。这样可以在恢复空间分辨率的同时保留一定的位置信息</p>
-<p><a data-lightbox="de94923b-677b-46aa-946d-ba74101a37cf" data-title="反池化" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/反池化.webp" target="_blank"><img alt="反池化" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/反池化.webp"/></a></p>
+<p><a data-lightbox="f037f42a-dd69-4400-a4fd-cde373598cb7" data-title="反池化" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/反池化.webp" target="_blank"><img alt="反池化" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/反池化.webp"/></a></p>
 <p>反池化和Unpooling在卷积神经网络中起着重要的作用，特别是在语义分割和图像重建等任务中。它们帮助网络恢复输入图像的详细结构和空间信息，从而提高模型的精度和质量</p>
 <h3 id="其他池化">2.3.9 其他池化</h3>
 <ol>
@@ -769,7 +769,7 @@ y=\gamma\left(\frac{x-\mu(x)}{\sigma(x)}\right)+\beta
 </script>
 归一化算法的<strong>主要区别在于操作的feature map维度不同</strong></p>
 <p>下图来自何凯明的<a href="https://arxiv.org/pdf/1803.08494.pdf" target="_blank">Group Normalization 2018</a></p>
-<p><a data-lightbox="86c9562b-2a33-4ac2-8561-bc33f8b18f66" data-title="归一化层之间的比较" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/归一化层之间的比较.webp" target="_blank"><img alt="归一化层之间的比较" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/归一化层之间的比较.webp"/></a></p>
+<p><a data-lightbox="2aad191f-d3ad-4ff7-9d0c-ee8d5d4eb65b" data-title="归一化层之间的比较" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/归一化层之间的比较.webp" target="_blank"><img alt="归一化层之间的比较" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/归一化层之间的比较.webp"/></a></p>
 <p>可以看出</p>
 <ul>
 <li><p>BN: 针对整个batch不同通道，具体来说，就是把第1个样本的第1个通道，加上第2个样本第1个通道...加上第N个样本第1个通道，求平均，得到通道1的均值
@@ -836,15 +836,15 @@ y=\gamma\left(\frac{x-\mu(x)}{\sigma(x)}\right)+\beta
 <li><strong>提高泛化能力</strong>：Batch Normalization作为一种正则化方法，有助于减少过拟合的风险。通过在训练过程中引入一些噪声，它可以提高模型的泛化能力，并使得网络对输入数据的变化更加鲁棒</li>
 </ol>
 <p><strong>Batch Normalization在每个小批量训练样本中对输入进行标准化，使其具有零均值和单位方差</strong></p>
-<p><a data-lightbox="bb09bae2-f59c-471c-80e2-9ccf1fcb643c" data-title="btach Normalization可视化" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/btach Normalization可视化.webp" target="_blank"><img alt="btach Normalization可视化" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/btach Normalization可视化.webp"/></a></p>
+<p><a data-lightbox="df000eec-5dc6-4a29-b0a3-57b23f0d7d9d" data-title="btach Normalization可视化" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/btach Normalization可视化.webp" target="_blank"><img alt="btach Normalization可视化" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/btach Normalization可视化.webp"/></a></p>
 <blockquote>
 <p>图像下的BN示例</p>
 </blockquote>
 <p>下图展示了一个batch size为2(两张图片，每张图片有3个通道，其中颜色红，绿，蓝分别代表r,g,b通道)的Batch Normalization的原理，首先会统计每个通道数目所有点的像素值，求得均值和方差，然后在每个通道上分别用该点的像素值减均值除方差得到该点的像素值，此过程就是BN。最后将其接入到激活函数中</p>
-<p><a data-lightbox="edcae2c1-d26f-4c6a-9531-b8be0a08cafb" data-title="btach Normalization神经网络示例" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/btach Normalization神经网络示例.webp" target="_blank"><img alt="btach Normalization神经网络示例" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/btach Normalization神经网络示例.webp"/></a></p>
+<p><a data-lightbox="9e65b46b-e1ae-442c-894d-5511fa78b65b" data-title="btach Normalization神经网络示例" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/btach Normalization神经网络示例.webp" target="_blank"><img alt="btach Normalization神经网络示例" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/btach Normalization神经网络示例.webp"/></a></p>
 <p>如下图所示，其中红，绿，蓝分别代表图像不同的通道，假设假设feature map1、feature map2分别是由image1、image2经过一系列卷积池化后得到的特征矩阵</p>
 <p>其中每个网格的值代表该点的像素值，分别统计feature map1和feature map2每个通道的像素值，得到一个矩阵，在使用BN的计算公式计算经过BN以后每个通道每个像素点的像素值</p>
-<p><a data-lightbox="c8aa14a2-435e-4386-8cce-6e14015ab502" data-title="btach Normalization示例" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/btach Normalization示例.webp" target="_blank"><img alt="btach Normalization示例" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/btach Normalization示例.webp"/></a></p>
+<p><a data-lightbox="c3bb1562-af5d-46db-abda-07eb500c4f10" data-title="btach Normalization示例" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/btach Normalization示例.webp" target="_blank"><img alt="btach Normalization示例" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/深度学习核心基础知识点/btach Normalization示例.webp"/></a></p>
 <p>定义<script type="math/tex; ">x</script>为以下矩阵
 <script type="math/tex; mode=display">
 \begin{array}{l}x^{(1)}=\{1,1,1,2,0,-1,2,2\} \\ x^{(2)}=\{-1,1,0,1,0,-1,3,1\} \\ x^{(3)}=\{2,1,1,2,1,2,-1,0\}\end{array}
@@ -941,7 +941,7 @@ tensor(<span class="hljs-number">1.0000</span>, grad_fn=&lt;SumBackward0&gt;)
 <h1 id="指标">3 指标</h1>
 <p>等待...</p>
 <p></p><footer class="page-footer"><span class="copyright">Copyright © narutohyc.com 2021 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
-2023-12-15 07:54:16
+2024-01-16 06:43:36
 </span></footer><hr/><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz',appKey: 'utUrzoiqNaDEGlgr09JL1pXB',placeholder: '欢迎留下评论交流~',avatar: 'wavatar',meta: undefined,pageSize: 15,lang: 'zh-CN',recordIP: false})</script><p></p>
 </section>
 </div>
@@ -968,7 +968,7 @@ tensor(<span class="hljs-number">1.0000</span>, grad_fn=&lt;SumBackward0&gt;)
 <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"abbrlink":6384,"date":"2023/05/20 16:16:17","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆6.webp","title":"深度学习核心基础知识点.md","tags":["深度学习","神经网络","卷积池化"],"top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆6.webp","mathjax":true,"categories":["deep-learning"],"description":"深度学习核心基础知识点","level":"1.16","depth":1,"next":{"title":"深度学习模型压缩技术.md","level":"1.17","depth":1,"path":"chapters/深度学习模型压缩技术.md","ref":"chapters/深度学习模型压缩技术.md","articles":[]},"previous":{"title":"深度学习核心之激活函数.md","level":"1.15","depth":1,"path":"chapters/深度学习核心之激活函数.md","ref":"chapters/深度学习核心之激活函数.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/hycBook"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":false,"enableFooter":false,"site":"https://dl.hycbook.com","author":"narutohyc","website":"深度学习知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"hycBook","repo":"bk_dl_page","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"深度学习相关学习记录","language":"zh-hans","mathjax":{"forceSVG":true},"links":{"sidebar":{"书籍主页":"https://study.hycbook.com"}},"gitbook":"*","description":"记录 深度学习 的学习和一些技巧的使用"},"file":{"path":"chapters/深度学习核心基础知识点.md","mtime":"2023-12-15T07:54:16.946Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-12-15T07:54:36.351Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"abbrlink":6384,"date":"2023/05/20 16:16:17","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆6.webp","title":"深度学习核心基础知识点.md","tags":["深度学习","神经网络","卷积池化"],"top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆6.webp","mathjax":true,"categories":["deep-learning"],"description":"深度学习核心基础知识点","level":"1.16","depth":1,"next":{"title":"深度学习模型压缩技术.md","level":"1.17","depth":1,"path":"chapters/深度学习模型压缩技术.md","ref":"chapters/深度学习模型压缩技术.md","articles":[]},"previous":{"title":"深度学习核心之激活函数.md","level":"1.15","depth":1,"path":"chapters/深度学习核心之激活函数.md","ref":"chapters/深度学习核心之激活函数.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/hycBook"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":false,"enableFooter":false,"site":"https://dl.hycbook.com","author":"narutohyc","website":"深度学习知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"hycBook","repo":"bk_dl_page","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"深度学习相关学习记录","language":"zh-hans","mathjax":{"forceSVG":true},"links":{"sidebar":{"书籍主页":"https://study.hycbook.com"}},"gitbook":"*","description":"记录 深度学习 的学习和一些技巧的使用"},"file":{"path":"chapters/深度学习核心基础知识点.md","mtime":"2024-01-16T06:43:36.389Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-01-16T06:44:44.190Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 <canvas class="fireworks"></canvas><script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script></div>
