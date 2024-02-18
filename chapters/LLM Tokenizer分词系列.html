@@ -1,0 +1,662 @@
+<!DOCTYPE HTML>
+<html lang="zh-hans">
+<head>
+<meta charset="utf-8"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>LLM Tokenizer分词系列.md · 深度学习相关学习记录</title>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="LLM Tokenizer分词系列" name="description"/>
+<meta content="GitBook 3.2.3" name="generator"/>
+<meta content="narutohyc" name="author"/>
+<link href="../gitbook/style.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-splitter/splitter.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-anchors/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-donate/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-code/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-search-plus/search.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-pageview-count/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-highlight/website.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-fontsettings/website.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-theme-comscore/test.css" rel="stylesheet"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<link href="../gitbook/images/apple-touch-icon-precomposed-152.png" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+<link href="../gitbook/images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="LLM模型微调系列.html" rel="next"/>
+<link href="../" rel="prev"/>
+<link href="./chapters/res/other/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="./chapters/res/other/favicon.ico" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+<style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+<script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"hycBook","repo":"bk_dl_page","type":"star","size":"small","count":true}]};
+    </script>
+</head>
+<body>
+          <div class="mountain_a"></div>
+          <div class="mountain_b"></div>
+          <div class="house right">
+            <div class="fence"></div>
+            <div class="wall"></div>
+            <div class="roof left"></div>
+            <div class="roof right"></div>
+            <div class="door"></div>
+          </div>
+          <div class="house left">
+            <div class="fence"></div>
+            <div class="wall"></div>
+            <div class="roof left"></div>
+            <div class="roof right"></div>
+            <div class="door"></div>
+          </div>
+          <div class="tree_back"></div>
+          <div class="tree"></div>
+          <div class="postbox_a">
+            <div class="hole"></div>
+          </div>
+          <div class="postbox_b">
+            <div class="hole"></div>
+          </div>
+          <div class="windmill">
+            <div class="tower"></div>
+            <div class="t1"></div>
+            <div class="t2"></div>
+            <div class="blade">
+              <div class="windblade"></div>
+              <div class="windblade windblade2"></div>
+              <div class="windblade windblade3"></div>
+              <div class="windblade windblade4"></div>
+            </div>
+          </div>
+          <div class="allsnows">
+            <div class="snow1"></div>
+            <div class="snow2"></div>
+            <div class="snow3"></div>
+            <div class="snow4"></div>
+            <div class="snow5"></div>
+            <div class="snow6"></div>
+            <div class="snow7"></div>
+            <div class="snow8"></div>
+            <div class="snow9"></div>
+            <div class="snow10"></div>
+            <div class="snow11"></div>
+            <div class="snow12"></div>
+            <div class="snow13"></div>
+            <div class="snow14"></div>
+            <div class="snow15"></div>
+            <div class="snow16"></div>
+            <div class="snow17"></div>
+            <div class="snow18"></div>
+            <div class="snow19"></div>
+            <div class="snow20"></div>
+          </div>
+          <div class="ground">
+            <div class="g1"></div>
+            <div class="g2"></div>
+            <div class="g3"></div>
+            <div class="ice">
+              <div class="glare"></div>
+              <div class="ice_shadow"></div>
+            </div>
+
+          </div>
+    
+<div class="book">
+<div class="book-summary">
+<div id="book-search-input" role="search">
+<input placeholder="输入并搜索" type="text"/>
+</div>
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a class="custom-link" href="https://study.hycbook.com" target="_blank">书籍主页</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-level="1.1" data-path="../" id="chapter_id_0">
+<a href="../">
+<b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+</li>
+<li class="chapter active" data-level="1.2" data-path="LLM Tokenizer分词系列.html" id="chapter_id_1">
+<a href="LLM Tokenizer分词系列.html">
+<b>1.2.</b>
+                    
+                    LLM Tokenizer分词系列.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.3" data-path="LLM模型微调系列.html" id="chapter_id_2">
+<a href="LLM模型微调系列.html">
+<b>1.3.</b>
+                    
+                    LLM模型微调系列.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.4" data-path="LLM模型部署调试推理.html" id="chapter_id_3">
+<a href="LLM模型部署调试推理.html">
+<b>1.4.</b>
+                    
+                    LLM模型部署调试推理.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.5" data-path="dl_in_vision_field.html" id="chapter_id_4">
+<a href="dl_in_vision_field.html">
+<b>1.5.</b>
+                    
+                    dl_in_vision_field.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.6" data-path="huggingface基本使用教程.html" id="chapter_id_5">
+<a href="huggingface基本使用教程.html">
+<b>1.6.</b>
+                    
+                    huggingface基本使用教程.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.7" data-path="nlp关键词和摘要提取技术整理.html" id="chapter_id_6">
+<a href="nlp关键词和摘要提取技术整理.html">
+<b>1.7.</b>
+                    
+                    nlp关键词和摘要提取技术整理.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.8" data-path="pytorch学习.html" id="chapter_id_7">
+<a href="pytorch学习.html">
+<b>1.8.</b>
+                    
+                    pytorch学习.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.9" data-path="transformer.html" id="chapter_id_8">
+<a href="transformer.html">
+<b>1.9.</b>
+                    
+                    transformer.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.10" data-path="图像分割算法.html" id="chapter_id_9">
+<a href="图像分割算法.html">
+<b>1.10.</b>
+                    
+                    图像分割算法.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.11" data-path="图像分类算法.html" id="chapter_id_10">
+<a href="图像分类算法.html">
+<b>1.11.</b>
+                    
+                    图像分类算法.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.12" data-path="图神经网络.html" id="chapter_id_11">
+<a href="图神经网络.html">
+<b>1.12.</b>
+                    
+                    图神经网络.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.13" data-path="数据标注工具.html" id="chapter_id_12">
+<a href="数据标注工具.html">
+<b>1.13.</b>
+                    
+                    数据标注工具.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.14" data-path="深度学习核心之优化器.html" id="chapter_id_13">
+<a href="深度学习核心之优化器.html">
+<b>1.14.</b>
+                    
+                    深度学习核心之优化器.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.15" data-path="深度学习核心之损失函数.html" id="chapter_id_14">
+<a href="深度学习核心之损失函数.html">
+<b>1.15.</b>
+                    
+                    深度学习核心之损失函数.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.16" data-path="深度学习核心之激活函数.html" id="chapter_id_15">
+<a href="深度学习核心之激活函数.html">
+<b>1.16.</b>
+                    
+                    深度学习核心之激活函数.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.17" data-path="深度学习核心基础知识点.html" id="chapter_id_16">
+<a href="深度学习核心基础知识点.html">
+<b>1.17.</b>
+                    
+                    深度学习核心基础知识点.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.18" data-path="深度学习模型压缩技术.html" id="chapter_id_17">
+<a href="深度学习模型压缩技术.html">
+<b>1.18.</b>
+                    
+                    深度学习模型压缩技术.md
+            
+                </a>
+</li>
+<li class="chapter" data-level="1.19" data-path="目标检测与跟踪算法.html" id="chapter_id_18">
+<a href="目标检测与跟踪算法.html">
+<b>1.19.</b>
+                    
+                    目标检测与跟踪算法.md
+            
+                </a>
+</li>
+<li class="divider"></li>
+<li>
+<a class="gitbook-link" href="https://www.gitbook.com" target="blank">
+            本书使用 GitBook 发布
+        </a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="..">LLM Tokenizer分词系列.md</a>
+</h1>
+</div>
+<div class="page-wrapper" role="main" tabindex="-1">
+<div class="page-inner">
+<div class="search-plus" id="book-search-results">
+<div class="search-noresults">
+<section class="normal markdown-section">
+<div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon"></span><a href="#tokenizer">1 tokenizer</a></li><ul><li><span class="title-icon"></span><a href="#概述">1.1 概述</a></li><li><span class="title-icon"></span><a href="#分词例子">1.2 分词例子</a></li><li><span class="title-icon"></span><a href="#分词粒度">1.3 分词粒度</a></li></ul><li><span class="title-icon"></span><a href="#子词分词">2 子词分词</a></li><ul><li><span class="title-icon"></span><a href="#byte-pair-encoding-bpe">2.1 Byte-Pair Encoding (BPE)</a></li><ul><li><span class="title-icon"></span><a href="#byte-level-bpe">2.1.1 Byte-level BPE</a></li></ul><li><span class="title-icon"></span><a href="#wordpiece">2.2 WordPiece</a></li><li><span class="title-icon"></span><a href="#unigram">2.3 Unigram</a></li><li><span class="title-icon"></span><a href="#sentencepiece">2.4 SentencePiece</a></li></ul><li><span class="title-icon"></span><a href="#训练分词器">3 训练分词器</a></li></ul></div><a href="#tokenizer" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><hr/>
+<h1 id="tokenizer">1 tokenizer</h1>
+<blockquote>
+<p><a href="https://huggingface.co/docs/tokenizers/index" target="_blank">hugging face Tokenizer文档</a></p>
+<p><a href="https://huggingface.co/docs/transformers/v4.37.2/zh/tokenizer_summary" target="_blank">huggingface的分词器的摘要</a></p>
+<p><a href="http://www.360doc.com/content/23/0605/20/7673502_1083606595.shtml" target="_blank">【LLM系列之Tokenizer】如何科学地训练一个LLM分词器</a></p>
+</blockquote>
+<h2 id="概述">1.1 概述</h2>
+<p>文本分词的过程涉及将文本拆分成多个单词或子单词。接着，这些单词或子单词会被映射到特定的ID，转换过程涉及一个查找表，这是一种简单的对应关系</p>
+<p>因此，我们的主要关注点在于解析文本为一系列的单词或子单词</p>
+<p>更具体地说，我们将探讨🤗 Transformers库中常用的三种主要分词器类型：<strong>Byte-Pair Encoding (BPE)</strong>、<strong>WordPiece</strong>和<strong>SentencePiece</strong>，并且我们将提供实例说明哪种模型采用了哪种分词器</p>
+<p>要了解特定预训练模型使用了哪种分词器，你可以参考每个模型主页上的文档说明，例如BertTokenizer，你会发现模型采用的是<strong>WordPiece分词器</strong></p>
+<h2 id="分词例子">1.2 分词例子</h2>
+<p>将一段文本分词到小块是一个比它看起来更加困难的任务，并且有很多方式来实现分词，举个例子，让我们看看这个句子</p>
+<pre><code class="lang-cmd">"Don't you love 🤗 Transformers? We sure <span class="hljs-keyword">do</span>."
+</code></pre>
+<p>对这段文本分词的一个简单方式，就是使用空格来分词，得到的结果是：</p>
+<pre><code class="lang-cmd">["Don't", "you", "love", "🤗", "Transformers?", "We", "sure", "<span class="hljs-keyword">do</span>."]
+</code></pre>
+<p>上面的分词是一个明智的开始，但是如果我们查看token <code>"Transformers?"</code> 和 <code>"do."</code>，我们可以观察到标点符号附在单词<code>"Transformer"</code> 和 <code>"do"</code>的后面，这并不是最理想的情况</p>
+<p>我们应该将标点符号考虑进来，这样一个模型就没必要学习一个单词和每个可能跟在后面的 标点符号的不同的组合，这么组合的话，模型需要学习的组合的数量会急剧上升。将标点符号也考虑进来，对范例文本进行分词的结果就是：</p>
+<pre><code class="lang-cmd">["Don", "'", "t", "you", "love", "🤗", "Transformers", "?", "We", "sure", "<span class="hljs-keyword">do</span>", "."]
+</code></pre>
+<p>分词的结果更好了，然而，这么做也是不好的，分词怎么处理单词<code>"Don't"</code>，<code>"Don't"</code>的含义是<code>"do not"</code>，所以这么分词<code>["Do", "n't"]</code> 会更好</p>
+<p>现在开始事情就开始变得复杂起来了，部分的原因是每个模型都有它自己的分词类型</p>
+<p>依赖于我们应用在文本分词上的规则， 相同的文本会产生不同的分词输出</p>
+<p>用在训练数据上的分词规则，被用来对输入做分词操作，一个预训练模型才会正确的执行</p>
+<p><a href="https://spacy.io/" target="_blank">spaCy</a> and <a href="http://www.statmt.org/moses/?n=Development.GetStarted" target="_blank">Moses</a> 是两个受欢迎的<code>基于规则的分词器</code>，将这两个分词器应用在示例文本上，<em>spaCy</em> 和 <em>Moses</em>会输出类似下面的结果：</p>
+<pre><code class="lang-cmd">["<span class="hljs-keyword">Do</span>", "n't", "you", "love", "🤗", "Transformers", "?", "We", "sure", "<span class="hljs-keyword">do</span>", "."]
+</code></pre>
+<p>可见上面的分词使用到了空格和标点符号的分词方式，以及基于规则的分词方式</p>
+<p>空格和标点符号分词以及基于规则的分词都是单词分词的例子，<code>不那么严格的来说，单词分词的定义就是将句子分割到很多单词</code></p>
+<p>然而将文本分割到更小的块是符合直觉的，当处理大型文本语料库时，上面的 分词方法会导致很多问题</p>
+<p>在这种情况下，空格和标点符号分词通常会产生一个非常大的词典（使用到的所有不重复的单词和tokens的集合）</p>
+<p>像：<a href="https://huggingface.co/docs/transformers/v4.37.2/zh/model_doc/transformerxl" target="_blank">Transformer XL</a>使用空格和标点符号分词，结果会产生一个大小是267,735的词典</p>
+<p>这么大的一个词典容量，迫使模型有着一个巨大的embedding矩阵，以及巨大的输入和输出层，这会增加内存使用量，也会提高时间复杂度</p>
+<p>通常情况下，transformers模型几乎没有词典容量大于50,000的，特别是只在一种语言上预训练的模型</p>
+<blockquote>
+<p>所以如果简单的空格和标点符号分词让人不满意，为什么不简单的对字符分词</p>
+</blockquote>
+<p>尽管字符分词是非常简单的，并且能极大的减少内存使用，降低时间复杂度，但是这样做会让模型很难学到有意义的输入表达</p>
+<p>像： 比起学到单词<code>"today"</code>的一个有意义的上下文独立的表达，学到字母<code>"t"</code>的一个有意义的上下文独立的表达是相当困难的</p>
+<p>因此，字符分词经常会伴随着性能的下降。所以为了获得最好的结果，transformers模型在单词级别分词和字符级别分词之间使用了一个折中的方案被称作<strong>子词分词</strong></p>
+<h2 id="分词粒度">1.3 分词粒度</h2>
+<blockquote>
+<p><a href="https://blog.csdn.net/weixin_37447415/article/details/126583754" target="_blank">NLP中Tokenizers总结（BPE、WordPiece、Unigram和SentencePiece）</a></p>
+</blockquote>
+<p>在<a href="https://so.csdn.net/so/search?q=NLP&amp;spm=1001.2101.3001.7020" target="_blank">NLP</a>中，模型如Bert、GPT）的输入通常需要先进行tokenize，其目的是<strong>将输入的文本流，切分为一个个子串，每个子串都有完整的语义</strong>，便于学习embedding表达和后续模型的使用。tokenize有三种粒度：<strong>word/subword/char</strong></p>
+<p><a data-lightbox="9c0eeaf2-7caa-4d73-8b00-9a3ebcb3aecd" data-title="Tokenizer不同粒度" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/huggingface基本使用教程/LLM%20Tokenizer分词系列/Tokenizer不同粒度.svg" target="_blank"><img alt="Tokenizer不同粒度" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/huggingface基本使用教程/LLM%20Tokenizer分词系列/Tokenizer不同粒度.svg"/></a></p>
+<ul>
+<li><p><strong>word/词</strong>：词是最自然的语言单元，对于英文来说其天然存在空格进行，切分相对容易，常用的分词器有<a href="https://spacy.io/" target="_blank">spaCy</a>和<a href="http://www2.statmt.org/moses/?n=Development.GetStarted" target="_blank">Moses</a> </p>
+<p>中文不具备这样的分割符，所以相对困难一些，不过目前也有Jieba、HanLP、LTP等分词器，这些分词器基于规则与模型，可以取得良好的分词效果</p>
+<p>使用词时会有2个问题，通常情况下<strong>词表大小不超过5w</strong>：</p>
+<ol>
+<li>词表通常是基于语料进行分词获得，但遇到新的语料时可能会出现<strong>OOV</strong>的情况</li>
+<li>词表过于庞大，对于模型来说大部分参数都集中在输入输出层，不利于模型学习，且容易<strong>爆内存</strong>（显存）</li>
+</ol>
+</li>
+<li><p><strong>char/字符</strong>：字符是一种语言最基本的组成单元，如英文中的'a'、'b'、'c'或中文中的‘你’、‘我’、‘他’等，使用字符有如下问题：</p>
+<ol>
+<li>字符数量是有限的通常数量较少，这样在学习每个字符的embedding向量时，每个字符中包含非常多的语义，<strong>学习起来比较困难</strong></li>
+<li>以字符分割，会造成序列长度过长，对后续应用造成较大限制</li>
+</ol>
+</li>
+<li><p><strong>subword/子词</strong>：它介于char和word之间，可以很好的<strong>平衡词汇量和语义独立性</strong>，它的切分准则是<strong>常用的词不被切分，而不常见的词切分为子词</strong></p>
+</li>
+</ul>
+<h1 id="子词分词">2 子词分词</h1>
+<blockquote>
+<p>子词分词原则</p>
+</blockquote>
+<p><strong>子词分词算法</strong>依赖这样的原则：</p>
+<ol>
+<li>频繁使用的单词不应该被分割成更小的子词</li>
+<li>很少使用的单词应该被分解到有意义的子词</li>
+</ol>
+<p>举个例子： <code>"annoyingly"</code>能被看作一个很少使用的单词，能被分解成<code>"annoying"</code>和`"ly"``</p>
+<p><code>`"annoying"</code>和<code>"ly"</code>作为独立地子词，出现的次数都很频繁，而且与此同时单词<code>"annoyingly"</code>的含义可以通过组合<code>"annoying"</code>和<code>"ly"</code>的含义来获得</p>
+<hr/>
+<p>在粘合和胶水语言上，像Turkish语言，这么做是相当有用的，在这样的语言里，通过线性组合子词，大多数情况下你能形成任意长的复杂的单词</p>
+<p>子词分词允许模型有一个合理的词典大小，而且能学到有意义的上下文独立地表达</p>
+<p>除此以外，子词分词可以让模型处理以前从来没见过的单词， 方式是通过分解这些单词到已知的子词，举个例子：<code>BertTokenizer</code>对句子<code>"I have a new GPU!"</code>分词的结果如下：</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> BertTokenizer
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>tokenizer = BertTokenizer.from_pretrained(<span class="hljs-string">"bert-base-uncased"</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>tokenizer.tokenize(<span class="hljs-string">"I have a new GPU!"</span>)
+[<span class="hljs-string">"i"</span>, <span class="hljs-string">"have"</span>, <span class="hljs-string">"a"</span>, <span class="hljs-string">"new"</span>, <span class="hljs-string">"gp"</span>, <span class="hljs-string">"##u"</span>, <span class="hljs-string">"!"</span>]
+</code></pre>
+<p>因为我们正在考虑不区分大小写的模型，句子首先被转换成小写字母形式</p>
+<p>我们可以见到单词<code>["i", "have", "a", "new"]</code>在分词器的词典内，但是这个单词<code>"gpu"</code>不在词典内</p>
+<p>所以，分词器将<code>"gpu"</code>分割成已知的子词<code>["gp" and "##u"]</code></p>
+<p><code>"##"</code>意味着剩下的 token应该附着在前面那个token的后面，不带空格的附着（分词的解码或者反向）</p>
+<p>另外一个例子，<code>XLNetTokenizer</code>对前面的文本例子分词结果如下：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> XLNetTokenizer
+
+tokenizer = XLNetTokenizer.from_pretrained(<span class="hljs-string">"xlnet-base-cased"</span>)
+tokenizer.tokenize(<span class="hljs-string">"Don't you love 🤗 Transformers? We sure do."</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>[<span class="hljs-string">"▁Don"</span>, <span class="hljs-string">"'"</span>, <span class="hljs-string">"t"</span>, <span class="hljs-string">"▁you"</span>, <span class="hljs-string">"▁love"</span>, <span class="hljs-string">"▁"</span>, <span class="hljs-string">"🤗"</span>, <span class="hljs-string">"▁"</span>, <span class="hljs-string">"Transform"</span>, <span class="hljs-string">"ers"</span>, <span class="hljs-string">"?"</span>, <span class="hljs-string">"▁We"</span>, <span class="hljs-string">"▁sure"</span>, <span class="hljs-string">"▁do"</span>, <span class="hljs-string">"."</span>]
+</code></pre>
+<p>当我们查看<a href="https://huggingface.co/docs/transformers/v4.37.2/zh/tokenizer_summary#sentencepiece" target="_blank">SentencePiece</a>时会回过头来解释这些<code>"▁"</code>符号的含义。正如你能见到的，很少使用的单词 <code>"Transformers"</code>能被分割到更加频繁使用的子词<code>"Transform"</code>和<code>"ers"</code></p>
+<p>现在让我们来看看不同的子词分割算法是怎么工作的，注意到所有的这些分词算法依赖于某些训练的方式，这些训练通常在语料库上完成， 相应的模型也是在这个语料库上训练的</p>
+<h2 id="byte-pair-encoding-bpe">2.1 Byte-Pair Encoding (BPE)</h2>
+<blockquote>
+<p><a href="https://arxiv.org/abs/1508.07909" target="_blank">BPE-Neural Machine Translation of Rare Words with Subword Units (Sennrich et al., 2015)</a></p>
+<p><a href="https://leimao.github.io/blog/Byte-Pair-Encoding/" target="_blank">Byte Pair Encoding</a></p>
+</blockquote>
+<p>BPE依赖于一个预分词器，这个预分词器会将训练数据分割成单词。预分词可以是简单的 空格分词，像：<a href="https://huggingface.co/docs/transformers/v4.37.2/zh/model_doc/gpt2" target="_blank">GPT-2</a>，<a href="https://huggingface.co/docs/transformers/v4.37.2/zh/model_doc/roberta" target="_blank">RoBERTa</a></p>
+<p>更加先进的预分词方式包括了基于规则的分词，像：<a href="https://huggingface.co/docs/transformers/v4.37.2/zh/model_doc/xlm" target="_blank">XLM</a>，<a href="https://huggingface.co/docs/transformers/v4.37.2/zh/model_doc/flaubert" target="_blank">FlauBERT</a>，FlauBERT在大多数语言使用了Moses，或者<a href="https://huggingface.co/docs/transformers/v4.37.2/zh/model_doc/gpt" target="_blank">GPT</a>，GPT使用了Spacy和ftfy，统计了训练语料库中每个单词的频次</p>
+<p>在预分词以后，生成了单词的集合，也确定了训练数据中每个单词出现的频次</p>
+<p>下一步，<strong>BPE产生了一个基础词典，包含了集合中所有的符号</strong>，<code>BPE学习融合的规则-组合基础词典中的两个符号来形成一个新的符号</code></p>
+<p>BPE会一直学习直到词典的大小满足了期望的词典大小的要求。注意到 期望的词典大小是一个超参数，在训练这个分词器以前就需要人为指定</p>
+<p>举个例子，让我们假设在预分词以后，下面的单词集合以及他们的频次都已经确定好了：</p>
+<pre><code class="lang-cmd">("hug", <span class="hljs-number">10</span>), ("pug", <span class="hljs-number">5</span>), ("pun", <span class="hljs-number">12</span>), ("bun", <span class="hljs-number">4</span>), ("hugs", <span class="hljs-number">5</span>)
+</code></pre>
+<p>所以，基础的词典是<code>["b", "g", "h", "n", "p", "s", "u"]</code>，将所有单词分割成基础词典内的符号，就可以获得：</p>
+<pre><code class="lang-cmd">("h" "u" "g", <span class="hljs-number">10</span>), ("p" "u" "g", <span class="hljs-number">5</span>), ("p" "u" "n", <span class="hljs-number">12</span>), ("b" "u" "n", <span class="hljs-number">4</span>), ("h" "u" "g" "s", <span class="hljs-number">5</span>)
+</code></pre>
+<p>BPE接着会统计每个可能的符号对的频次，然后挑出出现最频繁的的符号对，在上面的例子中，<code>"h"</code>跟了<code>"u"</code>出现了10 + 5 = 15次 （10次是出现了10次<code>"hug"</code>，5次是出现了5次<code>"hugs"</code>）</p>
+<p>然而，最频繁的符号对是<code>"u"</code>后面跟了个<code>"g"</code>，总共出现了10 + 5 + 5 = 20次</p>
+<p>因此，分词器学到的第一个融合规则是组合所有的<code>"u"</code>后面跟了个<code>"g"</code>符号</p>
+<p>下一步，<code>"ug"</code>被加入到了词典内。单词的集合就变成了：</p>
+<pre><code class="lang-cmd">("h" "ug", <span class="hljs-number">10</span>), ("p" "ug", <span class="hljs-number">5</span>), ("p" "u" "n", <span class="hljs-number">12</span>), ("b" "u" "n", <span class="hljs-number">4</span>), ("h" "ug" "s", <span class="hljs-number">5</span>)
+</code></pre>
+<p>BPE接着会统计出下一个最普遍的出现频次最大的符号对，也就是<code>"u"</code>后面跟了个<code>"n"</code>，出现了16次，<code>"u"</code>，<code>"n"</code>被融合成了<code>"un"</code>。</p>
+<p>也被加入到了词典中，再下一个出现频次最大的符号对是<code>"h"</code>后面跟了个<code>"ug"</code>，出现了15次</p>
+<p>又一次这个符号对被融合成了<code>"hug"</code>， 也被加入到了词典中</p>
+<p>在当前这步，词典是<code>["b", "g", "h", "n", "p", "s", "u", "ug", "un", "hug"]</code>，我们的单词集合则是：</p>
+<pre><code class="lang-cmd">("hug", <span class="hljs-number">10</span>), ("p" "ug", <span class="hljs-number">5</span>), ("p" "un", <span class="hljs-number">12</span>), ("b" "un", <span class="hljs-number">4</span>), ("hug" "s", <span class="hljs-number">5</span>)
+</code></pre>
+<p>假设，the Byte-Pair Encoding在这个时候停止训练，学到的融合规则并应用到其他新的单词上（只要这些新单词不包括不在基础词典内的符号 就行）</p>
+<p>举个例子，单词<code>"bug"</code>会被分词到<code>["b", "ug"]</code>，但是<code>"mug"</code>会被分词到<code>["&lt;unk&gt;", "ug"]</code>，因为符号<code>"m"</code>不在基础词典内</p>
+<p>通常来看的话，单个字母像<code>"m"</code>不会被<code>"&lt;unk&gt;"</code>符号替换掉，因为训练数据通常包括了每个字母，每个字母至少出现了一次，但是在特殊的符号 中也可能发生像emojis</p>
+<p>就像之前提到的那样，词典的大小，举个例子，基础词典的大小 + 融合的数量，是一个需要配置的超参数</p>
+<p>举个例子：<a href="https://huggingface.co/docs/transformers/v4.37.2/zh/model_doc/gpt" target="_blank">GPT</a> 的词典大小是40,478，因为GPT有着478个基础词典内的字符，在40,000次融合以后选择了停止训练</p>
+<h3 id="byte-level-bpe">2.1.1 Byte-level BPE</h3>
+<p>一个包含了所有可能的基础字符的基础字典可能会非常大，如果考虑将所有的unicode字符作为基础字符</p>
+<p>为了拥有一个更好的基础词典，<a href="https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf" target="_blank">GPT-2</a>使用了字节 作为基础词典，这是一个非常聪明的技巧，迫使基础词典是256大小，而且确保了所有基础字符包含在这个词典内。使用了其他的规则来处理标点符号，这个GPT2的分词器能对每个文本进行分词，不需要使用到<unk>符号。<a href="https://huggingface.co/docs/transformers/v4.37.2/zh/model_doc/gpt" target="_blank">GPT-2</a>有一个大小是50,257 的词典，对应到256字节的基础tokens，一个特殊的文本结束token，这些符号经过了50,000次融合学习</unk></p>
+<h2 id="wordpiece">2.2 WordPiece</h2>
+<blockquote>
+<p><a href="https://static.googleusercontent.com/media/research.google.com/ja//pubs/archive/37842.pdf" target="_blank">Japanese and Korean Voice Search (Schuster et al., 2012)</a></p>
+</blockquote>
+<p>WordPiece是子词分词算法，被用在<a href="https://huggingface.co/docs/transformers/v4.37.2/zh/model_doc/bert" target="_blank">BERT</a>，<a href="https://huggingface.co/docs/transformers/v4.37.2/zh/model_doc/distilbert" target="_blank">DistilBERT</a>，和<a href="https://huggingface.co/docs/transformers/v4.37.2/zh/model_doc/electra" target="_blank">Electra</a>，和BPE非常相似</p>
+<p>WordPiece首先初始化一个词典，这个词典包含了出现在训练数据中的每个字符，然后递进的学习一个给定数量的融合规则</p>
+<p>和BPE相比较， WordPiece不会选择出现频次最大的符号对，而是选择了加入到字典以后能最大化训练数据似然值的符号对</p>
+<p>所以这到底意味着什么？参考前面的例子，最大化训练数据的似然值，等价于找到一个符号对，它们的概率除以这个符号对中第一个符号的概率，接着除以第二个符号的概率，在所有的符号对中商最大</p>
+<p>像：如果<code>"ug"</code>的概率除以<code>"u"</code>除以<code>"g"</code>的概率的商，比其他任何符号对更大， 这个时候才能融合<code>"u"</code>和<code>"g"</code></p>
+<p>直觉上，WordPiece，和BPE有点点不同，WordPiece是评估融合两个符号会失去的量，来确保这么做是值得的</p>
+<h2 id="unigram">2.3 Unigram</h2>
+<blockquote>
+<p><a href="https://arxiv.org/pdf/1804.10959.pdf" target="_blank">Subword Regularization: Improving Neural Network Translation Models with Multiple Subword Candidates (Kudo, 2018)</a></p>
+</blockquote>
+<p>Unigram是一个子词分词器算法，和BPE或者WordPiece相比较 ，Unigram使用大量的符号来初始化它的基础字典，然后逐渐的精简每个符号来获得一个更小的词典。举例来看基础词典能够对应所有的预分词 的单词以及最常见的子字符串。Unigram没有直接用在任何transformers的任何模型中，但是和<a href="https://huggingface.co/docs/transformers/v4.37.2/zh/tokenizer_summary#sentencepiece" target="_blank">SentencePiece</a>一起联合使用。</p>
+<p>在每个训练的步骤，Unigram算法在当前词典的训练数据上定义了一个损失函数（经常定义为log似然函数的），还定义了一个unigram语言模型。 然后，对词典内的每个符号，算法会计算如果这个符号从词典内移除，总的损失会升高多少</p>
+<p>Unigram然后会移除百分之p的符号，这些符号的loss 升高是最低的（p通常是10%或者20%），像：这些在训练数据上对总的损失影响最小的符号</p>
+<p>重复这个过程，直到词典已经达到了期望的大小。 为了任何单词都能被分词，Unigram算法总是保留基础的字符</p>
+<p>因为Unigram不是基于融合规则（和BPE以及WordPiece相比较），在训练以后算法有几种方式来分词，如果一个训练好的Unigram分词器 的词典是这个：</p>
+<pre><code>["b", "g", "h", "n", "p", "s", "u", "ug", "un", "hug"],
+</code></pre><p><code>"hugs"</code>可以被分词成<code>["hug", "s"]</code>, <code>["h", "ug", "s"]</code>或者<code>["h", "u", "g", "s"]</code></p>
+<p>所以选择哪一个呢？Unigram在保存词典的时候还会保存训练语料库内每个token的概率，所以在训练以后可以计算每个可能的分词结果的概率</p>
+<p>实际上算法简单的选择概率最大的那个分词结果，但是也会提供概率来根据分词结果的概率来采样一个可能的分词结果</p>
+<p>分词器在损失函数上训练，这些损失函数定义了这些概率</p>
+<p>假设训练数据包含了这些单词 <script type="math/tex; ">x*{1}, \dots, x*{N}</script>，一个单词<script type="math/tex; ">x*{i}</script>的所有可能的分词结果的集合定义为<script type="math/tex; ">S(x*{i})</script>，然后总的损失就可以定义为：
+<script type="math/tex; mode=display">
+L = - \sum _{i=1}^{N}{log ( \sum _{x \in S(x_i)}{p(x)})}
+</script></p>
+<h2 id="sentencepiece">2.4 SentencePiece</h2>
+<blockquote>
+<p><a href="https://arxiv.org/pdf/1808.06226.pdf" target="_blank">SentencePiece: A simple and language independent subword tokenizer and detokenizer for Neural Text Processing (Kudo et al., 2018)</a></p>
+</blockquote>
+<p>目前为止描述的所有分词算法都有相同的问题：它们都假设输入的文本使用空格来分开单词，然而，不是所有的语言都使用空格来分开单词</p>
+<p>一个可能的解决方案是使用某种语言特定的预分词器。像：<a href="https://huggingface.co/docs/transformers/v4.37.2/zh/model_doc/xlm" target="_blank">XLM</a>使用了一个特定的中文、日语和Thai的预分词器</p>
+<p>为了更加广泛的解决这个问题，<code>SentencePiece</code>将输入文本看作一个原始的输入流，因此使用的符合集合中也包括了空格</p>
+<p>SentencePiece然后会使用BPE或者unigram算法来产生合适的词典</p>
+<p>举例来说，<code>XLNetTokenizer</code>使用了SentencePiece，这也是为什么上面的例子中<code>"▁"</code>符号包含在词典内</p>
+<p>SentencePiece解码是非常容易的，因为所有的tokens能被concatenate起来，然后将<code>"▁"</code>替换成空格</p>
+<p>库内所有使用了SentencePiece的transformers模型，会和unigram组合起来使用，像：使用了SentencePiece的模型是<a href="https://huggingface.co/docs/transformers/v4.37.2/zh/model_doc/albert" target="_blank">ALBERT</a>, <a href="https://huggingface.co/docs/transformers/v4.37.2/zh/model_doc/xlnet" target="_blank">XLNet</a>，<a href="https://huggingface.co/docs/transformers/v4.37.2/zh/model_doc/marian" target="_blank">Marian</a>，和<a href="https://huggingface.co/docs/transformers/v4.37.2/zh/model_doc/t5" target="_blank">T5</a></p>
+<h1 id="训练分词器">3 训练分词器</h1>
+<blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/625715830" target="_blank">大模型基础知识系列：从头训练一个自己的Tokenizer</a></p>
+</blockquote>
+<p>当前，预训练语言模型已成为NLP算法工程师的工具箱中的常客。在实际应用中，几乎所有的NLP模型都依赖于分词器（Tokenizer）来处理文本数据</p>
+<p>虽然通常我们会倾向于使用现成的分词器，但有时候创建一个定制化的分词器也是必要的</p>
+<p>对于分词器的构建，通常可以选择使用sentencepiece或者huggingface的tokenizers库，我们可以采用tokenizers库来训练我们自己的分词器，确保tokenizers库已经安装在你的系统上</p>
+<pre><code class="lang-bash">pip install tokenizers
+</code></pre>
+<p>有了tokenizers库，我们可以开始构建我们的Tokenizer。这个过程包括配置多个组件以自定Tokenizer的行为，包括但不限于：</p>
+<ul>
+<li><strong>模型（Models）</strong>：这是Tokenizer的核心，负责实际的分词操作。可选的模型包括WordLevel、BPE、Unigram和WordPiece</li>
+<li><strong>规范化器（Normalizers）</strong>：规范化器用于预处理输入文本，将其转换为标准化的格式，如进行Unicode规范化或转换为小写，同时跟踪与原始文本的对齐关系</li>
+<li><strong>预分词器（PreTokenizers）</strong>：预分词器按照一定规则拆分输入文本，以确保底层模型按照这些预设边界构建令牌</li>
+<li><strong>后处理器（PostProcessors）</strong>：在分词流程完成后，后处理器负责在标记化后的字符串中插入特殊标记，比如说为模型提供标准格式的字符串</li>
+<li><strong>解码器（Decoders）</strong>：解码器能够将分词器生成的ID转换回人类可读的文本</li>
+</ul>
+<p>这些组件的组合使得Tokenizer不仅能够执行基本的分词任务，还能为特定的NLP问题提供定制化的解决方案</p>
+<p>在调用 Tokenizer.encode 或 Tokenizer.encode_batch 时，输入文本将经过以下流程：</p>
+<ol>
+<li>规范化</li>
+<li>预分词</li>
+<li>模型处理</li>
+<li>后处理</li>
+</ol>
+<pre><code class="lang-python"><span class="hljs-comment">#!/usr/bin/env Python</span>
+<span class="hljs-comment"># -- coding: utf-8 --</span>
+
+<span class="hljs-string">"""
+@version: v1.0
+@author: huangyc
+@file: train_tokenizer.py
+@Description: 
+@time: 2024/2/15 9:42
+"""</span>
+<span class="hljs-keyword">from</span> datasets <span class="hljs-keyword">import</span> load_dataset
+<span class="hljs-keyword">from</span> tokenizers.models <span class="hljs-keyword">import</span> BPE
+<span class="hljs-keyword">from</span> tokenizers.normalizers <span class="hljs-keyword">import</span> NFD, StripAccents
+<span class="hljs-keyword">from</span> tokenizers.pre_tokenizers <span class="hljs-keyword">import</span> Whitespace, Punctuation, Digits, ByteLevel
+<span class="hljs-keyword">from</span> tokenizers.trainers <span class="hljs-keyword">import</span> BpeTrainer
+<span class="hljs-keyword">from</span> tokenizers <span class="hljs-keyword">import</span> Tokenizer, normalizers, pre_tokenizers, decoders
+<span class="hljs-keyword">from</span> tokenizers <span class="hljs-keyword">import</span> tokenizers
+<span class="hljs-keyword">from</span> tokenizers.processors <span class="hljs-keyword">import</span> TemplateProcessing
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">batch_iterator</span><span class="hljs-params">(batch_size=<span class="hljs-number">10000</span>)</span>:</span>
+    dataset = load_dataset(<span class="hljs-string">"TurboPascal/tokenizers_example_zh_en"</span>, cache_dir=<span class="hljs-string">'./cache/'</span>)
+    print(dataset)
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, len(dataset), batch_size):
+        <span class="hljs-keyword">yield</span> dataset[<span class="hljs-string">'train'</span>][i: i + batch_size][<span class="hljs-string">"text"</span>]
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">train_tokenizer</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-comment"># 自定数据集</span>
+    data_files = [<span class="hljs-string">r".\data\dataset_hyc.txt"</span>]
+
+    <span class="hljs-comment"># 定义tokenizer</span>
+    tokenizer = Tokenizer(BPE(unk_token=<span class="hljs-string">"[UNK]"</span>))
+
+    <span class="hljs-comment"># 定义一个归一化对象</span>
+    normalizer = normalizers.Sequence([NFD(), StripAccents()])
+    tokenizer.normalizer = normalizer
+
+    <span class="hljs-comment"># 我们主要使用四类分割，空白、标点符号、数字、Bytelevel</span>
+    <span class="hljs-comment"># pre_tokenizer = pre_tokenizers.Sequence([Whitespace(), Punctuation(), Digits(individual_digits=True), ByteLevel()])</span>
+    <span class="hljs-comment"># tokenizer.pre_tokenizer = pre_tokenizer</span>
+    <span class="hljs-comment"># 使用空白分割</span>
+    tokenizer.pre_tokenizer = Whitespace()
+
+    <span class="hljs-comment"># 解码器</span>
+    tokenizer.decoder = decoders.ByteLevel(add_prefix_space=<span class="hljs-keyword">True</span>, use_regex=<span class="hljs-keyword">True</span>)
+
+    <span class="hljs-comment"># 字节级 BPE 可能在生成的令牌中包括空白。如果您不希望偏移量包含这些空格，那么必须使用这个 PostProcessor。</span>
+    tokenizer.post_processor = tokenizers.processors.ByteLevel()
+
+    <span class="hljs-comment"># 定义一个BpeTrainer</span>
+    trainer = BpeTrainer(special_tokens=[<span class="hljs-string">"[UNK]"</span>, <span class="hljs-string">"[CLS]"</span>, <span class="hljs-string">"[SEP]"</span>, <span class="hljs-string">"[PAD]"</span>, <span class="hljs-string">"[MASK]"</span>])
+
+    <span class="hljs-comment"># 开始训练</span>
+    <span class="hljs-comment"># 方式一</span>
+    tokenizer.train(data_files, trainer)
+    <span class="hljs-comment"># 方式二</span>
+    <span class="hljs-comment"># tokenizer.train_from_iterator(batch_iterator(), trainer=trainer, length=len(dataset['train']))</span>
+
+    <span class="hljs-comment"># tokenizer保存</span>
+    tokenizer.save(<span class="hljs-string">"data/tokenizer-wiki.json"</span>)
+
+    <span class="hljs-comment"># tokenizer加载</span>
+    tokenizer = Tokenizer.from_file(<span class="hljs-string">"data/tokenizer-wiki.json"</span>)
+
+    sentence = <span class="hljs-string">"我尝试了很多的方法"</span>
+    output = tokenizer.encode(sentence)
+
+    print(output.tokens)
+    <span class="hljs-comment"># ['我', '[UNK]', '[UNK]', '了', '很', '多的', '方', '法']</span>
+
+    print(output.ids)
+    <span class="hljs-comment"># [376, 0, 0, 44, 339, 1561, 438, 524]</span>
+
+    print(output.offsets[<span class="hljs-number">5</span>])
+    <span class="hljs-comment"># (5, 7)</span>
+
+    print(sentence[output.offsets[<span class="hljs-number">5</span>][<span class="hljs-number">0</span>]:output.offsets[<span class="hljs-number">5</span>][<span class="hljs-number">1</span>]])
+    <span class="hljs-comment"># '多的'</span>
+
+    tokenizer.token_to_id(<span class="hljs-string">"[SEP]"</span>)
+    <span class="hljs-comment"># 2</span>
+
+    <span class="hljs-comment"># 后续处理</span>
+    tokenizer.post_processor = TemplateProcessing(single=<span class="hljs-string">"[CLS] $A [SEP]"</span>, pair=<span class="hljs-string">"[CLS] $A [SEP] $B:1 [SEP]:1"</span>,
+                                                  special_tokens=[(<span class="hljs-string">"[CLS]"</span>, tokenizer.token_to_id(<span class="hljs-string">"[CLS]"</span>)),
+                                                                  (<span class="hljs-string">"[SEP]"</span>, tokenizer.token_to_id(<span class="hljs-string">"[SEP]"</span>)), ], )
+
+    output = tokenizer.encode_batch([sentence])
+    print(output)
+
+    output = tokenizer.encode_batch([[<span class="hljs-string">"我尝试了许多的方法"</span>, <span class="hljs-string">"却始终没有成功"</span>], [<span class="hljs-string">"自己说过的话"</span>, <span class="hljs-string">"就必须要努力去践行"</span>]])
+    print(output)
+
+    tokenizer.enable_padding(pad_id=<span class="hljs-number">3</span>, pad_token=<span class="hljs-string">"[PAD]"</span>)
+    output = tokenizer.encode_batch([<span class="hljs-string">"我尝试了许多的方法"</span>, <span class="hljs-string">"却始终没有成功"</span>])
+    print(output[<span class="hljs-number">0</span>].tokens, output[<span class="hljs-number">1</span>].tokens)
+    <span class="hljs-comment"># ['[CLS]', '我', '[UNK]', '[UNK]', '了', '许', '多的', '方', '法', '[SEP]'] ['[CLS]', '[UNK]', '[UNK]', '[UNK]', '没有', '成', '功', '[SEP]', '[PAD]', '[PAD]']</span>
+
+    print(output[<span class="hljs-number">1</span>].attention_mask)
+    <span class="hljs-comment"># [1, 1, 1, 1, 1, 1, 1, 1, 0, 0]</span>
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:
+    train_tokenizer()
+</code></pre>
+<p></p><footer class="page-footer"><span class="copyright">Copyright © narutohyc.com 2021 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
+2024-02-18 00:48:44
+</span></footer><hr/><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz',appKey: 'utUrzoiqNaDEGlgr09JL1pXB',placeholder: '欢迎留下评论交流~',avatar: 'wavatar',meta: undefined,pageSize: 15,lang: 'zh-CN',recordIP: false})</script><p></p>
+</section>
+</div>
+<div class="search-results">
+<div class="has-results">
+<h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+<ul class="search-results-list"></ul>
+</div>
+<div class="no-results">
+<h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<a aria-label="Previous page: Introduction" class="navigation navigation-prev" href="../">
+<i class="fa fa-angle-left"></i>
+</a>
+<a aria-label="Next page: LLM模型微调系列.md" class="navigation navigation-next" href="LLM模型微调系列.html">
+<i class="fa fa-angle-right"></i>
+</a>
+<script src="https://cdn.jsdelivr.net/gh/zztongtong/CDN/js/live2d.min.js"></script><div style="position:absolute; bottom:0; left:0; width:200;"><canvas height="350" id="model_1" width="200"></canvas></div></div>
+<script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"LLM Tokenizer分词系列.md","date":"2024/02/15 08:39:15","top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆4.webp","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆4.webp","categories":["deep-learning"],"tags":["深度学习","Tokenizer"],"description":"LLM Tokenizer分词系列","abbrlink":57252,"level":"1.2","depth":1,"next":{"title":"LLM模型微调系列.md","level":"1.3","depth":1,"path":"chapters/LLM模型微调系列.md","ref":"chapters/LLM模型微调系列.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/hycBook"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":false,"enableFooter":false,"site":"https://dl.hycbook.com","author":"narutohyc","website":"深度学习知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"hycBook","repo":"bk_dl_page","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"深度学习相关学习记录","language":"zh-hans","mathjax":{"forceSVG":true},"links":{"sidebar":{"书籍主页":"https://study.hycbook.com"}},"gitbook":"*","description":"记录 深度学习 的学习和一些技巧的使用"},"file":{"path":"chapters/LLM Tokenizer分词系列.md","mtime":"2024-02-18T00:48:44.984Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-02-18T00:49:56.244Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+<canvas class="fireworks"></canvas><script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script></div>
+<script src="../gitbook/gitbook.js"></script>
+<script src="../gitbook/theme.js"></script>
+<script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+<script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+<script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+<script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+<script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+<script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-copyright-v/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+<script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+</body>
+</html>
