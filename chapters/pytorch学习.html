@@ -299,7 +299,7 @@
 <div class="search-plus" id="book-search-results">
 <div class="search-noresults">
 <section class="normal markdown-section">
-<div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon"></span><a href="#torch">1 torch</a></li><ul><li><span class="title-icon"></span><a href="#基本操作">1.1 基本操作</a></li><li><span class="title-icon"></span><a href="#创建操作-creation-ops">1.2 创建操作 Creation Ops</a></li><li><span class="title-icon"></span><a href="#索引切片连接换位">1.3 索引|切片|连接|换位</a></li><ul><li><span class="title-icon"></span><a href="#索引和切片">1.3.1 索引和切片</a></li><li><span class="title-icon"></span><a href="#合并和拼接">1.3.2 合并和拼接</a></li><li><span class="title-icon"></span><a href="#变换和重塑">1.3.3 变换和重塑</a></li><li><span class="title-icon"></span><a href="#元素添加与替换">1.3.4 元素添加与替换</a></li><li><span class="title-icon"></span><a href="#搜索和条件操作">1.3.5 搜索和条件操作</a></li><li><span class="title-icon"></span><a href="#扩展与重复操作">1.3.6 扩展与重复操作</a></li></ul><li><span class="title-icon"></span><a href="#随机抽样">1.4 随机抽样</a></li><li><span class="title-icon"></span><a href="#序列化serialization">1.5 序列化Serialization</a></li><li><span class="title-icon"></span><a href="#并行化-parallelism">1.6 并行化 Parallelism</a></li><li><span class="title-icon"></span><a href="#数学操作math-operations">1.7 数学操作Math operations</a></li><li><span class="title-icon"></span><a href="#reduction-ops">1.8 Reduction Ops</a></li><li><span class="title-icon"></span><a href="#比较操作-comparison-ops">1.9 比较操作 Comparison Ops</a></li><li><span class="title-icon"></span><a href="#其它操作-other-operations">1.10 其它操作 Other Operations</a></li><li><span class="title-icon"></span><a href="#blas-and-lapack-operations">1.11 BLAS and LAPACK Operations</a></li></ul><li><span class="title-icon"></span><a href="#tensor">2 Tensor</a></li><ul><li><span class="title-icon"></span><a href="#storage">2.1 storage</a></li></ul><li><span class="title-icon"></span><a href="#实例">3 实例</a></li><ul><li><span class="title-icon"></span><a href="#pytorch加载数据">3.1 Pytorch加载数据</a></li><li><span class="title-icon"></span><a href="#tensorboard">3.2 Tensorboard</a></li><li><span class="title-icon"></span><a href="#transforms">3.3 Transforms</a></li><li><span class="title-icon"></span><a href="#torchvision数据集">3.4 torchvision数据集</a></li><li><span class="title-icon"></span><a href="#损失函数">3.5 损失函数</a></li><li><span class="title-icon"></span><a href="#优化器">3.6 优化器</a></li><li><span class="title-icon"></span><a href="#网络模型使用及修改">3.7 网络模型使用及修改</a></li><li><span class="title-icon"></span><a href="#网络模型保存与读取">3.8 网络模型保存与读取</a></li><li><span class="title-icon"></span><a href="#固定模型参数">3.9 固定模型参数</a></li><li><span class="title-icon"></span><a href="#训练流程">3.10 训练流程</a></li></ul></ul></div><a href="#torch" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><hr/>
+<div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon"></span><a href="#torch">1 torch</a></li><ul><li><span class="title-icon"></span><a href="#基本操作">1.1 基本操作</a></li><li><span class="title-icon"></span><a href="#创建操作-creation-ops">1.2 创建操作 Creation Ops</a></li><ul><li><span class="title-icon"></span><a href="#随机采样函数">1.2.1 随机采样函数</a></li><li><span class="title-icon"></span><a href="#张量创建函数">1.2.2 张量创建函数</a></li><li><span class="title-icon"></span><a href="#数据类型转换函数">1.2.3 数据类型转换函数</a></li><li><span class="title-icon"></span><a href="#初始化填充函数">1.2.4 初始化填充函数</a></li><li><span class="title-icon"></span><a href="#特定区间填充函数">1.2.5 特定区间填充函数</a></li><li><span class="title-icon"></span><a href="#其他辅助函数">1.2.6 其他辅助函数</a></li></ul><li><span class="title-icon"></span><a href="#索引切片连接换位">1.3 索引|切片|连接|换位</a></li><ul><li><span class="title-icon"></span><a href="#索引和切片">1.3.1 索引和切片</a></li><li><span class="title-icon"></span><a href="#合并和拼接">1.3.2 合并和拼接</a></li><li><span class="title-icon"></span><a href="#变换和重塑">1.3.3 变换和重塑</a></li><li><span class="title-icon"></span><a href="#元素添加与替换">1.3.4 元素添加与替换</a></li><li><span class="title-icon"></span><a href="#搜索和条件操作">1.3.5 搜索和条件操作</a></li><li><span class="title-icon"></span><a href="#扩展与重复操作">1.3.6 扩展与重复操作</a></li></ul><li><span class="title-icon"></span><a href="#随机抽样">1.4 随机抽样</a></li><li><span class="title-icon"></span><a href="#序列化serialization">1.5 序列化Serialization</a></li><li><span class="title-icon"></span><a href="#并行化-parallelism">1.6 并行化 Parallelism</a></li><li><span class="title-icon"></span><a href="#数学操作math-operations">1.7 数学操作Math operations</a></li><li><span class="title-icon"></span><a href="#reduction-ops">1.8 Reduction Ops</a></li><li><span class="title-icon"></span><a href="#比较操作-comparison-ops">1.9 比较操作 Comparison Ops</a></li><li><span class="title-icon"></span><a href="#其它操作-other-operations">1.10 其它操作 Other Operations</a></li><li><span class="title-icon"></span><a href="#blas-and-lapack-operations">1.11 BLAS and LAPACK Operations</a></li></ul><li><span class="title-icon"></span><a href="#tensor">2 Tensor</a></li><ul><li><span class="title-icon"></span><a href="#storage">2.1 storage</a></li></ul><li><span class="title-icon"></span><a href="#实例">3 实例</a></li><ul><li><span class="title-icon"></span><a href="#pytorch加载数据">3.1 Pytorch加载数据</a></li><li><span class="title-icon"></span><a href="#tensorboard">3.2 Tensorboard</a></li><li><span class="title-icon"></span><a href="#transforms">3.3 Transforms</a></li><li><span class="title-icon"></span><a href="#torchvision数据集">3.4 torchvision数据集</a></li><li><span class="title-icon"></span><a href="#损失函数">3.5 损失函数</a></li><li><span class="title-icon"></span><a href="#优化器">3.6 优化器</a></li><li><span class="title-icon"></span><a href="#网络模型使用及修改">3.7 网络模型使用及修改</a></li><li><span class="title-icon"></span><a href="#网络模型保存与读取">3.8 网络模型保存与读取</a></li><li><span class="title-icon"></span><a href="#固定模型参数">3.9 固定模型参数</a></li><li><span class="title-icon"></span><a href="#训练流程">3.10 训练流程</a></li></ul></ul></div><a href="#torch" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><hr/>
 <blockquote>
 <p><a href="https://www.pytorchtutorial.com/docs/package_references/torch/" target="_blank">pytorch中文文档</a></p>
 </blockquote>
@@ -338,6 +338,7 @@ Out[<span class="hljs-number">1</span>]: <span class="hljs-number">16</span>
 </code></pre>
 <blockquote>
 <p><strong>torch.set_printoptions</strong>: 设置打印选项</p>
+</blockquote>
 <p>参数:</p>
 <ul>
 <li>precision – 浮点数输出的精度位数 (默认为8 )</li>
@@ -346,55 +347,216 @@ Out[<span class="hljs-number">1</span>]: <span class="hljs-number">16</span>
 <li>linewidth – 用于插入行间隔的每行字符数（默认为80）。Thresholded matricies will ignore this parameter.</li>
 <li>profile – pretty打印的完全默认值。 可以覆盖上述所有选项 (默认为short, full)</li>
 </ul>
-</blockquote>
 <h2 id="创建操作-creation-ops">1.2 创建操作 Creation Ops</h2>
 <blockquote>
 <p>总览</p>
 </blockquote>
 <p>以下是PyTorch中用于创建和初始化张量的函数：</p>
-<p><strong>随机采样函数</strong>:</p>
+<h3 id="随机采样函数">1.2.1 随机采样函数</h3>
 <ul>
-<li><code>torch.rand()</code>: 创建一个具有给定形状的张量，并用区间[0, 1)内的均匀分布的随机数填充。</li>
-<li><code>torch.rand_like()</code>: 返回一个与给定张量形状相同的张量，并用区间[0, 1)内的均匀分布的随机数填充。</li>
-<li><code>torch.randn()</code>: 返回一个具有给定形状的张量，并用标准正态分布的随机数填充。</li>
-<li><code>torch.randn_like()</code>: 返回一个与给定张量形状相同的张量，并用标准正态分布的随机数填充。</li>
-<li><code>torch.randint()</code>: 返回一个具有给定形状的张量，并用区间[low, high)内的随机整数填充。</li>
-<li><code>torch.randint_like()</code>: 返回一个与给定张量形状相同的张量，并用区间[low, high)内的随机整数填充。</li>
-<li><code>torch.randperm()</code>: 返回一个从0到给定参数<code>n - 1</code>的整数的随机排列。</li>
+<li><p><code>torch.rand()</code>: 创建一个具有给定形状的张量，并用区间[0, 1)内的<code>均匀分布</code>的随机数填充</p>
+<p><code>torch.rand_like()</code>: 返回一个与给定张量形状相同的张量，并用区间[0, 1)内的<code>均匀分布</code>的随机数填充</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>torch.rand(<span class="hljs-number">4</span>)
+tensor([ <span class="hljs-number">0.5204</span>,  <span class="hljs-number">0.2503</span>,  <span class="hljs-number">0.3525</span>,  <span class="hljs-number">0.5673</span>])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.rand(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+tensor([[ <span class="hljs-number">0.8237</span>,  <span class="hljs-number">0.5781</span>,  <span class="hljs-number">0.6879</span>],
+        [ <span class="hljs-number">0.3816</span>,  <span class="hljs-number">0.7249</span>,  <span class="hljs-number">0.0998</span>]])
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.rand_like(torch.rand(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>))
+tensor([[<span class="hljs-number">0.3885</span>, <span class="hljs-number">0.9888</span>, <span class="hljs-number">0.4838</span>],
+        [<span class="hljs-number">0.8154</span>, <span class="hljs-number">0.6068</span>, <span class="hljs-number">0.6895</span>]])
+</code></pre>
+</li>
+<li><p><code>torch.randn()</code>: 返回一个具有给定形状的张量，并用<code>标准正态分布</code>的随机数填充</p>
+<p><code>torch.randn_like()</code>: 返回一个与给定张量形状相同的张量，并用<code>标准正态分布</code>的随机数填充</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>torch.randn(<span class="hljs-number">4</span>)
+tensor([<span class="hljs-number">-2.1436</span>,  <span class="hljs-number">0.9966</span>,  <span class="hljs-number">2.3426</span>, <span class="hljs-number">-0.6366</span>])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.randn(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+tensor([[ <span class="hljs-number">1.5954</span>,  <span class="hljs-number">2.8929</span>, <span class="hljs-number">-1.0923</span>],
+        [ <span class="hljs-number">1.1719</span>, <span class="hljs-number">-0.4709</span>, <span class="hljs-number">-0.1996</span>]])
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.randn_like(torch.randn(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>))
+tensor([[ <span class="hljs-number">0.9979</span>,  <span class="hljs-number">0.0471</span>, <span class="hljs-number">-1.1305</span>],
+        [ <span class="hljs-number">0.7216</span>, <span class="hljs-number">-0.0747</span>,  <span class="hljs-number">0.0610</span>]])
+</code></pre>
+</li>
+<li><p><code>torch.randint()</code>: 返回一个具有给定形状的张量，并用区间[low, high)内的随机整数填充</p>
+<p><code>torch.randint_like()</code>: 返回一个与给定张量形状相同的张量，并用区间[low, high)内的随机整数填充</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>torch.randint(low=<span class="hljs-number">3</span>, high=<span class="hljs-number">5</span>, size=(<span class="hljs-number">3</span>,))
+tensor([<span class="hljs-number">4</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.randint(<span class="hljs-number">10</span>, (<span class="hljs-number">2</span>, <span class="hljs-number">2</span>))
+tensor([[<span class="hljs-number">0</span>, <span class="hljs-number">2</span>],
+        [<span class="hljs-number">5</span>, <span class="hljs-number">5</span>]])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.randint(<span class="hljs-number">3</span>, <span class="hljs-number">10</span>, (<span class="hljs-number">2</span>, <span class="hljs-number">2</span>))
+tensor([[<span class="hljs-number">4</span>, <span class="hljs-number">5</span>],
+        [<span class="hljs-number">6</span>, <span class="hljs-number">7</span>]])
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.randint_like(input=torch.randint(low=<span class="hljs-number">3</span>, high=<span class="hljs-number">5</span>, size=(<span class="hljs-number">3</span>,)), low=<span class="hljs-number">6</span>, high=<span class="hljs-number">10</span>)
+tensor([<span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">9</span>])
+</code></pre>
+</li>
+<li><p><code>torch.randperm()</code>: 返回一个从0到给定参数<code>n - 1</code>的整数的随机排列</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>torch.randperm(<span class="hljs-number">4</span>)
+tensor([<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>])
+</code></pre>
+</li>
 </ul>
-<p><strong>张量创建函数</strong>:</p>
+<h3 id="张量创建函数">1.2.2 张量创建函数</h3>
 <ul>
-<li><code>torch.tensor()</code>: 通过复制数据创建一个具有自动求导历史的张量（如果数据是一个张量）。</li>
-<li><code>torch.sparse_coo_tensor()</code>: 通过坐标格式的索引和值构建稀疏张量。</li>
-<li><code>torch.sparse_csr_tensor()</code>: 通过压缩稀疏行格式的索引和值构建稀疏张量。</li>
-<li><code>torch.sparse_csc_tensor()</code>: 通过压缩稀疏列格式的索引和值构建稀疏张量。</li>
-<li><code>torch.sparse_bsr_tensor()</code>: 通过块压缩稀疏行格式的索引和2维块构建稀疏张量。</li>
-<li><code>torch.sparse_bsc_tensor()</code>: 通过块压缩稀疏列格式的索引和2维块构建稀疏张量。</li>
+<li><p><code>torch.tensor()</code>: 通过复制数据创建一个具有自动求导历史的张量（如果数据是一个张量）</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>torch.tensor([[<span class="hljs-number">0.1</span>, <span class="hljs-number">1.2</span>], [<span class="hljs-number">2.2</span>, <span class="hljs-number">3.1</span>], [<span class="hljs-number">4.9</span>, <span class="hljs-number">5.2</span>]])
+tensor([[ <span class="hljs-number">0.1000</span>,  <span class="hljs-number">1.2000</span>],
+        [ <span class="hljs-number">2.2000</span>,  <span class="hljs-number">3.1000</span>],
+        [ <span class="hljs-number">4.9000</span>,  <span class="hljs-number">5.2000</span>]])
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.tensor([<span class="hljs-number">0</span>, <span class="hljs-number">1</span>])  <span class="hljs-comment"># Type inference on data</span>
+tensor([ <span class="hljs-number">0</span>,  <span class="hljs-number">1</span>])
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.tensor([[<span class="hljs-number">0.11111</span>, <span class="hljs-number">0.222222</span>, <span class="hljs-number">0.3333333</span>]],
+<span class="hljs-meta">... </span>             dtype=torch.float64,
+<span class="hljs-meta">... </span>             device=torch.device(<span class="hljs-string">'cuda:0'</span>))  <span class="hljs-comment"># creates a double tensor on a CUDA device</span>
+tensor([[ <span class="hljs-number">0.1111</span>,  <span class="hljs-number">0.2222</span>,  <span class="hljs-number">0.3333</span>]], dtype=torch.float64, device=<span class="hljs-string">'cuda:0'</span>)
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.tensor(<span class="hljs-number">3.14159</span>)  <span class="hljs-comment"># Create a zero-dimensional (scalar) tensor</span>
+tensor(<span class="hljs-number">3.1416</span>)
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.tensor([])  <span class="hljs-comment"># Create an empty tensor (of size (0,))</span>
+tensor([])
+</code></pre>
+</li>
+<li><p><code>torch.sparse_coo_tensor()</code>: 通过坐标格式的索引和值构建稀疏张量</p>
+<p>使用稀疏矩阵的一个主要优点是，在存储和计算上更加高效，特别是对于非常大的数据集。例如，在矩阵乘法或其他线性代数运算中，利用稀疏性可以显著减少不必要的乘法和加法计算，因为零元素与任何数相乘都是零，并且不会影响加法运算的结果</p>
+<pre><code class="lang-python"><span class="hljs-comment"># 假设我们有2个非零元素分别在(0, 2)和(1, 0)的位置</span>
+indices = torch.tensor([[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>], [<span class="hljs-number">2</span>, <span class="hljs-number">0</span>]])  <span class="hljs-comment"># 表示非零元素的坐标</span>
+values = torch.tensor([<span class="hljs-number">3</span>, <span class="hljs-number">4</span>])             <span class="hljs-comment"># 这些非零元素的值</span>
+<span class="hljs-comment"># 创建COO格式的稀疏张量</span>
+sparse_coo = torch.sparse_coo_tensor(indices, values, (<span class="hljs-number">2</span>, <span class="hljs-number">3</span>))
+
+print(sparse_coo)
+tensor(indices=tensor([[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>],
+                       [<span class="hljs-number">2</span>, <span class="hljs-number">0</span>]]),
+       values=tensor([<span class="hljs-number">3</span>, <span class="hljs-number">4</span>]),
+       size=(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>), nnz=<span class="hljs-number">2</span>, layout=torch.sparse_coo)
+</code></pre>
+</li>
+<li><p><code>torch.sparse_csr_tensor()</code>: 通过压缩稀疏行格式的索引和值构建稀疏张量</p>
+<p><code>torch.sparse_csc_tensor()</code>: 通过压缩稀疏列格式的索引和值构建稀疏张量</p>
+<pre><code class="lang-python"><span class="hljs-comment"># 定义CSR格式的三个组件：行索引、列索引和值</span>
+crow_indices = torch.tensor([<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>])
+col_indices = torch.tensor([<span class="hljs-number">0</span>, <span class="hljs-number">1</span>])
+values = torch.tensor([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>])
+<span class="hljs-comment"># 创建CSR格式的稀疏张量</span>
+sparse_csr = torch.sparse_csr_tensor(crow_indices, col_indices, values)
+
+print(sparse_csr)
+tensor(crow_indices=tensor([<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>]),
+       col_indices=tensor([<span class="hljs-number">0</span>, <span class="hljs-number">1</span>]),
+       values=tensor([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]), size=(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>), nnz=<span class="hljs-number">2</span>, layout=torch.sparse_csr)
+</code></pre>
+</li>
+<li><p><code>torch.sparse_bsr_tensor()</code>: 通过块压缩稀疏行格式的索引和2维块构建稀疏张量</p>
+<p><code>torch.sparse_bsc_tensor()</code>: 通过块压缩稀疏列格式的索引和2维块构建稀疏张量</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>crow_indices = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>col_indices = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>values = [[[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>], [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>]], [[<span class="hljs-number">5</span>, <span class="hljs-number">6</span>], [<span class="hljs-number">7</span>, <span class="hljs-number">8</span>]]]
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.sparse_bsr_tensor(torch.tensor(crow_indices, dtype=torch.int64),
+<span class="hljs-meta">... </span>                        torch.tensor(col_indices, dtype=torch.int64),
+<span class="hljs-meta">... </span>                        torch.tensor(values), dtype=torch.double)
+tensor(crow_indices=tensor([<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>]),
+       col_indices=tensor([<span class="hljs-number">0</span>, <span class="hljs-number">1</span>]),
+       values=tensor([[[<span class="hljs-number">1.</span>, <span class="hljs-number">2.</span>],
+                       [<span class="hljs-number">3.</span>, <span class="hljs-number">4.</span>]],
+                      [[<span class="hljs-number">5.</span>, <span class="hljs-number">6.</span>],
+                       [<span class="hljs-number">7.</span>, <span class="hljs-number">8.</span>]]]), size=(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>), nnz=<span class="hljs-number">2</span>, dtype=torch.float64,
+       layout=torch.sparse_bsr)
+</code></pre>
+</li>
 </ul>
-<p><strong>数据类型转换函数</strong>:</p>
+<h3 id="数据类型转换函数">1.2.3 数据类型转换函数</h3>
 <ul>
-<li><code>torch.asarray()</code>: 将对象转换为张量。</li>
-<li><code>torch.as_tensor()</code>: 将数据转换为张量，共享数据并尽可能保留自动求导历史。</li>
-<li><code>torch.as_strided()</code>: 创建一个具有指定大小、步长和存储偏移的现有张量的视图。</li>
-<li><code>torch.from_file()</code>: 从内存映射文件创建CPU张量。</li>
-<li><code>torch.from_numpy()</code>: 将numpy数组转换为张量。</li>
-<li><code>torch.from_dlpack()</code>: 将来自外部库的张量转换为PyTorch张量。</li>
+<li><p><code>torch.asarray()</code>: 将对象转换为张量</p>
+<p><code>torch.as_tensor()</code>: 将数据转换为张量，共享数据并尽可能保留自动求导历史</p>
+<p><code>torch.as_strided()</code>: 创建一个具有指定大小、步长和存储偏移的现有张量的视图(不好理解)</p>
+<pre><code class="lang-python"><span class="hljs-comment"># 将对象转换为张量</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>a = torch.tensor([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-comment"># Shares memory with tensor 'a'</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>b = torch.asarray(a)
+<span class="hljs-meta">&gt;&gt;&gt; </span>a.data_ptr() == b.data_ptr()
+<span class="hljs-keyword">True</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-comment"># Forces memory copy</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>c = torch.asarray(a, copy=<span class="hljs-keyword">True</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>a.data_ptr() == c.data_ptr()
+<span class="hljs-keyword">False</span>
+
+<span class="hljs-comment"># 将数据转换为张量，共享数据并尽可能保留自动求导历史</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>a = numpy.array([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+<span class="hljs-meta">&gt;&gt;&gt; </span>t = torch.as_tensor(a)
+<span class="hljs-meta">&gt;&gt;&gt; </span>t
+tensor([ <span class="hljs-number">1</span>,  <span class="hljs-number">2</span>,  <span class="hljs-number">3</span>])
+<span class="hljs-meta">&gt;&gt;&gt; </span>t[<span class="hljs-number">0</span>] = <span class="hljs-number">-1</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>a
+array([<span class="hljs-number">-1</span>,  <span class="hljs-number">2</span>,  <span class="hljs-number">3</span>])
+<span class="hljs-meta">&gt;&gt;&gt; </span>a = numpy.array([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+<span class="hljs-meta">&gt;&gt;&gt; </span>t = torch.as_tensor(a, device=torch.device(<span class="hljs-string">'cuda'</span>))
+<span class="hljs-meta">&gt;&gt;&gt; </span>t
+tensor([ <span class="hljs-number">1</span>,  <span class="hljs-number">2</span>,  <span class="hljs-number">3</span>])
+<span class="hljs-meta">&gt;&gt;&gt; </span>t[<span class="hljs-number">0</span>] = <span class="hljs-number">-1</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>a
+array([<span class="hljs-number">1</span>,  <span class="hljs-number">2</span>,  <span class="hljs-number">3</span>])
+
+<span class="hljs-comment"># 创建一个具有指定大小、步长和存储偏移的现有张量的视图</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>x = torch.randn(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>x
+tensor([[ <span class="hljs-number">0.9039</span>,  <span class="hljs-number">0.6291</span>,  <span class="hljs-number">1.0795</span>],
+        [ <span class="hljs-number">0.1586</span>,  <span class="hljs-number">2.1939</span>, <span class="hljs-number">-0.4900</span>],
+        [<span class="hljs-number">-0.1909</span>, <span class="hljs-number">-0.7503</span>,  <span class="hljs-number">1.9355</span>]])
+<span class="hljs-meta">&gt;&gt;&gt; </span>t = torch.as_strided(x, (<span class="hljs-number">2</span>, <span class="hljs-number">2</span>), (<span class="hljs-number">1</span>, <span class="hljs-number">2</span>))
+<span class="hljs-meta">&gt;&gt;&gt; </span>t
+tensor([[<span class="hljs-number">0.9039</span>, <span class="hljs-number">1.0795</span>],
+        [<span class="hljs-number">0.6291</span>, <span class="hljs-number">0.1586</span>]])
+<span class="hljs-meta">&gt;&gt;&gt; </span>t = torch.as_strided(input=x, size=(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>), stride=(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>), storage_offset=<span class="hljs-number">1</span>)
+tensor([[<span class="hljs-number">0.6291</span>, <span class="hljs-number">0.1586</span>],
+        [<span class="hljs-number">1.0795</span>, <span class="hljs-number">2.1939</span>]])
+</code></pre>
+</li>
+<li><p><code>torch.from_file()</code>: 从内存映射文件创建CPU张量</p>
+<p><code>torch.from_numpy()</code>: 将numpy数组转换为张量</p>
+<p><code>torch.from_dlpack()</code>: 将来自外部库的张量转换为PyTorch张量</p>
+<pre><code class="lang-python"><span class="hljs-comment"># 从内存映射文件创建CPU张量</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>t = torch.randn(<span class="hljs-number">2</span>, <span class="hljs-number">5</span>, dtype=torch.float64)
+<span class="hljs-meta">&gt;&gt;&gt; </span>t.numpy().tofile(<span class="hljs-string">'storage.pt'</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>t_mapped = torch.from_file(<span class="hljs-string">'storage.pt'</span>, shared=<span class="hljs-keyword">False</span>, size=<span class="hljs-number">10</span>, dtype=torch.float64)
+
+<span class="hljs-comment"># 将numpy数组转换为张量</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>a = numpy.array([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+<span class="hljs-meta">&gt;&gt;&gt; </span>t = torch.from_numpy(a)
+<span class="hljs-meta">&gt;&gt;&gt; </span>t
+tensor([ <span class="hljs-number">1</span>,  <span class="hljs-number">2</span>,  <span class="hljs-number">3</span>])
+<span class="hljs-meta">&gt;&gt;&gt; </span>t[<span class="hljs-number">0</span>] = <span class="hljs-number">-1</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>a
+array([<span class="hljs-number">-1</span>,  <span class="hljs-number">2</span>,  <span class="hljs-number">3</span>])
+</code></pre>
+</li>
 </ul>
-<p><strong>初始化填充函数</strong>:</p>
+<h3 id="初始化填充函数">1.2.4 初始化填充函数</h3>
 <ul>
-<li><code>torch.zeros()</code>: 返回一个指定形状且用0填充的张量。</li>
-<li><code>torch.zeros_like()</code>: 返回一个与给定张量形状相同且用0填充的张量。</li>
-<li><code>torch.ones()</code>: 返回一个指定形状且用1填充的张量。</li>
-<li><code>torch.ones_like()</code>: 返回一个与给定张量形状相同且用1填充的张量。</li>
-<li><code>torch.arange()</code>: 返回一个从<code>start</code>到<code>end</code>（不包含<code>end</code>）且步长为<code>step</code>的1维张量。</li>
-<li><code>torch.range()</code>: 返回一个从<code>start</code>到<code>end</code>（包含<code>end</code>）且步长为<code>step</code>的1维张量。</li>
+<li><p><code>torch.zeros()</code>: 返回一个指定形状且用0填充的张量</p>
+<p><code>torch.zeros_like()</code>: 返回一个与给定张量形状相同且用0填充的张量</p>
+</li>
+<li><p><code>torch.ones()</code>: 返回一个指定形状且用1填充的张量</p>
+<p><code>torch.ones_like()</code>: 返回一个与给定张量形状相同且用1填充的张量</p>
+</li>
+<li><p><code>torch.arange()</code>: 返回一个从<code>start</code>到<code>end</code>（不包含<code>end</code>）且步长为<code>step</code>的1维张量</p>
+</li>
+<li><p>torch.range()<code>: 返回一个从</code>start<code>到</code>end<code>（包含</code>end<code>）且步长为</code>step`的1维张量</p>
+</li>
 </ul>
-<p><strong>特定区间填充函数</strong>:</p>
+<h3 id="特定区间填充函数">1.2.5 特定区间填充函数</h3>
 <ul>
 <li><code>torch.linspace()</code>: 返回一个从<code>start</code>到<code>end</code>（包括<code>end</code>）且在其中均匀分布的指定大小的1维张量。</li>
 <li><code>torch.logspace()</code>: 返回一个在对数刻度上从<code>base^start</code>到<code>base^end</code>（包括<code>end</code>）且均匀分布的指定大小的1维张量。</li>
 </ul>
-<p><strong>其他辅助函数</strong>:</p>
+<h3 id="其他辅助函数">1.2.6 其他辅助函数</h3>
 <ul>
 <li><code>torch.eye()</code>: 返回一个二维张量，对角线上为1，其他地方为0。</li>
 <li><code>torch.empty()</code>: 返回一个指定形状且未初始化的张量。</li>
@@ -913,6 +1075,7 @@ Out[<span class="hljs-number">34</span>]: torch.Size([<span class="hljs-number">
 </li>
 <li><p><code>hsplit</code>: 水平方向分割张量</p>
 <p><code>vsplit</code>: 垂直方向分割张量</p>
+<p><code>dsplit</code>: 深度方向分割张量</p>
 <p><code>split</code>: 分割张量成多个块，函数将张量分割成特定大小的块。你可以指定每个块的大小，或者传递一个包含每个块大小的列表。如果张量不能均匀分割，最后一块的大小将小于前面的块</p>
 <p><code>tensor_split</code>: 沿特定维度分割张量，基于索引来分割张量的。你可以指定一个分割点的索引列表，函数会在这些索引处分割张量。这些索引指的是分割后每个新张量的第一个元素的索引</p>
 <pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>t = torch.arange(<span class="hljs-number">16.0</span>).reshape(<span class="hljs-number">4</span>,<span class="hljs-number">4</span>)
@@ -956,6 +1119,33 @@ tensor([[ <span class="hljs-number">0.</span>,  <span class="hljs-number">1.</sp
  tensor([[<span class="hljs-number">12.</span>, <span class="hljs-number">13.</span>, <span class="hljs-number">14.</span>, <span class="hljs-number">15.</span>]]),
  tensor([], size=(<span class="hljs-number">0</span>, <span class="hljs-number">4</span>)))
 
+<span class="hljs-comment"># 深度方向分割张量</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>t = torch.arange(<span class="hljs-number">16.0</span>).reshape(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>t
+tensor([[[ <span class="hljs-number">0.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">3.</span>],
+         [ <span class="hljs-number">4.</span>,  <span class="hljs-number">5.</span>,  <span class="hljs-number">6.</span>,  <span class="hljs-number">7.</span>]],
+        [[ <span class="hljs-number">8.</span>,  <span class="hljs-number">9.</span>, <span class="hljs-number">10.</span>, <span class="hljs-number">11.</span>],
+         [<span class="hljs-number">12.</span>, <span class="hljs-number">13.</span>, <span class="hljs-number">14.</span>, <span class="hljs-number">15.</span>]]])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.dsplit(t, <span class="hljs-number">2</span>)
+(tensor([[[ <span class="hljs-number">0.</span>,  <span class="hljs-number">1.</span>],
+        [ <span class="hljs-number">4.</span>,  <span class="hljs-number">5.</span>]],
+       [[ <span class="hljs-number">8.</span>,  <span class="hljs-number">9.</span>],
+        [<span class="hljs-number">12.</span>, <span class="hljs-number">13.</span>]]]),
+ tensor([[[ <span class="hljs-number">2.</span>,  <span class="hljs-number">3.</span>],
+          [ <span class="hljs-number">6.</span>,  <span class="hljs-number">7.</span>]],
+         [[<span class="hljs-number">10.</span>, <span class="hljs-number">11.</span>],
+          [<span class="hljs-number">14.</span>, <span class="hljs-number">15.</span>]]]))
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.dsplit(t, [<span class="hljs-number">3</span>, <span class="hljs-number">6</span>])
+(tensor([[[ <span class="hljs-number">0.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>],
+          [ <span class="hljs-number">4.</span>,  <span class="hljs-number">5.</span>,  <span class="hljs-number">6.</span>]],
+         [[ <span class="hljs-number">8.</span>,  <span class="hljs-number">9.</span>, <span class="hljs-number">10.</span>],
+          [<span class="hljs-number">12.</span>, <span class="hljs-number">13.</span>, <span class="hljs-number">14.</span>]]]),
+ tensor([[[ <span class="hljs-number">3.</span>],
+          [ <span class="hljs-number">7.</span>]],
+         [[<span class="hljs-number">11.</span>],
+          [<span class="hljs-number">15.</span>]]]),
+ tensor([], size=(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>)))
+
 <span class="hljs-comment"># 分割张量成多个块</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>torch.split(t, <span class="hljs-number">2</span>, dim=<span class="hljs-number">0</span>)
 (tensor([[<span class="hljs-number">0.</span>, <span class="hljs-number">1.</span>, <span class="hljs-number">2.</span>, <span class="hljs-number">3.</span>],
@@ -979,15 +1169,147 @@ tensor([[ <span class="hljs-number">0.</span>,  <span class="hljs-number">1.</sp
 </ul>
 <h3 id="变换和重塑">1.3.3 变换和重塑</h3>
 <ul>
-<li><code>adjoint</code>: 返回共轭的张量，并交换最后两维。</li>
-<li><code>conj</code>: 返回共轭位翻转的张量视图。</li>
-<li><code>dsplit</code>: 深度方向分割张量。</li>
-<li><code>gather</code>: 沿指定维度聚集值。</li>
-<li><code>movedim</code>, <code>moveaxis</code>: 移动张量的维度。</li>
-<li><code>permute</code>: 重新排列张量的维度。</li>
-<li><code>reshape</code>: 改变张量的形状。</li>
-<li><code>transpose</code>, <code>swapaxes</code>, <code>swapdims</code>: 转置张量的维度。</li>
-<li><code>t</code>: 转置二维张量的维度。</li>
+<li><p><code>adjoint</code>: 返回共轭的张量，并交换最后两维</p>
+</li>
+<li><p><code>conj</code>: 返回共轭位翻转的张量视图</p>
+</li>
+<li><p><code>gather</code>: 沿指定维度聚集值</p>
+<pre><code class="lang-python">torch.gather(input, dim, index, *, sparse_grad=False) -&gt; Tensor
+</code></pre>
+<p>其中参数的意义如下：</p>
+<ul>
+<li><code>input</code> 是要从中提取数据的张量</li>
+<li><code>dim</code> 是要沿着哪个维度进行提取</li>
+<li><code>index</code> 是与 <code>input</code> 张量在除了 <code>dim</code> 指定的维度外具有相同大小的张量，包含了要提取的元素的索引</li>
+<li><code>sparse_grad</code> 是布尔值，用于指示是否进行稀疏梯度的计算；通常用于高级用途</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-comment"># 创建一个 3x3 的矩阵</span>
+input_tensor = torch.tensor([[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>],
+                             [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>],
+                             [<span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>]])
+
+<span class="hljs-comment"># 创建一个索引，用于选择每一行的第二个元素</span>
+index = torch.tensor([[<span class="hljs-number">1</span>], [<span class="hljs-number">1</span>], [<span class="hljs-number">1</span>]])
+
+<span class="hljs-comment"># 使用 gather 来提取元素，dim=1 表示沿着列的方向进行操作</span>
+torch.gather(input_tensor, <span class="hljs-number">1</span>, index)
+<span class="hljs-comment"># 输出：[[2], [5], [8]]</span>
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>t = torch.tensor([[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>], [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>]])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.gather(t, <span class="hljs-number">1</span>, torch.tensor([[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>], [<span class="hljs-number">1</span>, <span class="hljs-number">0</span>]]))
+tensor([[ <span class="hljs-number">1</span>,  <span class="hljs-number">1</span>],
+        [ <span class="hljs-number">4</span>,  <span class="hljs-number">3</span>]])
+</code></pre>
+</li>
+<li><p><code>movedim</code>(别名<code>moveaxis</code>): 移动张量维度位置的函数，这个操作可以让你指定某个维度（或多个维度）从它的原始位置移动到一个新的位置</p>
+<p>```python</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>t = torch.randn(3,2,1)
+t
+tensor([[[-0.3362],</p>
+<pre><code>    [-0.8437]],
+</code></pre></blockquote>
+</blockquote>
+</blockquote>
+<pre><code>    [[-0.9627],
+    [ 0.1727]],
+
+    [[ 0.5173],
+    [-0.1398]]])
+</code></pre><blockquote>
+<blockquote>
+<blockquote>
+<p>torch.moveaxis(t, 1, 0).shape
+torch.Size([2, 3, 1])
+torch.moveaxis(t, 1, 0)
+tensor([[[-0.3362],</p>
+<pre><code>    [-0.9627],
+    [ 0.5173]],
+</code></pre></blockquote>
+</blockquote>
+</blockquote>
+<pre><code>    [[-0.8437],
+    [ 0.1727],
+    [-0.1398]]])
+</code></pre><blockquote>
+<blockquote>
+<blockquote>
+<p>torch.moveaxis(t, (1, 2), (0, 1)).shape
+torch.Size([2, 1, 3])
+torch.moveaxis(t, (1, 2), (0, 1))
+tensor([[[-0.3362, -0.9627,  0.5173]],</p>
+<pre><code>    [[-0.8437,  0.1727, -0.1398]]])
+</code></pre></blockquote>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<p>  tensor = torch.randn(10, 3, 5)
+  torch.movedim(tensor, 1, 0).size()
+  Out[78]: torch.Size([3, 10, 5])</p>
+<pre><code>
+- `permute`: 重新排列张量的维度，重组tensor维度，支持高维操作，tensor.permute(dim0, dim1, … dimn)，表示原本的dim0放在第0维度，dim1放在第1维度，…, dimn放在第n维度，必须将所有维度写上
+
+  `reshape`: 改变张量的形状，需要指定最终的形状
+
+  `transpose`(等价于`swapaxes`、`swapdims`): 转置张量的维度
+
+  &gt; [捋清pytorch的transpose、permute、view、reshape、contiguous](https://blog.csdn.net/nuohuang3371/article/details/113403755)
+
+  permute可以完全替代transpose，transpose不能替代permute
+
+  ```python
+  # permute重新排列张量的维度
+  &gt;&gt;&gt; x = torch.randn(2, 3, 5)
+  &gt;&gt;&gt; x.size()
+  torch.Size([2, 3, 5])
+  &gt;&gt;&gt; torch.permute(x, (2, 0, 1)).size()
+  torch.Size([5, 2, 3])
+
+  # reshape改变张量的形状
+  &gt;&gt;&gt; a = torch.arange(4.)
+  &gt;&gt;&gt; torch.reshape(a, (2, 2))
+  tensor([[ 0.,  1.],
+          [ 2.,  3.]])
+  &gt;&gt;&gt; b = torch.tensor([[0, 1], [2, 3]])
+  &gt;&gt;&gt; torch.reshape(b, (-1,))
+  tensor([ 0,  1,  2,  3])
+
+  # transpose转置张量的维度
+  &gt;&gt;&gt; x = torch.randn(2, 3)
+  &gt;&gt;&gt; x
+  tensor([[ 1.0028, -0.9893,  0.5809],
+          [-0.1669,  0.7299,  0.4942]])
+  &gt;&gt;&gt; torch.transpose(x, dim0=0, dim1=1)
+  tensor([[ 1.0028, -0.1669],
+          [-0.9893,  0.7299],
+          [ 0.5809,  0.4942]])
+</code></pre><ul>
+<li><p><code>t</code>: 转置二维张量的维度</p>
+<p>期望输入是一个二维或二维以下的张量，并交换维度0和1</p>
+<p>当输入是一个零维或一维张量时，返回的张量保持不变。当输入是一个二维张量时，这相当于 transpose(input, 0, 1)</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>x = torch.randn(())
+<span class="hljs-meta">&gt;&gt;&gt; </span>x
+tensor(<span class="hljs-number">0.1995</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.t(x)
+tensor(<span class="hljs-number">0.1995</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>x = torch.randn(<span class="hljs-number">3</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>x
+tensor([ <span class="hljs-number">2.4320</span>, <span class="hljs-number">-0.4608</span>,  <span class="hljs-number">0.7702</span>])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.t(x)
+tensor([ <span class="hljs-number">2.4320</span>, <span class="hljs-number">-0.4608</span>,  <span class="hljs-number">0.7702</span>])
+<span class="hljs-meta">&gt;&gt;&gt; </span>x = torch.randn(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>x
+tensor([[ <span class="hljs-number">0.4875</span>,  <span class="hljs-number">0.9158</span>, <span class="hljs-number">-0.5872</span>],
+        [ <span class="hljs-number">0.3938</span>, <span class="hljs-number">-0.6929</span>,  <span class="hljs-number">0.6932</span>]])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.t(x)
+tensor([[ <span class="hljs-number">0.4875</span>,  <span class="hljs-number">0.3938</span>],
+        [ <span class="hljs-number">0.9158</span>, <span class="hljs-number">-0.6929</span>],
+        [<span class="hljs-number">-0.5872</span>,  <span class="hljs-number">0.6932</span>]])
+</code></pre>
+</li>
 </ul>
 <h3 id="元素添加与替换">1.3.4 元素添加与替换</h3>
 <ul>
@@ -4290,7 +4612,7 @@ tensor([[<span class="hljs-number">1.</span>, <span class="hljs-number">8.</span
 <p><a href="https://www.jianshu.com/p/ebd7f6395bf4" target="_blank">tensor的数据结构、storage()、stride()、storage_offset()</a></p>
 </blockquote>
 <p>pytorch中一个tensor对象分为<strong>头信息区（Tensor）</strong>和<strong>存储区（Storage）</strong>两部分</p>
-<p><a data-lightbox="4cec5001-da4b-4a7a-bd0a-a5f9f8325df1" data-title="tensor结构示例图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/pytorch学习/tensor结构示例图.webp" target="_blank"><img alt="tensor结构示例图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/pytorch学习/tensor结构示例图.webp"/></a>
+<p><a data-lightbox="9e59b21b-b238-40c1-b5f9-c8fa338b8a0d" data-title="tensor结构示例图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/pytorch学习/tensor结构示例图.webp" target="_blank"><img alt="tensor结构示例图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/pytorch学习/tensor结构示例图.webp"/></a>
 头信息区主要保存tensor的形状（size）、步长（stride）、数据类型（type）等信息；而真正的data（数据)则以<strong>连续一维数组</strong>的形式放在存储区，由torch.Storage实例管理着</p>
 <p><strong>注意：storage永远是一维数组，任何维度的tensor的实际数据都存储在一维的storage中</strong></p>
 <blockquote>
@@ -4752,7 +5074,7 @@ writer = SummaryWriter(<span class="hljs-string">"logs"</span>)
 writer.close()
 </code></pre>
 <p></p><footer class="page-footer"><span class="copyright">Copyright © narutohyc.com 2021 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
-2024-02-19 07:02:52
+2024-02-19 09:34:47
 </span></footer><hr/><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz',appKey: 'utUrzoiqNaDEGlgr09JL1pXB',placeholder: '欢迎留下评论交流~',avatar: 'wavatar',meta: undefined,pageSize: 15,lang: 'zh-CN',recordIP: false})</script><p></p>
 </section>
 </div>
@@ -4779,7 +5101,7 @@ writer.close()
 <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"abbrlink":53039,"date":"2023/04/16 16:39:14","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆2.webp","title":"pytorch学习.md","tags":["pytorch"],"top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆2.webp","mathjax":true,"categories":["deep-learning"],"description":"pytorch学习记录","level":"1.8","depth":1,"next":{"title":"transformer.md","level":"1.9","depth":1,"path":"chapters/transformer.md","ref":"chapters/transformer.md","articles":[]},"previous":{"title":"nlp关键词和摘要提取技术整理.md","level":"1.7","depth":1,"path":"chapters/nlp关键词和摘要提取技术整理.md","ref":"chapters/nlp关键词和摘要提取技术整理.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/hycBook"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":false,"enableFooter":false,"site":"https://dl.hycbook.com","author":"narutohyc","website":"深度学习知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"hycBook","repo":"bk_dl_page","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"深度学习相关学习记录","language":"zh-hans","mathjax":{"forceSVG":true},"links":{"sidebar":{"书籍主页":"https://study.hycbook.com"}},"gitbook":"*","description":"记录 深度学习 的学习和一些技巧的使用"},"file":{"path":"chapters/pytorch学习.md","mtime":"2024-02-19T07:02:52.138Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-02-19T07:03:12.663Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"abbrlink":53039,"date":"2023/04/16 16:39:14","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆2.webp","title":"pytorch学习.md","tags":["pytorch"],"top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆2.webp","mathjax":true,"categories":["deep-learning"],"description":"pytorch学习记录","level":"1.8","depth":1,"next":{"title":"transformer.md","level":"1.9","depth":1,"path":"chapters/transformer.md","ref":"chapters/transformer.md","articles":[]},"previous":{"title":"nlp关键词和摘要提取技术整理.md","level":"1.7","depth":1,"path":"chapters/nlp关键词和摘要提取技术整理.md","ref":"chapters/nlp关键词和摘要提取技术整理.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/hycBook"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":false,"enableFooter":false,"site":"https://dl.hycbook.com","author":"narutohyc","website":"深度学习知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"hycBook","repo":"bk_dl_page","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"深度学习相关学习记录","language":"zh-hans","mathjax":{"forceSVG":true},"links":{"sidebar":{"书籍主页":"https://study.hycbook.com"}},"gitbook":"*","description":"记录 深度学习 的学习和一些技巧的使用"},"file":{"path":"chapters/pytorch学习.md","mtime":"2024-02-19T09:34:47.177Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-02-19T09:35:09.015Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 <canvas class="fireworks"></canvas><script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script></div>
