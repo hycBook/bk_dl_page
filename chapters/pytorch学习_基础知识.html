@@ -568,10 +568,16 @@ tensor([ <span class="hljs-number">1.0000</span>,  <span class="hljs-number">1.5
 </ul>
 <h2 id="特定区间填充函数">2.4 特定区间填充函数</h2>
 <ul>
-<li><code>torch.linspace()</code>: 返回一个从<code>start</code>到<code>end</code>（包括<code>end</code>）且在其中均匀分布的指定大小的1维张量
+<li><p><code>torch.linspace()</code>: 返回一个从<code>start</code>到<code>end</code>（包括<code>end</code>）且在其中均匀分布的指定大小的1维张量
 <script type="math/tex; mode=display">
   (start, start+\frac{end-start}{steps-1}, \dots, start+(steps-2)* \frac{end-start}{steps-1}, end)
-  </script></li>
+  </script></p>
+<p><code>torch.logspace()</code>: 返回一个在对数刻度上从<script type="math/tex; ">base^{start}</script>到<script type="math/tex; ">base^{end}</script>（包括<code>end</code>）且均匀分布的指定大小的1维张量
+<script type="math/tex; mode=display">
+  (base^{start}, base^{(start+ \frac{end-start}{steps-1})}, \dots, base^{(start+(steps-2)*\frac{end-start}{steps-1})}, base^{end})
+  </script>
+这两个函数生成的张量常常用于数据预处理、数学模拟、绘图等需要生成规则数列的场景</p>
+</li>
 </ul>
 <pre><code class="lang-python">  &gt;&gt;&gt; torch.linspace(start=<span class="hljs-number">3</span>, end=<span class="hljs-number">10</span>, steps=<span class="hljs-number">5</span>)
   tensor([  <span class="hljs-number">3.0000</span>,   <span class="hljs-number">4.7500</span>,   <span class="hljs-number">6.5000</span>,   <span class="hljs-number">8.2500</span>,  <span class="hljs-number">10.0000</span>])
@@ -581,14 +587,8 @@ tensor([ <span class="hljs-number">1.0000</span>,  <span class="hljs-number">1.5
   tensor([<span class="hljs-number">-10.</span>,  <span class="hljs-number">-5.</span>,   <span class="hljs-number">0.</span>,   <span class="hljs-number">5.</span>,  <span class="hljs-number">10.</span>])
   &gt;&gt;&gt; torch.linspace(start=<span class="hljs-number">-10</span>, end=<span class="hljs-number">10</span>, steps=<span class="hljs-number">1</span>)
   tensor([<span class="hljs-number">-10.</span>])
-</code></pre>
-<ul>
-<li><code>torch.logspace()</code>: 返回一个在对数刻度上从<script type="math/tex; ">base^{start}</script>到<script type="math/tex; ">base^{end}</script>（包括<code>end</code>）且均匀分布的指定大小的1维张量
-<script type="math/tex; mode=display">
-  (base^{start}, base^{(start+ \frac{end-start}{steps-1})}, \dots, base^{(start+(steps-2)*\frac{end-start}{steps-1})}, base^{end})
-  </script></li>
-</ul>
-<pre><code class="lang-python">  &gt;&gt;&gt; torch.logspace(start=<span class="hljs-number">-10</span>, end=<span class="hljs-number">10</span>, steps=<span class="hljs-number">5</span>)
+
+  &gt;&gt;&gt; torch.logspace(start=<span class="hljs-number">-10</span>, end=<span class="hljs-number">10</span>, steps=<span class="hljs-number">5</span>)
   tensor([ <span class="hljs-number">1.0000e-10</span>,  <span class="hljs-number">1.0000e-05</span>,  <span class="hljs-number">1.0000e+00</span>,  <span class="hljs-number">1.0000e+05</span>,  <span class="hljs-number">1.0000e+10</span>])
   &gt;&gt;&gt; torch.logspace(start=<span class="hljs-number">0.1</span>, end=<span class="hljs-number">1.0</span>, steps=<span class="hljs-number">5</span>)
   tensor([  <span class="hljs-number">1.2589</span>,   <span class="hljs-number">2.1135</span>,   <span class="hljs-number">3.5481</span>,   <span class="hljs-number">5.9566</span>,  <span class="hljs-number">10.0000</span>])
@@ -1717,7 +1717,6 @@ tensor([[<span class="hljs-number">-1.2825</span>,  <span class="hljs-number">1.
 </code></pre>
 </li>
 <li><p><strong>torch.ceil</strong>: 对输入<code>input</code>张量每个元素向上取整, 即取不小于每个元素的最小整数</p>
-<p><strong>torch.floor</strong>: 返回一个新张量，包含输入<code>input</code>张量每个元素的floor，即不小于元素的最大整数</p>
 <p><strong>torch.clamp</strong>(别名<strong>torch.clip</strong>): 将输入<code>input</code>张量每个元素的夹紧到区间<script type="math/tex; ">[min, max]</script>，并返回结果到一个新张量
 <script type="math/tex; mode=display">
   y_i = \begin{cases} 
@@ -1725,25 +1724,27 @@ tensor([[<span class="hljs-number">-1.2825</span>,  <span class="hljs-number">1.
   x_i, & \text{if } \text{min} \leq x_i \leq \text{max} \\
   \text{max}, & \text{if } x_i > \text{max}
   \end{cases}
-  </script></p>
-</li>
-</ul>
-<pre><code class="lang-python">  a = torch.randn(<span class="hljs-number">4</span>)
-  Out[<span class="hljs-number">0</span>]: tensor([<span class="hljs-number">-0.9105</span>, <span class="hljs-number">-0.7277</span>,  <span class="hljs-number">0.9516</span>, <span class="hljs-number">-0.1081</span>])
-  torch.ceil(a)
-  Out[<span class="hljs-number">1</span>]: tensor([<span class="hljs-number">-0.</span>, <span class="hljs-number">-0.</span>, <span class="hljs-number">1.</span>, <span class="hljs-number">-0.</span>])
+  </script>
+<strong>torch.floor</strong>: 返回一个新张量，包含输入<code>input</code>张量每个元素的floor，即不小于元素的最大整数</p>
+<pre><code class="lang-python"><span class="hljs-comment"># torch.ceil</span>
+a = torch.randn(<span class="hljs-number">4</span>)
+Out[<span class="hljs-number">0</span>]: tensor([<span class="hljs-number">-0.9105</span>, <span class="hljs-number">-0.7277</span>,  <span class="hljs-number">0.9516</span>, <span class="hljs-number">-0.1081</span>])
+torch.ceil(a)
+Out[<span class="hljs-number">1</span>]: tensor([<span class="hljs-number">-0.</span>, <span class="hljs-number">-0.</span>, <span class="hljs-number">1.</span>, <span class="hljs-number">-0.</span>])
 
-  a = torch.randn(<span class="hljs-number">4</span>)
-  Out[<span class="hljs-number">0</span>]: tensor([<span class="hljs-number">-0.5661</span>, <span class="hljs-number">-0.9135</span>,  <span class="hljs-number">1.1018</span>, <span class="hljs-number">-0.2633</span>])
-  torch.floor(a)
-  Out[<span class="hljs-number">1</span>]: tensor([<span class="hljs-number">-1.</span>, <span class="hljs-number">-1.</span>,  <span class="hljs-number">1.</span>, <span class="hljs-number">-1.</span>])
+<span class="hljs-comment"># torch.floor</span>
+a = torch.randn(<span class="hljs-number">4</span>)
+Out[<span class="hljs-number">0</span>]: tensor([<span class="hljs-number">-0.5661</span>, <span class="hljs-number">-0.9135</span>,  <span class="hljs-number">1.1018</span>, <span class="hljs-number">-0.2633</span>])
+torch.floor(a)
+Out[<span class="hljs-number">1</span>]: tensor([<span class="hljs-number">-1.</span>, <span class="hljs-number">-1.</span>,  <span class="hljs-number">1.</span>, <span class="hljs-number">-1.</span>])
 
-  a = torch.randn(<span class="hljs-number">4</span>)
-  Out[<span class="hljs-number">0</span>]: tensor([<span class="hljs-number">-0.9105</span>, <span class="hljs-number">-0.7277</span>,  <span class="hljs-number">0.9516</span>, <span class="hljs-number">-0.1081</span>])
-  torch.clamp(a, min=<span class="hljs-number">-0.5</span>, max=<span class="hljs-number">0.5</span>)
-  Out[<span class="hljs-number">1</span>]: tensor([<span class="hljs-number">-0.5000</span>, <span class="hljs-number">-0.5000</span>,  <span class="hljs-number">0.5000</span>, <span class="hljs-number">-0.1081</span>])
+<span class="hljs-comment"># torch.clamp</span>
+a = torch.randn(<span class="hljs-number">4</span>)
+Out[<span class="hljs-number">0</span>]: tensor([<span class="hljs-number">-0.9105</span>, <span class="hljs-number">-0.7277</span>,  <span class="hljs-number">0.9516</span>, <span class="hljs-number">-0.1081</span>])
+torch.clamp(a, min=<span class="hljs-number">-0.5</span>, max=<span class="hljs-number">0.5</span>)
+Out[<span class="hljs-number">1</span>]: tensor([<span class="hljs-number">-0.5000</span>, <span class="hljs-number">-0.5000</span>,  <span class="hljs-number">0.5000</span>, <span class="hljs-number">-0.1081</span>])
 </code></pre>
-<ul>
+</li>
 <li><p><strong>torch.div</strong>(别名<strong>torch.divide</strong>): 将<code>input</code>逐元素除以标量值<code>value</code>，并返回结果到输出张量<code>out</code>，torch.div(input, value, out=None)</p>
 <p>两张量<code>input</code>和<code>other</code>逐元素相除，并将结果返回到输出，torch.div(<em>input</em>, <em>other</em>, <em>**, </em>rounding_mode=None<em>, </em>out=None*) → Tensor</p>
 <p><strong>torch.mul</strong>(别米<strong>torch.multiply</strong>): 用标量值<code>value</code>乘以输入<code>input</code>的每个元素，并返回一个新的结果张量，torch.mul(input, value, out=None)</p>
@@ -2537,7 +2538,7 @@ Out[<span class="hljs-number">1</span>]:
          [ <span class="hljs-number">0.6258</span><span class="hljs-number">-0.1770j</span>,  <span class="hljs-number">0.8552</span>+<span class="hljs-number">0.0000j</span>]], dtype=torch.complex128))
 </code></pre>
 <p></p><footer class="page-footer"><span class="copyright">Copyright © narutohyc.com 2021 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
-2024-02-20 07:42:51
+2024-02-20 08:28:33
 </span></footer><hr/><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz',appKey: 'utUrzoiqNaDEGlgr09JL1pXB',placeholder: '欢迎留下评论交流~',avatar: 'wavatar',meta: undefined,pageSize: 15,lang: 'zh-CN',recordIP: false})</script><p></p>
 </section>
 </div>
@@ -2564,7 +2565,7 @@ Out[<span class="hljs-number">1</span>]:
 <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"abbrlink":53039,"date":"2023/04/16 16:39:14","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆2.webp","title":"pytorch学习_基础知识.md","tags":["pytorch"],"top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆2.webp","mathjax":true,"categories":["deep-learning"],"description":"pytorch学习_基础知识","level":"1.8","depth":1,"next":{"title":"pytorch学习_进阶知识.md","level":"1.9","depth":1,"path":"chapters/pytorch学习_进阶知识.md","ref":"chapters/pytorch学习_进阶知识.md","articles":[]},"previous":{"title":"nlp关键词和摘要提取技术整理.md","level":"1.7","depth":1,"path":"chapters/nlp关键词和摘要提取技术整理.md","ref":"chapters/nlp关键词和摘要提取技术整理.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/hycBook"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":false,"enableFooter":false,"site":"https://dl.hycbook.com","author":"narutohyc","website":"深度学习知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"hycBook","repo":"bk_dl_page","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"深度学习相关学习记录","language":"zh-hans","mathjax":{"forceSVG":true},"links":{"sidebar":{"书籍主页":"https://study.hycbook.com"}},"gitbook":"*","description":"记录 深度学习 的学习和一些技巧的使用"},"file":{"path":"chapters/pytorch学习_基础知识.md","mtime":"2024-02-20T07:42:51.184Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-02-20T07:43:15.230Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"abbrlink":53039,"date":"2023/04/16 16:39:14","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆2.webp","title":"pytorch学习_基础知识.md","tags":["pytorch"],"top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆2.webp","mathjax":true,"categories":["deep-learning"],"description":"pytorch学习_基础知识","level":"1.8","depth":1,"next":{"title":"pytorch学习_进阶知识.md","level":"1.9","depth":1,"path":"chapters/pytorch学习_进阶知识.md","ref":"chapters/pytorch学习_进阶知识.md","articles":[]},"previous":{"title":"nlp关键词和摘要提取技术整理.md","level":"1.7","depth":1,"path":"chapters/nlp关键词和摘要提取技术整理.md","ref":"chapters/nlp关键词和摘要提取技术整理.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/hycBook"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":false,"enableFooter":false,"site":"https://dl.hycbook.com","author":"narutohyc","website":"深度学习知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"hycBook","repo":"bk_dl_page","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"深度学习相关学习记录","language":"zh-hans","mathjax":{"forceSVG":true},"links":{"sidebar":{"书籍主页":"https://study.hycbook.com"}},"gitbook":"*","description":"记录 深度学习 的学习和一些技巧的使用"},"file":{"path":"chapters/pytorch学习_基础知识.md","mtime":"2024-02-20T08:28:33.178Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-02-20T08:28:58.673Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 <canvas class="fireworks"></canvas><script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script></div>
