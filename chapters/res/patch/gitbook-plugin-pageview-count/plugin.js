@@ -43,8 +43,6 @@ id_map.set("深度学习核心之优化器.html", "hrmxncdqo");
 id_map.set("深度学习模型压缩技术.html", "hemxncdqq");
 // https://dl.hycbook.com/chapters/huggingface基本使用教程.html
 id_map.set("huggingface基本使用教程.html", "hexncdqn");
-// https://dl.hycbook.com/chapters/pytorch学习.html
-id_map.set("pytorch学习.html", "hxncdck");
 // https://dl.hycbook.com/chapters/图像分割算法.html
 id_map.set("图像分割算法.html", "hvxncdca");
 // https://dl.hycbook.com/chapters/LLM模型微调系列.html
@@ -55,12 +53,16 @@ id_map.set("图神经网络.html", "hxncdqp");
 id_map.set("transformer.html", "hemxncdqq");
 // https://dl.hycbook.com/chapters/深度学习核心基础知识点.html
 id_map.set("深度学习核心基础知识点.html", "hxncdqc");
+// https://dl.hycbook.com/chapters/pytorch学习_进阶知识.html
+id_map.set("pytorch学习_进阶知识.html", "huuxpkaak");
 // https://dl.hycbook.com/chapters/图像分类算法.html
 id_map.set("图像分类算法.html", "hxncdqc");
 // https://dl.hycbook.com/chapters/nlp关键词和摘要提取技术整理.html
 id_map.set("nlp关键词和摘要提取技术整理.html", "huvxncdcx");
 // https://dl.hycbook.com/chapters/深度学习核心之激活函数.html
 id_map.set("深度学习核心之激活函数.html", "hrmxncdqo");
+// https://dl.hycbook.com/chapters/pytorch学习_基础知识.html
+id_map.set("pytorch学习_基础知识.html", "hxpkaaa");
 // https://dl.hycbook.com/chapters/目标检测与跟踪算法.html
 id_map.set("目标检测与跟踪算法.html", "hxncdqp");
 // https://dl.hycbook.com/chapters/LLM模型部署调试推理.html
