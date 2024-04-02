@@ -643,7 +643,7 @@ files=$(git lfs ls-files | awk <span class="hljs-string">'{print $3}'</span>)
 <p><a href="https://huggingface.co/docs/transformers/quicktour#quick-tour" target="_blank">hf快速开始教程</a></p>
 </blockquote>
 <p>下图是huggingface模块关系图</p>
-<p><a data-lightbox="6110a9f8-b85b-478f-af8a-9c3e07062419" data-title="huggingface模块关系图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/huggingface基本使用教程/huggingface模块关系图.svg" target="_blank"><img alt="huggingface模块关系图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/huggingface基本使用教程/huggingface模块关系图.svg"/></a></p>
+<p><a data-lightbox="b0d5076a-b390-4c1a-bf13-00727971dfe3" data-title="huggingface模块关系图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/huggingface基本使用教程/huggingface模块关系图.svg" target="_blank"><img alt="huggingface模块关系图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/huggingface基本使用教程/huggingface模块关系图.svg"/></a></p>
 <pre><code class="lang-python"><span class="hljs-comment">#!/usr/bin/env Python</span>
 <span class="hljs-comment"># -- coding: utf-8 --</span>
 
@@ -1761,7 +1761,7 @@ model_names = [<span class="hljs-string">"Model 1"</span>, <span class="hljs-str
 plot = radar_plot(data=data, model_names=model_names)
 plot.show()
 </code></pre>
-<p><a data-lightbox="d5dedf3d-457e-4cc8-860f-5c0bc366ec34" data-title="模型比较指标图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/huggingface基本使用教程/模型比较指标图.webp" target="_blank"><img alt="模型比较指标图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/huggingface基本使用教程/模型比较指标图.webp"/></a></p>
+<p><a data-lightbox="ba6286cc-7d34-48b5-8aa0-12b488f3b5ad" data-title="模型比较指标图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/huggingface基本使用教程/模型比较指标图.webp" target="_blank"><img alt="模型比较指标图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/huggingface基本使用教程/模型比较指标图.webp"/></a></p>
 <h3 id="选择合适指标">3.2.6 选择合适指标</h3>
 <p>评估指标可以分为三个高级类别：</p>
 <ul>
@@ -2396,7 +2396,7 @@ train_dataloader, eval_dataloader, model, optimizer = accelerator.prepare(
 </ol>
 <h2 id="基本使用">6.1 基本使用</h2>
 <h3 id="加载peft-adapter">6.1.1 加载PEFT adapter</h3>
-<p><a data-lightbox="4796d95c-3eb3-4495-b099-1b19f3f45a2f" data-title="PEFT-Lora文件示例" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/huggingface基本使用教程/PEFT-Lora文件示例.webp" target="_blank"><img alt="PEFT-Lora文件示例" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/huggingface基本使用教程/PEFT-Lora文件示例.webp"/></a></p>
+<p><a data-lightbox="c9e9ce0f-31db-4d38-99c5-62d51c0d0635" data-title="PEFT-Lora文件示例" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/huggingface基本使用教程/PEFT-Lora文件示例.webp" target="_blank"><img alt="PEFT-Lora文件示例" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/huggingface基本使用教程/PEFT-Lora文件示例.webp"/></a></p>
 <p>从🤗Transformers加载并使用PEFT adapter模型时，请确保Hub仓库或本地目录包含一个<code>adapter_config.json</code>文件和<code>adapter</code>权重，如上面的示例图片所示</p>
 <p>然后，你可以使用AutoModelFor类加载PEFT adapter模型。例如，要加载用于因果语言建模的PEFT adapter模型：</p>
 <ul>
@@ -2725,6 +2725,96 @@ model.add_adapter(lora_config)
 <li>每加一张卡，大概提升速度<strong>1.16倍</strong></li>
 <li>使用<strong>flash-attn-v2</strong>大概提速<strong>1.33倍</strong></li>
 </ol>
+<p>训练参数为</p>
+<pre><code class="lang-json">{
+    <span class="hljs-string">"output_dir"</span>: <span class="hljs-string">"output/firefly-qwen-14b-pretrain-qlora-law-one-item-doc-2000-statge-0"</span>,
+    <span class="hljs-string">"model_name_or_path"</span>: <span class="hljs-string">"/root/autodl-tmp/pretrained_model/tokenizer/Qwen-14B"</span>,
+    <span class="hljs-string">"train_file"</span>: <span class="hljs-string">"/root/autodl-tmp/hyc/Qwen/datas/base_law_one_item_and_docs_2000_0327_1340"</span>,
+
+    <span class="hljs-string">"deepspeed"</span>: <span class="hljs-string">"./train_args/ds_z2_config_qwen.json"</span>,
+    <span class="hljs-string">"train_mode"</span>: <span class="hljs-string">"qlora"</span>,
+
+    <span class="hljs-string">"task_type"</span>: <span class="hljs-string">"pretrain"</span>,
+    <span class="hljs-string">"num_train_epochs"</span>: <span class="hljs-number">500</span>,
+    <span class="hljs-string">"tokenize_num_workers"</span>: <span class="hljs-number">10</span>,
+    <span class="hljs-string">"per_device_train_batch_size"</span>: <span class="hljs-number">16</span>,
+    <span class="hljs-string">"gradient_accumulation_steps"</span>: <span class="hljs-number">16</span>,
+    <span class="hljs-string">"learning_rate"</span>: <span class="hljs-number">1e-5</span>,
+    <span class="hljs-string">"max_seq_length"</span>: <span class="hljs-number">1024</span>,
+
+    <span class="hljs-string">"logging_steps"</span>: <span class="hljs-number">2</span>,
+    <span class="hljs-string">"save_steps"</span>: <span class="hljs-number">100</span>,
+    <span class="hljs-string">"save_total_limit"</span>: <span class="hljs-number">50</span>,
+    <span class="hljs-string">"lr_scheduler_type"</span>: <span class="hljs-string">"cosine"</span>,
+    <span class="hljs-string">"warmup_ratio"</span>: <span class="hljs-number">0.01</span>,
+
+    <span class="hljs-string">"gradient_checkpointing"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"logging_first_step"</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-string">"disable_tqdm"</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-string">"optim"</span>: <span class="hljs-string">"adamw_hf"</span>,
+    <span class="hljs-string">"seed"</span>: <span class="hljs-number">42</span>,
+    <span class="hljs-string">"fp16"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"report_to"</span>: <span class="hljs-string">"tensorboard"</span>,
+    <span class="hljs-string">"dataloader_num_workers"</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-string">"save_strategy"</span>: <span class="hljs-string">"steps"</span>,
+    <span class="hljs-string">"weight_decay"</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-string">"max_grad_norm"</span>: <span class="hljs-number">1.0</span>,
+    <span class="hljs-string">"remove_unused_columns"</span>: <span class="hljs-literal">false</span>
+}
+</code></pre>
+<p>ds_z2_config_qwen.json</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">"fp16"</span>: {
+    <span class="hljs-string">"enabled"</span>: <span class="hljs-string">"auto"</span>,
+    <span class="hljs-string">"loss_scale"</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-string">"loss_scale_window"</span>: <span class="hljs-number">1000</span>,
+    <span class="hljs-string">"initial_scale_power"</span>: <span class="hljs-number">16</span>,
+    <span class="hljs-string">"hysteresis"</span>: <span class="hljs-number">2</span>,
+    <span class="hljs-string">"min_loss_scale"</span>: <span class="hljs-number">1</span>
+  },
+  <span class="hljs-string">"bf16"</span>: {
+    <span class="hljs-string">"enabled"</span>: <span class="hljs-string">"auto"</span>
+  },
+  <span class="hljs-string">"optimizer"</span>: {
+    <span class="hljs-string">"type"</span>: <span class="hljs-string">"AdamW"</span>,
+    <span class="hljs-string">"params"</span>: {
+      <span class="hljs-string">"lr"</span>: <span class="hljs-string">"auto"</span>,
+      <span class="hljs-string">"betas"</span>: <span class="hljs-string">"auto"</span>,
+      <span class="hljs-string">"eps"</span>: <span class="hljs-string">"auto"</span>,
+      <span class="hljs-string">"weight_decay"</span>: <span class="hljs-string">"auto"</span>
+    }
+  },
+  <span class="hljs-string">"scheduler"</span>: {
+    <span class="hljs-string">"type"</span>: <span class="hljs-string">"WarmupLR"</span>,
+    <span class="hljs-string">"params"</span>: {
+      <span class="hljs-string">"warmup_min_lr"</span>: <span class="hljs-string">"auto"</span>,
+      <span class="hljs-string">"warmup_max_lr"</span>: <span class="hljs-string">"auto"</span>,
+      <span class="hljs-string">"warmup_num_steps"</span>: <span class="hljs-string">"auto"</span>
+    }
+  },
+  <span class="hljs-string">"zero_optimization"</span>: {
+    <span class="hljs-string">"stage"</span>: <span class="hljs-number">2</span>,
+    <span class="hljs-string">"offload_optimizer"</span>: {
+      <span class="hljs-string">"device"</span>: <span class="hljs-string">"none"</span>,
+      <span class="hljs-string">"pin_memory"</span>: <span class="hljs-literal">true</span>
+    },
+    <span class="hljs-string">"allgather_partitions"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"allgather_bucket_size"</span>: <span class="hljs-number">2e8</span>,
+    <span class="hljs-string">"overlap_comm"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"reduce_scatter"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"reduce_bucket_size"</span>: <span class="hljs-number">2e8</span>,
+    <span class="hljs-string">"contiguous_gradients"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"stage3_gather_16bit_weights_on_model_save"</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-string">"ignore_unused_parameters"</span>: <span class="hljs-literal">true</span>
+  },
+  <span class="hljs-string">"gradient_accumulation_steps"</span>: <span class="hljs-string">"auto"</span>,
+  <span class="hljs-string">"gradient_clipping"</span>: <span class="hljs-string">"auto"</span>,
+  <span class="hljs-string">"steps_per_print"</span>: <span class="hljs-number">100</span>,
+  <span class="hljs-string">"train_batch_size"</span>: <span class="hljs-string">"auto"</span>,
+  <span class="hljs-string">"train_micro_batch_size_per_gpu"</span>: <span class="hljs-string">"auto"</span>,
+  <span class="hljs-string">"wall_clock_breakdown"</span>: <span class="hljs-literal">false</span>
+}
+</code></pre>
 <h1 id="其他模块">7 其他模块</h1>
 <h2 id="核心类">7.1 核心类</h2>
 <blockquote>
@@ -2856,7 +2946,7 @@ model.add_adapter(lora_config)
 </code></pre>
 <p>在这个例子中，首先定义了 <code>LlamaPreTrainedModel</code> 类作为 llama 模型的基类，它继承自 <code>PreTrainedModel</code>。在这个基类中，我们指定了一些 llama 模型特有的属性，比如配置类 <code>LlamaConfig</code>、模型前缀 model、支持梯度检查点（gradient checkpointing）、跳过的模块列表 _no_split_modules 等等。</p>
 <p>然后，我们基于这个基类分别定义了 <code>LlamaModel</code>、<code>LlamaForCausalLM</code> 和 <code>LlamaForSequenceClassification</code>。这些模型的逻辑关系如下图所示</p>
-<p><a data-lightbox="f19430ad-84ef-4922-833f-f52a71c65aae" data-title="Llama模型结构关系图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/huggingface基本使用教程/Llama模型结构关系图.webp" target="_blank"><img alt="Llama模型结构关系图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/huggingface基本使用教程/Llama模型结构关系图.webp"/></a></p>
+<p><a data-lightbox="6ab6f4c6-e81b-495a-af3b-82dc9fe1d76e" data-title="Llama模型结构关系图" href="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/huggingface基本使用教程/Llama模型结构关系图.webp" target="_blank"><img alt="Llama模型结构关系图" src="https://pic.hycbook.com/i/hexo/bk_resources/deep_learning/huggingface基本使用教程/Llama模型结构关系图.webp"/></a></p>
 <p><code>LlamaModel</code>是 llama 模型的主体定义类，也就是我们最常见的普pytorch 定义模型的方法、默认的输出格式为<code>BaseModelOutputWithPast</code></p>
 <pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LlamaModel</span><span class="hljs-params">(LlamaPreTrainedModel)</span>:</span>
 
@@ -2944,7 +3034,7 @@ model = AutoModel.from_config(config)
 </ol>
 <p>总之，Hugging Face的Accelerate是一个功能强大的库，旨在简化和加速深度学习模型的训练和推理过程。它提供了高级API和一系列工具，使用户能够轻松地实现分布式训练、混合精度训练和梯度累积等高效训练策略</p>
 <p></p><footer class="page-footer"><span class="copyright">Copyright © narutohyc.com 2021 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
-2024-04-02 07:04:58
+2024-04-02 07:15:46
 </span></footer><hr/><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz',appKey: 'utUrzoiqNaDEGlgr09JL1pXB',placeholder: '欢迎留下评论交流~',avatar: 'wavatar',meta: undefined,pageSize: 15,lang: 'zh-CN',recordIP: false})</script><p></p>
 </section>
 </div>
@@ -2971,7 +3061,7 @@ model = AutoModel.from_config(config)
 <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"abbrlink":57912,"date":"2023/06/10 18:36:10","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆12.webp","title":"huggingface基本使用教程.md","tags":["huggingface","transformers"],"top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆12.webp","mathjax":true,"categories":["deep-learning"],"description":"huggingface基本使用教程","level":"1.6","depth":1,"next":{"title":"nlp关键词和摘要提取技术整理.md","level":"1.7","depth":1,"path":"chapters/nlp关键词和摘要提取技术整理.md","ref":"chapters/nlp关键词和摘要提取技术整理.md","articles":[]},"previous":{"title":"dl_in_vision_field.md","level":"1.5","depth":1,"path":"chapters/dl_in_vision_field.md","ref":"chapters/dl_in_vision_field.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/hycBook"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":false,"enableFooter":false,"site":"https://dl.hycbook.com","author":"narutohyc","website":"深度学习知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"hycBook","repo":"bk_dl_page","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"深度学习相关学习记录","language":"zh-hans","mathjax":{"forceSVG":true},"links":{"sidebar":{"书籍主页":"https://study.hycbook.com"}},"gitbook":"*","description":"记录 深度学习 的学习和一些技巧的使用"},"file":{"path":"chapters/huggingface基本使用教程.md","mtime":"2024-04-02T07:04:58.584Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-04-02T07:05:24.562Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"abbrlink":57912,"date":"2023/06/10 18:36:10","cover":"https://pic.hycbook.com/i/hexo/post_cover/蕾姆12.webp","title":"huggingface基本使用教程.md","tags":["huggingface","transformers"],"top_img":"https://pic.hycbook.com/i/hexo/post_imgs/蕾姆12.webp","mathjax":true,"categories":["deep-learning"],"description":"huggingface基本使用教程","level":"1.6","depth":1,"next":{"title":"nlp关键词和摘要提取技术整理.md","level":"1.7","depth":1,"path":"chapters/nlp关键词和摘要提取技术整理.md","ref":"chapters/nlp关键词和摘要提取技术整理.md","articles":[]},"previous":{"title":"dl_in_vision_field.md","level":"1.5","depth":1,"path":"chapters/dl_in_vision_field.md","ref":"chapters/dl_in_vision_field.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","search-plus","-lunr","-search","lightbox","theme-comscore","valine","pageview-count","favicon-absolute","copyright-v"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/hycBook"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2022/03/23/dEYjkaSGXwe7rnu.png","alipayText":"alipay打赏","button":"欢迎打赏","title":"","wechat":"https://s2.loli.net/2022/03/23/WDiTVSamQBJdEA4.png","wechatText":"wechat打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"copyright-v":{"copyProtect":false,"enableFooter":false,"site":"https://dl.hycbook.com","author":"narutohyc","website":"深度学习知识驿站","image":"https://s2.loli.net/2022/03/24/pbMd1BCgUNzi7mG.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"hycBook","repo":"bk_dl_page","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"wavatar","lang":"zh-CN","pageSize":15,"placeholder":"欢迎留下评论交流~","recordIP":false,"appId":"evyLlP61gQN3G3OM2GQq1rzH-gzGzoHsz","appKey":"utUrzoiqNaDEGlgr09JL1pXB"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"深度学习相关学习记录","language":"zh-hans","mathjax":{"forceSVG":true},"links":{"sidebar":{"书籍主页":"https://study.hycbook.com"}},"gitbook":"*","description":"记录 深度学习 的学习和一些技巧的使用"},"file":{"path":"chapters/huggingface基本使用教程.md","mtime":"2024-04-02T07:15:46.931Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-04-02T07:16:08.905Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 <canvas class="fireworks"></canvas><script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script></div>
